@@ -1928,3 +1928,34 @@
 .gst-intro-supporting strong {
   color: #f97316;
 }
+
+
+/* ===== Final compact full-width hero sizing ===== */
+.gst-intro-hero {
+  width: 100%;
+  min-height: 600px;
+  padding: 76px 70px 60px;
+}
+
+@media (max-width: 991px) {
+  .gst-intro-hero {
+    width: 100%;
+    min-height: 560px;
+    padding: 70px 45px 55px;
+  }
+}
+
+@media (max-width: 767px) {
+  .gst-intro-hero {
+    width: 100%;
+    min-height: auto;
+    padding: 60px 20px 44px;
+  }
+}
+
+@media (max-width: 479px) {
+  .gst-intro-hero {
+    width: 100%;
+    padding: 50px 16px 38px;
+  }
+}
