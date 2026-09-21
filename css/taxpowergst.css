@@ -1409,3 +1409,308 @@
     font-size: 13px;
   }
 }
+
+/* ===== TaxPower GST introduction hero ===== */
+.gst-intro-hero {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 0.92fr) minmax(360px, 1.08fr);
+  align-items: center;
+  min-height: calc(100vh - 112px);
+  margin-bottom: 30px;
+  padding: clamp(56px, 7vw, 96px) clamp(30px, 6vw, 88px);
+  overflow: hidden;
+  border-radius: 18px;
+  background:
+    radial-gradient(circle at 77% 42%, rgba(255, 255, 255, 0.9) 0 7%, transparent 32%),
+    linear-gradient(135deg, #fffaf6 0%, #ffffff 48%, #effbff 100%);
+  border: 1px solid rgba(15, 32, 43, 0.08);
+  box-shadow: 0 24px 70px rgba(15, 32, 43, 0.12);
+  isolation: isolate;
+}
+
+.gst-intro-hero::before {
+  content: "";
+  position: absolute;
+  left: -90px;
+  bottom: -150px;
+  width: 360px;
+  height: 360px;
+  border-radius: 50%;
+  background: rgba(0, 180, 216, 0.08);
+  filter: blur(4px);
+  z-index: -1;
+}
+
+.gst-intro-copy {
+  position: relative;
+  z-index: 3;
+  max-width: 620px;
+}
+
+.gst-intro-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  min-height: 32px;
+  margin: 0 0 20px;
+  padding: 7px 14px;
+  border-radius: 999px;
+  background: rgba(244, 122, 34, 0.11);
+  color: #d65f0f;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+}
+
+.gst-intro-copy h1 {
+  max-width: 680px;
+  margin: 0;
+  color: #102b38;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: clamp(52px, 7vw, 96px);
+  font-weight: 800;
+  line-height: 0.96;
+  letter-spacing: -0.065em;
+}
+
+.gst-intro-copy h1 span {
+  color: #f47a22;
+}
+
+.gst-intro-tagline {
+  max-width: 570px;
+  margin: 28px 0 12px;
+  color: #102b38;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: clamp(24px, 3vw, 40px);
+  font-weight: 700;
+  line-height: 1.13;
+  letter-spacing: -0.035em;
+}
+
+.gst-intro-description {
+  max-width: 540px;
+  margin: 0;
+  color: #4b6470;
+  font-size: clamp(14px, 1.25vw, 17px);
+  line-height: 1.7;
+}
+
+.gst-intro-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 32px;
+}
+
+.gst-intro-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 13px 23px;
+  border-radius: 999px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: transform 220ms ease, box-shadow 220ms ease, color 220ms ease, background-color 220ms ease;
+}
+
+.gst-intro-button-primary {
+  background: #102b38;
+  color: #ffffff;
+  box-shadow: 0 12px 26px rgba(16, 43, 56, 0.22);
+}
+
+.gst-intro-button-primary:hover {
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 16px 32px rgba(16, 43, 56, 0.28);
+}
+
+.gst-intro-button-link {
+  color: #102b38;
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(16, 43, 56, 0.12);
+}
+
+.gst-intro-button-link span {
+  margin-left: 8px;
+  color: #f47a22;
+  font-size: 19px;
+  transition: transform 220ms ease;
+}
+
+.gst-intro-button-link:hover {
+  color: #d65f0f;
+  transform: translateY(-2px);
+}
+
+.gst-intro-button-link:hover span {
+  transform: translateX(4px);
+}
+
+.gst-intro-visual {
+  position: relative;
+  z-index: 1;
+  width: min(100%, 620px);
+  aspect-ratio: 1 / 0.86;
+  justify-self: end;
+}
+
+.gst-intro-orb {
+  position: absolute;
+  display: block;
+  border-radius: 50%;
+  box-shadow: 0 30px 60px rgba(18, 49, 62, 0.16);
+}
+
+.gst-intro-orb-orange {
+  left: 3%;
+  top: 31%;
+  width: 48%;
+  aspect-ratio: 1;
+  background: linear-gradient(145deg, #ff9b4d 0%, #f47a22 52%, #d95813 100%);
+  animation: gstIntroFloat 7s ease-in-out infinite;
+}
+
+.gst-intro-orb-blue {
+  right: 4%;
+  bottom: 1%;
+  width: 58%;
+  aspect-ratio: 1;
+  background: linear-gradient(145deg, #81e6f5 0%, #00b4d8 55%, #0077b6 100%);
+  animation: gstIntroFloat 8.5s ease-in-out -2s infinite reverse;
+}
+
+.gst-intro-orb-light {
+  right: 0;
+  top: 0;
+  width: 66%;
+  aspect-ratio: 1;
+  border: 1px solid rgba(255, 255, 255, 0.72);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.98) 8%, rgba(255, 214, 173, 0.88) 49%, rgba(255, 255, 255, 0.94) 100%);
+  animation: gstIntroFloat 9.5s ease-in-out -4s infinite;
+}
+
+.gst-intro-product {
+  position: absolute;
+  right: 16%;
+  top: 24%;
+  z-index: 3;
+  display: flex;
+  width: 46%;
+  min-width: 210px;
+  aspect-ratio: 1;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 7px;
+  padding: 24px;
+  border-radius: 50%;
+  color: #102b38;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.56);
+  border: 1px solid rgba(255, 255, 255, 0.82);
+  box-shadow: 0 28px 65px rgba(16, 43, 56, 0.17);
+  backdrop-filter: blur(18px) saturate(145%);
+}
+
+.gst-intro-product img {
+  width: clamp(44px, 5vw, 64px);
+  height: auto;
+  margin-bottom: 4px;
+  filter: drop-shadow(0 9px 14px rgba(0, 180, 216, 0.22));
+}
+
+.gst-intro-product strong {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: clamp(18px, 2.3vw, 30px);
+  line-height: 1.05;
+}
+
+.gst-intro-product span {
+  color: #55717d;
+  font-size: clamp(10px, 1.1vw, 13px);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+@keyframes gstIntroFloat {
+  0%, 100% { transform: translate3d(0, 0, 0); }
+  50% { transform: translate3d(0, -12px, 0); }
+}
+
+@media (max-width: 900px) {
+  .gst-intro-hero {
+    grid-template-columns: 1fr;
+    min-height: auto;
+    padding: 60px 36px 28px;
+  }
+
+  .gst-intro-copy {
+    max-width: 680px;
+  }
+
+  .gst-intro-visual {
+    width: min(100%, 540px);
+    margin: 18px auto 0;
+    justify-self: center;
+  }
+}
+
+@media (max-width: 640px) {
+  .gst-intro-hero {
+    margin-bottom: 20px;
+    padding: 42px 22px 18px;
+    border-radius: 14px;
+  }
+
+  .gst-intro-copy h1 {
+    font-size: clamp(46px, 15vw, 68px);
+  }
+
+  .gst-intro-tagline {
+    margin-top: 22px;
+    font-size: clamp(23px, 8vw, 34px);
+  }
+
+  .gst-intro-description {
+    font-size: 14px;
+  }
+
+  .gst-intro-actions {
+    align-items: stretch;
+    margin-top: 26px;
+  }
+
+  .gst-intro-button {
+    flex: 1 1 150px;
+  }
+
+  .gst-intro-visual {
+    min-height: 310px;
+    aspect-ratio: 1;
+  }
+
+  .gst-intro-product {
+    right: 12%;
+    min-width: 170px;
+    padding: 18px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gst-intro-orb {
+    animation: none;
+  }
+
+  .gst-intro-button,
+  .gst-intro-button-link span {
+    transition: none;
+  }
+}
