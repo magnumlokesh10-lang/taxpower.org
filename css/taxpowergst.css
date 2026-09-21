@@ -1959,3 +1959,57 @@
     padding: 50px 16px 38px;
   }
 }
+
+
+/* ===== Align intro hero with full-width GST sections ===== */
+.gst-intro-hero {
+  box-sizing: border-box;
+  width: calc(100vw - 40px);
+  max-width: none;
+  min-height: 520px;
+  margin: 0 0 24px calc(50% - 50vw + 20px);
+  padding: 42px 64px 36px;
+}
+
+.gst-intro-copy {
+  transform: none;
+}
+
+@media (max-width: 991px) {
+  .gst-intro-hero {
+    width: calc(100vw - 32px);
+    min-height: 500px;
+    margin-left: calc(50% - 50vw + 16px);
+    padding: 38px 42px 32px;
+  }
+}
+
+@media (max-width: 767px) {
+  .gst-intro-hero {
+    width: calc(100vw - 32px);
+    min-height: auto;
+    margin-left: calc(50% - 50vw + 16px);
+    padding: 34px 20px 28px;
+  }
+
+  .gst-intro-visual {
+    margin-top: 28px;
+  }
+}
+
+@media (max-width: 640px) {
+  .gst-intro-hero {
+    width: calc(100vw - 20px);
+    margin-left: calc(50% - 50vw + 10px);
+  }
+}
+
+@media (max-width: 479px) {
+  .gst-intro-hero {
+    padding: 28px 16px 24px;
+  }
+
+  .gst-intro-highlights {
+    margin-bottom: 22px !important;
+  }
+}
