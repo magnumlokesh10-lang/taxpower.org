@@ -1411,7 +1411,7 @@
 }
 
 /* ===== Hero section from supplied reference file ===== */
-.gst-intro-hero {
+ {
   --gst-hero-background: #f7fbfe;
   --gst-hero-paragraph: #31566a;
   --gst-hero-heading: #0b202b;
@@ -1428,7 +1428,7 @@
   max-width: 1400px;
   min-height: calc(100vh - 88px);
   margin: 0 auto 30px;
-  padding: 85px;
+  padding: 40px 80px;
   overflow: hidden;
   border: 1px solid rgba(14, 165, 233, 0.16);
   border-radius: 28px;
@@ -1676,7 +1676,6 @@
 /* ===== Enhanced TaxPower GST hero ===== */
 .gst-intro-hero {
   min-height: 680px;
-  padding: 112px 80px 76px;
   background:
     radial-gradient(circle at 8% 12%, rgba(56, 189, 248, 0.16), transparent 30%),
     radial-gradient(circle at 92% 88%, rgba(249, 115, 22, 0.10), transparent 32%),
