@@ -1412,23 +1412,30 @@
 
 /* ===== Hero section from supplied reference file ===== */
 .gst-intro-hero {
-  --gst-hero-background: #fbfafa;
-  --gst-hero-paragraph: #646262;
-  --gst-hero-heading: #0f0d0d;
-  --gst-circle-b1: #dcb119;
-  --gst-circle-b2: #f1df3d;
-  --gst-circle-a1: #d03737;
-  --gst-circle-a2: #e8bf48;
+  --gst-hero-background: #f7fbfe;
+  --gst-hero-paragraph: #31566a;
+  --gst-hero-heading: #0b202b;
+  --gst-circle-b1: #0284c7;
+  --gst-circle-b2: #38bdf8;
+  --gst-circle-a1: #f97316;
+  --gst-circle-a2: #fdba74;
   position: relative;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: minmax(300px, auto);
   align-items: center;
-  min-height: calc(100vh - 26px);
-  margin-bottom: 30px;
-  padding: 220px 80px 85px;
+  width: calc(100% - 60px);
+  max-width: 1400px;
+  min-height: calc(100vh - 88px);
+  margin: 0 auto 30px;
+  padding: 180px 80px 85px;
   overflow: hidden;
-  background: var(--gst-hero-background);
+  border: 1px solid rgba(14, 165, 233, 0.16);
+  border-radius: 28px;
+  background:
+    radial-gradient(circle at 12% 18%, rgba(56, 189, 248, 0.10), transparent 34%),
+    linear-gradient(135deg, #ffffff 0%, var(--gst-hero-background) 100%);
+  box-shadow: 0 24px 70px rgba(11, 32, 43, 0.14);
 }
 
 .gst-intro-copy {
@@ -1441,22 +1448,25 @@
 }
 
 .gst-intro-copy h1 {
-  max-width: 610px;
-  margin: 0 0 28px;
+  max-width: 680px;
+  margin: 0 0 22px;
   color: var(--gst-hero-heading);
   font-family: 'Plus Jakarta Sans', Arial, sans-serif;
-  font-size: 78px;
+  font-size: clamp(58px, 6.2vw, 88px);
   font-weight: 700;
   line-height: 1.05;
   letter-spacing: -0.04em;
 }
 
 .gst-intro-description {
-  max-width: 450px;
-  margin: 0 0 34px;
+  max-width: 560px;
+  margin: 0 0 38px;
   color: var(--gst-hero-paragraph);
-  font-size: 17px;
-  line-height: 1.7;
+  font-family: 'Plus Jakarta Sans', Arial, sans-serif;
+  font-size: clamp(22px, 2.2vw, 32px);
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
 }
 
 .gst-intro-actions {
@@ -1484,14 +1494,14 @@
   padding: 19px 36px;
   border-radius: 50px;
   color: #ffffff;
-  background: linear-gradient(320deg, #3f3f3f, var(--gst-hero-heading));
+  background: linear-gradient(135deg, #0284c7, #0b5f8a);
   transition: box-shadow 0.3s cubic-bezier(.25, .46, .45, .94), filter 0.3s cubic-bezier(.25, .46, .45, .94);
 }
 
 .gst-intro-button-primary:hover {
   color: #ffffff;
   filter: brightness(118%);
-  box-shadow: 0 15px 30px rgba(63, 63, 63, 0.35);
+  box-shadow: 0 15px 30px rgba(2, 132, 199, 0.3);
 }
 
 .gst-intro-button-link {
@@ -1509,7 +1519,7 @@
 }
 
 .gst-intro-button-link:hover {
-  color: #e7752b;
+  color: #f97316;
 }
 
 .gst-intro-visual {
@@ -1549,8 +1559,8 @@
   left: 100px;
   width: 600px;
   height: 600px;
-  border: 1px solid rgba(251, 250, 250, 0.25);
-  background: rgba(251, 250, 250, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.34);
+  background: rgba(255, 255, 255, 0.08);
   -webkit-backdrop-filter: blur(50px);
   backdrop-filter: blur(50px);
 }
@@ -1563,7 +1573,8 @@
 
 @media (max-width: 991px) {
   .gst-intro-hero {
-    padding-top: 205px;
+    width: calc(100% - 40px);
+    padding-top: 170px;
     padding-bottom: 70px;
     padding-inline: 50px;
   }
@@ -1579,7 +1590,9 @@
     grid-template-rows: auto minmax(360px, auto);
     justify-items: center;
     min-height: auto;
-    padding: 175px 20px 60px;
+    width: calc(100% - 24px);
+    padding: 135px 20px 60px;
+    border-radius: 22px;
   }
 
   .gst-intro-copy {
@@ -1620,7 +1633,7 @@
 
 @media (max-width: 479px) {
   .gst-intro-hero {
-    padding-top: 165px;
+    padding-top: 120px;
     padding-bottom: 50px;
   }
 
