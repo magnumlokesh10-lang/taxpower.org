@@ -1,4 +1,15 @@
 (() => {
+  const NAV_CACHE_KEY = 'taxpower-navigation-v1';
+  const navigationRequest = fetch('nav.html', {
+    cache: 'force-cache',
+    credentials: 'omit'
+  }).then((response) => {
+    if (!response.ok) {
+      throw new Error(`Unable to load nav.html: ${response.status}`);
+    }
+    return response.text();
+  });
+
   const commonHeadMarkup = `
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,22 +25,45 @@
     document.head.appendChild(template.content.cloneNode(true));
   }
 
+  function renderNavigation(slot, html) {
+    const template = document.createElement('template');
+    template.innerHTML = html.trim();
+    slot.replaceWith(template.content.cloneNode(true));
+    window.taxPowerNavigationLoaded = true;
+    document.dispatchEvent(new CustomEvent('taxpower:navigation-loaded'));
+  }
+
   async function loadSharedNavigation() {
     const slot = document.querySelector('[data-nav-slot]');
     if (!slot) return;
 
+    let cachedNavigation = '';
     try {
-      const response = await fetch('nav.html', { cache: 'no-cache' });
-      if (!response.ok) {
-        throw new Error(`Unable to load nav.html: ${response.status}`);
-      }
+      cachedNavigation = sessionStorage.getItem(NAV_CACHE_KEY) || '';
+    } catch (error) {
+      console.warn('Navigation cache is unavailable.', error);
+    }
 
-      const html = await response.text();
-      const template = document.createElement('template');
-      template.innerHTML = html.trim();
-      slot.replaceWith(template.content.cloneNode(true));
-      window.taxPowerNavigationLoaded = true;
-      document.dispatchEvent(new CustomEvent('taxpower:navigation-loaded'));
+    if (cachedNavigation) {
+      renderNavigation(slot, cachedNavigation);
+      navigationRequest.then((html) => {
+        try {
+          sessionStorage.setItem(NAV_CACHE_KEY, html);
+        } catch (error) {
+          console.warn('Navigation cache could not be refreshed.', error);
+        }
+      }).catch(console.error);
+      return;
+    }
+
+    try {
+      const html = await navigationRequest;
+      try {
+        sessionStorage.setItem(NAV_CACHE_KEY, html);
+      } catch (error) {
+        console.warn('Navigation cache could not be saved.', error);
+      }
+      renderNavigation(slot, html);
     } catch (error) {
       console.error(error);
       slot.innerHTML = '<p class="nav-load-error">Navigation could not be loaded.</p>';
