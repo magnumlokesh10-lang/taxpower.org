@@ -1671,3 +1671,186 @@
     transition: none;
   }
 }
+
+
+/* ===== Enhanced TaxPower GST hero ===== */
+.gst-intro-hero {
+  min-height: 680px;
+  padding: 112px 80px 76px;
+  background:
+    radial-gradient(circle at 8% 12%, rgba(56, 189, 248, 0.16), transparent 30%),
+    radial-gradient(circle at 92% 88%, rgba(249, 115, 22, 0.10), transparent 32%),
+    linear-gradient(135deg, #ffffff 0%, #f4fbff 54%, #fff8f2 100%);
+}
+
+.gst-intro-copy {
+  transform: translateY(-28px);
+}
+
+.gst-intro-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  margin-bottom: 18px;
+  padding: 8px 14px;
+  border: 1px solid rgba(2, 132, 199, 0.18);
+  border-radius: 999px;
+  color: #0369a1;
+  background: rgba(224, 242, 254, 0.78);
+  font-family: 'Plus Jakarta Sans', Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.gst-intro-eyebrow::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #f97316;
+  box-shadow: 0 0 0 5px rgba(249, 115, 22, 0.13);
+}
+
+.gst-intro-copy h1 {
+  margin-bottom: 14px;
+  color: #082f49;
+  font-size: clamp(54px, 5.5vw, 80px);
+  line-height: 1.01;
+}
+
+.gst-intro-description {
+  margin-bottom: 18px;
+  color: #0284c7;
+  font-size: clamp(21px, 2vw, 29px);
+}
+
+.gst-intro-supporting {
+  max-width: 600px;
+  margin: 0 0 24px;
+  color: #496779;
+  font-size: 16px;
+  line-height: 1.65;
+}
+
+.gst-intro-highlights {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 0;
+  margin: 0 0 30px;
+  list-style: none;
+}
+
+.gst-intro-highlights li {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 8px 12px;
+  border: 1px solid rgba(14, 165, 233, 0.16);
+  border-radius: 10px;
+  color: #164e63;
+  background: rgba(255, 255, 255, 0.76);
+  box-shadow: 0 7px 20px rgba(14, 116, 144, 0.08);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.gst-intro-highlights li::before {
+  content: "✓";
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 17px;
+  height: 17px;
+  border-radius: 50%;
+  color: #ffffff;
+  background: linear-gradient(135deg, #0ea5e9, #0284c7);
+  font-size: 10px;
+  font-weight: 900;
+}
+
+.gst-intro-button-primary {
+  background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
+  box-shadow: 0 12px 26px rgba(2, 132, 199, 0.22);
+}
+
+.gst-intro-button-link {
+  color: #0c4a6e;
+  font-weight: 700;
+}
+
+.gst-intro-circle-b {
+  background: linear-gradient(135deg, #0ea5e9 0%, #0369a1 100%);
+  box-shadow: 0 30px 70px rgba(2, 132, 199, 0.28);
+}
+
+.gst-intro-circle-a {
+  background: linear-gradient(135deg, #fb923c 0%, #f97316 52%, #ea580c 100%);
+  box-shadow: 0 25px 60px rgba(249, 115, 22, 0.24);
+}
+
+.gst-intro-circle-blur {
+  border-color: rgba(255, 255, 255, 0.42);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.02), rgba(224, 242, 254, 0.16));
+}
+
+@media (max-width: 991px) {
+  .gst-intro-hero {
+    min-height: 640px;
+    padding-top: 100px;
+  }
+
+  .gst-intro-copy {
+    transform: translateY(-18px);
+  }
+}
+
+@media (max-width: 767px) {
+  .gst-intro-hero {
+    min-height: auto;
+    padding-top: 82px;
+  }
+
+  .gst-intro-copy {
+    transform: none;
+  }
+
+  .gst-intro-copy h1 {
+    font-size: clamp(43px, 12vw, 58px);
+  }
+
+  .gst-intro-supporting {
+    max-width: 540px;
+    font-size: 15px;
+  }
+
+  .gst-intro-highlights {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 479px) {
+  .gst-intro-hero {
+    padding-top: 66px;
+  }
+
+  .gst-intro-copy h1 {
+    font-size: 43px;
+  }
+
+  .gst-intro-description {
+    font-size: 20px;
+  }
+
+  .gst-intro-actions {
+    width: 100%;
+    gap: 14px;
+  }
+
+  .gst-intro-button-primary {
+    width: 100%;
+  }
+}
