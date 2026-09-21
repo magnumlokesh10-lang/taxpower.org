@@ -1462,4 +1462,72 @@
   initGstPage();
   document.addEventListener('taxpower:sections-loaded', initGstPage);
   document.addEventListener('taxpower:navigation-loaded', keepGstStylesheetLast);
+})();/* ===== GST introduction hero scroll motion ===== */
+(() => {
+  'use strict';
+
+  function initGstIntroHeroMotion() {
+    document.querySelectorAll('.gst-intro-hero').forEach((hero) => {
+      if (hero.dataset.scrollMotionReady === 'true') return;
+
+      const circleA = hero.querySelector('.gst-intro-circle-a');
+      const circleB = hero.querySelector('.gst-intro-circle-b');
+      const circleBlur = hero.querySelector('.gst-intro-circle-blur');
+
+      if (!circleA || !circleB || !circleBlur) return;
+      hero.dataset.scrollMotionReady = 'true';
+
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+      let current = 0;
+      let target = 0;
+      let frame = null;
+      const clamp = (value, min, max) => Math.max(min, Math.min(max, value));
+
+      function render() {
+        current += (target - current) * 0.085;
+        if (Math.abs(target - current) < 0.02) current = target;
+
+        const progress = current;
+        circleA.style.transform = `translate3d(${-progress * 0.95}px, ${-progress * 0.38}px, 0) rotate(${-progress * 0.045}deg)`;
+        circleB.style.transform = `translate3d(${progress * 1.05}px, ${progress * 0.32}px, 0) rotate(${progress * 0.055}deg)`;
+        circleBlur.style.transform = `translate3d(${progress * 0.10}px, ${-progress * 0.08}px, 0) scale(${1 + progress * 0.0008})`;
+
+        if (Math.abs(target - current) > 0.02) {
+          frame = requestAnimationFrame(render);
+        } else {
+          frame = null;
+        }
+      }
+
+      function update() {
+        if (window.innerWidth < 992) {
+          target = 0;
+          current = 0;
+          circleA.style.transform = '';
+          circleB.style.transform = '';
+          circleBlur.style.transform = '';
+          hero.classList.remove('gst-intro-hero-scroll-motion');
+          return;
+        }
+
+        hero.classList.add('gst-intro-hero-scroll-motion');
+        const travel = Math.max(0, -hero.getBoundingClientRect().top);
+        target = clamp(travel * 0.135, 0, 34);
+        if (!frame) frame = requestAnimationFrame(render);
+      }
+
+      window.addEventListener('scroll', update, { passive: true });
+      window.addEventListener('resize', update, { passive: true });
+      update();
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initGstIntroHeroMotion, { once: true });
+  } else {
+    initGstIntroHeroMotion();
+  }
+
+  document.addEventListener('taxpower:sections-loaded', initGstIntroHeroMotion);
 })();

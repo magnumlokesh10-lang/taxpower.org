@@ -1410,144 +1410,135 @@
   }
 }
 
-/* ===== TaxPower GST introduction hero ===== */
+/* ===== TaxPower GST introduction hero — adapted from supplied design ===== */
 .gst-intro-hero {
+  --gst-hero-bg: #fbfafa;
+  --gst-hero-heading: #0f0d0d;
+  --gst-hero-copy: #646262;
+  --gst-circle-a1: #d03737;
+  --gst-circle-a2: #e8bf48;
+  --gst-circle-b1: #dcb119;
+  --gst-circle-b2: #f1df3d;
   position: relative;
   display: grid;
-  grid-template-columns: minmax(0, 0.92fr) minmax(360px, 1.08fr);
+  grid-template-columns: minmax(0, 1fr) minmax(430px, 1fr);
+  grid-template-rows: minmax(560px, auto);
   align-items: center;
-  min-height: calc(100vh - 112px);
+  min-height: calc(100vh - 104px);
   margin-bottom: 30px;
-  padding: clamp(56px, 7vw, 96px) clamp(30px, 6vw, 88px);
+  padding: clamp(76px, 8vw, 118px) clamp(42px, 7vw, 110px);
   overflow: hidden;
-  border-radius: 18px;
-  background:
-    radial-gradient(circle at 77% 42%, rgba(255, 255, 255, 0.9) 0 7%, transparent 32%),
-    linear-gradient(135deg, #fffaf6 0%, #ffffff 48%, #effbff 100%);
-  border: 1px solid rgba(15, 32, 43, 0.08);
-  box-shadow: 0 24px 70px rgba(15, 32, 43, 0.12);
-  isolation: isolate;
-}
-
-.gst-intro-hero::before {
-  content: "";
-  position: absolute;
-  left: -90px;
-  bottom: -150px;
-  width: 360px;
-  height: 360px;
-  border-radius: 50%;
-  background: rgba(0, 180, 216, 0.08);
-  filter: blur(4px);
-  z-index: -1;
+  border-radius: 16px;
+  background: var(--gst-hero-bg);
+  box-shadow: 0 13px 23px rgba(0, 0, 0, 0.03);
 }
 
 .gst-intro-copy {
   position: relative;
-  z-index: 3;
+  z-index: 20;
+  display: flex;
   max-width: 620px;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
 }
 
 .gst-intro-eyebrow {
-  display: inline-flex;
-  align-items: center;
-  min-height: 32px;
-  margin: 0 0 20px;
-  padding: 7px 14px;
-  border-radius: 999px;
-  background: rgba(244, 122, 34, 0.11);
-  color: #d65f0f;
-  font-family: 'DM Sans', sans-serif;
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 0.11em;
+  margin: 0 0 18px;
+  color: #e7752b;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.3;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
 }
 
 .gst-intro-copy h1 {
-  max-width: 680px;
-  margin: 0;
-  color: #102b38;
+  margin: 0 0 20px;
+  color: var(--gst-hero-heading);
   font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: clamp(52px, 7vw, 96px);
-  font-weight: 800;
-  line-height: 0.96;
-  letter-spacing: -0.065em;
+  font-size: clamp(58px, 6.1vw, 78px);
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -0.045em;
 }
 
 .gst-intro-copy h1 span {
-  color: #f47a22;
+  color: inherit;
 }
 
 .gst-intro-tagline {
-  max-width: 570px;
-  margin: 28px 0 12px;
-  color: #102b38;
+  max-width: 500px;
+  margin: 0 0 13px;
+  color: var(--gst-hero-heading);
   font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: clamp(24px, 3vw, 40px);
-  font-weight: 700;
-  line-height: 1.13;
-  letter-spacing: -0.035em;
+  font-size: clamp(22px, 2.15vw, 31px);
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
 }
 
 .gst-intro-description {
-  max-width: 540px;
-  margin: 0;
-  color: #4b6470;
-  font-size: clamp(14px, 1.25vw, 17px);
+  max-width: 500px;
+  margin: 0 0 34px;
+  color: var(--gst-hero-copy);
+  font-size: 17px;
   line-height: 1.7;
 }
 
 .gst-intro-actions {
-  display: flex;
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: auto;
   align-items: center;
-  flex-wrap: wrap;
-  gap: 14px;
-  margin-top: 32px;
+  justify-items: center;
+  gap: 24px;
 }
 
 .gst-intro-button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 48px;
-  padding: 13px 23px;
-  border-radius: 999px;
-  font-family: 'DM Sans', sans-serif;
-  font-size: 14px;
-  font-weight: 700;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.06;
   text-decoration: none;
-  transition: transform 220ms ease, box-shadow 220ms ease, color 220ms ease, background-color 220ms ease;
 }
 
 .gst-intro-button-primary {
-  background: #102b38;
+  padding: 19px 36px;
+  border-radius: 50px;
   color: #ffffff;
-  box-shadow: 0 12px 26px rgba(16, 43, 56, 0.22);
+  background: linear-gradient(320deg, #3f3f3f, #0f0d0d);
+  transition: filter 0.3s cubic-bezier(.25, .46, .45, .94), box-shadow 0.3s cubic-bezier(.25, .46, .45, .94);
 }
 
 .gst-intro-button-primary:hover {
   color: #ffffff;
-  transform: translateY(-2px);
-  box-shadow: 0 16px 32px rgba(16, 43, 56, 0.28);
+  filter: brightness(118%);
+  box-shadow: 0 15px 30px rgba(63, 63, 63, 0.35);
 }
 
 .gst-intro-button-link {
-  color: #102b38;
-  background: rgba(255, 255, 255, 0.72);
-  border: 1px solid rgba(16, 43, 56, 0.12);
+  padding: 6px 0;
+  color: var(--gst-hero-heading);
+  background: transparent;
 }
 
 .gst-intro-button-link span {
-  margin-left: 8px;
-  color: #f47a22;
-  font-size: 19px;
-  transition: transform 220ms ease;
+  width: 14px;
+  height: 14px;
+  margin-left: 5px;
+  color: var(--gst-hero-heading);
+  font-size: 18px;
+  line-height: 12px;
+  transition: transform 0.25s ease;
 }
 
 .gst-intro-button-link:hover {
-  color: #d65f0f;
-  transform: translateY(-2px);
+  color: #e7752b;
 }
 
 .gst-intro-button-link:hover span {
@@ -1556,159 +1547,239 @@
 
 .gst-intro-visual {
   position: relative;
-  z-index: 1;
-  width: min(100%, 620px);
-  aspect-ratio: 1 / 0.86;
-  justify-self: end;
+  width: 100%;
+  min-height: 470px;
+  justify-self: stretch;
 }
 
-.gst-intro-orb {
+.gst-intro-circle {
   position: absolute;
   display: block;
   border-radius: 50%;
-  box-shadow: 0 30px 60px rgba(18, 49, 62, 0.16);
+  will-change: transform;
+  transition: transform 0.18s ease-out;
 }
 
-.gst-intro-orb-orange {
-  left: 3%;
-  top: 31%;
-  width: 48%;
-  aspect-ratio: 1;
-  background: linear-gradient(145deg, #ff9b4d 0%, #f47a22 52%, #d95813 100%);
-  animation: gstIntroFloat 7s ease-in-out infinite;
+.gst-intro-circle-a {
+  top: 74px;
+  left: 2%;
+  width: 290px;
+  height: 290px;
+  background: linear-gradient(72deg, var(--gst-circle-a1), var(--gst-circle-a2));
+  mix-blend-mode: multiply;
 }
 
-.gst-intro-orb-blue {
-  right: 4%;
-  bottom: 1%;
-  width: 58%;
-  aspect-ratio: 1;
-  background: linear-gradient(145deg, #81e6f5 0%, #00b4d8 55%, #0077b6 100%);
-  animation: gstIntroFloat 8.5s ease-in-out -2s infinite reverse;
+.gst-intro-circle-b {
+  top: 155px;
+  left: 17%;
+  width: 370px;
+  height: 370px;
+  background: linear-gradient(54deg, var(--gst-circle-b1), var(--gst-circle-b2));
+  mix-blend-mode: multiply;
 }
 
-.gst-intro-orb-light {
-  right: 0;
-  top: 0;
-  width: 66%;
-  aspect-ratio: 1;
-  border: 1px solid rgba(255, 255, 255, 0.72);
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.98) 8%, rgba(255, 214, 173, 0.88) 49%, rgba(255, 255, 255, 0.94) 100%);
-  animation: gstIntroFloat 9.5s ease-in-out -4s infinite;
+.gst-intro-circle-blur {
+  z-index: 10;
+  top: -154px;
+  left: 21%;
+  width: 600px;
+  height: 600px;
+  border: 1px solid rgba(251, 250, 250, 0.25);
+  background: rgba(251, 250, 250, 0.05);
+  -webkit-backdrop-filter: blur(50px);
+  backdrop-filter: blur(50px);
 }
 
 .gst-intro-product {
   position: absolute;
-  right: 16%;
-  top: 24%;
-  z-index: 3;
+  z-index: 12;
+  left: 22%;
+  bottom: 0;
   display: flex;
-  width: 46%;
-  min-width: 210px;
-  aspect-ratio: 1;
   align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  gap: 7px;
-  padding: 24px;
-  border-radius: 50%;
-  color: #102b38;
-  text-align: center;
-  background: rgba(255, 255, 255, 0.56);
-  border: 1px solid rgba(255, 255, 255, 0.82);
-  box-shadow: 0 28px 65px rgba(16, 43, 56, 0.17);
-  backdrop-filter: blur(18px) saturate(145%);
+  gap: 10px;
+  max-width: 340px;
+  padding: 10px 16px;
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  border-radius: 50px;
+  color: var(--gst-hero-copy);
+  background: rgba(255, 255, 255, 0.62);
+  box-shadow: 0 13px 23px rgba(0, 0, 0, 0.05);
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+  font-size: 13px;
+  line-height: 1.3;
+  white-space: nowrap;
 }
 
 .gst-intro-product img {
-  width: clamp(44px, 5vw, 64px);
-  height: auto;
-  margin-bottom: 4px;
-  filter: drop-shadow(0 9px 14px rgba(0, 180, 216, 0.22));
+  width: 38px;
+  height: 38px;
+  flex: none;
 }
 
 .gst-intro-product strong {
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: clamp(18px, 2.3vw, 30px);
-  line-height: 1.05;
+  color: var(--gst-hero-heading);
+  font-weight: 700;
 }
 
-.gst-intro-product span {
-  color: #55717d;
-  font-size: clamp(10px, 1.1vw, 13px);
-  font-weight: 600;
-  letter-spacing: 0.04em;
+@media (min-width: 992px) {
+  .gst-intro-hero-scroll-motion .gst-intro-circle {
+    transition: none;
+  }
 }
 
-@keyframes gstIntroFloat {
-  0%, 100% { transform: translate3d(0, 0, 0); }
-  50% { transform: translate3d(0, -12px, 0); }
-}
-
-@media (max-width: 900px) {
+@media (max-width: 991px) {
   .gst-intro-hero {
-    grid-template-columns: 1fr;
-    min-height: auto;
-    padding: 60px 36px 28px;
-  }
-
-  .gst-intro-copy {
-    max-width: 680px;
-  }
-
-  .gst-intro-visual {
-    width: min(100%, 540px);
-    margin: 18px auto 0;
-    justify-self: center;
-  }
-}
-
-@media (max-width: 640px) {
-  .gst-intro-hero {
-    margin-bottom: 20px;
-    padding: 42px 22px 18px;
-    border-radius: 14px;
+    grid-template-columns: minmax(0, 1fr) minmax(370px, 0.9fr);
+    grid-template-rows: minmax(520px, auto);
+    padding: 72px 38px;
   }
 
   .gst-intro-copy h1 {
-    font-size: clamp(46px, 15vw, 68px);
+    font-size: 66px;
   }
 
-  .gst-intro-tagline {
-    margin-top: 22px;
-    font-size: clamp(23px, 8vw, 34px);
+  .gst-intro-circle-a {
+    left: -5%;
+    width: 260px;
+    height: 260px;
   }
 
-  .gst-intro-description {
-    font-size: 14px;
+  .gst-intro-circle-b {
+    left: 9%;
+    width: 330px;
+    height: 330px;
   }
 
-  .gst-intro-actions {
-    align-items: stretch;
-    margin-top: 26px;
-  }
-
-  .gst-intro-button {
-    flex: 1 1 150px;
-  }
-
-  .gst-intro-visual {
-    min-height: 310px;
-    aspect-ratio: 1;
+  .gst-intro-circle-blur {
+    left: 5%;
+    width: 500px;
+    height: 500px;
   }
 
   .gst-intro-product {
-    right: 12%;
-    min-width: 170px;
-    padding: 18px;
+    left: 8%;
+  }
+}
+
+@media (max-width: 767px) {
+  .gst-intro-hero {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    justify-items: center;
+    min-height: auto;
+    padding: 76px 30px 42px;
+  }
+
+  .gst-intro-copy {
+    max-width: 530px;
+    align-items: center;
+    text-align: center;
+  }
+
+  .gst-intro-copy h1 {
+    font-size: 54px;
+  }
+
+  .gst-intro-description {
+    margin-bottom: 30px;
+  }
+
+  .gst-intro-visual {
+    width: min(100%, 500px);
+    min-height: 420px;
+    margin-top: 28px;
+  }
+
+  .gst-intro-circle-a {
+    top: 32px;
+    left: 3%;
+  }
+
+  .gst-intro-circle-b {
+    top: 108px;
+    left: 25%;
+  }
+
+  .gst-intro-circle-blur {
+    top: -80px;
+    left: 13%;
+  }
+
+  .gst-intro-product {
+    left: 50%;
+    bottom: 2px;
+    transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 479px) {
+  .gst-intro-hero {
+    padding: 62px 20px 30px;
+    border-radius: 12px;
+  }
+
+  .gst-intro-eyebrow {
+    font-size: 12px;
+  }
+
+  .gst-intro-copy h1 {
+    font-size: clamp(43px, 13vw, 52px);
+  }
+
+  .gst-intro-tagline {
+    font-size: 22px;
+  }
+
+  .gst-intro-description {
+    font-size: 15px;
+  }
+
+  .gst-intro-actions {
+    grid-auto-flow: row;
+    gap: 16px;
+  }
+
+  .gst-intro-visual {
+    min-height: 340px;
+  }
+
+  .gst-intro-circle-a {
+    top: 35px;
+    left: -15%;
+    width: 220px;
+    height: 220px;
+  }
+
+  .gst-intro-circle-b {
+    top: 98px;
+    left: 23%;
+    width: 300px;
+    height: 300px;
+  }
+
+  .gst-intro-circle-blur {
+    top: -30px;
+    left: -8%;
+    width: 400px;
+    height: 400px;
+  }
+
+  .gst-intro-product {
+    bottom: 0;
+    max-width: calc(100% - 8px);
+    font-size: 11px;
+  }
+
+  .gst-intro-product img {
+    width: 32px;
+    height: 32px;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .gst-intro-orb {
-    animation: none;
-  }
-
+  .gst-intro-circle,
   .gst-intro-button,
   .gst-intro-button-link span {
     transition: none;
