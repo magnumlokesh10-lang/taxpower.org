@@ -846,7 +846,14 @@ function initTaxPowerSite() {
 
     item.addEventListener('click', (event) => {
       setNavClickGuard();
+      const parentDropdown = item.closest('.nav-dropdown');
+      if (parentDropdown && window.innerWidth <= 1180 && !parentDropdown.classList.contains('is-open')) {
+        event.preventDefault();
+        navDropdowns.forEach((dropdown) => dropdown.classList.toggle('is-open', dropdown === parentDropdown));
+        return;
+      }
       if (handleSamePageNavClick(event, item, item)) return;
+      navDropdowns.forEach((dropdown) => dropdown.classList.remove('is-open'));
       setActiveNavItem(item);
     });
   });
@@ -877,10 +884,17 @@ function initTaxPowerSite() {
     dropdownLinks.forEach((dropdownLink) => {
       dropdownLink.addEventListener('click', (event) => {
         setNavClickGuard();
+        dropdown.classList.remove('is-open');
         if (handleSamePageNavClick(event, dropdownLink, dropdownToggle)) return;
         setActiveNavItem(dropdownToggle);
       });
     });
+  });
+
+  document.addEventListener('click', (event) => {
+    if (!event.target.closest('.nav-dropdown')) {
+      navDropdowns.forEach((dropdown) => dropdown.classList.remove('is-open'));
+    }
   });
 
   // Global handler for other in-page hash links (e.g. hero CTA buttons)
@@ -2012,27 +2026,27 @@ function initTaxPowerSite() {
   headerRevealHint?.addEventListener('click', pinHeaderFromRevealIcon);
 
   if (hamburgerBtn && navbarMenu) {
+    const setMobileMenuState = (isOpen) => {
+      hamburgerBtn.classList.toggle('active', isOpen);
+      navbarMenu.classList.toggle('active', isOpen);
+      hamburgerBtn.setAttribute('aria-expanded', String(isOpen));
+      hamburgerBtn.setAttribute('aria-label', isOpen ? 'Close navigation menu' : 'Open navigation menu');
+      document.body.classList.toggle('nav-menu-open', isOpen && window.innerWidth <= mobileBreakpoint);
+      header?.classList.remove('navbar-scroll-hidden');
+      resetHeaderInactivityTimer();
+    };
+
     hamburgerBtn.addEventListener('click', (e) => {
       e.preventDefault();
       e.stopPropagation();
-      // button bars shape to cross icon rotation transformation toggle
       const isOpen = !navbarMenu.classList.contains('active');
-      hamburgerBtn.classList.toggle('active', isOpen);
-      // expands links tray dropdown list visible items stack animate
-      navbarMenu.classList.toggle('active', isOpen);
-      hamburgerBtn.setAttribute('aria-expanded', String(isOpen));
-      header?.classList.remove('navbar-scroll-hidden');
-      resetHeaderInactivityTimer();
+      setMobileMenuState(isOpen);
     });
 
     // close navigation drawer drop tray dynamically when any anchor point link is selected
     navbarMenu.querySelectorAll('a').forEach(item => {
       item.addEventListener('click', () => {
-        hamburgerBtn.classList.remove('active');
-        navbarMenu.classList.remove('active');
-        hamburgerBtn.setAttribute('aria-expanded', 'false');
-        header?.classList.remove('navbar-scroll-hidden');
-        resetHeaderInactivityTimer();
+        setMobileMenuState(false);
       });
     });
 
@@ -2040,22 +2054,14 @@ function initTaxPowerSite() {
     document.addEventListener('click', (e) => {
       if (window.innerWidth <= mobileBreakpoint && navbarMenu.classList.contains('active')) {
         if (!navbarMenu.contains(e.target) && !hamburgerBtn.contains(e.target)) {
-          hamburgerBtn.classList.remove('active');
-          navbarMenu.classList.remove('active');
-          hamburgerBtn.setAttribute('aria-expanded', 'false');
-          header?.classList.remove('navbar-scroll-hidden');
-          resetHeaderInactivityTimer();
+          setMobileMenuState(false);
         }
       }
     });
 
     document.addEventListener('keydown', (event) => {
       if (event.key === 'Escape' && navbarMenu.classList.contains('active')) {
-        hamburgerBtn.classList.remove('active');
-        navbarMenu.classList.remove('active');
-        hamburgerBtn.setAttribute('aria-expanded', 'false');
-        header?.classList.remove('navbar-scroll-hidden');
-        resetHeaderInactivityTimer();
+        setMobileMenuState(false);
         hamburgerBtn.focus();
       }
     });
@@ -2066,6 +2072,8 @@ function initTaxPowerSite() {
       hamburgerBtn?.classList.remove('active');
       navbarMenu?.classList.remove('active');
       hamburgerBtn?.setAttribute('aria-expanded', 'false');
+      hamburgerBtn?.setAttribute('aria-label', 'Open navigation menu');
+      document.body.classList.remove('nav-menu-open');
       header?.classList.remove('navbar-scroll-hidden');
       resetHeaderInactivityTimer();
       moveIndicator(document.querySelector('.nav-item.h-current'));

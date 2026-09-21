@@ -1,21 +1,3 @@
-var TAXPOWER_CRM_ENDPOINT = 'https://crm-taxpower.lovable.app/api/public/lead';
-
-// Domain live hone ke baad upar wali line ko isse badal do:
-// var TAXPOWER_CRM_ENDPOINT = 'https://crm.taxpower.org/api/public/lead';
-
-function sendToGoogleSheet(payload) {
-  var body = new URLSearchParams();
-  Object.keys(payload).forEach(function (key) {
-    body.append(key, payload[key] == null ? '' : String(payload[key]));
-  });
-
-  return fetch(TAXPOWER_CRM_ENDPOINT, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8' },
-    body: body.toString(),
-  }).then(function (res) { return res.ok; });
-}
-
 /* TaxPower demo enquiry -> Google Sheet + Email + WhatsApp
  * Paste your deployed Google Apps Script Web App URL below.
  * It must look like: https://script.google.com/macros/s/AKfycb...../exec
@@ -70,7 +52,7 @@ window.TAXPOWER_FORM_ENDPOINT = 'https://script.google.com/macros/s/AKfycbz8GTac
     const body = new URLSearchParams();
     Object.keys(payload).forEach((key) => body.append(key, payload[key] == null ? '' : String(payload[key])));
 
-    return fetch(TAXPOWER_CRM_ENDPOINT, {
+    return fetch('/api/public/enquiry', {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8' },
       body: body.toString(),

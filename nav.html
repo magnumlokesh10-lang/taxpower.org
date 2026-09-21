@@ -26,11 +26,15 @@
       <div class="navbar-links" id="navLinksContainer">
         <div class="nav-sliding-bg" id="navSlideBg"></div>
 
-        <a href="index.html#home" class="nav-item" data-nav-page="index.html">Home</a>
+        <a href="index.html#home" class="nav-item" data-nav-page="index.html" aria-label="Home">
+          <svg class="nav-item-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10.8 12 3l9 7.8v9.7a.5.5 0 0 1-.5.5H15v-7H9v7H3.5a.5.5 0 0 1-.5-.5z"/></svg>
+          <span class="nav-item-label">Home</span>
+        </a>
         <div class="nav-dropdown">
-          <a href="index.html#taxpowergst" class="nav-item nav-item-org nav-dropdown-toggle"
-            data-nav-page="taxpowergst.html">
-            <span>TaxPower GST</span>
+          <a href="index.html#taxpowergst" class="nav-item nav-item-org nav-item-always nav-dropdown-toggle"
+            data-nav-page="taxpowergst.html" aria-haspopup="true" aria-label="TaxPower GST">
+            <svg class="nav-item-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16v16H4zM8 8h8M8 12h8M8 16h5"/></svg>
+            <span class="nav-item-label">TaxPower GST</span>
             <span class="nav-dropdown-caret" aria-hidden="true"></span>
           </a>
           <div class="nav-dropdown-menu" aria-label="TaxPower GST submenu">
@@ -38,13 +42,13 @@
             <a href="index.html#gst-einvoice" class="nav-dropdown-link">TaxPower GST Billing</a>
           </div>
         </div>
-        <a href="index.html#taxpowertds" class="nav-item nav-item-org" data-nav-page="taxpowertds.html">TaxPower TDS</a>
-        <a href="index.html#pricing-banner" class="nav-item" data-nav-page="pricing.html">Pricing</a>
-        <a href="index.html#downloads" class="nav-item" data-nav-page="downloads.html">Downloads</a>
-        <a href="index.html#aboutus" class="nav-item" data-nav-page="aboutus.html">About us</a>
-        <a href="index.html#support" class="nav-item" data-nav-page="support.html">Support</a>
+        <a href="index.html#taxpowertds" class="nav-item nav-item-org nav-item-always" data-nav-page="taxpowertds.html" aria-label="TaxPower TDS"><svg class="nav-item-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16M7 9h10M9 13h6M11 17h2"/></svg><span class="nav-item-label">TaxPower TDS</span></a>
+        <a href="index.html#pricing-banner" class="nav-item" data-nav-page="pricing.html" aria-label="Pricing"><svg class="nav-item-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h12M6 8h12M6 13h3a5 5 0 0 0 0-10M6 13l8.5 8"/></svg><span class="nav-item-label">Pricing</span></a>
+        <a href="index.html#downloads" class="nav-item" data-nav-page="downloads.html" aria-label="Downloads"><svg class="nav-item-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0 5-5m-5 5-5-5M4 20h16"/></svg><span class="nav-item-label">Downloads</span></a>
+        <a href="index.html#aboutus" class="nav-item" data-nav-page="aboutus.html" aria-label="About us"><svg class="nav-item-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg><span class="nav-item-label">About us</span></a>
+        <a href="index.html#support" class="nav-item" data-nav-page="support.html" aria-label="Support"><svg class="nav-item-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 13a8 8 0 0 1 16 0M4 13v5h4v-6H4m16 1v5h-4v-6h4M16 19c0 2-2 2-4 2"/></svg><span class="nav-item-label">Support</span></a>
 
-        <a href="index.html#demo-enquiry" class="navbar-demo demo-mobile-only" id="navbarDemoMobile" data-demo-form-open title="Book Live Demo">
+        <a href="index.html#demo-enquiry" class="navbar-demo demo-mobile-only" id="navbarDemoMobile" data-demo-form-open title="Book Live Demo" aria-label="Book Live Demo">
           <span class="btn btn-orange">
             <span class="text-initial">Book Live Demo</span>
           </span>
@@ -54,14 +58,14 @@
     </div>
 
     <div class="header-right-actions">
-      <a href="index.html#demo-enquiry" class="navbar-demo demo-desktop-only" id="navbarDemoDesktop" data-demo-form-open title="Book Live Demo">
+      <a href="index.html#demo-enquiry" class="navbar-demo demo-desktop-only" id="navbarDemoDesktop" data-demo-form-open title="Book Live Demo" aria-label="Book Live Demo">
         <span class="btn btn-orange">
           <span class="text-initial">Book Live Demo</span>
         </span>
         <img src="asset/swt_icon/demo_icon.png" alt="" class="demo_btn" width="18" height="18">
       </a>
 
-      <button type="button" class="hamburger-menu" id="hamburgerBtn" aria-label="Toggle navigation"
+      <button type="button" class="hamburger-menu" id="hamburgerBtn" aria-label="Open navigation menu"
         aria-controls="navbarMenu" aria-expanded="false">
         <div class="hamburger-inner-box">
           <span class="bar"></span>
