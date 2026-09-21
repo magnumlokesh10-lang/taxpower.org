@@ -1424,11 +1424,11 @@
   grid-template-columns: 1fr 1fr;
   grid-template-rows: minmax(300px, auto);
   align-items: center;
-  width: calc(100% - 60px);
+  width: 100%;
   max-width: 1400px;
   min-height: calc(100vh - 88px);
   margin: 0 auto 30px;
-  padding: 180px 80px 85px;
+  padding: 85px;
   overflow: hidden;
   border: 1px solid rgba(14, 165, 233, 0.16);
   border-radius: 28px;
