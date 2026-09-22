@@ -1553,10 +1553,18 @@
         return;
       }
 
+      let revealFrame = null;
+
       const replay = () => {
         hero.classList.remove('is-circle-revealed');
-        void hero.offsetWidth;
-        requestAnimationFrame(() => hero.classList.add('is-circle-revealed'));
+        if (revealFrame) cancelAnimationFrame(revealFrame);
+
+        revealFrame = requestAnimationFrame(() => {
+          revealFrame = requestAnimationFrame(() => {
+            hero.classList.add('is-circle-revealed');
+            revealFrame = null;
+          });
+        });
       };
 
       const observer = new IntersectionObserver((entries) => {
