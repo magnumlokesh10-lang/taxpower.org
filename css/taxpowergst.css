@@ -1577,3 +1577,40 @@
  .gst-workflow-shortcut { transition: none; }
  .gst-workflow-shortcut:hover { transform: none; }
 }
+
+/* Compact feature introduction with in-page workflow navigation. */
+.gst-feature-stack-heading {
+  position: relative; display: grid; grid-template-columns: minmax(0, 1fr) minmax(230px, 300px);
+  align-items: center; gap: 36px; max-width: none; margin: 0 0 18px; padding: 26px 40px;
+  border-bottom: 1px solid #dbe9f1;
+  background: radial-gradient(ellipse at 5% 45%, #fff1e3b3, transparent 52%), radial-gradient(ellipse at 95% 55%, #dff3fdb3, transparent 45%);
+}
+.gst-feature-stack-heading::after { content: ''; position: absolute; bottom: -1px; left: 40px; width: 100px; height: 3px; border-radius: 3px; background: linear-gradient(90deg,#f47a22,#38bdf8); }
+.gst-features-kicker { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 12px; color: #557082; font-size: 10px; line-height: 1.5; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
+.gst-features-kicker::before { content: ''; width: 7px; height: 7px; flex-shrink: 0; border-radius: 50%; background: #f47a22; box-shadow: 0 0 0 4px #f47a2215; }
+.gst-feature-stack-heading h2 { margin: 0 0 12px; color: #12364c; font-size: clamp(30px,3.4vw,46px); font-weight: 800; line-height: 1.13; letter-spacing: -.035em; }
+.gst-features-orange { color: #e56912; }
+.gst-features-blue { color: #0284c7; }
+.gst-feature-stack-heading p { max-width: 600px; margin: 0; color: #587080; font-size: 14px; line-height: 1.65; }
+.gst-features-nav { display: flex; flex-direction: column; min-width: 0; padding-left: 26px; border-left: 1px solid #d6e6ef; }
+.gst-features-nav-label { margin: 0 0 8px; color: #667d8b; font-size: 10px; font-weight: 700; letter-spacing: .07em; text-transform: uppercase; }
+.gst-features-nav a { display: flex; align-items: center; gap: 12px; min-height: 43px; padding: 8px 0; border-bottom: 1px solid #dceaf2; color: #244b63; text-decoration: none; font-size: 14px; font-weight: 700; transition: color .2s, transform .2s; }
+.gst-features-nav a:last-child { border-bottom: 0; }
+.gst-features-nav a > span:first-child { color: #859ba9; font-size: 10px; font-weight: 500; }
+.gst-features-nav a > span:last-child { margin-left: auto; color: #0284c7; }
+.gst-features-nav a:hover { color: #d75f0c; transform: translateX(3px); }
+.gst-features-nav a:focus-visible { outline: 2px solid #f47a22; outline-offset: 4px; border-radius: 3px; }
+.gst-feature-row:is(#gst-return, #gst-reports, #gst-filing-status) { scroll-margin-top: 100px; }
+@media (max-width: 767px) {
+  .gst-feature-stack-heading { grid-template-columns: 1fr; gap: 20px; padding: 22px 18px; margin-bottom: 12px; }
+  .gst-feature-stack-heading::after { left: 18px; }
+  .gst-feature-stack-heading h2 { font-size: clamp(29px,5.5vw,38px); }
+  .gst-features-nav { flex-direction: row; flex-wrap: wrap; gap: 0 18px; border-left: 0; padding-left: 0; }
+  .gst-features-nav-label { width: 100%; margin-bottom: 4px; }
+  .gst-features-nav a { gap: 7px; border: 0; font-size: 12px; }
+  .gst-features-nav a > span:first-child { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .gst-features-nav a { transition: none; }
+  .gst-features-nav a:hover { transform: none; }
+}
