@@ -2135,3 +2135,70 @@
     animation: none;
   }
 }
+
+
+/* ===== Dashboard-aligned width and repeating individual circle reveals ===== */
+.gst-intro-hero {
+  width: calc(100vw - 40px);
+}
+
+.gst-intro-visual.gst-circle-reveal-ready,
+.gst-intro-visual.gst-circle-reveal-ready.is-revealed {
+  opacity: 1;
+  transform: none;
+  animation: none;
+}
+
+.gst-intro-circle.gst-individual-reveal-ready {
+  opacity: 0;
+  scale: 1.32;
+}
+
+.gst-intro-hero.is-circle-revealed .gst-intro-circle-a {
+  animation: gstIndividualCircleZoomOut 760ms 40ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.gst-intro-hero.is-circle-revealed .gst-intro-circle-b {
+  animation: gstIndividualCircleZoomOut 900ms 150ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.gst-intro-hero.is-circle-revealed .gst-intro-circle-blur {
+  animation: gstIndividualCircleZoomOut 1050ms 270ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes gstIndividualCircleZoomOut {
+  0% {
+    opacity: 0;
+    scale: 1.32;
+  }
+
+  40% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 1;
+    scale: 1;
+  }
+}
+
+@media (max-width: 991px) {
+  .gst-intro-hero {
+    width: calc(100vw - 32px);
+  }
+}
+
+@media (max-width: 640px) {
+  .gst-intro-hero {
+    width: calc(100vw - 20px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gst-intro-circle.gst-individual-reveal-ready,
+  .gst-intro-hero.is-circle-revealed .gst-intro-circle {
+    opacity: 1;
+    scale: 1;
+    animation: none;
+  }
+}
