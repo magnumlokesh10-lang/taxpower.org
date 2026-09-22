@@ -1622,3 +1622,16 @@
   .gst-features-nav a, .gst-features-link-arrow { transition: none; }
   .gst-features-nav a:hover .gst-features-link-arrow, .gst-features-nav a:focus-visible .gst-features-link-arrow { transform: none; }
 }
+
+/* Remove frame artwork only from the three GST feature cards. */
+:is(#gst-return, #gst-reports, #gst-filing-status).gst-feature-row {
+  background: transparent;
+  box-shadow: none;
+}
+:is(#gst-return, #gst-reports, #gst-filing-status) > .gst-motion-frame {
+  display: none;
+}
+:is(#gst-return, #gst-reports, #gst-filing-status) .gst-feature-row-copy :is(h2, p, li) {
+  color: #12364c;
+  text-shadow: none;
+}
