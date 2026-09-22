@@ -2202,3 +2202,59 @@
     animation: none;
   }
 }
+
+
+/* ===== Final circle composition: blue, orange, then white reveal ===== */
+.gst-intro-circle-a {
+  top: -35px;
+  left: 60px;
+  width: 220px;
+  height: 220px;
+}
+
+.gst-intro-circle-b {
+  top: 50px;
+  left: 120px;
+  width: 280px;
+  height: 280px;
+}
+
+.gst-intro-circle-blur {
+  top: -100px;
+  left: 230px;
+  width: 400px;
+  height: 400px;
+}
+
+.gst-intro-circle.gst-individual-reveal-ready {
+  will-change: opacity, scale;
+  scale: 1.24;
+}
+
+.gst-intro-hero.is-circle-revealed .gst-intro-circle-b {
+  animation: gstIndividualCircleZoomOut 820ms 0ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.gst-intro-hero.is-circle-revealed .gst-intro-circle-a {
+  animation: gstIndividualCircleZoomOut 860ms 130ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.gst-intro-hero.is-circle-revealed .gst-intro-circle-blur {
+  animation: gstIndividualCircleZoomOut 960ms 260ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes gstIndividualCircleZoomOut {
+  0% {
+    opacity: 0;
+    scale: 1.24;
+  }
+
+  42% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 1;
+    scale: 1;
+  }
+}
