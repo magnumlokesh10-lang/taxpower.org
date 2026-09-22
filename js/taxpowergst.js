@@ -1489,9 +1489,9 @@
         if (Math.abs(target - current) < 0.02) current = target;
 
         const progress = current;
-        circleA.style.transform = `translate3d(${-progress * 0.95}px, ${-progress * 0.38}px, 0) rotate(${-progress * 0.045}deg)`;
-        circleB.style.transform = `translate3d(${progress * 1.05}px, ${progress * 0.32}px, 0) rotate(${progress * 0.055}deg)`;
-        circleBlur.style.transform = `translate3d(${progress * 0.10}px, ${-progress * 0.08}px, 0) scale(${1 + progress * 0.0008})`;
+        circleA.style.transform = `translate3d(${progress * 0.30}px, ${-progress * 0.25}px, 0) rotate(${-progress * 0.045}deg)`;
+        circleB.style.transform = `translate3d(${progress * 0.45}px, ${progress * 0.20}px, 0) rotate(${progress * 0.055}deg)`;
+        circleBlur.style.transform = `translate3d(${progress * 0.10}px, ${-progress * 0.08}px, 0)`;
 
         if (Math.abs(target - current) > 0.02) {
           frame = requestAnimationFrame(render);
@@ -1502,6 +1502,8 @@
 
       function update() {
         if (window.innerWidth < 992) {
+          if (frame) cancelAnimationFrame(frame);
+          frame = null;
           target = 0;
           current = 0;
           circleA.style.transform = '';
@@ -1513,7 +1515,7 @@
 
         hero.classList.add('gst-intro-hero-scroll-motion');
         const travel = Math.max(0, -hero.getBoundingClientRect().top);
-        target = clamp(travel * 0.135, 0, 34);
+        target = clamp(travel * 0.10, 0, 24);
         if (!frame) frame = requestAnimationFrame(render);
       }
 
@@ -1569,9 +1571,11 @@
 
       const observer = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            replay();
-          } else {
+          if (entry.isIntersecting && entry.intersectionRatio >= 0.22) {
+            if (!hero.classList.contains('is-circle-revealed') && !revealFrame) replay();
+          } else if (!entry.isIntersecting) {
+            if (revealFrame) cancelAnimationFrame(revealFrame);
+            revealFrame = null;
             hero.classList.remove('is-circle-revealed');
           }
         });
