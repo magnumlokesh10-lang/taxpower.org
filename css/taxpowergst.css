@@ -1650,12 +1650,20 @@
 }
 @supports ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
   :is(#gst-return, #gst-reports, #gst-filing-status) .gst-feature-row-copy li {
-    background: linear-gradient(135deg, rgba(255, 255, 255, .58), rgba(255, 255, 255, .42));
-    -webkit-backdrop-filter: blur(14px) saturate(135%);
-    backdrop-filter: blur(14px) saturate(135%);
+    background: linear-gradient(135deg, rgba(255, 255, 255, .64), rgba(255, 255, 255, .52));
+    -webkit-backdrop-filter: blur(40px) saturate(150%);
+    backdrop-filter: blur(40px) saturate(150%);
   }
 }
 :is(#gst-return, #gst-reports, #gst-filing-status) .gst-feature-row-copy li:hover {
   background: rgba(255, 255, 255, .68);
   border-color: rgba(255, 255, 255, .85);
+}
+
+/* Release the copy's opacity animation layer after entry so bullet backdrops
+   can sample the frame image instead of an isolated transparent ancestor. */
+:is(#gst-return, #gst-reports, #gst-filing-status) .gst-feature-row-copy.gst-animation-visible {
+  opacity: 1;
+  transform: none;
+  animation-fill-mode: backwards;
 }
