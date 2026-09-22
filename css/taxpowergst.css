@@ -2258,3 +2258,14 @@
     scale: 1;
   }
 }
+
+/* Both frames use the same parent width and corner radius at every breakpoint. */
+.gst-dashboard-page .section-inner > .gst-intro-hero,
+.gst-dashboard-page .section-inner > .gst-dashboard-hero {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: none;
+  margin-left: 0;
+  margin-right: 0;
+  border-radius: 8px;
+}
