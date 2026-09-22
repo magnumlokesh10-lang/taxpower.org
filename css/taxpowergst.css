@@ -2204,26 +2204,42 @@
 }
 
 
-/* ===== Final circle composition: blue, orange, then white reveal ===== */
+/* Center the complete circle composition within the right-hand column.
+   At full size: orange/blue 280px, white 400px, composition 500 x 400px. */
+.gst-intro-visual {
+  width: min(500px, 100%);
+  max-width: 500px;
+  min-width: 0;
+  height: auto;
+  min-height: 0;
+  aspect-ratio: 5 / 4;
+  margin: 0;
+  justify-self: center;
+  align-self: center;
+}
+
 .gst-intro-circle-a {
-  top: -35px;
-  left: 60px;
-  width: 220px;
-  height: 220px;
+  top: 10%;
+  left: 0;
+  width: 56%;
+  height: auto;
+  aspect-ratio: 1;
 }
 
 .gst-intro-circle-b {
-  top: 50px;
-  left: 120px;
-  width: 280px;
-  height: 280px;
+  top: 30%;
+  left: 12%;
+  width: 56%;
+  height: auto;
+  aspect-ratio: 1;
 }
 
 .gst-intro-circle-blur {
-  top: -100px;
-  left: 230px;
-  width: 400px;
-  height: 400px;
+  top: 0;
+  left: 20%;
+  width: 80%;
+  height: auto;
+  aspect-ratio: 1;
 }
 
 .gst-intro-circle.gst-individual-reveal-ready {
