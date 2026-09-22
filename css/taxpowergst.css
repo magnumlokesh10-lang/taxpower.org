@@ -1623,13 +1623,23 @@
   .gst-features-nav a:hover .gst-features-link-arrow, .gst-features-nav a:focus-visible .gst-features-link-arrow { transform: none; }
 }
 
-/* Remove frame artwork only from the three GST feature cards. */
+/* Repository JPG backgrounds for the three GST feature frames. */
 :is(#gst-return, #gst-reports, #gst-filing-status).gst-feature-row {
-  background: transparent;
+  background-color: #f5f9fc;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
   box-shadow: none;
 }
+#gst-return.gst-feature-row { background-image: url("../asset/frms_bg/frm_bcgd1.jpg"); }
+#gst-reports.gst-feature-row { background-image: url("../asset/frms_bg/frm_bcgd2.jpg"); }
+#gst-filing-status.gst-feature-row { background-image: url("../asset/frms_bg/frm_bcgd3.jpg"); }
 :is(#gst-return, #gst-reports, #gst-filing-status) > .gst-motion-frame {
   display: none;
+}
+:is(#gst-return, #gst-reports, #gst-filing-status) .gst-feature-row-copy {
+  background: linear-gradient(135deg, rgba(255,255,255,.92), rgba(255,255,255,.82));
+  border-radius: 16px;
 }
 :is(#gst-return, #gst-reports, #gst-filing-status) .gst-feature-row-copy :is(h2, p, li) {
   color: #12364c;
