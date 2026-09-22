@@ -12,10 +12,10 @@
   <meta name="keywords"
     content="TaxPower GST, TaxPower TDS, GST software, TDS software, tax compliance, e-invoicing, GST return filing, TDS return filing">
   <link rel="stylesheet" href="css/stylesheet.css">
-  <link rel="stylesheet" href="css/taxpowergst.css?v=20260922-colored-glass">
+  <link rel="stylesheet" href="css/taxpowergst.css?v=20260922-office-workflow">
   <script src="js/nav-loader.js" defer></script>
   <script src="js/script.js" defer></script>
-  <script src="js/taxpowergst.js?v=20260922-circle-offsets" defer></script>
+  <script src="js/taxpowergst.js?v=20260922-office-workflow" defer></script>
   <script src="js/page-loader.js" defer></script>
 </head>
 
@@ -39,10 +39,46 @@
             <a class="gst-intro-button gst-intro-button-link" href="support.html#demo-enquiry">Book Free Demo <span aria-hidden="true">›</span></a>
           </div>
         </div>
-        <div class="gst-intro-visual" aria-hidden="true">
-          <div class="gst-intro-circle gst-intro-circle-a"></div>
-          <div class="gst-intro-circle gst-intro-circle-b"></div>
-          <div class="gst-intro-circle gst-intro-circle-blur"></div>
+        <div class="gst-office-preview" data-gst-preview aria-label="Interactive GST workflow demo">
+          <div class="gst-office-windows" aria-hidden="true"></div>
+          <div class="gst-office-files" aria-hidden="true"><i></i><i></i><i></i></div>
+          <div class="gst-office-desk" aria-hidden="true"></div>
+          <div class="gst-workstation">
+            <div class="gst-workspace-header">
+              <img src="asset/swt_icon/taxpower_icon.png" width="32" height="32" alt="TaxPower">
+              <div><strong>TaxPower GST</strong><span>Your compliance workspace</span></div>
+              <span class="gst-preview-label">Demo preview</span>
+            </div>
+            <div class="gst-workspace-body">
+              <div class="gst-workspace-title"><h2>GST Compliance Status</h2><span>Sample company</span></div>
+              <div class="gst-preview-tabs" role="tablist" aria-label="Explore GST workflows">
+                <button type="button" role="tab" id="gst-tab-returns" aria-controls="gst-panel-returns" aria-selected="true">GSTR-1</button>
+                <button type="button" role="tab" id="gst-tab-itc" aria-controls="gst-panel-itc" aria-selected="false" tabindex="-1">ITC Reconciliation</button>
+                <button type="button" role="tab" id="gst-tab-invoice" aria-controls="gst-panel-invoice" aria-selected="false" tabindex="-1">E-Invoice</button>
+              </div>
+              <div class="gst-preview-panel" id="gst-panel-returns" role="tabpanel" aria-labelledby="gst-tab-returns" tabindex="0">
+                <div class="gst-preview-metric"><div><span>Invoices prepared</span><strong>128 <small>/ 128</small></strong></div><span class="gst-preview-status">✓ Ready for review</span></div>
+                <div class="gst-preview-progress" aria-hidden="true"><span></span></div>
+                <ul class="gst-preview-steps"><li><span>Import sales invoices</span><b>Complete</b></li><li><span>Validate return data</span><b>Complete</b></li><li><span>Review GSTR-1 summary</span><b class="gst-step-next">Next step</b></li></ul>
+                <a class="gst-preview-detail" href="#gst-return">Explore return preparation <span aria-hidden="true">↗</span></a>
+              </div>
+              <div class="gst-preview-panel" id="gst-panel-itc" role="tabpanel" aria-labelledby="gst-tab-itc" tabindex="0" hidden>
+                <div class="gst-preview-metric"><div><span>Invoices matched</span><strong>96 <small>/ 100</small></strong></div><span class="gst-preview-status gst-status-review">4 to review</span></div>
+                <div class="gst-preview-progress" aria-hidden="true"><span style="width:96%"></span></div>
+                <ul class="gst-preview-steps"><li><span>Import purchase register</span><b>Complete</b></li><li><span>Compare with GSTR-2B</span><b>96 matched</b></li><li><span>Review differences</span><b class="gst-step-next">4 invoices</b></li></ul>
+                <a class="gst-preview-detail" href="#gst-itc">Explore ITC reconciliation <span aria-hidden="true">↗</span></a>
+              </div>
+              <div class="gst-preview-panel" id="gst-panel-invoice" role="tabpanel" aria-labelledby="gst-tab-invoice" tabindex="0" hidden>
+                <div class="gst-preview-metric"><div><span>E-invoices compared</span><strong>48 <small>/ 50</small></strong></div><span class="gst-preview-status gst-status-review">2 to review</span></div>
+                <div class="gst-preview-progress" aria-hidden="true"><span style="width:96%"></span></div>
+                <ul class="gst-preview-steps"><li><span>Load e-invoice data</span><b>Complete</b></li><li><span>Compare with GSTR-1</span><b>48 matched</b></li><li><span>Check tax differences</span><b class="gst-step-next">2 invoices</b></li></ul>
+                <a class="gst-preview-detail" href="#gst-einvoice">Explore e-invoice reconciliation <span aria-hidden="true">↗</span></a>
+              </div>
+              <p class="gst-preview-note">Illustrative sample data · Select a tab to explore</p>
+            </div>
+          </div>
+          <div class="gst-office-keyboard" aria-hidden="true"></div>
+          <div class="gst-office-cup" aria-hidden="true"></div>
         </div>
       </section>
 
@@ -74,7 +110,7 @@
           </div>
         </article>
 
-        <article class="gst-feature-card gst-feature-card-light">
+        <article class="gst-feature-card gst-feature-card-light" id="gst-itc">
           <div class="gst-feature-copy">
             <h2>TaxPower GST<br>GSTR2 & 2B ITC Reconciliation</h2>
             <p>Effortlessly reconcile GSTR-2 purchase book data with auto-drafted GSTR-2B to maximize ITC claim and

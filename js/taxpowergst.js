@@ -1462,137 +1462,54 @@
   initGstPage();
   document.addEventListener('taxpower:sections-loaded', initGstPage);
   document.addEventListener('taxpower:navigation-loaded', keepGstStylesheetLast);
-})();/* ===== GST introduction hero scroll motion ===== */
-(() => {
-  'use strict';
-
-  function initGstIntroHeroMotion() {
-    document.querySelectorAll('.gst-intro-hero').forEach((hero) => {
-      if (hero.dataset.scrollMotionReady === 'true') return;
-
-      const circleA = hero.querySelector('.gst-intro-circle-a');
-      const circleB = hero.querySelector('.gst-intro-circle-b');
-      const circleBlur = hero.querySelector('.gst-intro-circle-blur');
-
-      if (!circleA || !circleB || !circleBlur) return;
-      hero.dataset.scrollMotionReady = 'true';
-
-      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-
-      let current = 0;
-      let target = 0;
-      let frame = null;
-      const clamp = (value, min, max) => Math.max(min, Math.min(max, value));
-
-      function render() {
-        current += (target - current) * 0.085;
-        if (Math.abs(target - current) < 0.02) current = target;
-
-        const progress = current;
-        circleA.style.transform = `translate3d(${progress * 0.30}px, ${-progress * 0.25}px, 0) rotate(${-progress * 0.045}deg)`;
-        circleB.style.transform = `translate3d(${progress * 0.45}px, ${progress * 0.20}px, 0) rotate(${progress * 0.055}deg)`;
-        circleBlur.style.transform = `translate3d(${progress * 0.10}px, ${-progress * 0.08}px, 0)`;
-
-        if (Math.abs(target - current) > 0.02) {
-          frame = requestAnimationFrame(render);
-        } else {
-          frame = null;
-        }
-      }
-
-      function update() {
-        if (window.innerWidth < 992) {
-          if (frame) cancelAnimationFrame(frame);
-          frame = null;
-          target = 0;
-          current = 0;
-          circleA.style.transform = '';
-          circleB.style.transform = '';
-          circleBlur.style.transform = '';
-          hero.classList.remove('gst-intro-hero-scroll-motion');
-          return;
-        }
-
-        hero.classList.add('gst-intro-hero-scroll-motion');
-        const travel = Math.max(0, -hero.getBoundingClientRect().top);
-        target = clamp(travel * 0.10, 0, 24);
-        if (!frame) frame = requestAnimationFrame(render);
-      }
-
-      window.addEventListener('scroll', update, { passive: true });
-      window.addEventListener('resize', update, { passive: true });
-      update();
-    });
-  }
-
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initGstIntroHeroMotion, { once: true });
-  } else {
-    initGstIntroHeroMotion();
-  }
-
-  document.addEventListener('taxpower:sections-loaded', initGstIntroHeroMotion);
 })();
-
-
-/* ===== Repeating individual GST hero circle zoom-out reveal ===== */
+/* Lightweight demo tabs; supports direct pages and dynamically loaded sections. */
 (() => {
   'use strict';
-
-  function initGstCircleReveal() {
-    document.querySelectorAll('.gst-intro-hero').forEach((hero) => {
-      if (hero.dataset.circleRevealReady === 'true') return;
-
-      const circles = hero.querySelectorAll('.gst-intro-circle');
-      if (!circles.length) return;
-
-      hero.dataset.circleRevealReady = 'true';
-      circles.forEach((circle) => circle.classList.add('gst-individual-reveal-ready'));
-
-      const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      if (reducedMotion || !('IntersectionObserver' in window)) {
-        hero.classList.add('is-circle-revealed');
-        return;
+  function initGstWorkflowPreview() {
+    document.querySelectorAll('[data-gst-preview]').forEach((preview) => {
+      if (preview.dataset.ready) return;
+      preview.dataset.ready = 'true';
+      const tabs = Array.from(preview.querySelectorAll('[role="tab"]'));
+      const panels = Array.from(preview.querySelectorAll('[role="tabpanel"]'));
+      function selectTab(tab) {
+        tabs.forEach((item) => {
+          const active = item === tab;
+          item.setAttribute('aria-selected', String(active));
+          item.tabIndex = active ? 0 : -1;
+        });
+        panels.forEach((panel) => {
+          const active = panel.id === tab.getAttribute('aria-controls');
+          panel.hidden = !active;
+          panel.classList.toggle('is-switching', active);
+        });
       }
-
-      let revealFrame = null;
-
-      const replay = () => {
-        hero.classList.remove('is-circle-revealed');
-        if (revealFrame) cancelAnimationFrame(revealFrame);
-
-        revealFrame = requestAnimationFrame(() => {
-          revealFrame = requestAnimationFrame(() => {
-            hero.classList.add('is-circle-revealed');
-            revealFrame = null;
-          });
+      tabs.forEach((tab, index) => {
+        tab.addEventListener('click', () => selectTab(tab));
+        tab.addEventListener('keydown', (event) => {
+          let next;
+          if (event.key === 'ArrowRight') next = (index + 1) % tabs.length;
+          if (event.key === 'ArrowLeft') next = (index - 1 + tabs.length) % tabs.length;
+          if (event.key === 'Home') next = 0;
+          if (event.key === 'End') next = tabs.length - 1;
+          if (next === undefined) return;
+          event.preventDefault();
+          tabs[next].focus();
+          selectTab(tabs[next]);
         });
-      };
-
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting && entry.intersectionRatio >= 0.22) {
-            if (!hero.classList.contains('is-circle-revealed') && !revealFrame) replay();
-          } else if (!entry.isIntersecting) {
-            if (revealFrame) cancelAnimationFrame(revealFrame);
-            revealFrame = null;
-            hero.classList.remove('is-circle-revealed');
-          }
-        });
-      }, {
-        threshold: 0.22,
-        rootMargin: '0px 0px -8% 0px'
       });
-
-      observer.observe(hero);
+      if ('IntersectionObserver' in window) {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => preview.classList.toggle('is-entering', entry.isIntersecting));
+        }, { threshold: 0.15 });
+        observer.observe(preview);
+      }
     });
   }
-
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initGstCircleReveal, { once: true });
+    document.addEventListener('DOMContentLoaded', initGstWorkflowPreview, { once: true });
   } else {
-    initGstCircleReveal();
+    initGstWorkflowPreview();
   }
-
-  document.addEventListener('taxpower:sections-loaded', initGstCircleReveal);
+  document.addEventListener('taxpower:sections-loaded', initGstWorkflowPreview);
 })();
