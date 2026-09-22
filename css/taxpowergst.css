@@ -2220,15 +2220,15 @@
 
 .gst-intro-circle-a {
   top: 10%;
-  left: 0;
+  left: -30px;
   width: 56%;
   height: auto;
   aspect-ratio: 1;
 }
 
 .gst-intro-circle-b {
-  top: 30%;
-  left: 12%;
+  top: 35%;
+  left: -30px;
   width: 56%;
   height: auto;
   aspect-ratio: 1;
@@ -2236,7 +2236,7 @@
 
 .gst-intro-circle-blur {
   top: 0;
-  left: 20%;
+  left: 0;
   width: 80%;
   height: auto;
   aspect-ratio: 1;
@@ -2244,7 +2244,7 @@
 
 .gst-intro-circle.gst-individual-reveal-ready {
   will-change: opacity, scale;
-  scale: 1.24;
+  scale: 1.12;
 }
 
 .gst-intro-hero.is-circle-revealed .gst-intro-circle-b {
@@ -2262,7 +2262,7 @@
 @keyframes gstIndividualCircleZoomOut {
   0% {
     opacity: 0;
-    scale: 1.24;
+    scale: 1.12;
   }
 
   42% {
@@ -2307,5 +2307,15 @@
     border-left: 0;
     font-size: clamp(23px, 4.5vw, 30px);
     text-wrap: balance;
+  }
+}
+
+/* Keep the revised, closer circle composition still for reduced motion. */
+@media (prefers-reduced-motion: reduce) {
+  .gst-intro-circle.gst-individual-reveal-ready,
+  .gst-intro-hero.is-circle-revealed .gst-intro-circle {
+    opacity: 1;
+    scale: 1;
+    animation: none;
   }
 }
