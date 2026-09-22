@@ -1609,7 +1609,7 @@
   .gst-features-nav a:hover .gst-features-link-arrow, .gst-features-nav a:focus-visible .gst-features-link-arrow { transform: none; }
 }
 
-/* Repository JPG backgrounds for the three GST feature frames. */
+/* Repository image backgrounds for the three GST feature frames. */
 :is(#gst-return, #gst-reports, #gst-filing-status).gst-feature-row {
   background-color: #f5f9fc;
   background-position: center;
@@ -1618,7 +1618,7 @@
   box-shadow: none;
 }
 #gst-return.gst-feature-row { background-image: url("../asset/frms_bg/frm_bcgd1.jpg?v=087ba9fe1b43"); }
-#gst-reports.gst-feature-row { background-image: url("../asset/frms_bg/frm_bcgd2.jpg?v=77fdaf6e8bf9"); }
+#gst-reports.gst-feature-row { background-image: url("../asset/frms_bg/frm_bcgd2.png?v=379a937adf0b"); }
 #gst-filing-status.gst-feature-row { background-image: url("../asset/frms_bg/frm_bcgd3.jpg?v=9e2b6be01180"); }
 :is(#gst-return, #gst-reports, #gst-filing-status) > .gst-motion-frame {
   display: none;
