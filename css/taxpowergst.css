@@ -2082,3 +2082,56 @@
     height: 340px;
   }
 }
+
+
+/* ===== Five-pixel right edge and first-view circle reveal ===== */
+.gst-intro-hero {
+  width: calc(100vw - 25px);
+}
+
+.gst-intro-visual.gst-circle-reveal-ready {
+  opacity: 0;
+  transform: scale(1.22);
+  transform-origin: 50% 48%;
+}
+
+.gst-intro-visual.gst-circle-reveal-ready.is-revealed {
+  animation: gstCircleGroupZoomOut 1050ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes gstCircleGroupZoomOut {
+  0% {
+    opacity: 0;
+    transform: scale(1.22);
+  }
+
+  45% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@media (max-width: 991px) {
+  .gst-intro-hero {
+    width: calc(100vw - 21px);
+  }
+}
+
+@media (max-width: 640px) {
+  .gst-intro-hero {
+    width: calc(100vw - 15px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gst-intro-visual.gst-circle-reveal-ready,
+  .gst-intro-visual.gst-circle-reveal-ready.is-revealed {
+    opacity: 1;
+    transform: none;
+    animation: none;
+  }
+}
