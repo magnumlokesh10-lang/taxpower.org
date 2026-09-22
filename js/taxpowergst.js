@@ -1472,7 +1472,13 @@
       preview.dataset.ready = 'true';
       const tabs = Array.from(preview.querySelectorAll('[role="tab"]'));
       const panels = Array.from(preview.querySelectorAll('[role="tabpanel"]'));
+      const hero = preview.closest('.gst-intro-hero');
+      const shortcuts = Array.from(hero.querySelectorAll('[data-gst-workflow]'));
       function selectTab(tab) {
+        const workflow = tab.id.replace('gst-tab-', '');
+        preview.dataset.workflow = workflow;
+        shortcuts.forEach((button) => button.setAttribute('aria-pressed',
+          String(button.dataset.gstWorkflow === workflow)));
         tabs.forEach((item) => {
           const active = item === tab;
           item.setAttribute('aria-selected', String(active));
@@ -1484,6 +1490,16 @@
           panel.classList.toggle('is-switching', active);
         });
       }
+      shortcuts.forEach((button) => {
+        button.addEventListener('click', () => {
+          const tab = tabs.find((item) => item.id === 'gst-tab-' + button.dataset.gstWorkflow);
+          if (!tab) return;
+          selectTab(tab);
+          tab.focus({ preventScroll: true });
+          preview.scrollIntoView({ block: 'nearest', behavior:
+            window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
+        });
+      });
       tabs.forEach((tab, index) => {
         tab.addEventListener('click', () => selectTab(tab));
         tab.addEventListener('keydown', (event) => {

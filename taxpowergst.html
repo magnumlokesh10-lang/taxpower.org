@@ -12,10 +12,10 @@
   <meta name="keywords"
     content="TaxPower GST, TaxPower TDS, GST software, TDS software, tax compliance, e-invoicing, GST return filing, TDS return filing">
   <link rel="stylesheet" href="css/stylesheet.css">
-  <link rel="stylesheet" href="css/taxpowergst.css?v=20260922-office-workflow">
+  <link rel="stylesheet" href="css/taxpowergst.css?v=20260922-office-enhanced">
   <script src="js/nav-loader.js" defer></script>
   <script src="js/script.js" defer></script>
-  <script src="js/taxpowergst.js?v=20260922-office-workflow" defer></script>
+  <script src="js/taxpowergst.js?v=20260922-office-enhanced" defer></script>
   <script src="js/page-loader.js" defer></script>
 </head>
 
@@ -39,7 +39,7 @@
             <a class="gst-intro-button gst-intro-button-link" href="support.html#demo-enquiry">Book Free Demo <span aria-hidden="true">›</span></a>
           </div>
         </div>
-        <div class="gst-office-preview" data-gst-preview aria-label="Interactive GST workflow demo">
+        <div class="gst-office-preview" data-gst-preview data-workflow="returns" aria-label="Interactive GST workflow demo">
           <div class="gst-office-windows" aria-hidden="true"></div>
           <div class="gst-office-files" aria-hidden="true"><i></i><i></i><i></i></div>
           <div class="gst-office-desk" aria-hidden="true"></div>
@@ -50,7 +50,7 @@
               <span class="gst-preview-label">Demo preview</span>
             </div>
             <div class="gst-workspace-body">
-              <div class="gst-workspace-title"><h2>GST Compliance Status</h2><span>Sample company</span></div>
+              <div class="gst-workspace-title"><h2>GST Compliance Status</h2><span><i class="gst-sample-dot" aria-hidden="true"></i> Sample company · Workflow overview</span></div>
               <div class="gst-preview-tabs" role="tablist" aria-label="Explore GST workflows">
                 <button type="button" role="tab" id="gst-tab-returns" aria-controls="gst-panel-returns" aria-selected="true">GSTR-1</button>
                 <button type="button" role="tab" id="gst-tab-itc" aria-controls="gst-panel-itc" aria-selected="false" tabindex="-1">ITC Reconciliation</button>
@@ -60,25 +60,52 @@
                 <div class="gst-preview-metric"><div><span>Invoices prepared</span><strong>128 <small>/ 128</small></strong></div><span class="gst-preview-status">✓ Ready for review</span></div>
                 <div class="gst-preview-progress" aria-hidden="true"><span></span></div>
                 <ul class="gst-preview-steps"><li><span>Import sales invoices</span><b>Complete</b></li><li><span>Validate return data</span><b>Complete</b></li><li><span>Review GSTR-1 summary</span><b class="gst-step-next">Next step</b></li></ul>
+                <details class="gst-sample-details">
+                  <summary>View sample invoices <span aria-hidden="true">+</span></summary>
+                  <div class="gst-sample-table-wrap"><table><caption>Illustrative returns workflow records</caption><thead><tr><th scope="col">Invoice</th><th scope="col">Check</th><th scope="col">Status</th></tr></thead><tbody><tr><td>INV-101</td><td>Sales invoice</td><td><span class="gst-record-ok">Validated</span></td></tr><tr><td>INV-102</td><td>Sales invoice</td><td><span class="gst-record-ok">Validated</span></td></tr></tbody></table></div>
+                </details>
                 <a class="gst-preview-detail" href="#gst-return">Explore return preparation <span aria-hidden="true">↗</span></a>
               </div>
               <div class="gst-preview-panel" id="gst-panel-itc" role="tabpanel" aria-labelledby="gst-tab-itc" tabindex="0" hidden>
                 <div class="gst-preview-metric"><div><span>Invoices matched</span><strong>96 <small>/ 100</small></strong></div><span class="gst-preview-status gst-status-review">4 to review</span></div>
                 <div class="gst-preview-progress" aria-hidden="true"><span style="width:96%"></span></div>
                 <ul class="gst-preview-steps"><li><span>Import purchase register</span><b>Complete</b></li><li><span>Compare with GSTR-2B</span><b>96 matched</b></li><li><span>Review differences</span><b class="gst-step-next">4 invoices</b></li></ul>
+                <details class="gst-sample-details">
+                  <summary>View sample invoices <span aria-hidden="true">+</span></summary>
+                  <div class="gst-sample-table-wrap"><table><caption>Illustrative itc workflow records</caption><thead><tr><th scope="col">Invoice</th><th scope="col">Check</th><th scope="col">Status</th></tr></thead><tbody><tr><td>PUR-201</td><td>Purchase invoice</td><td><span class="gst-record-ok">Matched</span></td></tr><tr><td>PUR-202</td><td>Tax difference</td><td><span class="gst-record-review">Review</span></td></tr></tbody></table></div>
+                </details>
                 <a class="gst-preview-detail" href="#gst-itc">Explore ITC reconciliation <span aria-hidden="true">↗</span></a>
               </div>
               <div class="gst-preview-panel" id="gst-panel-invoice" role="tabpanel" aria-labelledby="gst-tab-invoice" tabindex="0" hidden>
                 <div class="gst-preview-metric"><div><span>E-invoices compared</span><strong>48 <small>/ 50</small></strong></div><span class="gst-preview-status gst-status-review">2 to review</span></div>
                 <div class="gst-preview-progress" aria-hidden="true"><span style="width:96%"></span></div>
                 <ul class="gst-preview-steps"><li><span>Load e-invoice data</span><b>Complete</b></li><li><span>Compare with GSTR-1</span><b>48 matched</b></li><li><span>Check tax differences</span><b class="gst-step-next">2 invoices</b></li></ul>
+                <details class="gst-sample-details">
+                  <summary>View sample invoices <span aria-hidden="true">+</span></summary>
+                  <div class="gst-sample-table-wrap"><table><caption>Illustrative invoice workflow records</caption><thead><tr><th scope="col">Invoice</th><th scope="col">Check</th><th scope="col">Status</th></tr></thead><tbody><tr><td>EINV-301</td><td>GSTR-1 comparison</td><td><span class="gst-record-ok">Matched</span></td></tr><tr><td>EINV-302</td><td>Missing in return</td><td><span class="gst-record-review">Review</span></td></tr></tbody></table></div>
+                </details>
                 <a class="gst-preview-detail" href="#gst-einvoice">Explore e-invoice reconciliation <span aria-hidden="true">↗</span></a>
               </div>
               <p class="gst-preview-note">Illustrative sample data · Select a tab to explore</p>
             </div>
           </div>
+          <div class="gst-workspace-caption"><span aria-hidden="true">✦</span> One workspace. Every GST workflow.</div>
           <div class="gst-office-keyboard" aria-hidden="true"></div>
           <div class="gst-office-cup" aria-hidden="true"></div>
+        </div>
+        <div class="gst-workflow-shortcuts" aria-label="Try a GST workflow">
+          <button type="button" class="gst-workflow-shortcut" data-gst-workflow="returns" aria-controls="gst-panel-returns" aria-pressed="true">
+            <span class="gst-workflow-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3h7l4 4v14H6V3h1Zm7 0v5h4M9 12h6M9 16h4"/></svg></span>
+            <span><strong>Prepare returns</strong><small>Import, validate and review</small></span><span class="gst-workflow-arrow" aria-hidden="true">↗</span>
+          </button>
+          <button type="button" class="gst-workflow-shortcut" data-gst-workflow="itc" aria-controls="gst-panel-itc" aria-pressed="false">
+            <span class="gst-workflow-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="m4 7 3 3 5-5M14 7h6M4 16l3 3 5-5M14 16h6"/></svg></span>
+            <span><strong>Reconcile ITC</strong><small>Match invoices. Spot differences.</small></span><span class="gst-workflow-arrow" aria-hidden="true">↗</span>
+          </button>
+          <button type="button" class="gst-workflow-shortcut" data-gst-workflow="invoice" aria-controls="gst-panel-invoice" aria-pressed="false">
+            <span class="gst-workflow-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h7l-1 8 10-12h-7l1-8Z"/></svg></span>
+            <span><strong>Check e-invoices</strong><small>Compare records with GSTR-1</small></span><span class="gst-workflow-arrow" aria-hidden="true">↗</span>
+          </button>
         </div>
       </section>
 
