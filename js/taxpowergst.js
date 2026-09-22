@@ -1533,7 +1533,7 @@
 })();
 
 
-/* ===== First-view GST hero circle zoom-out reveal ===== */
+/* ===== Repeating individual GST hero circle zoom-out reveal ===== */
 (() => {
   'use strict';
 
@@ -1541,34 +1541,35 @@
     document.querySelectorAll('.gst-intro-hero').forEach((hero) => {
       if (hero.dataset.circleRevealReady === 'true') return;
 
-      const visual = hero.querySelector('.gst-intro-visual');
-      if (!visual) return;
+      const circles = hero.querySelectorAll('.gst-intro-circle');
+      if (!circles.length) return;
 
       hero.dataset.circleRevealReady = 'true';
-      visual.classList.add('gst-circle-reveal-ready');
+      circles.forEach((circle) => circle.classList.add('gst-individual-reveal-ready'));
 
-      const reveal = () => {
-        if (visual.classList.contains('is-revealed')) return;
-        requestAnimationFrame(() => visual.classList.add('is-revealed'));
+      const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (reducedMotion || !('IntersectionObserver' in window)) {
+        hero.classList.add('is-circle-revealed');
+        return;
+      }
+
+      const replay = () => {
+        hero.classList.remove('is-circle-revealed');
+        void hero.offsetWidth;
+        requestAnimationFrame(() => hero.classList.add('is-circle-revealed'));
       };
 
-      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-        reveal();
-        return;
-      }
-
-      if (!('IntersectionObserver' in window)) {
-        reveal();
-        return;
-      }
-
       const observer = new IntersectionObserver((entries) => {
-        if (!entries.some((entry) => entry.isIntersecting)) return;
-        reveal();
-        observer.disconnect();
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            replay();
+          } else {
+            hero.classList.remove('is-circle-revealed');
+          }
+        });
       }, {
-        threshold: 0.18,
-        rootMargin: '0px 0px -5% 0px'
+        threshold: 0.22,
+        rootMargin: '0px 0px -8% 0px'
       });
 
       observer.observe(hero);
