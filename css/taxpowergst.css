@@ -1968,7 +1968,7 @@
   max-width: none;
   min-height: 520px;
   margin: 0 0 24px calc(50% - 50vw + 20px);
-  padding: 42px 64px 36px;
+  padding: 30px 0 30px 30px;
 }
 
 .gst-intro-copy {
