@@ -1531,3 +1531,55 @@
 
   document.addEventListener('taxpower:sections-loaded', initGstIntroHeroMotion);
 })();
+
+
+/* ===== First-view GST hero circle zoom-out reveal ===== */
+(() => {
+  'use strict';
+
+  function initGstCircleReveal() {
+    document.querySelectorAll('.gst-intro-hero').forEach((hero) => {
+      if (hero.dataset.circleRevealReady === 'true') return;
+
+      const visual = hero.querySelector('.gst-intro-visual');
+      if (!visual) return;
+
+      hero.dataset.circleRevealReady = 'true';
+      visual.classList.add('gst-circle-reveal-ready');
+
+      const reveal = () => {
+        if (visual.classList.contains('is-revealed')) return;
+        requestAnimationFrame(() => visual.classList.add('is-revealed'));
+      };
+
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        reveal();
+        return;
+      }
+
+      if (!('IntersectionObserver' in window)) {
+        reveal();
+        return;
+      }
+
+      const observer = new IntersectionObserver((entries) => {
+        if (!entries.some((entry) => entry.isIntersecting)) return;
+        reveal();
+        observer.disconnect();
+      }, {
+        threshold: 0.18,
+        rootMargin: '0px 0px -5% 0px'
+      });
+
+      observer.observe(hero);
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initGstCircleReveal, { once: true });
+  } else {
+    initGstCircleReveal();
+  }
+
+  document.addEventListener('taxpower:sections-loaded', initGstCircleReveal);
+})();
