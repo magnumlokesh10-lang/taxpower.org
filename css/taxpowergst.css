@@ -1637,10 +1637,6 @@
 :is(#gst-return, #gst-reports, #gst-filing-status) > .gst-motion-frame {
   display: none;
 }
-:is(#gst-return, #gst-reports, #gst-filing-status) .gst-feature-row-copy {
-  background: linear-gradient(135deg, rgba(255,255,255,.92), rgba(255,255,255,.82));
-  border-radius: 16px;
-}
 :is(#gst-return, #gst-reports, #gst-filing-status) .gst-feature-row-copy :is(h2, p, li) {
   color: #12364c;
   text-shadow: none;
