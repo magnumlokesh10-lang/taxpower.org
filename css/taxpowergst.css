@@ -1648,3 +1648,52 @@
   transform: none;
   animation-fill-mode: backwards;
 }
+
+/* Billing frame: reference-style copy; preserve existing media and background. */
+#gst-billing {
+  border-radius: 14px;
+}
+#gst-billing .gst-feature-row-copy {
+  padding-block: 52px;
+}
+#gst-billing .gst-feature-row-copy h2 {
+  margin: 0 0 22px;
+  font-size: clamp(28px, 3vw, 40px);
+  font-weight: 800;
+  line-height: 1.08;
+  letter-spacing: -.035em;
+  text-shadow: none;
+}
+#gst-billing .gst-feature-row-copy p {
+  margin: 0 0 24px;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.6;
+  text-shadow: none;
+}
+#gst-billing .gst-typing-keyword {
+  padding: 0;
+  color: inherit;
+  font-weight: inherit;
+  background: transparent;
+  box-shadow: none;
+}
+#gst-billing .gst-billing-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 12px 28px;
+  border-radius: 999px;
+  background: #fff;
+  color: #111;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.5;
+  text-decoration: none;
+}
+#gst-billing .gst-billing-button:focus-visible {
+  outline: 3px solid #fff;
+  outline-offset: 5px;
+}
