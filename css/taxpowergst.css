@@ -1705,3 +1705,11 @@
   outline: 3px solid #fff;
   outline-offset: 5px;
 }
+
+/* Transparent 3D artwork behind the Returns bullet list only. */
+#gst-return .gst-feature-row-copy > ul {
+  background-image: url("../asset/frms_bg/gst-returns-growth-transparent.png");
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
