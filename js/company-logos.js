@@ -2,12 +2,10 @@
   'use strict';
   const viewport = document.querySelector('.company-logo-marquee');
   const track = document.querySelector('.company-logo-track');
-  const toggle = document.querySelector('.company-logo-toggle');
-  if (!viewport || !track || !toggle) return;
+  if (!viewport || !track) return;
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
   const mouseHover = window.matchMedia('(hover: hover) and (pointer: fine)');
   const duplicate = track.querySelector('[aria-hidden="true"]');
-  let paused = false;
   let hovered = false;
   let focused = false;
   let touching = false;
@@ -28,9 +26,9 @@
   function tick(time) {
     const elapsed = previousTime ? Math.min(time - previousTime, 50) : 0;
     previousTime = time;
-    if (!paused && !hovered && !focused && !touching && time >= resumeAfter && distance > 0) {
+    if (!hovered && !focused && !touching && time >= resumeAfter && distance > 0) {
       // Keep fractional pixels across frames, including high-refresh-rate screens.
-      const speed = viewport.clientWidth <= 768 ? 30 : 45;
+      const speed = viewport.clientWidth <= 768 ? 42 : 62;
       position = (position + speed * elapsed / 1000) % distance;
       viewport.scrollLeft = position;
     } else {
@@ -44,16 +42,10 @@
     if (!document.hidden && visible && !reducedMotion.matches) frame = requestAnimationFrame(tick);
   }
   function updatePreference() {
-    toggle.hidden = reducedMotion.matches;
     viewport.classList.toggle('is-enhanced', !reducedMotion.matches);
     measure();
     syncAnimation();
   }
-  toggle.addEventListener('click', () => {
-    paused = !paused;
-    toggle.setAttribute('aria-pressed', String(paused));
-    toggle.textContent = paused ? 'Play scrolling' : 'Pause scrolling';
-  });
   viewport.addEventListener('mouseenter', () => { hovered = mouseHover.matches; });
   viewport.addEventListener('mouseleave', () => { hovered = false; });
   viewport.addEventListener('focusin', () => { focused = viewport.matches(':focus-visible'); });

@@ -1,12 +1,13 @@
 .trusted-companies-section {
   position: relative;
   z-index: 2;
+  isolation: isolate;
   padding: clamp(28px, 4vw, 48px) 0;
   overflow: hidden;
   background: linear-gradient(120deg, rgba(255, 246, 233, .45), rgba(245, 251, 255, .65));
   border-block: 1px solid rgba(0, 180, 216, .18);
 }
-.trusted-companies-inner { width: min(1200px, 100%); margin: auto; text-align: center; }
+.trusted-companies-inner { position: relative; z-index: 1; width: min(1200px, 100%); margin: auto; text-align: center; }
 .trusted-title {
   margin: 0 0 10px;
   padding-inline: 20px;
@@ -14,25 +15,11 @@
   font: 800 clamp(20px, 2.4vw, 28px)/1.3 'Plus Jakarta Sans', sans-serif;
   letter-spacing: -.025em;
 }
-.trusted-subtitle { margin: 0; padding-inline: 20px; color: #617287; font-size: clamp(13px, 1.4vw, 15px); line-height: 1.6; }
-.company-logo-controls { display: flex; justify-content: flex-end; padding: 12px 20px 0; }
-.company-logo-toggle {
-  min-height: 44px;
-  padding: 8px 16px;
-  border: 1px solid rgba(11, 59, 59, .22);
-  border-radius: 24px;
-  color: #0b3b3b;
-  background: rgba(255, 255, 255, .85);
-  font: inherit;
-  font-size: 13px;
-  cursor: pointer;
-  touch-action: manipulation;
-}
-.company-logo-toggle[hidden] { display: none; }
+.trusted-subtitle { max-width: 800px; margin: 0 auto 22px; padding-inline: 20px; color: #617287; font-size: clamp(13px, 1.4vw, 15px); line-height: 1.6; }
 .company-logo-marquee {
   overflow-x: auto;
   overflow-y: hidden;
-  padding: 18px 0 24px;
+  padding: 24px 0 28px;
   scrollbar-width: thin;
   scrollbar-color: #80bfc9 transparent;
   overscroll-behavior-x: contain;
@@ -43,6 +30,7 @@
 .company-logo-marquee.is-enhanced::-webkit-scrollbar { display: none; }
 .company-logo-track { display: flex; align-items: center; gap: 24px; width: max-content; }
 .company-logo-card {
+  position: relative;
   flex: 0 0 180px;
   width: 180px;
   height: 112px;
@@ -57,11 +45,11 @@
   box-shadow: 0 5px 16px rgba(19, 58, 76, .055);
   transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
 }
-.company-logo-card img { display: block; width: 100%; height: 100%; object-fit: contain; user-select: none; -webkit-user-drag: none; }
-.company-logo-toggle:focus-visible, .company-logo-marquee:focus-visible { outline: 3px solid #008faa; outline-offset: -3px; }
+.company-logo-card img { display: block; width: 100%; height: 100%; object-fit: contain; user-select: none; -webkit-user-drag: none; transition: transform .3s ease; }
+.company-logo-marquee:focus-visible { outline: 3px solid #008faa; outline-offset: -3px; }
 @media (hover: hover) and (pointer: fine) {
-  .company-logo-card:hover { transform: translateY(-4px); border-color: rgba(0, 154, 184, .55); box-shadow: 0 9px 22px rgba(0, 128, 153, .13); }
-  .company-logo-toggle:hover { background: #eaf8fb; }
+  .company-logo-card:hover img { transform: scale(1.12); }
+  .company-logo-card:hover { z-index: 2; transform: translateY(-4px) scale(1.06); border-color: rgba(0, 154, 184, .55); box-shadow: 0 9px 22px rgba(0, 128, 153, .13); }
 }
 @media (max-width: 768px) {
   .company-logo-track { gap: 16px; }
@@ -72,6 +60,21 @@
   .company-logo-card { flex-basis: 132px; width: 132px; height: 92px; padding: 14px; }
 }
 @media (prefers-reduced-motion: reduce) {
-  .company-logo-card { transition: none; }
+  .company-logo-card, .company-logo-card img { transition: none; }
   .company-logo-card[aria-hidden="true"] { display: none; }
+}
+
+/* Decorative document, chart and verification illustrations stay behind content. */
+.trusted-companies-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: url("../asset/frms_bg/trusted-taxpower-illustrations.svg") center / 100% 100% no-repeat;
+  opacity: .65;
+}
+.trusted-subtitle strong { color: #0b3b3b; font-weight: 600; }
+@media (max-width: 768px) {
+  .trusted-companies-section::before { opacity: .35; background-size: auto 100%; }
 }
