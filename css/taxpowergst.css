@@ -1785,9 +1785,9 @@
   background-repeat: no-repeat;
 }
 
-/* Preserve screenshot proportions when matching the two desktop frame heights. */
+/* Preserve the full screenshots at tablet and desktop sizes. */
 @media (min-width: 641px) {
-  :is(#gst-return, #gst-reports) .gst-feature-row-media img {
+  :is(#gst-return, #gst-reports, #gst-filing-status) .gst-feature-row-media img {
     height: auto;
   }
 }
@@ -1796,34 +1796,34 @@
 @media (min-width: 901px) and (max-width: 1500px), (min-width: 901px) and (max-height: 820px) {
   #gst-return.gst-feature-row { grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr); }
   #gst-reports.gst-feature-row { grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); }
-  :is(#gst-return, #gst-reports) .gst-feature-row-copy { padding: 20px 24px; }
-  :is(#gst-return, #gst-reports) .gst-feature-row-copy h2 {
+  :is(#gst-return, #gst-reports, #gst-filing-status) .gst-feature-row-copy { padding: 20px 24px; }
+  :is(#gst-return, #gst-reports, #gst-filing-status) .gst-feature-row-copy h2 {
     font-size: clamp(24px, 2.05vw, 30px);
     line-height: 1.15;
     margin-bottom: 10px;
   }
-  :is(#gst-return, #gst-reports) .gst-feature-row-copy > p {
+  :is(#gst-return, #gst-reports, #gst-filing-status) .gst-feature-row-copy > p {
     font-size: 14px;
     line-height: 1.5;
     margin-bottom: 14px;
   }
-  :is(#gst-return, #gst-reports) .gst-feature-row-copy ul { gap: 8px; }
-  :is(#gst-return, #gst-reports) .gst-feature-row-copy li {
+  :is(#gst-return, #gst-reports, #gst-filing-status) .gst-feature-row-copy ul { gap: 8px; }
+  :is(#gst-return, #gst-reports, #gst-filing-status) .gst-feature-row-copy li {
     padding: 9px 12px;
     gap: 10px;
     font-size: 14px;
     line-height: 1.4;
   }
-  :is(#gst-return, #gst-reports) .gst-feature-row-copy li::before {
+  :is(#gst-return, #gst-reports, #gst-filing-status) .gst-feature-row-copy li::before {
     width: 22px;
     height: 22px;
     min-width: 22px;
   }
-  :is(#gst-return, #gst-reports) .gst-feature-row-media {
+  :is(#gst-return, #gst-reports, #gst-filing-status) .gst-feature-row-media {
     padding: 16px;
     margin: 0;
   }
-  :is(#gst-return, #gst-reports) .gst-feature-row-media img {
+  :is(#gst-return, #gst-reports, #gst-filing-status) .gst-feature-row-media img {
     height: auto;
     max-height: max(260px, calc(100dvh - 150px));
     object-fit: contain;
@@ -1831,14 +1831,25 @@
 }
 /* Narrow windows stack naturally instead of squeezing the text column. */
 @media (min-width: 641px) and (max-width: 900px) {
-  :is(#gst-return, #gst-reports).gst-feature-row { grid-template-columns: minmax(0, 1fr); }
-  :is(#gst-return, #gst-reports) .gst-feature-row-media {
+  :is(#gst-return, #gst-reports, #gst-filing-status).gst-feature-row { grid-template-columns: minmax(0, 1fr); }
+  :is(#gst-return, #gst-reports, #gst-filing-status) .gst-feature-row-media {
     order: 0;
     padding: 18px;
     margin: 0;
   }
-  :is(#gst-return, #gst-reports) .gst-feature-row-copy {
+  :is(#gst-return, #gst-reports, #gst-filing-status) .gst-feature-row-copy {
     order: 1;
     padding: 20px 24px 28px;
+  }
+}
+
+/* Desktop baseline: grow naturally whenever the screenshot or copy needs space. */
+:is(#gst-return, #gst-reports, #gst-filing-status).gst-feature-row {
+  height: auto;
+  min-height: 540px;
+}
+@media (max-width: 900px) {
+  :is(#gst-return, #gst-reports, #gst-filing-status).gst-feature-row {
+    min-height: 0;
   }
 }
