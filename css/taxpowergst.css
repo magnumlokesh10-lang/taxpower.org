@@ -1926,3 +1926,46 @@
     opacity: .4;
   }
 }
+
+/* Corner-only reconciliation artwork; all existing layout and backgrounds stay intact. */
+:is(#gst-einvoice, #gst-itc).gst-feature-card {
+  position: relative;
+  isolation: isolate;
+}
+#gst-einvoice.gst-feature-card { --reconciliation-art: url("../asset/frms_bg/gst-invoice-match-corner.svg"); }
+#gst-itc.gst-feature-card { --reconciliation-art: url("../asset/frms_bg/gst-itc-match-corner.svg"); }
+:is(#gst-einvoice, #gst-itc).gst-feature-card::before,
+:is(#gst-einvoice, #gst-itc).gst-feature-card::after {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  pointer-events: none;
+  background: var(--reconciliation-art) center / contain no-repeat;
+}
+:is(#gst-einvoice, #gst-itc).gst-feature-card::before {
+  width: 52px;
+  height: 45px;
+  top: -12px;
+  left: -14px;
+  opacity: .28;
+  transform: rotate(-12deg);
+}
+:is(#gst-einvoice, #gst-itc).gst-feature-card::after {
+  width: clamp(76px, 8vw, 116px);
+  height: 100px;
+  top: -12px;
+  right: -8px;
+  opacity: .4;
+}
+:is(#gst-einvoice, #gst-itc).gst-feature-card > .gst-feature-copy,
+:is(#gst-einvoice, #gst-itc).gst-feature-card > .gst-feature-browser {
+  position: relative;
+  z-index: 1;
+}
+@media (max-width: 600px) {
+  :is(#gst-einvoice, #gst-itc).gst-feature-card::after {
+    width: 76px;
+    height: 66px;
+    opacity: .24;
+  }
+}
