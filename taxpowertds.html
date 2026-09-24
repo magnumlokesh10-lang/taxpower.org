@@ -12,6 +12,8 @@
   <meta name="keywords"
     content="TaxPower GST, TaxPower TDS, GST software, TDS software, tax compliance, e-invoicing, GST return filing, TDS return filing">
   <link rel="stylesheet" href="css/stylesheet.css">
+  <link rel="stylesheet" href="css/taxpowertds.css?v=20260924-intro">
+  <script src="js/tds-intro.js?v=20260924" defer></script>
   <script src="js/nav-loader.js" defer></script>
   <script src="js/script.js" defer></script>
   <script src="js/page-loader.js" defer></script>
@@ -19,20 +21,49 @@
 
 <body>
   <div data-nav-slot></div>
-  <main class="page-section" id="taxpowertds">
-    <div class="section-inner two-column-section">
-      <div class="section-copy">
-        <span class="section-kicker">TDS Suite</span>
-        <h1 class="hero_heading"><span class="ttds">TaxPower TDS</span></h1>
-        <p>TaxPower TDS helps with return filing, challan management, validation, and practical reporting.</p>
-        <div class="download-row">
-          <a href="index.html#taxpowertds" class="razor-btn-primary">View on Home Page</a>
+  <main class="page-section tds-page" id="taxpowertds">
+    <div class="section-inner">
+      <section class="tds-intro" aria-labelledby="tds-intro-title">
+        <div class="tds-intro-copy">
+          <span class="tds-eyebrow">Simplify your TDS workflow</span>
+          <h1 id="tds-intro-title"><span>TaxPower TDS</span><br>Software</h1>
+          <p class="tds-lead">Prepare, validate and manage your TDS returns with confidence.</p>
+          <p class="tds-description">Bring return preparation, challan management and data checks together in one organised workspace. Spend less time switching between tasks and more time getting your TDS work ready.</p>
+          <ul class="tds-highlights"><li>Return preparation</li><li>Challan management</li><li>Validation &amp; reports</li></ul>
+          <div class="tds-actions">
+            <a class="tds-primary" href="support.html#demo-enquiry" data-demo-product="TaxPower TDS" data-demo-purpose="demo">Book Free Demo</a>
+            <a class="tds-secondary" href="#tds-workflow-preview">Explore the workflow <span aria-hidden="true">↗</span></a>
+          </div>
         </div>
-      </div>
-      <div class="section-panel">
-        <h2>TDS Compliance</h2>
-        <p>Add detailed features, screenshots, and demo information here when ready.</p>
-      </div>
+        <div class="tds-preview" id="tds-workflow-preview">
+          <div class="tds-preview-header"><img src="asset/swt_icon/taxpower_icon.png" width="32" height="32" alt=""><div><strong>TaxPower TDS</strong><small>Your TDS compliance workspace</small></div><span class="tds-sample-tag">Demo</span></div>
+          <div class="tds-preview-body">
+            <div class="tds-preview-heading"><h2>One workspace. Every step.</h2><p>Select a workflow to explore sample data.</p></div>
+            <div class="tds-tabs" role="tablist" aria-label="TDS demo workflows">
+              <button type="button" role="tab" id="tds-tab-returns" aria-controls="tds-panel-returns" aria-selected="true">Returns</button>
+              <button type="button" role="tab" id="tds-tab-challans" aria-controls="tds-panel-challans" aria-selected="false" tabindex="-1">Challans</button>
+              <button type="button" role="tab" id="tds-tab-validation" aria-controls="tds-panel-validation" aria-selected="false" tabindex="-1">Validation</button>
+            </div>
+            <div class="tds-panel" id="tds-panel-returns" role="tabpanel" aria-labelledby="tds-tab-returns" tabindex="0">
+              <div class="tds-metric"><div><span>Deductee records</span><strong>128</strong></div><span class="tds-status">Sample return</span></div>
+              <ul class="tds-checklist"><li><span>Deductor details</span><b>Added</b></li><li><span>Deductee records</span><b>Imported</b></li><li><span>Return summary</span><b>Ready to review</b></li></ul>
+            </div>
+            <div class="tds-panel" id="tds-panel-challans" role="tabpanel" aria-labelledby="tds-tab-challans" tabindex="0" hidden>
+              <div class="tds-metric"><div><span>Challans in this example</span><strong>12</strong></div><span class="tds-status">Sample records</span></div>
+              <ul class="tds-checklist"><li><span>Payment details</span><b>Recorded</b></li><li><span>Challan allocation</span><b>Linked</b></li><li><span>Balance review</span><b>Ready to review</b></li></ul>
+            </div>
+            <div class="tds-panel" id="tds-panel-validation" role="tabpanel" aria-labelledby="tds-tab-validation" tabindex="0" hidden>
+              <div class="tds-metric"><div><span>Sample checks</span><strong>03</strong></div><span class="tds-status">Try it below</span></div>
+              <ul class="tds-checklist"><li><span>Required fields</span><b>Check</b></li><li><span>Record consistency</span><b>Check</b></li><li><span>Summary review</span><b>Check</b></li></ul>
+            </div>
+            <div class="tds-demo-check">
+              <button type="button" class="tds-primary" data-tds-check>Run sample check <span aria-hidden="true">→</span></button>
+              <p class="tds-check-result" role="status">Try a simulated check of these example records.</p>
+            </div>
+            <p class="tds-demo-note">Illustrative demo only · No real tax data is processed.</p>
+          </div>
+        </div>
+      </section>
     </div>
   </main>
   <div data-footer-slot></div>
