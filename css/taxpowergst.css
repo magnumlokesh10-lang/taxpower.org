@@ -1846,7 +1846,7 @@
 /* Desktop baseline: grow naturally whenever the screenshot or copy needs space. */
 :is(#gst-return, #gst-reports, #gst-filing-status).gst-feature-row {
   height: auto;
-  min-height: 540px;
+  min-height: 530px;
 }
 @media (max-width: 900px) {
   :is(#gst-return, #gst-reports, #gst-filing-status).gst-feature-row {
