@@ -1759,3 +1759,9 @@
   transform: none;
   animation-fill-mode: backwards;
 }
+
+/* Let a little of the Returns artwork show through the existing glass. */
+#gst-return .gst-feature-row-copy li {
+  -webkit-backdrop-filter: blur(12px) saturate(150%);
+  backdrop-filter: blur(12px) saturate(150%);
+}
