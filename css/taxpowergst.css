@@ -1630,7 +1630,19 @@
   background-repeat: no-repeat;
   box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .8);
 }
-#gst-reports.gst-feature-row { background-image: url("../asset/frms_bg/frm_bcgd2.png?v=379a937adf0b"); }
+/* Reports: warm glass tiles and contour arches behind the blue illustration. */
+#gst-reports.gst-feature-row {
+  background-color: #fff0db;
+  background-image:
+    url("../asset/frms_bg/gst-reports-abstract.svg?v=20260924"),
+    radial-gradient(ellipse at 0% 90%, rgba(241, 190, 236, .45), transparent 56%),
+    radial-gradient(ellipse at 100% 0%, rgba(255, 211, 158, .5), transparent 58%),
+    linear-gradient(115deg, #f4e0fc 0%, #fff4d6 48%, #ffdccb 100%);
+  background-size: 100% 100%, cover, cover, cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .8);
+}
 #gst-filing-status.gst-feature-row { background-image: url("../asset/frms_bg/frm_bcgd3.jpg?v=9e2b6be01180"); }
 :is(#gst-return, #gst-reports, #gst-filing-status) > .gst-motion-frame {
   display: none;
@@ -1718,15 +1730,15 @@
   background-repeat: no-repeat;
 }
 
-/* Sharp dark copy on the bright Returns frame. */
-#gst-return .gst-feature-row-copy :is(h2, p, li) {
+/* Shared sharp copy on the bright Returns and Reports frames. */
+:is(#gst-return, #gst-reports) .gst-feature-row-copy :is(h2, p, li) {
   color: #17382e;
   text-shadow: none;
 }
-#gst-return .gst-feature-row-copy p {
+:is(#gst-return, #gst-reports) .gst-feature-row-copy p {
   color: #284536;
 }
-#gst-return .gst-feature-row-copy li {
+:is(#gst-return, #gst-reports) .gst-feature-row-copy li {
   color: #17382e;
   background: transparent;
   border-color: rgba(235, 255, 247, .3);
@@ -1734,7 +1746,7 @@
   font-weight: 650;
   letter-spacing: 0;
 }
-#gst-return .gst-typing-keyword {
+:is(#gst-return, #gst-reports) .gst-typing-keyword {
   padding: 2px 5px;
   border-radius: 4px;
   color: #17382e;
@@ -1744,24 +1756,32 @@
 }
 
 /* Return paragraph to normal text rendering after its entrance animation. */
-#gst-return .gst-feature-row-copy > p {
+:is(#gst-return, #gst-reports) .gst-feature-row-copy > p {
   color: #18372e;
   font-size: 16px;
   font-weight: 600;
   text-shadow: none;
 }
-#gst-return .gst-feature-row-copy > p.gst-typing-ready .gst-typing-word {
+:is(#gst-return, #gst-reports) .gst-feature-row-copy > p.gst-typing-ready .gst-typing-word {
   will-change: auto;
 }
-#gst-return .gst-feature-row-copy.gst-animation-visible > p,
-#gst-return .gst-feature-row-copy.gst-animation-visible > p.gst-typing-ready .gst-typing-word {
+:is(#gst-return, #gst-reports) .gst-feature-row-copy.gst-animation-visible > p,
+:is(#gst-return, #gst-reports) .gst-feature-row-copy.gst-animation-visible > p.gst-typing-ready .gst-typing-word {
   opacity: 1;
   transform: none;
   animation-fill-mode: backwards;
 }
 
 /* Let a little of the Returns artwork show through the existing glass. */
-#gst-return .gst-feature-row-copy li {
+:is(#gst-return, #gst-reports) .gst-feature-row-copy li {
   -webkit-backdrop-filter: blur(12px) saturate(150%);
   backdrop-filter: blur(12px) saturate(150%);
+}
+
+/* Full transparent Reports illustration; contain preserves the entire platform. */
+#gst-reports .gst-feature-row-copy > ul {
+  background-image: url("../asset/frms_bg/gst-reports-clipboard-transparent.png?v=a68dae49d399");
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
 }
