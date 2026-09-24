@@ -1784,3 +1784,10 @@
   background-size: contain;
   background-repeat: no-repeat;
 }
+
+/* Preserve screenshot proportions when matching the two desktop frame heights. */
+@media (min-width: 641px) {
+  :is(#gst-return, #gst-reports) .gst-feature-row-media img {
+    height: auto;
+  }
+}
