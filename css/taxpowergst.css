@@ -1634,7 +1634,7 @@
 #gst-reports.gst-feature-row {
   background-color: #dcf7ff;
   background-image:
-    url("../asset/frms_bg/gst-reports-abstract.svg?v=20260924-mirrored"),
+    url("../asset/frms_bg/gst-reports-abstract.svg?v=20260924-reports-depth"),
     radial-gradient(ellipse at 0% 55%, #ecfcff 0%, transparent 65%),
     linear-gradient(115deg, #d8f3ff 0%, #c7f5ed 54%, #b5e9ff 100%);
   background-size: 100% 100%, cover, cover;
