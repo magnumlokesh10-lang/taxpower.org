@@ -1654,7 +1654,7 @@
   box-shadow: inset 0 0 0 1px rgba(255,255,255,.8);
 }
 #gst-filing-status .gst-feature-row-copy > ul {
-  background: url("../asset/frms_bg/gst-filing-status-purple-transparent.png?v=20260924") center / contain no-repeat;
+  background: url("../asset/frms_bg/gst-filing-status-lavender-transparent.png?v=20260924") center / contain no-repeat;
 }
 :is(#gst-return, #gst-reports, #gst-filing-status) > .gst-motion-frame {
   display: none;
@@ -1867,3 +1867,27 @@
   }
 }
 
+
+/* Consistent feature titles and crisp bullet text. */
+:is(#gst-return, #gst-reports, #gst-filing-status) .gst-feature-row-copy h2 {
+  position: relative;
+  color: #0b3b3b;
+  font-weight: 800;
+  letter-spacing: -.025em;
+  text-shadow: none;
+  padding-bottom: 12px;
+}
+:is(#gst-return, #gst-reports, #gst-filing-status) .gst-feature-row-copy h2::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 52px;
+  height: 3px;
+  border-radius: 3px;
+  background: #0b3b3b;
+  opacity: .65;
+}
+:is(#gst-return, #gst-reports, #gst-filing-status) .gst-feature-row-copy li {
+  color: #17382e;
+}
