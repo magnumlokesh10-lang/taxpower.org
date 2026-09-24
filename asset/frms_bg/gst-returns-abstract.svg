@@ -46,15 +46,15 @@
 
 <style>
   .returns-flow-line {
-    /* One long stroke and a short travelling gap: never a blank route. */
-    stroke-dasharray: 100 24;
-    stroke-dashoffset: 0;
+    /* A full-path gap lets the entire stroke exit before the next one enters. */
+    stroke-dasharray: 100 100;
+    stroke-dashoffset: 100;
     opacity: .9;
-    animation: returnsContinuousFlow 7s linear infinite;
+    animation: returnsContinuousFlow 11.3s linear infinite;
   }
   @keyframes returnsContinuousFlow {
-    from { stroke-dashoffset: 0; }
-    to { stroke-dashoffset: -124; }
+    from { stroke-dashoffset: 100; }
+    to { stroke-dashoffset: -100; }
   }
   @media (prefers-reduced-motion: reduce) {
     .returns-flow-line { animation: none; stroke-dasharray: none; }
