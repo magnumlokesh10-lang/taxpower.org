@@ -1621,7 +1621,7 @@
 #gst-return.gst-feature-row {
   background-color: #edffd8;
   background-image:
-    url("../asset/frms_bg/gst-returns-abstract.svg?v=20260924-filing-depth"),
+    url("../asset/frms_bg/gst-returns-abstract.svg?v=20260924-sync-clock"),
     radial-gradient(ellipse at 92% 85%, rgba(91, 239, 171, .5) 0%, transparent 58%),
     radial-gradient(ellipse at 0% 0%, rgba(209, 166, 255, .42) 0%, transparent 52%),
     linear-gradient(245deg, #aff4d2 0%, #f1ffc7 44%, #f6edff 72%, #e7d2ff 100%);
@@ -1634,7 +1634,7 @@
 #gst-reports.gst-feature-row {
   background-color: #dcf7ff;
   background-image:
-    url("../asset/frms_bg/gst-reports-abstract.svg?v=20260924-flow"),
+    url("../asset/frms_bg/gst-reports-abstract.svg?v=20260924-sync-clock"),
     radial-gradient(ellipse at 0% 55%, #ecfcff 0%, transparent 65%),
     linear-gradient(115deg, #d8f3ff 0%, #c7f5ed 54%, #b5e9ff 100%);
   background-size: 100% 100%, cover, cover;
@@ -1645,7 +1645,7 @@
 /* Filing status: layered checklist and date motifs on a bright warm base. */
 #gst-filing-status.gst-feature-row {
   background-color: #fff2dc;
-  background-image: url("../asset/frms_bg/gst-filing-status-abstract.svg?v=20260924-flow"),
+  background-image: url("../asset/frms_bg/gst-filing-status-abstract.svg?v=20260924-sync-clock"),
     radial-gradient(ellipse at 95% 15%, #fff9e9 0%, transparent 60%),
     linear-gradient(115deg, #ffe2c6 0%, #fff4d9 52%, #ffe9ce 100%);
   background-size: 100% 100%, cover, cover;

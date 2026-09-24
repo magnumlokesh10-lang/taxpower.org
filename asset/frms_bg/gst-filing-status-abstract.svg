@@ -10,7 +10,11 @@
 <path class="filing-flow-line"
   d="M900 580 C963 595 1027 602 1065 568 C1092 541 1122 545 1148 571 C1174 597 1202 607 1233 595 C1264 583 1300 565 1358 573"
   pathLength="100" fill="none" stroke="url(#filing-flow-colors)" stroke-width="3"
-  stroke-linecap="round" stroke-linejoin="round" pointer-events="none"/>
+  stroke-linecap="round" stroke-linejoin="round" pointer-events="none" stroke-dashoffset="100">
+  <!-- Use the SVG document clock shared by the dot, including after tab suspension. -->
+  <animate attributeName="stroke-dashoffset" values="100;-100" begin="0s"
+    dur="14s" calcMode="linear" repeatCount="indefinite"/>
+</path>
 <!-- Recording-style pulsing dot follows the leading tip on the existing timeline. -->
 <g class="filing-flow-dot" pointer-events="none">
   <g>
@@ -23,7 +27,7 @@
       <animate attributeName="fill" values="#EEB36D;#219D99;#219D99" keyTimes="0;0.5;1" calcMode="linear" dur="14s" repeatCount="indefinite"/>
       <animate attributeName="opacity" values="1;.35;1" dur="1.2s" repeatCount="indefinite"/>
     </circle>
-    <animateMotion path="M900 580 C963 595 1027 602 1065 568 C1092 541 1122 545 1148 571 C1174 597 1202 607 1233 595 C1264 583 1300 565 1358 573" dur="14s" repeatCount="indefinite"
+    <animateMotion begin="0s" path="M900 580 C963 595 1027 602 1065 568 C1092 541 1122 545 1148 571 C1174 597 1202 607 1233 595 C1264 583 1300 565 1358 573" dur="14s" repeatCount="indefinite"
       calcMode="linear" keyPoints="0;1;1" keyTimes="0;0.5;1"/>
   </g>
   <animate attributeName="opacity" values="0.95;0;0" keyTimes="0;0.5;1"
@@ -60,13 +64,7 @@
   .filing-flow-line {
     /* A full-path gap lets the entire stroke exit before the next one enters. */
     stroke-dasharray: 100 100;
-    stroke-dashoffset: 100;
     opacity: .9;
-    animation: filingContinuousFlow 14s linear infinite;
-  }
-  @keyframes filingContinuousFlow {
-    from { stroke-dashoffset: 100; }
-    to { stroke-dashoffset: -100; }
   }
   @media (prefers-reduced-motion: reduce) {
     .filing-flow-line { animation: none; stroke-dasharray: none; }
