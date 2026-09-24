@@ -1901,3 +1901,28 @@
   box-sizing: border-box;
   border: 1px solid rgba(11, 59, 59, .38);
 }
+
+/* Decorative workflow illustrations for the feature introduction only. */
+.gst-feature-stack-heading {
+  isolation: isolate;
+  overflow: hidden;
+}
+.gst-feature-stack-heading::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: url("../asset/frms_bg/gst-features-intro-illustrations.svg?v=20260924") center / 100% 100% no-repeat;
+}
+.gst-feature-stack-heading > .gst-features-intro,
+.gst-feature-stack-heading > .gst-features-nav {
+  position: relative;
+  z-index: 1;
+}
+@media (max-width: 767px) {
+  .gst-feature-stack-heading::before {
+    background-size: auto 100%;
+    opacity: .4;
+  }
+}

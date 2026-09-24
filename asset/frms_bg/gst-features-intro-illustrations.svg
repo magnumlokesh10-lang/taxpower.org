@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="260" viewBox="0 0 1440 260" fill="none">
+<defs>
+ <linearGradient id="paper" x2="1" y2="1"><stop stop-color="#fff"/><stop offset="1" stop-color="#deeff8"/></linearGradient>
+ <linearGradient id="orange" x2="1" y2="1"><stop stop-color="#ffd7ad"/><stop offset="1" stop-color="#f3b176"/></linearGradient>
+ <linearGradient id="blue" x2="1" y2="1"><stop stop-color="#b8e4fa"/><stop offset="1" stop-color="#70bddd"/></linearGradient>
+ <filter id="depth" x="-45%" y="-45%" width="190%" height="200%"><feDropShadow dx="0" dy="6" stdDeviation="6" flood-color="#427b99" flood-opacity=".13"/></filter>
+</defs>
+<!-- Light edge document; the main heading remains the visual focus. -->
+<g transform="translate(-42 77) rotate(-14)" opacity=".22" filter="url(#depth)">
+ <rect x="7" y="8" width="99" height="118" rx="14" fill="#efbd93"/>
+ <rect width="99" height="118" rx="14" fill="url(#paper)" stroke="#fff" stroke-width="2"/>
+ <path d="M21 29h55M21 49h61M21 69h43M21 89h51" stroke="#dda26e" stroke-width="5" stroke-linecap="round"/>
+</g>
+<!-- A small chart above the open centre area. -->
+<g transform="translate(600 -32) rotate(12 70 50)" opacity=".5" filter="url(#depth)">
+ <rect x="6" y="8" width="137" height="98" rx="16" fill="#a6d3e7"/>
+ <rect width="137" height="98" rx="16" fill="url(#paper)" stroke="#fff" stroke-width="2"/>
+ <path d="M23 74h91" stroke="#b1d2e1" stroke-width="2"/>
+ <rect x="26" y="48" width="17" height="25" rx="4" fill="url(#blue)"/>
+ <rect x="57" y="34" width="17" height="39" rx="4" fill="url(#orange)"/>
+ <rect x="88" y="19" width="17" height="54" rx="4" fill="url(#blue)"/>
+</g>
+<!-- Layered checklist in the central gap, clear of the left-side copy. -->
+<g transform="translate(740 154) rotate(-12 57 65)" opacity=".5" filter="url(#depth)">
+ <rect x="8" y="9" width="105" height="130" rx="15" fill="#c2ddea"/>
+ <rect width="105" height="130" rx="15" fill="url(#paper)" stroke="#fff" stroke-width="2"/>
+ <rect x="22" y="-5" width="61" height="15" rx="7" fill="url(#orange)"/>
+ <g stroke="#8bbbd1" stroke-width="4" stroke-linecap="round"><path d="M44 38h42M44 68h35M44 98h39"/></g>
+ <g stroke="#d8a273" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m17 36 5 5 9-11m-14 36 5 5 9-11m-14 36 5 5 9-11"/></g>
+</g>
+<!-- Calendar at the far upper-right, outside navigation labels. -->
+<g transform="translate(1346 -22) rotate(13 53 47)" opacity=".35" filter="url(#depth)">
+ <rect x="5" y="7" width="103" height="98" rx="15" fill="#adcfe1"/>
+ <rect width="103" height="98" rx="15" fill="url(#paper)" stroke="#fff" stroke-width="2"/>
+ <path d="M15 0h73q15 0 15 15v13H0V15Q0 0 15 0" fill="url(#blue)"/>
+ <path d="M28 -5v15M76 -5v15" stroke="#7ab3ce" stroke-width="5" stroke-linecap="round"/>
+ <g fill="#b8dbe9"><rect x="17" y="43" width="16" height="15" rx="4"/><rect x="44" y="43" width="16" height="15" rx="4"/><rect x="71" y="43" width="16" height="15" rx="4"/><rect x="17" y="69" width="16" height="15" rx="4"/><rect x="71" y="69" width="16" height="15" rx="4"/></g>
+ <rect x="44" y="69" width="16" height="15" rx="4" fill="url(#orange)"/>
+</g>
+<!-- Restrained bottom accents tie the illustration colours together. -->
+<g transform="translate(1222 245) rotate(-9)" opacity=".35"><rect x="-40" y="-13" width="107" height="47" rx="13" fill="url(#paper)" stroke="#bfddeb" stroke-width="2"/><circle cx="-17" cy="10" r="12" fill="url(#blue)"/><path d="m-23 10 4 4 8-9" stroke="white" stroke-width="2.5" stroke-linecap="round"/><path d="M5 5h43M5 15h30" stroke="#b0ccdc" stroke-width="4" stroke-linecap="round"/></g>
+<circle cx="527" cy="215" r="8" stroke="#ecc49e" stroke-width="3" opacity=".3"/>
+<circle cx="874" cy="79" r="5" fill="#afd9ec" opacity=".35"/>
+</svg>
