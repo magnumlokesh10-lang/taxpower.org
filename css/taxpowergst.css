@@ -1617,14 +1617,14 @@
   background-repeat: no-repeat;
   box-shadow: none;
 }
-/* Soft brand gradients replace the Returns wallpaper without image downloads. */
+/* Sage and lavender gradients for the Returns frame. */
 #gst-return.gst-feature-row {
-  background-color: #d9eefa;
+  background-color: #c5d8c8;
   background-image:
-    radial-gradient(ellipse at 0% 100%, rgba(234, 88, 12, .42) 0%, transparent 65%),
-    radial-gradient(ellipse at 100% 0%, rgba(2, 132, 199, .42) 0%, transparent 68%),
-    linear-gradient(120deg, #ffd0a3 0%, #e0edf3 48%, #a6dafa 100%);
-  box-shadow: inset 0 0 0 1px rgba(14, 116, 165, .18);
+    radial-gradient(ellipse at 8% 85%, rgba(128, 164, 135, .58) 0%, transparent 62%),
+    radial-gradient(ellipse at 92% 12%, rgba(170, 143, 197, .48) 0%, transparent 64%),
+    linear-gradient(125deg, #b3d0bd 0%, #d4dcca 48%, #c8b8df 100%);
+  box-shadow: inset 0 0 0 1px rgba(76, 96, 80, .18);
 }
 #gst-reports.gst-feature-row { background-image: url("../asset/frms_bg/frm_bcgd2.png?v=379a937adf0b"); }
 #gst-filing-status.gst-feature-row { background-image: url("../asset/frms_bg/frm_bcgd3.jpg?v=9e2b6be01180"); }
@@ -1708,7 +1708,7 @@
 
 /* Transparent 3D artwork behind the Returns bullet list only. */
 #gst-return .gst-feature-row-copy > ul {
-  background-image: url("../asset/frms_bg/gst-returns-growth-transparent.png");
+  background-image: url("../asset/frms_bg/gst-returns-growth-transparent.png?v=20e7b78fdcc9");
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
