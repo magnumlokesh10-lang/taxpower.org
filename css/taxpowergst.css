@@ -1642,7 +1642,20 @@
   background-repeat: no-repeat;
   box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .8);
 }
-#gst-filing-status.gst-feature-row { background-image: url("../asset/frms_bg/frm_bcgd3.jpg?v=9e2b6be01180"); }
+/* Filing status: layered checklist and date motifs on a bright warm base. */
+#gst-filing-status.gst-feature-row {
+  background-color: #fff2dc;
+  background-image: url("../asset/frms_bg/gst-filing-status-abstract.svg?v=20260924-teal"),
+    radial-gradient(ellipse at 95% 15%, #fff9e9 0%, transparent 60%),
+    linear-gradient(115deg, #ffe2c6 0%, #fff4d9 52%, #ffe9ce 100%);
+  background-size: 100% 100%, cover, cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,.8);
+}
+#gst-filing-status .gst-feature-row-copy > ul {
+  background: url("../asset/frms_bg/gst-filing-status-purple-transparent.png?v=20260924") center / contain no-repeat;
+}
 :is(#gst-return, #gst-reports, #gst-filing-status) > .gst-motion-frame {
   display: none;
 }
@@ -1730,14 +1743,14 @@
 }
 
 /* Shared sharp copy on the bright Returns and Reports frames. */
-:is(#gst-return, #gst-reports) .gst-feature-row-copy :is(h2, p, li) {
+:is(#gst-return, #gst-reports, #gst-filing-status) .gst-feature-row-copy :is(h2, p, li) {
   color: #17382e;
   text-shadow: none;
 }
-:is(#gst-return, #gst-reports) .gst-feature-row-copy p {
+:is(#gst-return, #gst-reports, #gst-filing-status) .gst-feature-row-copy p {
   color: #284536;
 }
-:is(#gst-return, #gst-reports) .gst-feature-row-copy li {
+:is(#gst-return, #gst-reports, #gst-filing-status) .gst-feature-row-copy li {
   color: #17382e;
   background: transparent;
   border-color: rgba(235, 255, 247, .3);
@@ -1745,7 +1758,7 @@
   font-weight: 650;
   letter-spacing: 0;
 }
-:is(#gst-return, #gst-reports) .gst-typing-keyword {
+:is(#gst-return, #gst-reports, #gst-filing-status) .gst-typing-keyword {
   padding: 2px 5px;
   border-radius: 4px;
   color: #17382e;
@@ -1755,24 +1768,24 @@
 }
 
 /* Return paragraph to normal text rendering after its entrance animation. */
-:is(#gst-return, #gst-reports) .gst-feature-row-copy > p {
+:is(#gst-return, #gst-reports, #gst-filing-status) .gst-feature-row-copy > p {
   color: #18372e;
   font-size: 16px;
   font-weight: 600;
   text-shadow: none;
 }
-:is(#gst-return, #gst-reports) .gst-feature-row-copy > p.gst-typing-ready .gst-typing-word {
+:is(#gst-return, #gst-reports, #gst-filing-status) .gst-feature-row-copy > p.gst-typing-ready .gst-typing-word {
   will-change: auto;
 }
-:is(#gst-return, #gst-reports) .gst-feature-row-copy.gst-animation-visible > p,
-:is(#gst-return, #gst-reports) .gst-feature-row-copy.gst-animation-visible > p.gst-typing-ready .gst-typing-word {
+:is(#gst-return, #gst-reports, #gst-filing-status) .gst-feature-row-copy.gst-animation-visible > p,
+:is(#gst-return, #gst-reports, #gst-filing-status) .gst-feature-row-copy.gst-animation-visible > p.gst-typing-ready .gst-typing-word {
   opacity: 1;
   transform: none;
   animation-fill-mode: backwards;
 }
 
 /* Let a little of the Returns artwork show through the existing glass. */
-:is(#gst-return, #gst-reports) .gst-feature-row-copy li {
+:is(#gst-return, #gst-reports, #gst-filing-status) .gst-feature-row-copy li {
   -webkit-backdrop-filter: blur(12px) saturate(150%);
   backdrop-filter: blur(12px) saturate(150%);
 }
@@ -1853,3 +1866,4 @@
     min-height: 0;
   }
 }
+
