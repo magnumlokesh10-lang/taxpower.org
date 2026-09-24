@@ -1529,3 +1529,46 @@
   }
   document.addEventListener('taxpower:sections-loaded', initGstWorkflowPreview);
 })();
+
+/* Keep the first two desktop feature frames equally tall without clipping copy. */
+(() => {
+  let observer;
+  let pending = 0;
+  let first;
+  let second;
+  function syncHeights() {
+    pending = 0;
+    if (!first?.isConnected || !second?.isConnected) return;
+    first.style.removeProperty('min-height');
+    second.style.removeProperty('min-height');
+    if (window.matchMedia('(max-width: 900px)').matches) return;
+    const height = Math.ceil(Math.max(first.offsetHeight, second.offsetHeight));
+    first.style.minHeight = height + 'px';
+    second.style.minHeight = height + 'px';
+  }
+  function schedule() {
+    if (!pending) pending = requestAnimationFrame(syncHeights);
+  }
+  function init() {
+    observer?.disconnect();
+    first = document.getElementById('gst-return');
+    second = document.getElementById('gst-reports');
+    if (!first || !second) return;
+    if ('ResizeObserver' in window) {
+      observer = new ResizeObserver(schedule);
+      [first, second].forEach((frame) => {
+        frame.querySelectorAll('.gst-feature-row-copy, .gst-feature-row-media')
+          .forEach((child) => observer.observe(child));
+      });
+    }
+    schedule();
+    document.fonts?.ready.then(schedule);
+  }
+  window.addEventListener('resize', schedule);
+  document.addEventListener('taxpower:sections-loaded', init);
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init, { once: true });
+  } else {
+    init();
+  }
+})();
