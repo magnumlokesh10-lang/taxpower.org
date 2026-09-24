@@ -1654,7 +1654,7 @@
   box-shadow: inset 0 0 0 1px rgba(255,255,255,.8);
 }
 #gst-filing-status .gst-feature-row-copy > ul {
-  background: url("../asset/frms_bg/gst-filing-status-lavender-transparent.png?v=20260924") center / contain no-repeat;
+  background: url("../asset/frms_bg/gst-filing-status-pink-transparent.png?v=20260924") center / contain no-repeat;
 }
 :is(#gst-return, #gst-reports, #gst-filing-status) > .gst-motion-frame {
   display: none;
