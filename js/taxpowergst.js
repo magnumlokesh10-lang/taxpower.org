@@ -1541,7 +1541,7 @@
     if (!first?.isConnected || !second?.isConnected) return;
     first.style.removeProperty('min-height');
     second.style.removeProperty('min-height');
-    if (window.matchMedia('(max-width: 640px)').matches) return;
+    if (window.matchMedia('(max-width: 900px)').matches) return;
     const height = Math.ceil(Math.max(first.offsetHeight, second.offsetHeight));
     first.style.minHeight = height + 'px';
     second.style.minHeight = height + 'px';
