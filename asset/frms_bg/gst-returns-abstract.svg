@@ -23,8 +23,6 @@
 <circle cx="131" cy="59" r="28" fill="url(#mint)" stroke="#D5FFEB" stroke-width="2"/>
 <path d="M117 59L127 69L146 48" stroke="white" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
 </g>
-<!-- Small filing workflow along the bottom margin. -->
-<path d="M994 597H1090Q1106 597 1106 581V571Q1106 555 1122 555H1200Q1216 555 1216 571V581Q1216 597 1232 597H1346" stroke="#8CBCA7" stroke-width="2" stroke-dasharray="5 7" opacity=".65"/>
 <g transform="translate(1312 550)" filter="url(#depth)">
 <rect width="62" height="58" rx="15" fill="url(#purple)" stroke="#F8EFFF"/>
 <path d="M17 29L27 39L46 19" stroke="white" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -39,45 +37,28 @@
 <rect width="130" height="140" rx="18" fill="url(#purple)"/>
 <path d="M26 45H103M26 70H90M26 95H100" stroke="white" stroke-width="7" stroke-linecap="round"/>
 </g>
-<path d="M180 170C380 85 480 240 625 250S772 330 816 436" stroke="#B999D7" stroke-width="2" stroke-dasharray="6 9" opacity=".25"/>
 
-<!-- A single train follows the static route; a faint tail and bright nose share its endpoint. -->
-<g fill="none" stroke-linecap="round" pointer-events="none">
-  <path class="route-trail" d="M994 597H1090Q1106 597 1106 581V571Q1106 555 1122 555H1200Q1216 555 1216 571V581Q1216 597 1232 597H1346" pathLength="100" stroke="#ac79d8" stroke-width="7" stroke-dasharray="16 184"/>
-  <path class="route-train" d="M994 597H1090Q1106 597 1106 581V571Q1106 555 1122 555H1200Q1216 555 1216 571V581Q1216 597 1232 597H1346" pathLength="100" stroke="#8952c2" stroke-width="3.5" stroke-dasharray="7 193"/>
-  <path class="route-nose" d="M994 597H1090Q1106 597 1106 581V571Q1106 555 1122 555H1200Q1216 555 1216 571V581Q1216 597 1232 597H1346" pathLength="100" stroke="#f9f0ff" stroke-width="2" stroke-dasharray="1.5 198.5"/>
-  <circle class="route-arrival" cx="1346" cy="597" r="8" stroke="#8952c2" stroke-width="2"/>
-</g>
+
+<!-- One continuous curve grows from its starting point, then fades and restarts. -->
+<path class="returns-growing-line"
+  d="M960 595 C1002 595 1028 595 1055 568 C1082 541 1112 545 1138 571 C1164 597 1192 607 1223 595 C1254 583 1273 570 1312 578"
+  pathLength="100" fill="none" stroke="#9461cf" stroke-width="3"
+  stroke-linecap="round" stroke-linejoin="round" pointer-events="none"/>
 <style>
-  .route-trail { animation: routeTail 4.8s linear infinite; }
-  .route-train { animation: routeTravel 4.8s linear infinite; }
-  .route-nose { animation: routeNose 4.8s linear infinite; }
-  .route-arrival { animation: routeArrival 4.8s ease-out infinite; }
-  @keyframes routeTail {
-    0% { stroke-dashoffset: 16; opacity: 0; }
-    8% { opacity: .24; }
-    82% { stroke-dashoffset: -84; opacity: .24; }
-    88%, 100% { stroke-dashoffset: -84; opacity: 0; }
+  .returns-growing-line {
+    stroke-dasharray: 100 100;
+    stroke-dashoffset: 100;
+    opacity: 0;
+    animation: returnsGrowCurve 6s linear infinite;
   }
-  @keyframes routeTravel {
-    0% { stroke-dashoffset: 7; opacity: 0; }
-    4% { opacity: 1; }
-    82% { stroke-dashoffset: -93; opacity: 1; }
-    88%, 100% { stroke-dashoffset: -93; opacity: 0; }
-  }
-  @keyframes routeNose {
-    0% { stroke-dashoffset: 1.5; opacity: 0; }
-    4% { opacity: 1; }
-    82% { stroke-dashoffset: -98.5; opacity: 1; }
-    88%, 100% { stroke-dashoffset: -98.5; opacity: 0; }
-  }
-  @keyframes routeArrival {
-    0%, 80% { opacity: 0; r: 5px; stroke-width: 2; }
-    83% { opacity: .65; r: 5px; stroke-width: 2; }
-    96%, 100% { opacity: 0; r: 15px; stroke-width: 1; }
+  @keyframes returnsGrowCurve {
+    0%, 4% { stroke-dashoffset: 100; opacity: 0; }
+    5% { opacity: .9; }
+    78%, 84% { stroke-dashoffset: 0; opacity: .9; }
+    94%, 100% { stroke-dashoffset: 0; opacity: 0; }
   }
   @media (prefers-reduced-motion: reduce) {
-    .route-trail, .route-train, .route-nose, .route-arrival { animation: none; display: none; }
+    .returns-growing-line { animation: none; stroke-dashoffset: 0; opacity: .65; }
   }
 </style>
 </svg>
