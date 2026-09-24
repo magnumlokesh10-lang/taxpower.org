@@ -1630,15 +1630,14 @@
   background-repeat: no-repeat;
   box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .8);
 }
-/* Reports: warm glass tiles and contour arches behind the blue illustration. */
+/* Reports: crisp aqua waves with a light sky-blue base. */
 #gst-reports.gst-feature-row {
-  background-color: #fff0db;
+  background-color: #dcf7ff;
   background-image:
-    url("../asset/frms_bg/gst-reports-abstract.svg?v=20260924"),
-    radial-gradient(ellipse at 0% 90%, rgba(241, 190, 236, .45), transparent 56%),
-    radial-gradient(ellipse at 100% 0%, rgba(255, 211, 158, .5), transparent 58%),
-    linear-gradient(115deg, #f4e0fc 0%, #fff4d6 48%, #ffdccb 100%);
-  background-size: 100% 100%, cover, cover, cover;
+    url("../asset/frms_bg/gst-reports-abstract.svg?v=20260924-aqua-waves"),
+    radial-gradient(ellipse at 0% 55%, #ecfcff 0%, transparent 65%),
+    linear-gradient(115deg, #d8f3ff 0%, #c7f5ed 54%, #b5e9ff 100%);
+  background-size: 100% 100%, cover, cover;
   background-position: center;
   background-repeat: no-repeat;
   box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .8);
