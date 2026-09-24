@@ -1969,3 +1969,38 @@
     opacity: .24;
   }
 }
+
+/* Billing introduction shares the GST product introduction layout. */
+.gst-billing-intro { margin-top: 32px; scroll-margin-top: 110px; }
+.gst-billing-intro .gst-intro-copy h2 {
+  margin: 0 0 18px;
+  font-family: 'Plus Jakarta Sans', Arial, sans-serif;
+  font-size: clamp(42px, 4.9vw, 72px);
+  font-weight: 800;
+  line-height: 1.08;
+  letter-spacing: -.045em;
+}
+.gst-billing-intro .gst-intro-product { color: #0b3b3b; }
+.gst-billing-intro-visual {
+  min-width: 0;
+  padding: clamp(16px, 2vw, 26px);
+  border: 1px solid #c9e5ef;
+  border-radius: 24px;
+  background: linear-gradient(145deg, #ffffffeb, #eaf8ffbd);
+  box-shadow: 0 16px 36px #174e6510;
+}
+.gst-billing-visual-label { display: flex; align-items: center; gap: 10px; color: #0b3b3b; font-size: 15px; }
+.gst-billing-visual-label img { flex-shrink: 0; }
+.gst-billing-illustration { display: block; width: 100%; height: auto; margin-block: 14px; }
+.gst-billing-journey { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+.gst-billing-journey > span { display: flex; flex-direction: column; gap: 7px; padding: 12px 6px; border: 1px solid #d5e8ef; border-radius: 12px; background: #ffffffdb; color: #315565; text-align: center; font-size: 12px; font-weight: 600; }
+.gst-billing-journey b { color: #0284c7; font-size: 11px; letter-spacing: .08em; }
+.gst-billing-journey > span:last-child b { color: #c45f14; }
+@media (max-width: 1000px) {
+  .gst-billing-intro .gst-intro-copy h2 { font-size: clamp(38px, 5vw, 54px); }
+}
+@media (max-width: 760px) {
+  .gst-billing-intro { grid-template-columns: minmax(0, 1fr); }
+  .gst-billing-intro .gst-intro-copy h2 { font-size: clamp(38px, 9vw, 60px); }
+  .gst-billing-intro-visual { width: 100%; max-width: 540px; margin-inline: auto; box-sizing: border-box; }
+}
