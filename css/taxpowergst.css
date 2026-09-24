@@ -1891,3 +1891,13 @@
 :is(#gst-return, #gst-reports, #gst-filing-status) .gst-feature-row-copy li {
   color: #17382e;
 }
+
+/* First-frame preview: content-sized glass bullets with a visible outline. */
+#gst-return .gst-feature-row-copy > ul > li {
+  align-self: flex-start;
+  width: fit-content;
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+  border: 1px solid rgba(11, 59, 59, .38);
+}
