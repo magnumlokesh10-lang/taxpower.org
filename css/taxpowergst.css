@@ -1617,18 +1617,18 @@
   background-repeat: no-repeat;
   box-shadow: none;
 }
-/* Deep emerald and plum abstract background for the Returns frame. */
+/* Rich, bright jade and violet for the Returns abstract frame. */
 #gst-return.gst-feature-row {
-  background-color: #19252b;
+  background-color: #7950b4;
   background-image:
     url("../asset/frms_bg/gst-returns-abstract.svg?v=20260924-dark"),
-    radial-gradient(ellipse at 12% 80%, #12634e 0%, transparent 58%),
-    radial-gradient(ellipse at 100% 10%, #54316e 0%, transparent 52%),
-    linear-gradient(115deg, #123c32 0%, #19252b 50%, #33213f 100%);
+    radial-gradient(ellipse at 8% 85%, rgba(48, 221, 155, .55) 0%, transparent 58%),
+    radial-gradient(ellipse at 100% 0%, rgba(174, 87, 228, .38) 0%, transparent 52%),
+    linear-gradient(115deg, #159d79 0%, #468d87 42%, #7650b2 72%, #8546b9 100%);
   background-size: 100% 100%, cover, cover, cover;
   background-position: center;
   background-repeat: no-repeat;
-  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .16);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .25);
 }
 #gst-reports.gst-feature-row { background-image: url("../asset/frms_bg/frm_bcgd2.png?v=379a937adf0b"); }
 #gst-filing-status.gst-feature-row { background-image: url("../asset/frms_bg/frm_bcgd3.jpg?v=9e2b6be01180"); }
@@ -1718,7 +1718,7 @@
   background-repeat: no-repeat;
 }
 
-/* Crisp high-contrast copy over the dark Returns artwork. */
+/* Crisp high-contrast copy over the saturated Returns artwork. */
 #gst-return .gst-feature-row-copy :is(h2, p, li) {
   color: #ffffff;
   text-shadow: none;
@@ -1727,7 +1727,7 @@
   color: #edf6f2;
 }
 #gst-return .gst-feature-row-copy li {
-  background: rgba(15, 24, 29, .78);
+  background: rgba(91, 49, 132, .82);
   border-color: rgba(235, 255, 247, .3);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, .08);
   font-weight: 650;
