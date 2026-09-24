@@ -4,7 +4,13 @@
   // Delegation also covers the GST section loaded into the homepage.
   document.addEventListener('click', event => {
     const lane = event.target.closest('.gst-billing-truck-lane');
-    if (!lane || running.has(lane)) return;
+    if (!lane) return;
+    const counters = lane.closest('.gst-billing-intro-visual')?.querySelectorAll('.gst-billing-journey b');
+    counters?.forEach(counter => {
+      const current = Number.parseInt(counter.textContent, 10) || 0;
+      counter.textContent = String(current + Math.floor(Math.random() * 30) + 1).padStart(2, '0');
+    });
+    if (running.has(lane)) return;
     const truck = lane.querySelector('.gst-billing-truck');
     if (!truck || typeof truck.animate !== 'function') return;
     const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
