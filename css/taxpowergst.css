@@ -1727,7 +1727,7 @@
   color: #284536;
 }
 #gst-return .gst-feature-row-copy li {
-  color: #ffffff;
+  color: #17382e;
   background: transparent;
   border-color: rgba(235, 255, 247, .3);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, .08);
@@ -1735,7 +1735,10 @@
   letter-spacing: 0;
 }
 #gst-return .gst-typing-keyword {
-  color: inherit;
-  background: transparent;
-  box-shadow: none;
+  padding: 2px 5px;
+  border-radius: 4px;
+  color: #17382e;
+  font-weight: 800;
+  background: rgba(255, 255, 255, .8);
+  box-shadow: inset 0 -2px 0 rgba(244, 122, 34, .8);
 }
