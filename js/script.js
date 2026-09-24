@@ -295,6 +295,8 @@ function initTaxPowerSite() {
     home: 'index.html',
     taxpowergst: 'taxpowergst.html',
     'gst-return': 'taxpowergst.html',
+    dashboard_bg: 'taxpowergst.html',
+    'gst-billing-intro': 'taxpowergst.html',
     'gst-einvoice': 'taxpowergst.html',
     taxpowertds: 'taxpowertds.html',
     pricing: 'pricing.html',
@@ -634,6 +636,7 @@ function initTaxPowerSite() {
     }
 
     if (!targetSection) {
+      event.preventDefault();
       const onSectionsLoaded = () => {
         document.removeEventListener('taxpower:sections-loaded', onSectionsLoaded);
         handleSamePageNavClick(event, linkElement, activeItem);

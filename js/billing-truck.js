@@ -14,13 +14,14 @@
     const frames = reduced
       ? [{ opacity: 1 }, { opacity: .55 }, { opacity: 1 }]
       : [
-          { transform: 'translateX(0)', opacity: 1, offset: 0 },
+          { transform: 'translateX(0)', opacity: 1, offset: 0, easing: 'cubic-bezier(.4,0,.8,.6)' },
           { transform: `translateX(${exit}px)`, opacity: 1, offset: .42 },
           // Reuse the artwork only while fully outside the clipped lane.
           { transform: `translateX(${exit}px)`, opacity: 0, offset: .43 },
           { transform: `translateX(${entry}px)`, opacity: 0, offset: .44 },
-          { transform: `translateX(${entry}px)`, opacity: 1, offset: .45 },
-          { transform: `translateX(${parkingOvershoot}px)`, opacity: 1, offset: .82 },
+          { transform: `translateX(${entry}px)`, opacity: 1, offset: .45, easing: 'cubic-bezier(.2,.7,.3,1)' },
+          { transform: `translateX(${parkingOvershoot}px)`, opacity: 1, offset: .78 },
+          { transform: `translateX(${parkingOvershoot}px)`, opacity: 1, offset: .84, easing: 'ease-in-out' },
           { transform: 'translateX(0)', opacity: 1, offset: 1 }
         ];
     const animation = truck.animate(frames, { duration: reduced ? 400 : 4200, easing: 'ease-in-out' });
