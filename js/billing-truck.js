@@ -1,16 +1,28 @@
 (() => {
   'use strict';
   const running = new WeakMap();
+  function animateCount(counter, increment, reduced) {
+    let value = Number.parseInt(counter.textContent, 10) || 0;
+    const target = value + increment;
+    const paint = () => { counter.textContent = String(value).padStart(2, '0'); };
+    if (reduced) { value = target; paint(); return; }
+    let previous = 0;
+    function step(time) {
+      if (!counter.isConnected) return;
+      if (!previous) previous = time;
+      if (time - previous >= 55) {
+        value += 1;
+        paint();
+        previous = time;
+      }
+      if (value < target) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
   // Delegation also covers the GST section loaded into the homepage.
   document.addEventListener('click', event => {
     const lane = event.target.closest('.gst-billing-truck-lane');
-    if (!lane) return;
-    const counters = lane.closest('.gst-billing-intro-visual')?.querySelectorAll('.gst-billing-journey b');
-    counters?.forEach(counter => {
-      const current = Number.parseInt(counter.textContent, 10) || 0;
-      counter.textContent = String(current + Math.floor(Math.random() * 30) + 1).padStart(2, '0');
-    });
-    if (running.has(lane)) return;
+    if (!lane || running.has(lane)) return;
     const truck = lane.querySelector('.gst-billing-truck');
     if (!truck || typeof truck.animate !== 'function') return;
     const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -32,6 +44,9 @@
         ];
     const animation = truck.animate(frames, { duration: reduced ? 400 : 4200, easing: 'ease-in-out' });
     running.set(lane, animation);
+    // Count only after a new truck animation actually starts.
+    const counters = lane.closest('.gst-billing-intro-visual')?.querySelectorAll('.gst-billing-journey b');
+    counters?.forEach(counter => animateCount(counter, Math.floor(Math.random() * 30) + 1, reduced));
     const clear = () => running.delete(lane);
     animation.onfinish = clear;
     animation.oncancel = clear;
