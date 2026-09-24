@@ -1191,116 +1191,27 @@ body {
   border-right: 0;
 }
 
-.trusted-companies-section {
-  width: 100%;
-  padding: 16px 20px 46px;
-  margin-top: 0;
-  position: relative;
-  z-index: 2;
-}
 
-.trusted-companies-inner {
-  width: min(1120px, 100%);
-  margin: 0 auto;
-  text-align: center;
-}
 
-.trusted-title {
-  margin-bottom: 22px;
-  color: #00b4d8;
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: 28px;
-  font-weight: 800;
-  line-height: 1.2;
-  display: block;
-}
 
-.company-logo-marquee {
-  position: relative;
-  overflow: hidden;
-  width: 100%;
-  padding: 18px 0;
-  mask-image: linear-gradient(90deg, transparent, #000 9%, #000 91%, transparent);
-}
 
-.company-logo-track {
-  display: flex;
-  width: max-content;
-  gap: 0;
-  animation: companyLogoScroll 32s linear infinite;
-  will-change: transform;
-}
 
-.company-logo-marquee:hover .company-logo-track,
-.company-logo-marquee.is-logo-hovered .company-logo-track {
-  animation-play-state: paused;
-}
 
-.company-logo-card {
-  width: auto;
-  min-width: 150px;
-  height: 115px;
-  border-radius: 6px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 20px;
-  padding: 8px 12px;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
-  flex: 0 0 auto;
-  flex-shrink: 0;
-  opacity: 1;
-  transform: scale(1);
-  transform-origin: center;
-  transition: transform 0.3s ease, opacity 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
-  backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
-}
 
-.company-logo-card img {
-  width: 100%;
-  height: 100%;
-  max-width: 122px;
-  max-height: 78px;
-  object-fit: contain;
-  display: block;
-  opacity: 1 !important;
-  filter: none !important;
-  transform: none !important;
-  transition: opacity 0.3s ease;
-  backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
-  image-rendering: -webkit-optimize-contrast;
-}
 
-.company-logo-marquee.is-logo-hovered .company-logo-card {
-  opacity: 0.85;
-  transform: scale(0.95);
-  filter: none !important;
-}
 
-.company-logo-card:hover,
-.company-logo-card.is-active-logo,
-.company-logo-marquee.is-logo-hovered .company-logo-card:hover,
-.company-logo-marquee.is-logo-hovered .company-logo-card.is-active-logo {
-  border-color: #00b4d8;
-  box-shadow: 0 12px 25px rgba(0, 180, 216, 0.18);
-  opacity: 1 !important;
-  filter: none !important;
-  transform: translateY(-3px) scale(1.04);
-  z-index: 5;
-  background: #ffffff;
-}
 
-.company-logo-card:hover img,
-.company-logo-card.is-active-logo img,
-.company-logo-marquee.is-logo-hovered .company-logo-card:hover img,
-.company-logo-marquee.is-logo-hovered .company-logo-card.is-active-logo img {
-  filter: none !important;
-  opacity: 1 !important;
-  transform: scale(1.35) !important;
-  transition: transform 0.3s ease !important;
-}
+
+
+
+
+
+
+
+
+
+
+
 
 .page-section {
   width: 100%;
@@ -3305,15 +3216,7 @@ body.demo-form-open {
   }
 }
 
-@keyframes companyLogoScroll {
-  from {
-    transform: translateX(0);
-  }
 
-  to {
-    transform: translateX(-50%);
-  }
-}
 
 :is(a, button):focus-visible {
   outline: 3px solid #00b4d8;
@@ -3604,31 +3507,15 @@ body.demo-form-open {
     gap: 12px;
   }
 
-  .trusted-companies-section {
-    padding: 12px 16px 34px;
-    margin-top: 0;
-  }
 
-  .trusted-title {
-    font-size: 22px;
-  }
 
-  .company-logo-track {
-    gap: 0;
-    animation-duration: 28s;
-  }
 
-  .company-logo-card {
-    min-width: 132px;
-    height: 96px;
-    margin: 0 12px;
-    padding: 8px 14px;
-  }
 
-  .company-logo-card img {
-    max-width: 104px;
-    max-height: 62px;
-  }
+
+
+
+
+
 
   html {
     scroll-padding-top: 96px;
@@ -3707,184 +3594,47 @@ body.demo-form-open {
    TRUSTED COMPANIES MARQUEE SECTION
    ============================================================ */
 
-.trusted-companies-section {
-  width: 100%;
-  padding: 40px 0px;
-  position: relative;
-  overflow: hidden;
-}
 
-.trusted-companies-section::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 2px;
-  background: linear-gradient(90deg, transparent, #f47a22, #00b4d8, transparent);
-}
 
-.trusted-companies-section::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 2px;
-  background: linear-gradient(90deg, transparent, #00b4d8, #f47a22, transparent);
-}
 
-.trusted-companies-inner {
-  max-width: 100%;
-  margin: 0 auto;
-}
 
-.trusted-title {
-  text-align: center;
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: clamp(20px, 3vw, 28px);
-  font-weight: 700;
-  color: #1a202c;
-  margin-bottom: 8px;
-  letter-spacing: -0.02em;
-  padding: 0 24px;
-}
 
-.trusted-subtitle {
-  text-align: center;
-  font-size: 15.2px;
-  color: #6b7280;
-  margin-bottom: 44px;
-  padding: 0 24px;
-  font-family: 'Plus Jakarta Sans', sans-serif;
-}
+
+
+
+
+
+
 
 /* Marquee wrapper with fade edges */
-.company-logo-marquee {
-  position: relative;
-  width: 100%;
-  overflow: hidden;
-  padding: 12px 0;
-}
 
-.company-logo-marquee::before,
-.company-logo-marquee::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  width: 140px;
-  z-index: 2;
-  pointer-events: none;
-}
 
-.company-logo-marquee::before {
-  left: 0;
-  background: linear-gradient(to right, #eef2f7 0%, transparent 100%);
-}
 
-.company-logo-marquee::after {
-  right: 0;
-  background: linear-gradient(to left, #eef2f7 0%, transparent 100%);
-}
+
+
+
+
 
 /* Scrolling track */
-.company-logo-track {
-  display: flex;
-  align-items: center;
-  gap: 28px;
-  width: max-content;
-  animation: marquee-scroll 32s linear infinite;
-  will-change: transform;
-}
 
-.company-logo-marquee:hover .company-logo-track {
-  animation-play-state: paused;
-}
 
-@keyframes marquee-scroll {
-  0% {
-    transform: translateX(0);
-  }
 
-  100% {
-    transform: translateX(-50%);
-  }
-}
+
+
 
 /* Individual logo cards ??? no box, bare logo */
-.company-logo-card {
-  flex: 0 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0 24px;
-  cursor: default;
-  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
-}
 
-.company-logo-card:hover {
-  transform: scale(1.1);
-  z-index: 1;
-}
 
-.company-logo-card img {
-  width: 160px;
-  height: 100px;
-  object-fit: contain;
-  mix-blend-mode: multiply;
-  filter: grayscale(30%) opacity(0.8);
-  transition: filter 0.3s ease, transform 0.3s ease;
-  display: block;
-}
 
-.company-logo-card:hover img {
-  filter: grayscale(0%) opacity(1);
-}
+
+
+
+
 
 /* Responsive tweaks */
-@media (max-width: 768px) {
-  .trusted-companies-section {
-    padding: 44px 0 52px;
-  }
 
-  .trusted-title {
-    font-size: 19.2px;
-    margin-bottom: 6px;
-  }
 
-  .trusted-subtitle {
-    margin-bottom: 32px;
-    font-size: 14px;
-  }
 
-  .company-logo-card img {
-    width: 120px;
-    height: 76px;
-  }
-
-  .company-logo-track {
-    gap: 20px;
-    animation-duration: 24s;
-  }
-
-  .company-logo-marquee::before,
-  .company-logo-marquee::after {
-    width: 80px;
-  }
-}
-
-@media (max-width: 480px) {
-  .company-logo-card img {
-    width: 100px;
-    height: 64px;
-  }
-
-  .company-logo-track {
-    gap: 16px;
-    animation-duration: 20s;
-  }
-}
 
 .nav-item:focus-visible {
   outline: none;
@@ -5055,3 +4805,4 @@ body.demo-form-open {
     transition: none;
   }
 }
+

@@ -269,32 +269,6 @@ function initTaxPowerSite() {
   updateSliderView();
   startAutoSlide();
 
-  // module 01b: trusted company logo marquee hover focus
-  const companyLogoMarquee = document.querySelector('.company-logo-marquee');
-  const companyLogoCards = Array.from(document.querySelectorAll('.company-logo-card'));
-
-  if (companyLogoMarquee && companyLogoCards.length) {
-    function clearLogoFocus() {
-      companyLogoMarquee.classList.remove('is-logo-hovered');
-      companyLogoCards.forEach((card) => {
-        card.classList.remove('is-active-logo');
-      });
-    }
-
-    companyLogoCards.forEach((card) => {
-      card.addEventListener('mouseenter', () => {
-        companyLogoMarquee.classList.add('is-logo-hovered');
-        companyLogoCards.forEach((logoCard) => {
-          logoCard.classList.toggle('is-active-logo', logoCard === card);
-        });
-      });
-    });
-
-    companyLogoMarquee.addEventListener('mouseleave', clearLogoFocus);
-    companyLogoMarquee.addEventListener('blur', clearLogoFocus, true);
-  }
-
-
   // module 02: premium navbar smooth sliding tracker background
   const navbarLogo = document.querySelector('[data-logo-home-link]');
   const navLinksContainer = document.getElementById('navLinksContainer');
@@ -2098,4 +2072,5 @@ function bootTaxPowerSite() {
 }
 
 bootTaxPowerSite();
+
 
