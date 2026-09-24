@@ -40,4 +40,22 @@
 <path d="M26 45H103M26 70H90M26 95H100" stroke="white" stroke-width="7" stroke-linecap="round"/>
 </g>
 <path d="M180 170C380 85 480 240 625 250S772 330 816 436" stroke="#B999D7" stroke-width="2" stroke-dasharray="6 9" opacity=".25"/>
+
+<!-- First-frame filing route: coloured dashes travel left to right. -->
+<style>
+  path[d^="M994 597H1090"] {
+    stroke: #9461cf;
+    stroke-width: 2.5;
+    stroke-linecap: round;
+    opacity: .9;
+    animation: gstReturnsDashTrain 1.2s linear infinite;
+  }
+  @keyframes gstReturnsDashTrain {
+    from { stroke-dashoffset: 0; }
+    to { stroke-dashoffset: -24; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    path[d^="M994 597H1090"] { animation: none; }
+  }
+</style>
 </svg>
