@@ -1785,7 +1785,7 @@
   background-repeat: no-repeat;
 }
 
-/* Preserve screenshot proportions when matching the two desktop frame heights. */
+/* Preserve screenshot proportions at tablet and desktop sizes. */
 @media (min-width: 641px) {
   :is(#gst-return, #gst-reports) .gst-feature-row-media img {
     height: auto;
@@ -1840,5 +1840,29 @@
   :is(#gst-return, #gst-reports) .gst-feature-row-copy {
     order: 1;
     padding: 20px 24px 28px;
+  }
+}
+
+/* On desktop the screenshot alone determines its frame's automatic height.
+   Keep excess copy accessible without stretching the frame or cropping the image. */
+@media (min-width: 901px) {
+  :is(#gst-return, #gst-reports).gst-feature-row {
+    height: auto;
+    min-height: 0;
+  }
+  :is(#gst-return, #gst-reports) .gst-feature-row-media {
+    padding-block: 0;
+    margin-block: 0;
+  }
+  :is(#gst-return, #gst-reports) .gst-feature-row-media img {
+    height: auto;
+    object-fit: contain;
+  }
+  :is(#gst-return, #gst-reports) .gst-feature-row-copy {
+    contain: size;
+    align-self: stretch;
+    min-height: 0;
+    overflow-y: auto;
+    scrollbar-width: thin;
   }
 }
