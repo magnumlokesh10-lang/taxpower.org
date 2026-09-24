@@ -1,15 +1,34 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="620" viewBox="0 0 1440 620" preserveAspectRatio="none" fill="none">
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="620" viewBox="0 0 1440 620" fill="none">
 <defs>
-<linearGradient id="wave" x1="0" y1="0" x2="1440" y2="620" gradientUnits="userSpaceOnUse"><stop stop-color="#65D6F1"/><stop offset=".5" stop-color="#82ECE0"/><stop offset="1" stop-color="#57BCEB"/></linearGradient>
-<linearGradient id="fold" x1="1100" y1="0" x2="1440" y2="300" gradientUnits="userSpaceOnUse"><stop stop-color="#9CEDEB"/><stop offset="1" stop-color="#54AEE9"/></linearGradient>
+<pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse"><path d="M48 0H0V48" stroke="#369DC0" stroke-opacity=".10" stroke-width="1"/></pattern>
+<linearGradient id="paper" x1="0" y1="0" x2="1" y2="1"><stop stop-color="white" stop-opacity=".7"/><stop offset="1" stop-color="#88D9F0" stop-opacity=".25"/></linearGradient>
+<linearGradient id="bar" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#52C8DD"/><stop offset="1" stop-color="#90E9D9"/></linearGradient>
 </defs>
-<!-- Broad flowing forms occupy the exposed frame edges, not the copy center. -->
-<path d="M0 0H680C520 80 380 6 240 58S80 178 0 150Z" fill="url(#wave)" opacity=".85"/>
-<path d="M0 155C94 190 159 80 287 65S503 90 655 8" stroke="white" stroke-width="3" stroke-opacity=".85"/>
-<path d="M0 184C107 205 188 108 305 91S490 117 642 43" stroke="#33ACD1" stroke-width="2" stroke-opacity=".45"/>
-<path d="M1028 0H1440V330C1302 302 1384 167 1228 129S1104 58 1028 0Z" fill="url(#fold)" opacity=".75"/>
-<path d="M1082 0C1148 79 1157 97 1248 115S1354 290 1440 285" stroke="white" stroke-width="3" stroke-opacity=".8"/>
-<path d="M0 548C210 456 370 664 600 548S900 465 1100 554S1320 577 1440 475V620H0Z" fill="url(#wave)" opacity=".8"/>
-<path d="M0 542C210 450 370 658 600 542S900 459 1100 548S1320 571 1440 469" stroke="white" stroke-width="3" stroke-opacity=".85"/>
-<path d="M0 579C210 487 370 695 600 579S900 496 1100 585S1320 608 1440 506" stroke="#309DBF" stroke-width="2" stroke-opacity=".35"/>
+<!-- Decorative analytics motifs only: no invented metrics or report data. -->
+<rect width="1440" height="620" fill="url(#grid)"/>
+<g transform="translate(1210 -32) rotate(14 100 110)" opacity=".65">
+<rect x="16" y="12" width="188" height="210" rx="20" fill="#8EDAE8" fill-opacity=".3"/>
+<rect width="188" height="210" rx="20" fill="url(#paper)" stroke="white" stroke-width="2"/>
+<path d="M28 38H105M28 55H77" stroke="#398EAD" stroke-opacity=".5" stroke-width="6" stroke-linecap="round"/>
+<path d="M28 89H159M28 115H159M28 141H159M28 167H159M75 78V180M119 78V180" stroke="#45ACCA" stroke-opacity=".35" stroke-width="2"/>
+</g>
+<g transform="translate(694 518)" opacity=".7">
+<path d="M0 78H230M0 48H230M0 18H230" stroke="#48A6BB" stroke-opacity=".23"/>
+<rect x="15" y="42" width="24" height="36" rx="5" fill="url(#bar)"/>
+<rect x="59" y="24" width="24" height="54" rx="5" fill="url(#bar)"/>
+<rect x="103" y="35" width="24" height="43" rx="5" fill="url(#bar)"/>
+<rect x="147" y="3" width="24" height="75" rx="5" fill="url(#bar)"/>
+<rect x="191" y="-18" width="24" height="96" rx="5" fill="url(#bar)"/>
+<path d="M27 31L71 13L115 24L159 -8L203 -29" stroke="#319AB7" stroke-width="3" stroke-linejoin="round"/>
+<g fill="white" stroke="#319AB7" stroke-width="2"><circle cx="27" cy="31" r="4"/><circle cx="71" cy="13" r="4"/><circle cx="115" cy="24" r="4"/><circle cx="159" cy="-8" r="4"/><circle cx="203" cy="-29" r="4"/></g>
+</g>
+<g transform="translate(-27 551)" opacity=".45">
+<circle r="78" stroke="white" stroke-width="23"/>
+<circle r="78" stroke="#53C3CE" stroke-width="23" stroke-dasharray="210 490" transform="rotate(-90)"/>
+<circle r="47" stroke="#65BFD9" stroke-width="1.5"/>
+</g>
+<g transform="translate(630 14)" opacity=".45">
+<rect width="115" height="38" rx="10" fill="url(#paper)" stroke="white"/>
+<path d="M14 24L29 18L42 23L57 11L71 16L97 9" stroke="#329FB9" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
 </svg>

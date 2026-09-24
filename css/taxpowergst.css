@@ -1630,11 +1630,11 @@
   background-repeat: no-repeat;
   box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .8);
 }
-/* Reports: crisp aqua waves with a light sky-blue base. */
+/* Reports: report sheets and analytics motifs on the existing sky-blue base. */
 #gst-reports.gst-feature-row {
   background-color: #dcf7ff;
   background-image:
-    url("../asset/frms_bg/gst-reports-abstract.svg?v=20260924-aqua-waves"),
+    url("../asset/frms_bg/gst-reports-abstract.svg?v=20260924-analytics"),
     radial-gradient(ellipse at 0% 55%, #ecfcff 0%, transparent 65%),
     linear-gradient(115deg, #d8f3ff 0%, #c7f5ed 54%, #b5e9ff 100%);
   background-size: 100% 100%, cover, cover;
