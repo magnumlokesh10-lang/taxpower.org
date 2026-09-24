@@ -4,6 +4,7 @@
 <linearGradient id="paper" x1="0" y1="0" x2="1" y2="1"><stop stop-color="white" stop-opacity=".7"/><stop offset="1" stop-color="#88D9F0" stop-opacity=".25"/></linearGradient>
 <linearGradient id="bar" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#52C8DD"/><stop offset="1" stop-color="#90E9D9"/></linearGradient>
 </defs>
+<g transform="translate(1440 0) scale(-1 1)">
 <!-- Decorative analytics motifs only: no invented metrics or report data. -->
 <rect width="1440" height="620" fill="url(#grid)"/>
 <g transform="translate(1210 -32) rotate(14 100 110)" opacity=".65">
@@ -30,5 +31,6 @@
 <g transform="translate(630 14)" opacity=".45">
 <rect width="115" height="38" rx="10" fill="url(#paper)" stroke="white"/>
 <path d="M14 24L29 18L42 23L57 11L71 16L97 9" stroke="#329FB9" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
 </g>
 </svg>
