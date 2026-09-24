@@ -1617,18 +1617,18 @@
   background-repeat: no-repeat;
   box-shadow: none;
 }
-/* Rich, bright jade and violet for the Returns abstract frame. */
+/* Bright mint, lemon and lilac abstract Returns frame. */
 #gst-return.gst-feature-row {
-  background-color: #7950b4;
+  background-color: #edffd8;
   background-image:
-    url("../asset/frms_bg/gst-returns-abstract.svg?v=20260924-dark"),
-    radial-gradient(ellipse at 8% 85%, rgba(48, 221, 155, .55) 0%, transparent 58%),
-    radial-gradient(ellipse at 100% 0%, rgba(174, 87, 228, .38) 0%, transparent 52%),
-    linear-gradient(115deg, #159d79 0%, #468d87 42%, #7650b2 72%, #8546b9 100%);
+    url("../asset/frms_bg/gst-returns-abstract.svg?v=20260924-daylight"),
+    radial-gradient(ellipse at 8% 85%, rgba(91, 239, 171, .5) 0%, transparent 58%),
+    radial-gradient(ellipse at 100% 0%, rgba(209, 166, 255, .42) 0%, transparent 52%),
+    linear-gradient(115deg, #aff4d2 0%, #f1ffc7 44%, #f6edff 72%, #e7d2ff 100%);
   background-size: 100% 100%, cover, cover, cover;
   background-position: center;
   background-repeat: no-repeat;
-  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .25);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .8);
 }
 #gst-reports.gst-feature-row { background-image: url("../asset/frms_bg/frm_bcgd2.png?v=379a937adf0b"); }
 #gst-filing-status.gst-feature-row { background-image: url("../asset/frms_bg/frm_bcgd3.jpg?v=9e2b6be01180"); }
@@ -1718,23 +1718,23 @@
   background-repeat: no-repeat;
 }
 
-/* Crisp high-contrast copy over the saturated Returns artwork. */
+/* Sharp dark copy on the bright Returns frame. */
 #gst-return .gst-feature-row-copy :is(h2, p, li) {
-  color: #ffffff;
+  color: #17382e;
   text-shadow: none;
 }
 #gst-return .gst-feature-row-copy p {
-  color: #edf6f2;
+  color: #284536;
 }
 #gst-return .gst-feature-row-copy li {
-  background: rgba(91, 49, 132, .82);
-  border-color: rgba(235, 255, 247, .3);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .08);
+  background: transparent;
+  border-color: rgba(255, 255, 255, .75);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .45);
   font-weight: 650;
   letter-spacing: 0;
 }
 #gst-return .gst-typing-keyword {
-  color: #ffffff;
+  color: inherit;
   background: transparent;
   box-shadow: none;
 }
