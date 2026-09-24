@@ -1622,9 +1622,9 @@
   background-color: #edffd8;
   background-image:
     url("../asset/frms_bg/gst-returns-abstract.svg?v=20260924-daylight"),
-    radial-gradient(ellipse at 8% 85%, rgba(91, 239, 171, .5) 0%, transparent 58%),
-    radial-gradient(ellipse at 100% 0%, rgba(209, 166, 255, .42) 0%, transparent 52%),
-    linear-gradient(115deg, #aff4d2 0%, #f1ffc7 44%, #f6edff 72%, #e7d2ff 100%);
+    radial-gradient(ellipse at 92% 85%, rgba(91, 239, 171, .5) 0%, transparent 58%),
+    radial-gradient(ellipse at 0% 0%, rgba(209, 166, 255, .42) 0%, transparent 52%),
+    linear-gradient(245deg, #aff4d2 0%, #f1ffc7 44%, #f6edff 72%, #e7d2ff 100%);
   background-size: 100% 100%, cover, cover, cover;
   background-position: center;
   background-repeat: no-repeat;
