@@ -2004,3 +2004,11 @@
   .gst-billing-intro .gst-intro-copy h2 { font-size: clamp(38px, 9vw, 60px); }
   .gst-billing-intro-visual { width: 100%; max-width: 540px; margin-inline: auto; box-sizing: border-box; }
 }
+
+/* A tap-friendly truck adds motion without replacing the billing documents. */
+.gst-billing-truck-caption { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 4px 12px; color: #315565; font-size: 11px; font-weight: 700; }
+.gst-billing-truck-caption span { color: #617f8f; font-weight: 400; }
+.gst-billing-truck-lane { position: relative; display: block; width: 100%; height: 72px; margin: 4px 0 16px; padding: 0; overflow: hidden; border: 0; border-bottom: 2px solid #b7dce8; border-radius: 8px; background: linear-gradient(0deg, #e5f4f9, transparent 70%); cursor: pointer; touch-action: manipulation; }
+.gst-billing-truck { position: absolute; left: 4px; bottom: 1px; width: 104px; height: 65px; pointer-events: none; transform-origin: center; }
+.gst-billing-truck-lane:focus-visible { outline: 3px solid #f97316; outline-offset: 3px; }
+@media (hover: hover) { .gst-billing-truck-lane:hover { background-color: #eaf7fc; } }
