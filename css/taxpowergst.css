@@ -1727,9 +1727,10 @@
   color: #284536;
 }
 #gst-return .gst-feature-row-copy li {
-  background: transparent;
-  border-color: rgba(255, 255, 255, .75);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .45);
+  color: #ffffff;
+  background: rgba(91, 49, 132, .82);
+  border-color: rgba(235, 255, 247, .3);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .08);
   font-weight: 650;
   letter-spacing: 0;
 }
