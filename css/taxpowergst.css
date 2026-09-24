@@ -1617,18 +1617,18 @@
   background-repeat: no-repeat;
   box-shadow: none;
 }
-/* Light abstract ribbons and sculpted rings for the Returns frame. */
+/* Deep emerald and plum abstract background for the Returns frame. */
 #gst-return.gst-feature-row {
-  background-color: #eefbf5;
+  background-color: #19252b;
   background-image:
-    url("../asset/frms_bg/gst-returns-abstract.svg?v=20260924"),
-    radial-gradient(ellipse at 12% 80%, #b9f3da 0%, transparent 58%),
-    radial-gradient(ellipse at 100% 10%, #e7d7fb 0%, transparent 52%),
-    linear-gradient(115deg, #e2fbef 0%, #f5fcf4 50%, #f2eafb 100%);
+    url("../asset/frms_bg/gst-returns-abstract.svg?v=20260924-dark"),
+    radial-gradient(ellipse at 12% 80%, #12634e 0%, transparent 58%),
+    radial-gradient(ellipse at 100% 10%, #54316e 0%, transparent 52%),
+    linear-gradient(115deg, #123c32 0%, #19252b 50%, #33213f 100%);
   background-size: 100% 100%, cover, cover, cover;
   background-position: center;
   background-repeat: no-repeat;
-  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .8);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .16);
 }
 #gst-reports.gst-feature-row { background-image: url("../asset/frms_bg/frm_bcgd2.png?v=379a937adf0b"); }
 #gst-filing-status.gst-feature-row { background-image: url("../asset/frms_bg/frm_bcgd3.jpg?v=9e2b6be01180"); }
@@ -1716,4 +1716,25 @@
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
+}
+
+/* Crisp high-contrast copy over the dark Returns artwork. */
+#gst-return .gst-feature-row-copy :is(h2, p, li) {
+  color: #ffffff;
+  text-shadow: none;
+}
+#gst-return .gst-feature-row-copy p {
+  color: #edf6f2;
+}
+#gst-return .gst-feature-row-copy li {
+  background: rgba(15, 24, 29, .78);
+  border-color: rgba(235, 255, 247, .3);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .08);
+  font-weight: 650;
+  letter-spacing: 0;
+}
+#gst-return .gst-typing-keyword {
+  color: #ffffff;
+  background: transparent;
+  box-shadow: none;
 }

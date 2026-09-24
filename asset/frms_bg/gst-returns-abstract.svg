@@ -1,14 +1,14 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1440" height="620" viewBox="0 0 1440 620" fill="none">
 <defs>
-  <linearGradient id="ribbon" x1="70" y1="480" x2="850" y2="720" gradientUnits="userSpaceOnUse"><stop stop-color="#65DDB3"/><stop offset=".5" stop-color="#C5FAE4"/><stop offset="1" stop-color="#AA93E8"/></linearGradient>
-  <linearGradient id="ring" x1="1180" y1="0" x2="1500" y2="400" gradientUnits="userSpaceOnUse"><stop stop-color="#F8F3FF"/><stop offset=".45" stop-color="#C6A7F1"/><stop offset="1" stop-color="#EEE3FC"/></linearGradient>
-  <radialGradient id="pearl" cx=".3" cy=".25" r=".8"><stop stop-color="#FFFFFF"/><stop offset=".45" stop-color="#DDF8EC"/><stop offset="1" stop-color="#77CFAE"/></radialGradient>
+  <linearGradient id="ribbon" x1="70" y1="480" x2="850" y2="720" gradientUnits="userSpaceOnUse"><stop stop-color="#16876A"/><stop offset=".5" stop-color="#5BCDA5"/><stop offset="1" stop-color="#8660B8"/></linearGradient>
+  <linearGradient id="ring" x1="1180" y1="0" x2="1500" y2="400" gradientUnits="userSpaceOnUse"><stop stop-color="#BA96E0"/><stop offset=".45" stop-color="#744A99"/><stop offset="1" stop-color="#AB7CCE"/></linearGradient>
+  <radialGradient id="pearl" cx=".3" cy=".25" r=".8"><stop stop-color="#E6FFF3"/><stop offset=".45" stop-color="#71C5A6"/><stop offset="1" stop-color="#20795E"/></radialGradient>
   <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%"><feDropShadow dx="0" dy="10" stdDeviation="12" flood-color="#655483" flood-opacity=".12"/></filter>
 </defs>
 <!-- Edge decoration leaves the heading and bullet column quiet. -->
 <path d="M-130 495C160 342 333 708 669 565S1040 610 1125 742" stroke="url(#ribbon)" stroke-width="94" stroke-linecap="round" opacity=".7"/>
 <path d="M-130 463C160 310 333 676 669 533S1040 578 1125 710" stroke="white" stroke-opacity=".6" stroke-width="2"/>
-<path d="M-80 70C130 174 350 -120 630 5" stroke="#B3ECD6" stroke-width="70" opacity=".5"/>
+<path d="M-80 70C130 174 350 -120 630 5" stroke="#268B6C" stroke-width="70" opacity=".5"/>
 <path d="M-60 30C150 134 370 -160 650 -35" stroke="white" stroke-opacity=".8" stroke-width="2"/>
 <ellipse cx="1458" cy="100" rx="139" ry="208" transform="rotate(-28 1458 100)" stroke="url(#ring)" stroke-width="46" filter="url(#shadow)"/>
 <ellipse cx="1458" cy="100" rx="163" ry="232" transform="rotate(-28 1458 100)" stroke="white" stroke-opacity=".75" stroke-width="2"/>
