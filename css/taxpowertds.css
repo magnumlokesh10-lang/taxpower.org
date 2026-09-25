@@ -160,3 +160,9 @@
 .tds-form-option[aria-selected="true"] .tds-option-check { visibility: visible; }
 .tds-filing-demo { overflow: visible; }
 .tds-filing-demo .tds-preview-header { border-radius: 16px 16px 0 0; }
+
+/* Clear separators between old/new certificate pairs. */
+.tds-highlights .tds-certificate-chip { display: inline-flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 6px 10px; }
+.tds-certificate-pairs { display: inline-flex; align-items: center; flex-wrap: wrap; justify-content: center; gap: 8px 0; }
+.tds-certificate-pairs > span { display: inline-flex; align-items: center; white-space: nowrap; color: #0b3b3b; font-weight: 700; }
+.tds-certificate-pairs > span + span::before { content: ''; flex-shrink: 0; width: 5px; height: 5px; margin-inline: 10px; border-radius: 50%; background: #0b3b3b; }
