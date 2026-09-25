@@ -12,8 +12,8 @@
   <meta name="keywords"
     content="TaxPower GST, TaxPower TDS, GST software, TDS software, tax compliance, e-invoicing, GST return filing, TDS return filing">
   <link rel="stylesheet" href="css/stylesheet.css">
-  <link rel="stylesheet" href="css/taxpowertds.css?v=20260925-light-aligned">
-  <script src="js/tds-intro.js?v=20260925-desk" defer></script>
+  <link rel="stylesheet" href="css/taxpowertds.css?v=20260925-upload-demo">
+  <script src="js/tds-intro.js?v=20260925-upload-demo" defer></script>
   <script src="js/nav-loader.js" defer></script>
   <script src="js/script.js" defer></script>
   <script src="js/page-loader.js" defer></script>
@@ -28,46 +28,80 @@
           <span class="tds-eyebrow">TDS &amp; TCS compliance, connected</span>
           <h1 id="tds-intro-title"><span>TaxPower TDS</span> <em>Software</em></h1>
           <p class="tds-lead">Automate your TDS &amp; TCS compliance, from preparation to filing.</p>
-          <p class="tds-description">Manage salary and deductee data, prepare regular or correction returns, generate FVU files and file through the Income Tax portal. Connect your challan, TRACES and certificate workflows in one organised workspace.</p>
+          <p class="tds-description">Prepare returns, generate FVU files and manage challans, TRACES and certificates in one workspace.</p>
           <ul class="tds-highlights"><li>TDS &amp; TCS Returns</li><li>FVU &amp; e-Filing</li><li>TRACES Integration</li><li>Form 16 / 16A / 27D</li></ul>
           <div class="tds-actions">
             <a class="tds-primary" href="support.html#demo-enquiry" data-demo-product="TaxPower TDS" data-demo-purpose="demo">Book Free Demo</a>
             <a class="tds-secondary" href="#tds-workflow-preview">Explore the workflow <span aria-hidden="true">↗</span></a>
           </div>
         </div>
-        <div class="tds-preview" id="tds-workflow-preview">
-          <div class="tds-preview-header"><img src="asset/swt_icon/taxpower_icon.png" width="32" height="32" alt=""><div><strong>TaxPower TDS</strong><small>Your TDS &amp; TCS workspace</small></div><span class="tds-sample-tag">Demo</span></div>
-          <div class="tds-preview-body">
-            <div class="tds-preview-heading"><h2>Your compliance desk</h2><p>Choose a workflow. Explore the details. Play the demo.</p></div>
-            <div class="tds-tabs" role="tablist" aria-label="TDS demo workflows">
-              <button type="button" role="tab" id="tds-tab-returns" aria-controls="tds-panel-returns" aria-selected="true">Returns</button>
-              <button type="button" role="tab" id="tds-tab-challans" aria-controls="tds-panel-challans" aria-selected="false" tabindex="-1">Challans</button>
-              <button type="button" role="tab" id="tds-tab-traces" aria-controls="tds-panel-traces" aria-selected="false" tabindex="-1">TRACES</button>
+        <div class="tds-preview tds-filing-demo" id="tds-workflow-preview" data-stage="ready">
+          <div class="tds-preview-header"><img src="asset/swt_icon/taxpower_icon.png" width="32" height="32" alt=""><div><strong>TaxPower TDS</strong><small>Return upload &amp; filing</small></div><span class="tds-sample-tag">Interactive demo</span></div>
+          <div class="tds-filing-content">
+            <div class="tds-filing-art">
+              <svg viewBox="0 0 640 330" fill="none" aria-hidden="true" focusable="false">
+                <defs>
+                  <linearGradient id="tds-screen-fill" x2="1" y2="1"><stop stop-color="#fff"/><stop offset="1" stop-color="#e8f7ff"/></linearGradient>
+                  <linearGradient id="tds-file-fill" x2="1" y2="1"><stop stop-color="#fff7eb"/><stop offset="1" stop-color="#ffdfb5"/></linearGradient>
+                </defs>
+                <ellipse cx="337" cy="288" rx="240" ry="25" fill="#d9edf5"/>
+                <ellipse cx="328" cy="162" rx="224" ry="133" fill="#e9f7fd"/>
+                <circle cx="99" cy="79" r="31" fill="#fff0de"/>
+                <circle cx="556" cy="105" r="21" fill="#dff5ef"/>
+                <rect x="187" y="46" width="334" height="221" rx="18" fill="#a2cbdc"/>
+                <rect x="193" y="50" width="322" height="208" rx="15" fill="#285c73"/>
+                <rect x="205" y="64" width="298" height="177" rx="9" fill="url(#tds-screen-fill)"/>
+                <path d="M205 73a9 9 0 0 1 9-9h280a9 9 0 0 1 9 9v25H205z" fill="#dff0f8"/>
+                <circle cx="220" cy="81" r="4" fill="#f5a25c"/><circle cx="234" cy="81" r="4" fill="#78cdb4"/><circle cx="248" cy="81" r="4" fill="#6cbddd"/>
+                <text x="281" y="86" font-family="Arial,sans-serif" font-size="13" font-weight="700" fill="#0b3b3b">TaxPower TDS</text>
+                <g class="tds-screen-upload">
+                  <path d="M311 171h-8a20 20 0 0 1-2-40 29 29 0 0 1 55-3 22 22 0 1 1 14 43h-12" fill="#c9eafb" stroke="#6db8d8" stroke-width="2"/>
+                  <path d="M334 188v-43m-13 13 13-13 13 13" stroke="#0284c7" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+                  <text x="286" y="215" font-family="Arial,sans-serif" font-size="12" fill="#638598">Return filing</text>
+                </g>
+                <g class="tds-filed-stamp">
+                  <circle cx="352" cy="147" r="28" fill="#d6f5e7"/>
+                  <path d="m338 146 10 10 20-23" stroke="#1f9671" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+                  <rect x="244" y="186" width="217" height="31" rx="8" fill="#ecfbf3" stroke="#73caa8" stroke-width="2"/>
+                  <text x="267" y="206" font-family="Arial,sans-serif" font-size="15" font-weight="700" fill="#237c5c">Filed Successfully</text>
+                </g>
+                <path d="M169 260h367l33 18a9 9 0 0 1-8 12H146a9 9 0 0 1-8-12z" fill="#b9dce9"/>
+                <path d="M306 260h94l-9 10h-76z" fill="#86b9ce"/>
+                <path d="M161 289h389" stroke="#7faec2" stroke-width="3" stroke-linecap="round"/>
+                <path class="tds-upload-route" d="M143 187q28-76 116-41" stroke="#f3ac69" stroke-width="3" stroke-linecap="round" stroke-dasharray="5 9"/>
+                <g class="tds-return-file">
+                  <path d="M60 125q0-12 12-12h59l27 27v100q0 12-12 12H72q-12 0-12-12z" fill="url(#tds-file-fill)" stroke="#e9b77f" stroke-width="2"/>
+                  <path d="M131 114v27h26" fill="#ffd49f" stroke="#e9b77f" stroke-width="2" stroke-linejoin="round"/>
+                  <rect x="76" y="157" width="65" height="21" rx="6" fill="#fffaf3"/>
+                  <text x="83" y="172" font-family="Arial,sans-serif" font-size="11" font-weight="700" fill="#ba661f">TDS FILE</text>
+                  <path d="M78 194h59M78 207h46M78 220h53" stroke="#d4a56f" stroke-width="4" stroke-linecap="round"/>
+                </g>
+                <path d="M542 203h14m-7-7v14M150 69h12m-6-6v12" stroke="#8bc4d8" stroke-width="3" stroke-linecap="round"/>
+              </svg>
+              <ol class="tds-filing-steps" aria-label="Demo filing stages"><li data-filing-step="upload">Upload</li><li data-filing-step="validate">Validate</li><li data-filing-step="filed">Filed</li></ol>
             </div>
-            <div class="tds-panel" id="tds-panel-returns" role="tabpanel" aria-labelledby="tds-tab-returns" tabindex="0">
-              <div class="tds-metric"><div><span>Deductee records</span><strong>128</strong></div><span class="tds-status">Sample return</span></div>
-              <div class="tds-form-map">
-                <table><caption>Return forms · old &amp; new names</caption>
-                  <thead><tr><th scope="col">Old form</th><th scope="col">New form</th></tr></thead>
-                  <tbody><tr><td>Form 24Q</td><td>Form 138</td></tr><tr><td>Form 26Q</td><td>Form 140</td></tr><tr><td>Form 27Q</td><td>Form 144</td></tr><tr><td>Form 27EQ</td><td>Form 143</td></tr></tbody>
-                </table>
-              </div>
-              <ul class="tds-checklist"><li><span>Regular &amp; correction returns</span><b>Old &amp; new forms</b></li><li><span>PAN &amp; deduction checks</span><b>Before filing</b></li><li><span>FVU generation &amp; e-filing</span><b>Connected workflow</b></li></ul>
+            <div class="tds-filing-controls">
+              <span class="tds-filing-kicker">Try it yourself</span>
+              <h2>From upload<br> to filed.</h2>
+              <label for="tds-demo-form">Choose a return · old / new form</label>
+              <select id="tds-demo-form">
+                <option value="24Q / 138">Form 24Q / Form 138</option>
+                <option value="26Q / 140">Form 26Q / Form 140</option>
+                <option value="27Q / 144">Form 27Q / Form 144</option>
+                <option value="27EQ / 143">Form 27EQ / Form 143</option>
+              </select>
+              <button type="button" class="tds-primary" data-tds-upload>Upload Return <span aria-hidden="true">↑</span></button>
+              <div class="tds-upload-progress-label"><span>Upload progress</span><b data-tds-percent>0%</b></div>
+              <progress class="tds-upload-progress" max="100" value="0" aria-label="Demo return upload progress"></progress>
+              <p class="tds-upload-status" role="status">Select a form and start the demo.</p>
             </div>
-            <div class="tds-panel" id="tds-panel-challans" role="tabpanel" aria-labelledby="tds-tab-challans" tabindex="0" hidden>
-              <div class="tds-metric"><div><span>Challans in this example</span><strong>12</strong></div><span class="tds-status">Sample records</span></div>
-              <ul class="tds-checklist"><li><span>Import Challan</span><b>e-Filing / TRACES / NSDL BIN</b></li><li><span>Challan mapping &amp; validation</span><b>Review utilisation</b></li><li><span>Interest &amp; late fees</span><b>Automatic computation</b></li></ul>
-            </div>
-            <div class="tds-panel" id="tds-panel-traces" role="tabpanel" aria-labelledby="tds-tab-traces" tabindex="0" hidden>
-              <div class="tds-metric"><div><span>Certificates in this example</span><strong>48</strong></div><span class="tds-status">Try it below</span></div>
-              <ul class="tds-checklist"><li><span>Conso &amp; Justification Reports</span><b>Request &amp; download</b></li><li><span>TDS / TCS certificates</span><b>Form 16 · 16A · 27D</b></li><li><span>Certificate Direct Mail</span><b>Email to employees &amp; deductees</b></li></ul>
-            </div>
-            <div class="tds-demo-check">
-              <button type="button" class="tds-primary" data-tds-check>Play workflow demo <span aria-hidden="true">→</span></button>
-              <p class="tds-check-result" role="status">Select a tab, then play its illustrative workflow.</p>
-            </div>
-            <p class="tds-demo-note">Illustrative demo only · No real tax data is processed.</p>
           </div>
+          <div class="tds-filing-footer">
+            <div class="tds-filing-count"><strong data-tds-count="uploaded">00</strong><span>Returns Uploaded</span></div>
+            <div class="tds-filing-count"><strong data-tds-count="filed">00</strong><span>Returns Filed</span></div>
+            <p class="tds-demo-note">Interactive demo only.<br>No return is uploaded or filed with any portal.</p>
+          </div>
+          <details class="tds-extra-features"><summary>More TaxPower TDS features</summary><div><p><strong>Import Challan</strong><br>e-Filing / TRACES / NSDL BIN</p><p><strong>Certificate Direct Mail</strong><br>Email certificates to employees &amp; deductees</p><p><strong>Returns &amp; reports</strong><br>Regular and correction returns, FVU generation, PAN checks and TRACES integration</p></div></details>
         </div>
       </section>
     </div>
