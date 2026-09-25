@@ -124,3 +124,15 @@
 @media(prefers-reduced-motion:reduce) {
  .tds-filing-demo .tds-return-file,.tds-filing-demo .tds-filed-stamp { animation: none !important; }
 }
+
+/* Native form picker retains mobile and keyboard selection behavior. */
+.tds-form-select { position: relative; display: flex; align-items: center; border: 1px solid #b5dce9; border-radius: 12px; background: linear-gradient(110deg,#fff8ee,#f2fbff 65%); box-shadow: 0 4px 12px #187b9c09; transition: border-color .2s, box-shadow .2s; }
+.tds-form-select-icon { position: absolute; left: 12px; display: grid; place-items: center; width: 30px; height: 30px; border-radius: 8px; background: #ffedd8; color: #c46a20; pointer-events: none; }
+.tds-form-select-icon svg { width: 18px; height: 18px; }
+.tds-form-select::after { content: ''; position: absolute; right: 17px; top: 21px; width: 7px; height: 7px; border-right: 2px solid #078bb5; border-bottom: 2px solid #078bb5; transform: rotate(45deg); pointer-events: none; }
+.tds-filing-controls .tds-form-select select { appearance: none; -webkit-appearance: none; min-height: 54px; padding: 13px 40px 13px 52px; border: 0; border-radius: 12px; background: transparent; color: #164c68; font-size: 13px; font-weight: 700; cursor: pointer; }
+.tds-form-select select option { background: #fff; color: #164c68; font-weight: 500; }
+.tds-form-select:focus-within { border-color: #009dcc; box-shadow: 0 0 0 4px #00a9d51a; }
+.tds-form-select select:disabled { cursor: wait; opacity: .65; }
+@media(hover:hover) { .tds-form-select:hover { border-color: #6dbfd8; box-shadow: 0 5px 16px #0284c714; } }
+@media(prefers-reduced-motion:reduce) { .tds-form-select { transition: none; } }

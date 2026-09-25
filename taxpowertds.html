@@ -8,11 +8,11 @@
   <link rel="preload" href="asset/swt_icon/taxpower_icon.png" as="image">
   <title>TaxPower TDS - TDS &amp; TCS Returns, TRACES and Certificates</title>
   <meta name="description"
-    content="TaxPower TDS brings TDS/TCS return preparation, FVU generation, challan management, TRACES integration and Form 16, 16A and 27D certificates into one workspace.">
+    content="TaxPower TDS brings TDS/TCS return preparation, FVU generation, challan management, TRACES integration and Form 16/130, 16A/131 and 27D/133 certificates into one workspace.">
   <meta name="keywords"
     content="TaxPower GST, TaxPower TDS, GST software, TDS software, tax compliance, e-invoicing, GST return filing, TDS return filing">
   <link rel="stylesheet" href="css/stylesheet.css">
-  <link rel="stylesheet" href="css/taxpowertds.css?v=20260925-upload-demo">
+  <link rel="stylesheet" href="css/taxpowertds.css?v=20260925-form-selector">
   <script src="js/tds-intro.js?v=20260925-upload-demo" defer></script>
   <script src="js/nav-loader.js" defer></script>
   <script src="js/script.js" defer></script>
@@ -29,7 +29,7 @@
           <h1 id="tds-intro-title"><span>TaxPower TDS</span> <em>Software</em></h1>
           <p class="tds-lead">Automate your TDS &amp; TCS compliance, from preparation to filing.</p>
           <p class="tds-description">Prepare returns, generate FVU files and manage challans, TRACES and certificates in one workspace.</p>
-          <ul class="tds-highlights"><li>TDS &amp; TCS Returns</li><li>FVU &amp; e-Filing</li><li>TRACES Integration</li><li>Form 16 / 16A / 27D</li></ul>
+          <ul class="tds-highlights"><li>TDS &amp; TCS Returns</li><li>PAN &amp; FVU Validation</li><li>e-Filing &amp; TRACES Integration</li><li>Certificates (old / new): 16 / 130 · 16A / 131 · 27D / 133</li></ul>
           <div class="tds-actions">
             <a class="tds-primary" href="support.html#demo-enquiry" data-demo-product="TaxPower TDS" data-demo-purpose="demo">Book Free Demo</a>
             <a class="tds-secondary" href="#tds-workflow-preview">Explore the workflow <span aria-hidden="true">↗</span></a>
@@ -84,12 +84,15 @@
               <span class="tds-filing-kicker">Try it yourself</span>
               <h2>From upload<br> to filed.</h2>
               <label for="tds-demo-form">Choose a return · old / new form</label>
-              <select id="tds-demo-form">
+              <div class="tds-form-select">
+                <span class="tds-form-select-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h8l4 4v14H6zM14 3v5h4M9 12h6M9 16h4"/></svg></span>
+                <select id="tds-demo-form">
                 <option value="24Q / 138">Form 24Q / Form 138</option>
                 <option value="26Q / 140">Form 26Q / Form 140</option>
                 <option value="27Q / 144">Form 27Q / Form 144</option>
                 <option value="27EQ / 143">Form 27EQ / Form 143</option>
-              </select>
+                </select>
+              </div>
               <button type="button" class="tds-primary" data-tds-upload>Upload Return <span aria-hidden="true">↑</span></button>
               <div class="tds-upload-progress-label"><span>Upload progress</span><b data-tds-percent>0%</b></div>
               <progress class="tds-upload-progress" max="100" value="0" aria-label="Demo return upload progress"></progress>
@@ -101,7 +104,7 @@
             <div class="tds-filing-count"><strong data-tds-count="filed">00</strong><span>Returns Filed</span></div>
             <p class="tds-demo-note">Interactive demo only.<br>No return is uploaded or filed with any portal.</p>
           </div>
-          <details class="tds-extra-features"><summary>More TaxPower TDS features</summary><div><p><strong>Import Challan</strong><br>e-Filing / TRACES / NSDL BIN</p><p><strong>Certificate Direct Mail</strong><br>Email certificates to employees &amp; deductees</p><p><strong>Returns &amp; reports</strong><br>Regular and correction returns, FVU generation, PAN checks and TRACES integration</p></div></details>
+          <details class="tds-extra-features"><summary>More TaxPower TDS features</summary><div><p><strong>Import Challan</strong><br>e-Filing / TRACES / NSDL BIN</p><p><strong>Certificate Direct Mail</strong><br>Form 16 / 130 · Form 16A / 131 · Form 27D / 133<br>Email certificates to employees &amp; deductees</p><p><strong>Returns &amp; reports</strong><br>Regular and correction returns, PAN &amp; FVU Validation, e-Filing &amp; TRACES Integration</p></div></details>
         </div>
       </section>
     </div>
