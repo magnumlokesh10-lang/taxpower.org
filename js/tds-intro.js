@@ -30,6 +30,7 @@
     const status = demo.querySelector('.tds-upload-status');
     button.disabled = true;
     select.disabled = true;
+    demo.querySelector('.tds-form-trigger').disabled = true;
     progress.value = 0;
     percent.textContent = '0%';
     showStep(demo, 'upload');
@@ -58,6 +59,7 @@
         button.textContent = 'Upload Another Return ↑';
         button.disabled = false;
         select.disabled = false;
+        demo.querySelector('.tds-form-trigger').disabled = false;
         active.delete(demo);
         return;
       }
@@ -75,5 +77,84 @@
     demo.querySelector('[data-tds-percent]').textContent = '0%';
     demo.querySelector('.tds-upload-status').textContent = 'Selected ' + select.options[select.selectedIndex].textContent + '. Ready for the demo.';
     demo.querySelector('[data-tds-upload]').textContent = 'Upload Return ↑';
+  });
+})();
+
+(() => {
+  'use strict';
+  function parts(picker) {
+    return {
+      trigger: picker.querySelector('.tds-form-trigger'),
+      menu: picker.querySelector('.tds-form-menu'),
+      select: picker.querySelector('select'),
+      options: Array.from(picker.querySelectorAll('[role="option"]'))
+    };
+  }
+  function highlight(picker, index) {
+    const { trigger, options } = parts(picker);
+    options.forEach((option, i) => option.classList.toggle('is-active', i === index));
+    trigger.setAttribute('aria-activedescendant', options[index].id);
+    picker.dataset.activeIndex = String(index);
+  }
+  function close(picker) {
+    const { trigger, menu } = parts(picker);
+    trigger.setAttribute('aria-expanded', 'false');
+    trigger.removeAttribute('aria-activedescendant');
+    menu.hidden = true;
+    picker.classList.remove('is-open');
+  }
+  function open(picker) {
+    const { trigger, menu, select } = parts(picker);
+    if (select.disabled) return;
+    document.querySelectorAll('.tds-form-select.is-open').forEach(other => { if (other !== picker) close(other); });
+    menu.hidden = false;
+    trigger.setAttribute('aria-expanded', 'true');
+    picker.classList.add('is-open');
+    highlight(picker, select.selectedIndex);
+  }
+  function choose(picker, index) {
+    const { trigger, select, options } = parts(picker);
+    if (select.disabled) return;
+    select.selectedIndex = index;
+    trigger.querySelector('span').textContent = select.options[index].textContent;
+    options.forEach((option, i) => option.setAttribute('aria-selected', String(i === index)));
+    close(picker);
+    trigger.focus({ preventScroll: true });
+    select.dispatchEvent(new Event('change', { bubbles: true }));
+  }
+  document.addEventListener('click', event => {
+    const picker = event.target.closest('.tds-form-select');
+    document.querySelectorAll('.tds-form-select.is-open').forEach(other => { if (other !== picker) close(other); });
+    if (!picker) return;
+    if (event.target.closest('.tds-form-trigger')) {
+      if (parts(picker).menu.hidden) open(picker); else close(picker);
+    }
+    const option = event.target.closest('[data-form-index]');
+    if (option) choose(picker, Number(option.dataset.formIndex));
+  });
+  document.addEventListener('focusin', event => {
+    document.querySelectorAll('.tds-form-select.is-open').forEach(picker => {
+      if (!picker.contains(event.target)) close(picker);
+    });
+  });
+  document.addEventListener('keydown', event => {
+    const trigger = event.target.closest('.tds-form-trigger');
+    if (!trigger || trigger.disabled) return;
+    const picker = trigger.closest('.tds-form-select');
+    const { menu, options } = parts(picker);
+    if (event.key === 'Escape') { event.preventDefault(); close(picker); return; }
+    if (event.key === 'Tab') { close(picker); return; }
+    if (['ArrowDown','ArrowUp','Home','End'].includes(event.key)) {
+      event.preventDefault();
+      if (menu.hidden) { open(picker); return; }
+      let index = Number(picker.dataset.activeIndex);
+      if (event.key === 'Home') index = 0;
+      else if (event.key === 'End') index = options.length - 1;
+      else index = (index + (event.key === 'ArrowDown' ? 1 : -1) + options.length) % options.length;
+      highlight(picker, index);
+    } else if ((event.key === 'Enter' || event.key === ' ') && !menu.hidden) {
+      event.preventDefault();
+      choose(picker, Number(picker.dataset.activeIndex));
+    }
   });
 })();

@@ -12,8 +12,8 @@
   <meta name="keywords"
     content="TaxPower GST, TaxPower TDS, GST software, TDS software, tax compliance, e-invoicing, GST return filing, TDS return filing">
   <link rel="stylesheet" href="css/stylesheet.css">
-  <link rel="stylesheet" href="css/taxpowertds.css?v=20260925-form-selector">
-  <script src="js/tds-intro.js?v=20260925-upload-demo" defer></script>
+  <link rel="stylesheet" href="css/taxpowertds.css?v=20260925-custom-picker">
+  <script src="js/tds-intro.js?v=20260925-custom-picker" defer></script>
   <script src="js/nav-loader.js" defer></script>
   <script src="js/script.js" defer></script>
   <script src="js/page-loader.js" defer></script>
@@ -83,15 +83,25 @@
             <div class="tds-filing-controls">
               <span class="tds-filing-kicker">Try it yourself</span>
               <h2>From upload<br> to filed.</h2>
-              <label for="tds-demo-form">Choose a return · old / new form</label>
+              <label id="tds-form-label" for="tds-form-picker">Choose a return · old / new form</label>
               <div class="tds-form-select">
                 <span class="tds-form-select-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h8l4 4v14H6zM14 3v5h4M9 12h6M9 16h4"/></svg></span>
-                <select id="tds-demo-form">
+                <select id="tds-demo-form" hidden aria-hidden="true" tabindex="-1">
                 <option value="24Q / 138">Form 24Q / Form 138</option>
                 <option value="26Q / 140">Form 26Q / Form 140</option>
                 <option value="27Q / 144">Form 27Q / Form 144</option>
                 <option value="27EQ / 143">Form 27EQ / Form 143</option>
                 </select>
+                <button type="button" id="tds-form-picker" class="tds-form-trigger" role="combobox" aria-haspopup="listbox" aria-expanded="false" aria-controls="tds-form-options" aria-labelledby="tds-form-label tds-selected-form">
+                  <span id="tds-selected-form">Form 24Q / Form 138</span>
+                </button>
+                <div class="tds-form-menu" id="tds-form-options" role="listbox" aria-labelledby="tds-form-label" hidden>
+                  <div class="tds-form-menu-heading" aria-hidden="true">Select your return <span>Old → New</span></div>
+                  <div class="tds-form-option" id="tds-form-option-0" role="option" aria-selected="true" data-form-index="0"><span class="tds-option-document" aria-hidden="true">▤</span><span class="tds-option-copy"><strong>Form 24Q<i aria-hidden="true">→</i>Form 138</strong><small>Salary TDS</small></span><span class="tds-option-check" aria-hidden="true">✓</span></div>
+                  <div class="tds-form-option" id="tds-form-option-1" role="option" aria-selected="false" data-form-index="1"><span class="tds-option-document" aria-hidden="true">▤</span><span class="tds-option-copy"><strong>Form 26Q<i aria-hidden="true">→</i>Form 140</strong><small>Non-salary TDS</small></span><span class="tds-option-check" aria-hidden="true">✓</span></div>
+                  <div class="tds-form-option" id="tds-form-option-2" role="option" aria-selected="false" data-form-index="2"><span class="tds-option-document" aria-hidden="true">▤</span><span class="tds-option-copy"><strong>Form 27Q<i aria-hidden="true">→</i>Form 144</strong><small>Non-resident TDS</small></span><span class="tds-option-check" aria-hidden="true">✓</span></div>
+                  <div class="tds-form-option" id="tds-form-option-3" role="option" aria-selected="false" data-form-index="3"><span class="tds-option-document" aria-hidden="true">▤</span><span class="tds-option-copy"><strong>Form 27EQ<i aria-hidden="true">→</i>Form 143</strong><small>TCS Return</small></span><span class="tds-option-check" aria-hidden="true">✓</span></div>
+                </div>
               </div>
               <button type="button" class="tds-primary" data-tds-upload>Upload Return <span aria-hidden="true">↑</span></button>
               <div class="tds-upload-progress-label"><span>Upload progress</span><b data-tds-percent>0%</b></div>

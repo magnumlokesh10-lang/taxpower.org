@@ -136,3 +136,27 @@
 .tds-form-select select:disabled { cursor: wait; opacity: .65; }
 @media(hover:hover) { .tds-form-select:hover { border-color: #6dbfd8; box-shadow: 0 5px 16px #0284c714; } }
 @media(prefers-reduced-motion:reduce) { .tds-form-select { transition: none; } }
+
+/* Styled option panel for the return picker. */
+.tds-form-select { z-index: 3; }
+.tds-form-select.is-open { z-index: 20; border-color: #69bed8; box-shadow: 0 0 0 3px #00a9d512; }
+.tds-form-select.is-open::after { transform: rotate(225deg); top: 25px; }
+.tds-form-trigger { display: block; box-sizing: border-box; width: 100%; min-height: 54px; padding: 13px 40px 13px 52px; border: 0; border-radius: 12px; background: transparent; color: #164c68; line-height: 1.5; font-family: inherit; font-size: 13px; font-weight: 700; text-align: left; cursor: pointer; touch-action: manipulation; }
+.tds-form-trigger:disabled { opacity: .65; cursor: wait; }
+.tds-form-menu[hidden],.tds-form-select select[hidden] { display: none; }
+.tds-form-menu { position: absolute; top: calc(100% + 8px); left: 0; right: 0; padding: 7px; border: 1px solid #cfe5ef; border-radius: 14px; background: #fff; box-shadow: 0 14px 32px #164c6826; }
+.tds-form-menu-heading { display: flex; justify-content: space-between; gap: 8px; padding: 7px 8px 10px; color: #698898; font-size: 10px; }
+.tds-form-menu-heading span { color: #cf792e; }
+.tds-form-option { display: flex; align-items: center; gap: 9px; min-height: 58px; box-sizing: border-box; padding: 9px 8px; border-radius: 9px; color: #28556b; cursor: pointer; touch-action: manipulation; }
+.tds-form-option + .tds-form-option { margin-top: 3px; }
+.tds-form-option:is(:hover,.is-active) { background: #f0f8fc; }
+.tds-form-option[aria-selected="true"] { background: linear-gradient(100deg,#edf9ff,#f4fcfa); }
+.tds-option-document { display: grid; place-items: center; flex-shrink: 0; width: 28px; height: 32px; border: 1px solid #d3e8f2; border-radius: 7px; background: #f4faff; color: #259bc0; font-size: 19px; }
+.tds-option-copy { min-width: 0; flex: 1; }
+.tds-option-copy strong { display: flex; align-items: center; flex-wrap: wrap; gap: 5px; font-size: 12px; font-weight: 650; }
+.tds-option-copy i { color: #c58c51; font-style: normal; }
+.tds-option-copy small { display: block; margin-top: 3px; color: #75909e; font-size: 10px; }
+.tds-option-check { visibility: hidden; color: #249677; font-weight: 800; font-size: 14px; }
+.tds-form-option[aria-selected="true"] .tds-option-check { visibility: visible; }
+.tds-filing-demo { overflow: visible; }
+.tds-filing-demo .tds-preview-header { border-radius: 16px 16px 0 0; }
