@@ -3,8 +3,8 @@
   const timers = new WeakMap();
   const steps = {
     'tds-tab-returns': ['Import salary and deductee records.', 'Review PAN, deductions and return data.', 'Generate FVU and proceed to Income Tax portal filing.'],
-    'tds-tab-challans': ['Import challan records from the portal.', 'Map challans and review utilisation.', 'Review computed interest and late fees.'],
-    'tds-tab-traces': ['Request Conso files, reports or certificates from TRACES.', 'Prepare Form 16, 16A or 27D certificates.', 'Digitally sign and email certificates.']
+    'tds-tab-challans': ['Import challan records from e-Filing, TRACES or NSDL BIN.', 'Map challans and review utilisation.', 'Review computed interest and late fees.'],
+    'tds-tab-traces': ['Request Conso files, reports or certificates from TRACES.', 'Prepare Form 16, 16A or 27D certificates.', 'Send certificates directly by email to employees and deductees.']
   };
   function reset(preview) {
     window.clearTimeout(timers.get(preview));

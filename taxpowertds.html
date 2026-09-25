@@ -12,8 +12,8 @@
   <meta name="keywords"
     content="TaxPower GST, TaxPower TDS, GST software, TDS software, tax compliance, e-invoicing, GST return filing, TDS return filing">
   <link rel="stylesheet" href="css/stylesheet.css">
-  <link rel="stylesheet" href="css/taxpowertds.css?v=20260924-intro">
-  <script src="js/tds-intro.js?v=20260925-brochure" defer></script>
+  <link rel="stylesheet" href="css/taxpowertds.css?v=20260925-desk">
+  <script src="js/tds-intro.js?v=20260925-desk" defer></script>
   <script src="js/nav-loader.js" defer></script>
   <script src="js/script.js" defer></script>
   <script src="js/page-loader.js" defer></script>
@@ -26,7 +26,7 @@
       <section class="tds-intro" aria-labelledby="tds-intro-title">
         <div class="tds-intro-copy">
           <span class="tds-eyebrow">TDS &amp; TCS compliance, connected</span>
-          <h1 id="tds-intro-title"><span>TaxPower TDS</span><br>Software</h1>
+          <h1 id="tds-intro-title"><span>TaxPower TDS</span> <em>Software</em></h1>
           <p class="tds-lead">Automate your TDS &amp; TCS compliance, from preparation to filing.</p>
           <p class="tds-description">Manage salary and deductee data, prepare regular or correction returns, generate FVU files and file through the Income Tax portal. Connect your challan, TRACES and certificate workflows in one organised workspace.</p>
           <ul class="tds-highlights"><li>TDS &amp; TCS Returns</li><li>FVU &amp; e-Filing</li><li>TRACES Integration</li><li>Form 16 / 16A / 27D</li></ul>
@@ -38,7 +38,7 @@
         <div class="tds-preview" id="tds-workflow-preview">
           <div class="tds-preview-header"><img src="asset/swt_icon/taxpower_icon.png" width="32" height="32" alt=""><div><strong>TaxPower TDS</strong><small>Your TDS &amp; TCS workspace</small></div><span class="tds-sample-tag">Demo</span></div>
           <div class="tds-preview-body">
-            <div class="tds-preview-heading"><h2>Prepare. Validate. File.</h2><p>Explore returns, challans and TRACES with a guided demo.</p></div>
+            <div class="tds-preview-heading"><h2>Your compliance desk</h2><p>Choose a workflow. Explore the details. Play the demo.</p></div>
             <div class="tds-tabs" role="tablist" aria-label="TDS demo workflows">
               <button type="button" role="tab" id="tds-tab-returns" aria-controls="tds-panel-returns" aria-selected="true">Returns</button>
               <button type="button" role="tab" id="tds-tab-challans" aria-controls="tds-panel-challans" aria-selected="false" tabindex="-1">Challans</button>
@@ -46,15 +46,21 @@
             </div>
             <div class="tds-panel" id="tds-panel-returns" role="tabpanel" aria-labelledby="tds-tab-returns" tabindex="0">
               <div class="tds-metric"><div><span>Deductee records</span><strong>128</strong></div><span class="tds-status">Sample return</span></div>
-              <ul class="tds-checklist"><li><span>Regular &amp; correction returns</span><b>24Q · 26Q · 27Q · 27EQ</b></li><li><span>PAN &amp; deduction checks</span><b>Before filing</b></li><li><span>FVU generation &amp; e-filing</span><b>Connected workflow</b></li></ul>
+              <div class="tds-form-map">
+                <table><caption>Return forms · old &amp; new names</caption>
+                  <thead><tr><th scope="col">Old form</th><th scope="col">New form</th></tr></thead>
+                  <tbody><tr><td>Form 24Q</td><td>Form 138</td></tr><tr><td>Form 26Q</td><td>Form 140</td></tr><tr><td>Form 27Q</td><td>Form 144</td></tr><tr><td>Form 27EQ</td><td>Form 143</td></tr></tbody>
+                </table>
+              </div>
+              <ul class="tds-checklist"><li><span>Regular &amp; correction returns</span><b>Old &amp; new forms</b></li><li><span>PAN &amp; deduction checks</span><b>Before filing</b></li><li><span>FVU generation &amp; e-filing</span><b>Connected workflow</b></li></ul>
             </div>
             <div class="tds-panel" id="tds-panel-challans" role="tabpanel" aria-labelledby="tds-tab-challans" tabindex="0" hidden>
               <div class="tds-metric"><div><span>Challans in this example</span><strong>12</strong></div><span class="tds-status">Sample records</span></div>
-              <ul class="tds-checklist"><li><span>Import challans</span><b>IT Portal / TRACES</b></li><li><span>Challan mapping &amp; validation</span><b>Review utilisation</b></li><li><span>Interest &amp; late fees</span><b>Automatic computation</b></li></ul>
+              <ul class="tds-checklist"><li><span>Import Challan</span><b>e-Filing / TRACES / NSDL BIN</b></li><li><span>Challan mapping &amp; validation</span><b>Review utilisation</b></li><li><span>Interest &amp; late fees</span><b>Automatic computation</b></li></ul>
             </div>
             <div class="tds-panel" id="tds-panel-traces" role="tabpanel" aria-labelledby="tds-tab-traces" tabindex="0" hidden>
               <div class="tds-metric"><div><span>Certificates in this example</span><strong>48</strong></div><span class="tds-status">Try it below</span></div>
-              <ul class="tds-checklist"><li><span>Conso &amp; Justification Reports</span><b>Request &amp; download</b></li><li><span>TDS / TCS certificates</span><b>Form 16 · 16A · 27D</b></li><li><span>Digital signature &amp; email</span><b>Certificate delivery</b></li></ul>
+              <ul class="tds-checklist"><li><span>Conso &amp; Justification Reports</span><b>Request &amp; download</b></li><li><span>TDS / TCS certificates</span><b>Form 16 · 16A · 27D</b></li><li><span>Certificate Direct Mail</span><b>Email to employees &amp; deductees</b></li></ul>
             </div>
             <div class="tds-demo-check">
               <button type="button" class="tds-primary" data-tds-check>Play workflow demo <span aria-hidden="true">→</span></button>
