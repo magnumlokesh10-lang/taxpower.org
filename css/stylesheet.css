@@ -4806,3 +4806,23 @@ body.demo-form-open {
   }
 }
 
+
+/* Product names adapt to the active section while icons remain available. */
+.nav-item.nav-item-always {
+  transition: width .38s cubic-bezier(.2,.8,.2,1), max-width .38s cubic-bezier(.2,.8,.2,1), gap .38s ease, color .22s ease, background-color .22s ease;
+}
+.nav-item.nav-item-always .nav-item-label {
+  transition: width .38s cubic-bezier(.2,.8,.2,1), max-width .38s cubic-bezier(.2,.8,.2,1), opacity .22s ease;
+}
+@media (min-width:1101px) {
+  .nav-item.nav-item-always { width: 145px; min-width: 42px; max-width: 145px; box-sizing: border-box; }
+  .nav-item.nav-item-always .nav-item-label { width: 96px; max-width: 96px; }
+}
+.nav-item.nav-item-always.is-product-collapsed {
+  width: 42px; min-width: 42px; max-width: 42px; gap: 0; padding-inline: 10px;
+  color: #64748b; background: transparent;
+}
+.nav-item.nav-item-always.is-product-collapsed .nav-item-label {
+  width: 0; max-width: 0; opacity: 0;
+}
+.nav-item.nav-item-always.is-product-collapsed:focus-visible { outline: 3px solid #00b4d8; outline-offset: 3px; }

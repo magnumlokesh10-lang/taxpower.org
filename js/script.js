@@ -351,6 +351,15 @@ function initTaxPowerSite() {
       }
     });
 
+    const activePage = targetItem.getAttribute('data-nav-page');
+    const productPages = ['taxpowergst.html', 'taxpowertds.html'];
+    navItems.forEach((item) => {
+      const itemPage = item.getAttribute('data-nav-page');
+      if (!productPages.includes(itemPage)) return;
+      // Home and other sections show both names; a product section keeps its own name.
+      item.classList.toggle('is-product-collapsed',
+        productPages.includes(activePage) && itemPage !== activePage);
+    });
     currentActiveTab = targetItem;
     moveIndicator(currentActiveTab, shouldAnimate);
   }
