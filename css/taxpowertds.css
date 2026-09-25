@@ -1,33 +1,36 @@
-/* TDS uses a centered introduction and a wide compliance desk. */
-.tds-intro { position: relative; isolation: isolate; overflow: hidden; padding: clamp(28px,4vw,56px); border-radius: 24px; background: #102e46; color: #fff; }
-.tds-intro::before { content: ''; position: absolute; z-index: -1; inset: 0; pointer-events: none; background: radial-gradient(ellipse at 10% 0,#258eaa44,transparent 48%),radial-gradient(ellipse at 95% 35%,#f47a2229,transparent 42%),linear-gradient(#ffffff05 1px,transparent 1px),linear-gradient(90deg,#ffffff05 1px,transparent 1px); background-size: auto,auto,42px 42px,42px 42px; }
+/* Light TDS introduction aligned with the GST and Billing outer frames. */
+.tds-page { padding-top: 26px; }
+.tds-page .section-inner { width: 100%; }
+
+.tds-intro { position: relative; isolation: isolate; overflow: hidden; box-sizing: border-box; width: 100%; max-width: none; margin-inline: 0; padding: 36px 32px; border: 1px solid #d9eaf2; border-radius: 8px; background: radial-gradient(ellipse at 85% 15%,#dff3ff,transparent 46%),radial-gradient(ellipse at 8% 70%,#fff0df,transparent 42%),#fcfeff; color: #0b3b3b; box-shadow: 0 18px 48px #0b304414; }
+.tds-intro::before { content: ''; position: absolute; inset: 0 0 auto; height: 3px; pointer-events: none; background: linear-gradient(90deg,#fb923c,#f97316 25%,#38bdf8 65%,#0284c7); }
 .tds-intro-copy { max-width: 860px; margin: 0 auto 34px; text-align: center; }
-.tds-eyebrow { display: inline-flex; align-items: center; gap: 9px; color: #afdce9; font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
+.tds-eyebrow { display: inline-flex; align-items: center; gap: 9px; color: #0369a1; font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
 .tds-eyebrow::before { content: ''; width: 7px; height: 7px; border-radius: 50%; background: #f6a65e; box-shadow: 0 0 0 5px #f6a65e15; }
 .tds-intro h1 { margin: 18px 0 16px; font: 800 clamp(34px,4.2vw,60px)/1.15 'Plus Jakarta Sans',sans-serif; letter-spacing: -.04em; }
-.tds-intro h1 span { color: #fff; }
-.tds-intro h1 em { color: #ffb871; font-style: normal; }
-.tds-lead { max-width: 710px; margin: 0 auto 14px; color: #deeff6; font-size: clamp(18px,2vw,25px); font-weight: 600; line-height: 1.4; }
-.tds-description { max-width: 760px; margin: 0 auto 20px; color: #b7cedc; font-size: 14px; line-height: 1.75; }
+.tds-intro h1 span { color: #f47a22; }
+.tds-intro h1 em { color: #0b3b3b; font-style: normal; }
+.tds-page .tds-lead { max-width: 710px; margin: 0 auto 14px; color: #0369a1; font-size: clamp(18px,2vw,25px); font-weight: 600; line-height: 1.4; }
+.tds-page .tds-description { max-width: 760px; margin: 0 auto 20px; color: #496779; font-size: 14px; line-height: 1.75; }
 .tds-highlights { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; list-style: none; padding: 0; margin: 0 0 22px; }
-.tds-highlights li { padding: 7px 12px; border: 1px solid #92c6db33; border-radius: 6px; background: #ffffff07; color: #cce6f0; font-size: 11px; font-weight: 600; }
+.tds-highlights li { padding: 7px 12px; border: 1px solid #dbeaf2; border-radius: 30px; background: #ffffffd9; color: #0c4a6e; font-size: 11px; font-weight: 600; }
 .tds-actions { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 20px; }
-.tds-primary,.tds-secondary { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 46px; box-sizing: border-box; padding: 12px 20px; border: 0; border-radius: 9px; font-family: inherit; font-size: 13px; font-weight: 700; line-height: 1.4; text-decoration: none; cursor: pointer; touch-action: manipulation; }
-.tds-primary { color: #172f3f; background: #ffb46a; }
-.tds-primary:hover { color: #172f3f; background: #ffc58b; }
+.tds-primary,.tds-secondary { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 46px; box-sizing: border-box; padding: 12px 20px; border: 0; border-radius: 30px; font-family: inherit; font-size: 13px; font-weight: 700; line-height: 1.4; text-decoration: none; cursor: pointer; touch-action: manipulation; }
+.tds-primary { color: #fff; background: linear-gradient(135deg,#0284c7,#0369a1); box-shadow: 0 6px 18px #0284c721; }
+.tds-primary:hover { color: #fff; background: #0369a1; }
 .tds-primary:disabled { opacity: .65; cursor: wait; }
-.tds-secondary { color: #d1eaf5; padding-inline: 0; }
-.tds-secondary:hover { color: #fff; }
-.tds-preview { max-width: 1040px; margin: auto; overflow: hidden; border: 1px solid #d6e4ec; border-radius: 16px; background: #fff; box-shadow: 0 20px 60px #04111f55; color: #14384b; scroll-margin-top: 110px; }
-.tds-preview-header { display: flex; align-items: center; gap: 10px; padding: 16px 24px; background: #f0f6fa; border-bottom: 1px solid #dfeaf0; color: #173e51; }
+.tds-secondary { color: #0c4a6e; padding-inline: 0; }
+.tds-secondary:hover { color: #ea580c; }
+.tds-preview { box-sizing: border-box; width: 100%; max-width: none; margin: auto; overflow: hidden; border: 1px solid #d6e4ec; border-radius: 16px; background: #fff; box-shadow: 0 12px 32px #174e6510; color: #14384b; scroll-margin-top: 110px; }
+.tds-preview-header { display: flex; align-items: center; gap: 10px; padding: 16px 24px; background: linear-gradient(90deg,#fff8ef,#eef9ff); border-bottom: 1px solid #dfeaf0; color: #173e51; }
 .tds-preview-header small { display: block; margin-top: 2px; font-size: 11px; color: #648092; }
 .tds-sample-tag { margin-left: auto; border: 1px solid #bfdce8; border-radius: 6px; padding: 5px 9px; font-size: 10px; color: #396b83; }
 .tds-preview-body { padding: 24px 28px; }
-.tds-preview-heading h2 { margin: 0 0 5px; color: #0b3b3b; font-size: 23px; letter-spacing: -.025em; }
-.tds-preview-heading p { margin: 0 0 20px; color: #67818e; font-size: 12px; }
+.tds-page .tds-preview-heading h2 { margin: 0 0 5px; color: #0b3b3b; font-size: 23px; letter-spacing: -.025em; }
+.tds-page .tds-preview-heading p { margin: 0 0 20px; color: #67818e; font-size: 12px; }
 .tds-tabs { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 10px; margin-bottom: 24px; }
 .tds-tabs button { min-height: 48px; border: 1px solid #dae6ed; border-radius: 8px; background: #f6f9fc; color: #567081; font: inherit; font-size: 13px; font-weight: 700; cursor: pointer; touch-action: manipulation; }
-.tds-tabs button[aria-selected="true"] { color: #fff; background: #164c68; border-color: #164c68; box-shadow: inset 0 -3px #ffb46a; }
+.tds-tabs button[aria-selected="true"] { color: #0369a1; background: #e4f5ff; border-color: #92cfe8; box-shadow: inset 0 -3px #f6a65e; }
 .tds-panel { display: grid; grid-template-columns: 150px minmax(0,1fr); gap: 16px 24px; min-height: 225px; align-items: start; }
 .tds-panel[hidden] { display: none; }
 .tds-metric { grid-column: 1; grid-row: 1 / span 2; border-right: 1px solid #e0eaf0; padding: 12px 18px 12px 0; min-height: 160px; }
@@ -45,12 +48,12 @@
 .tds-checklist li { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; padding: 12px 0; border-bottom: 1px solid #e8eff3; color: #526e7f; font-size: 12px; line-height: 1.5; }
 .tds-checklist b { color: #1e596d; font-size: 12px; text-align: right; }
 .tds-demo-check { display: flex; align-items: center; gap: 20px; margin-top: 20px; padding: 16px; border: 1px solid #e0eaf1; border-radius: 10px; background: #f4f8fb; }
-.tds-demo-check .tds-primary { flex-shrink: 0; color: #fff; background: #164c68; }
-.tds-check-result { margin: 0; color: #557080; font-size: 12px; line-height: 1.6; }
-.tds-demo-note { margin: 12px 0 0; color: #728a97; font-size: 10px; line-height: 1.5; text-align: right; }
+.tds-demo-check .tds-primary { flex-shrink: 0; color: #fff; background: linear-gradient(135deg,#0284c7,#0369a1); }
+.tds-page .tds-check-result { margin: 0; color: #557080; font-size: 12px; line-height: 1.6; }
+.tds-page .tds-demo-note { margin: 12px 0 0; color: #728a97; font-size: 10px; line-height: 1.5; text-align: right; }
 .tds-intro :is(a,button,[tabindex]):focus-visible { outline: 3px solid #ed913c; outline-offset: 3px; }
 @media(max-width:700px) {
- .tds-intro { padding: 28px 16px; border-radius: 16px; }
+ .tds-intro { padding: 28px 18px; border-radius: 8px; }
  .tds-preview-body { padding: 18px 16px; }
  .tds-preview-header { padding: 14px 16px; }
  .tds-panel { grid-template-columns: 1fr; gap: 14px; }
@@ -61,5 +64,7 @@
  .tds-tabs { gap: 6px; }
  .tds-checklist li { flex-wrap: wrap; gap: 3px 10px; }
  .tds-checklist b { text-align: left; }
- .tds-demo-note { text-align: left; }
+ .tds-page .tds-demo-note { text-align: left; }
 }
+
+@media(max-width:640px) { .tds-page { padding: 26px 10px 34px; } }
