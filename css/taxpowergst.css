@@ -2017,3 +2017,26 @@
 .gst-billing-illustration { overflow: visible; }
 .gst-billing-load-card { transform-box: fill-box; transform-origin: center; pointer-events: none; }
 .gst-billing-truck-lane[aria-busy="true"] { cursor: progress; }
+
+/* A running engine and a quiet visual horn while the truck is parked. */
+.gst-billing-truck { overflow: visible; }
+.gst-truck-engine { transform-box: fill-box; transform-origin: 50% 85%; }
+.gst-billing-truck-lane:not([aria-busy="true"]) .gst-truck-engine { animation: gst-engine-idle .32s linear infinite; }
+.gst-truck-horn { opacity: 0; }
+.gst-billing-truck-lane:not([aria-busy="true"]) .gst-truck-horn { animation: gst-horn-pulse 3.6s ease-out infinite; }
+@keyframes gst-engine-idle {
+  0%,100% { transform: translateY(0) rotate(0); }
+  25% { transform: translateY(-1.5px) rotate(-.35deg); }
+  50% { transform: translateY(.5px) rotate(.2deg); }
+  75% { transform: translateY(-1px) rotate(.35deg); }
+}
+@keyframes gst-horn-pulse {
+  0%,65%,100% { opacity: 0; transform: translateX(0); }
+  70% { opacity: .9; transform: translateX(0); }
+  78% { opacity: 0; transform: translateX(7px); }
+  81% { opacity: .75; transform: translateX(0); }
+  91% { opacity: 0; transform: translateX(10px); }
+}
+@media(prefers-reduced-motion:reduce) {
+  .gst-billing-truck-lane .gst-truck-engine,.gst-billing-truck-lane .gst-truck-horn { animation: none !important; }
+}

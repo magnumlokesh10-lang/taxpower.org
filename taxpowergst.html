@@ -12,7 +12,7 @@
   <meta name="keywords"
     content="TaxPower GST, TaxPower TDS, GST software, TDS software, tax compliance, e-invoicing, GST return filing, TDS return filing">
   <link rel="stylesheet" href="css/stylesheet.css?v=20260925-product-nav">
-  <link rel="stylesheet" href="css/taxpowergst.css?v=20260926-load-cards">
+  <link rel="stylesheet" href="css/taxpowergst.css?v=20260926-idle-horn">
   <script src="js/nav-loader.js" defer></script>
   <script src="js/script.js?v=20260925-product-nav" defer></script>
   <script src="js/taxpowergst.js?v=20260924-frames-540" defer></script>
@@ -318,6 +318,7 @@
           <button type="button" class="gst-billing-truck-lane" aria-label="Tap the Truck">
             <svg class="gst-billing-truck" viewBox="0 0 210 130" fill="none" aria-hidden="true" focusable="false">
               <defs><linearGradient id="billing-moving-truck" x2="1" y2="1"><stop stop-color="#38bdf8"/><stop offset="1" stop-color="#0284c7"/></linearGradient></defs>
+              <g class="gst-truck-engine">
               <rect x="8" y="8" width="122" height="83" rx="13" fill="url(#billing-moving-truck)"/>
               <path d="M130 36h34l28 31v35h-62z" fill="#f6a253"/>
               <path d="M142 47h16l19 22h-35z" fill="#fff6e9"/>
@@ -325,6 +326,12 @@
               <circle cx="40" cy="105" r="19" fill="#214b60"/><circle cx="40" cy="105" r="8" fill="#d1e9f2"/>
               <circle cx="159" cy="105" r="19" fill="#214b60"/><circle cx="159" cy="105" r="8" fill="#d1e9f2"/>
               <path d="M38 36h57M38 51h40" stroke="#d4f3ff" stroke-width="6" stroke-linecap="round"/>
+                          </g>
+              <g class="gst-truck-horn" stroke="#ee9a43" stroke-width="3" stroke-linecap="round" fill="none">
+                <path d="m198 55 9-3"/>
+                <path d="M201 64h13"/>
+                <path d="m198 73 9 3"/>
+              </g>
             </svg>
           </button>
           <div class="gst-billing-journey" aria-label="Illustrative billing counts" aria-live="polite" aria-atomic="true">
