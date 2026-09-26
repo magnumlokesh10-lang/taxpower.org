@@ -2012,3 +2012,8 @@
 .gst-billing-truck { position: absolute; left: 4px; bottom: 1px; width: 104px; height: 65px; pointer-events: none; transform-origin: center; }
 .gst-billing-truck-lane:focus-visible { outline: 3px solid #f97316; outline-offset: 3px; }
 @media (hover: hover) { .gst-billing-truck-lane:hover { background-color: #eaf7fc; } }
+
+/* The document cards travel out of the illustration and into the truck below. */
+.gst-billing-illustration { overflow: visible; }
+.gst-billing-load-card { transform-box: fill-box; transform-origin: center; pointer-events: none; }
+.gst-billing-truck-lane[aria-busy="true"] { cursor: progress; }
