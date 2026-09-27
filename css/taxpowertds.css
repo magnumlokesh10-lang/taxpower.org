@@ -460,30 +460,9 @@
 #tds-deductors > canvas { position: absolute; inset: 0; z-index: 0; display: block; width: 100%; height: 100%; pointer-events: none; }
 :is(#tds-returns, #tds-compliance, #tds-register) .gst-feature-row-copy.gst-animation-visible { opacity: 1; transform: none; animation-fill-mode: backwards; }
 
-/* Two-color diagonal wave: one complete gradient period per 14-second loop. */
+/* TDS uses the same flowing WebGL mesh as GST, with its own two-color palette. */
 .tds-page #tds-deductors {
   isolation: isolate;
-  background: #CBB7EF;
-}
-.tds-page #tds-deductors::before {
-  content: "";
-  position: absolute;
-  inset: -480px;
-  z-index: 0;
-  pointer-events: none;
-  background: repeating-linear-gradient(135deg,
-    #CBB7EF 0px,
-    #CBB7EF 60px,
-    #FFD0AC 240px,
-    #FFD0AC 300px,
-    #CBB7EF 480px);
-  animation: tdsDiagonalColorWave 14s linear infinite;
+  background: linear-gradient(135deg, #CBB7EF, #FFD0AC);
 }
 .tds-page #tds-deductors .gst-dashboard-heading h2 { color: #0B3B3B; }
-@keyframes tdsDiagonalColorWave {
-  from { transform: translate(0, 0); }
-  to { transform: translate(339.411255px, 339.411255px); }
-}
-@media (prefers-reduced-motion: reduce) {
-  .tds-page #tds-deductors::before { animation: none; }
-}
