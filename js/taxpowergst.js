@@ -945,7 +945,10 @@
   ];
 
   function initDashboardGradient() {
-    const container = document.getElementById("dashboard_bg");
+    document.querySelectorAll("#dashboard_bg, #tds-deductors").forEach(initDashboardGradientForContainer);
+  }
+
+  function initDashboardGradientForContainer(container) {
     if (!container || container.dataset.gradientInitialized) return;
 
     const canvas = document.createElement("canvas");
@@ -1012,7 +1015,10 @@
   }
 
   function initGstAnimations() {
-    const gstAnimationPage = document.querySelector('.gst-dashboard-page');
+    document.querySelectorAll('.gst-dashboard-page').forEach(initDashboardPageAnimations);
+  }
+
+  function initDashboardPageAnimations(gstAnimationPage) {
     if (!gstAnimationPage || gstAnimationPage.dataset.animationInitialized) return;
 
     const gstAnimatedElements = gstAnimationPage.querySelectorAll('.gst-dashboard-heading, .gst-browser-frame, .gst-feature-copy, .gst-feature-browser img, .gst-feature-row-media');
@@ -1075,7 +1081,11 @@
       'reconciliation',
       'returns',
       'tds',
-      'tcs'
+      'tcs',
+      'traces',
+      'pan',
+      'challan',
+      'certificates'
     ]);
 
     paragraphs.forEach((paragraph) => {
@@ -1529,3 +1539,4 @@
   }
   document.addEventListener('taxpower:sections-loaded', initGstWorkflowPreview);
 })();
+

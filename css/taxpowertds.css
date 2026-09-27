@@ -168,16 +168,6 @@
 .tds-certificate-pairs > span + span::before { content: ''; flex-shrink: 0; width: 5px; height: 5px; margin-inline: 10px; border-radius: 50%; background: #0b3b3b; }
 
 
-.tds-shot-dialog { width: min(1440px,96vw); max-width: 96vw; max-height: 94dvh; padding: 0; border: 1px solid #bcd7e4; border-radius: 16px; background: #f4f9fc; color: #0b3b3b; box-shadow: 0 24px 80px #10374755; }
-.tds-shot-dialog::backdrop { background: #102c3ad9; }
-.tds-shot-toolbar { display: flex; align-items: center; gap: 10px; padding: 12px 16px; border-bottom: 1px solid #d3e2e9; background: #fff; }
-.tds-shot-toolbar strong { margin-right: auto; font: 700 14px/1.4 'DM Sans',sans-serif; }
-.tds-shot-toolbar button { flex-shrink: 0; min-width: 44px; min-height: 44px; padding: 8px 12px; border: 1px solid #c5dce7; border-radius: 9px; background: #edf8ff; color: #0b3b3b; font: 700 13px 'DM Sans',sans-serif; cursor: pointer; touch-action: manipulation; }
-.tds-shot-toolbar button:focus-visible { outline: 3px solid #f38b32; outline-offset: 2px; }
-.tds-shot-viewport { overflow: auto; max-height: calc(94dvh - 94px); padding: 12px; overscroll-behavior: contain; touch-action: pan-x pan-y pinch-zoom; }
-.tds-shot-viewport img { display: block; width: 100%; height: auto; max-width: none; margin: auto; }
-.tds-shot-dialog.is-zoomed .tds-shot-viewport img { width: var(--tds-shot-width); min-width: 100%; }
-
 /* Match the GST frames using its shared layout and artwork. */
 /* Repository image backgrounds for the three GST feature frames. */
 :is(#tds-returns, #tds-compliance, #tds-register).gst-feature-row {
@@ -459,19 +449,13 @@
 }
 
 .tds-page #tds-deductors { margin-top: 24px; background: radial-gradient(ellipse at 15% 20%,#d2f6fd,transparent 58%),linear-gradient(120deg,#edfaff,#fff1dc); }
-.tds-page .gst-feature-row :is(.gst-feature-row-media,.gst-feature-row-copy),
-.tds-page .gst-feature-row .gst-feature-row-copy > :is(h2,p,ul) { transform: none; }
-.tds-page .gst-feature-row .gst-feature-row-copy > ul > li { transform: none; }
-.tds-shot-open { position: relative; display: block; width: 100%; padding: 0; border: 0; background: transparent; border-radius: 5px; cursor: zoom-in; touch-action: manipulation; font: inherit; }
-.tds-shot-open img { display: block; width: 100%; height: auto; object-fit: contain; }
-.tds-shot-open:focus-visible { outline: 3px solid #f47a22; outline-offset: -3px; }
-.tds-shot-hint { position: absolute; right: 8px; bottom: 8px; padding: 5px 9px; border: 1px solid #a4d4e4; border-radius: 20px; color: #0b3b3b; background: #fffffff0; font-size: 11px; }
 @media(max-width: 900px) {
  .tds-page .gst-feature-row .gst-feature-row-media { order: 0; aspect-ratio: auto; }
  .tds-page .gst-feature-row .gst-feature-row-copy { order: 1; }
 }
-@media(max-width:760px) {
- .tds-shot-toolbar { flex-wrap: wrap; padding: 10px; }
- .tds-shot-toolbar strong { flex-basis: 100%; }
- .tds-shot-viewport { max-height: calc(94dvh - 138px); }
-}
+
+
+
+/* Same animated dashboard canvas and image-view effects as GST. */
+#tds-deductors > canvas { position: absolute; inset: 0; z-index: 0; display: block; width: 100%; height: 100%; pointer-events: none; }
+:is(#tds-returns, #tds-compliance, #tds-register) .gst-feature-row-copy.gst-animation-visible { opacity: 1; transform: none; animation-fill-mode: backwards; }
