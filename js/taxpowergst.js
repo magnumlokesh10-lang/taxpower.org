@@ -945,7 +945,7 @@
   ];
 
   function initDashboardGradient() {
-    document.querySelectorAll("#dashboard_bg, #tds-deductors").forEach(initDashboardGradientForContainer);
+    document.querySelectorAll("#dashboard_bg").forEach(initDashboardGradientForContainer);
   }
 
   function initDashboardGradientForContainer(container) {
