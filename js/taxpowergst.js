@@ -945,7 +945,7 @@
   ];
 
   function initDashboardGradient() {
-    document.querySelectorAll("#dashboard_bg, #tds-deductors").forEach(initDashboardGradientForContainer);
+    document.querySelectorAll("#dashboard_bg").forEach(initDashboardGradientForContainer);
   }
 
   function initDashboardGradientForContainer(container) {
@@ -957,11 +957,8 @@
     container.dataset.gradientInitialized = "true";
 
     try {
-      const palette = container.id === "tds-deductors"
-        ? ["#CBB7EF", "#FFD0AC", "#CBB7EF", "#FFD0AC", "#CBB7EF", "#FFD0AC"]
-        : colors;
       const gradient =
-        new Gradient(canvas, palette);
+        new Gradient(canvas, colors);
 
       gradient.mesh.material.uniforms
         .u_shadow_power.value = 8;
