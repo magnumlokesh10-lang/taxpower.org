@@ -5040,3 +5040,51 @@ body.demo-form-open {
  #00bfffc0 208deg 235deg,transparent 248deg 360deg);
  filter:blur(6px);
 }
+
+/* The inner edge follows the same rotating arcs and breathing cycle as the halo. */
+@property --demo-inner-strength {
+ syntax:"<number>";
+ inherits:true;
+ initial-value:.3;
+}
+.header.nav-gradient-depth .navbar-demo:is(.demo-desktop-only,.demo-mobile-only) {
+ animation:demoCapsuleLight 9s linear infinite, demoInnerBreathe 3.6s ease-in-out infinite;
+}
+.header.nav-gradient-depth .navbar-demo:is(.demo-desktop-only,.demo-mobile-only)::after {
+ background:
+  radial-gradient(ellipse at center,rgba(255,255,255,.98) 0%,rgba(255,255,255,.94) 48%,rgba(255,255,255,0) 100%),
+  conic-gradient(from var(--demo-ring-angle),
+   transparent 0deg 15deg,
+   rgb(255 151 0 / calc(var(--demo-inner-strength) * .48)) 28deg 55deg,
+   transparent 68deg 195deg,
+   rgb(0 191 255 / calc(var(--demo-inner-strength) * .48)) 208deg 235deg,
+   transparent 248deg 360deg),
+  #fff;
+}
+@keyframes demoInnerBreathe {
+ 0%,100% { --demo-inner-strength:.3; }
+ 50% { --demo-inner-strength:1; }
+}
+/* Color-matched light around the flat navigation pills. */
+.header.nav-gradient-depth [data-nav-page="index.html"] { --nav-hover-glow:#ac8ee74d; }
+.header.nav-gradient-depth [data-nav-page="taxpowergst.html"],
+.header.nav-gradient-depth [data-nav-page="taxpowertds.html"] { --nav-hover-glow:#ffa94059; }
+.header.nav-gradient-depth [data-nav-page="pricing.html"] { --nav-hover-glow:#58c9954d; }
+.header.nav-gradient-depth [data-nav-page="downloads.html"] { --nav-hover-glow:#52bdf34d; }
+.header.nav-gradient-depth [data-nav-page="aboutus.html"] { --nav-hover-glow:#ee8da84d; }
+.header.nav-gradient-depth [data-nav-page="support.html"] { --nav-hover-glow:#3dc9bb4d; }
+@media(hover:hover) {
+ .header.nav-gradient-depth .nav-item:hover,
+ .header.nav-gradient-depth .nav-dropdown:hover > .nav-item {
+  box-shadow:0 0 14px 2px var(--nav-hover-glow),inset 0 0 7px #ffffff8c;
+ }
+}
+.header.nav-gradient-depth .nav-item:focus-visible,
+.header.nav-gradient-depth .nav-dropdown:focus-within > .nav-item {
+ box-shadow:0 0 14px 2px var(--nav-hover-glow),inset 0 0 7px #ffffff8c;
+}
+@media(prefers-reduced-motion:reduce) {
+ .header.nav-gradient-depth .navbar-demo:is(.demo-desktop-only,.demo-mobile-only) {
+  animation:none; --demo-inner-strength:.65;
+ }
+}
