@@ -2087,38 +2087,3 @@ bootTaxPowerSite();
 
 
 
-/* Subtle pointer depth; CSS alone provides expansion, focus and touch states. */
-(() => {
- const fine = window.matchMedia('(min-width:1101px) and (hover:hover) and (pointer:fine)');
- const reduced = window.matchMedia('(prefers-reduced-motion:reduce)');
- function initNavigationDepth() {
-  document.querySelectorAll('.nav-gradient-depth .nav-item').forEach(item => {
-   if (item.dataset.depthReady) return;
-   item.dataset.depthReady = 'true';
-   let frame = 0;
-   const reset = () => {
-    cancelAnimationFrame(frame);
-    ['--nav-rx','--nav-ry','--nav-shine'].forEach(key => item.style.removeProperty(key));
-   };
-   item.addEventListener('pointermove', event => {
-    if (!fine.matches || reduced.matches || event.pointerType === 'touch') return;
-    const {clientX:x,clientY:y}=event;
-    cancelAnimationFrame(frame);
-    frame=requestAnimationFrame(() => {
-     const r=item.getBoundingClientRect();
-     const px=Math.max(0,Math.min(1,(x-r.left)/r.width));
-     const py=Math.max(0,Math.min(1,(y-r.top)/r.height));
-     item.style.setProperty('--nav-rx', ((.5-py)*6)+'deg');
-     item.style.setProperty('--nav-ry', ((px-.5)*8)+'deg');
-     item.style.setProperty('--nav-shine', (px*100)+'%');
-    });
-   });
-   item.addEventListener('pointerleave',reset);
-   item.addEventListener('blur',reset);
-   fine.addEventListener('change',reset);
-   reduced.addEventListener('change',reset);
-  });
- }
- initNavigationDepth();
- document.addEventListener('taxpower:navigation-loaded',initNavigationDepth);
-})();

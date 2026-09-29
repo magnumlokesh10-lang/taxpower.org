@@ -4828,31 +4828,31 @@ body.demo-form-open {
 .nav-item.nav-item-always.is-product-collapsed:focus-visible { outline: 3px solid #00b4d8; outline-offset: 3px; }
 
 /* Gradient navigation with layered depth; existing links and dropdowns remain native. */
-.nav-gradient-depth .nav-item { --nav-from:#8053bd; --nav-to:#ba429d; --nav-glow:#a955ff44; }
-.nav-gradient-depth [data-nav-page="taxpowergst.html"] { --nav-from:#b94b12; --nav-to:#d47619; --nav-glow:#f47a2244; }
-.nav-gradient-depth [data-nav-page="taxpowertds.html"] { --nav-from:#067a9c; --nav-to:#2960be; --nav-glow:#38bdf844; }
-.nav-gradient-depth [data-nav-page="pricing.html"] { --nav-from:#147763; --nav-to:#247f8d; --nav-glow:#36bdac44; }
-.nav-gradient-depth [data-nav-page="downloads.html"] { --nav-from:#3b62bd; --nav-to:#7156b8; }
-.nav-gradient-depth [data-nav-page="aboutus.html"] { --nav-from:#aa466d; --nav-to:#a747a5; }
-.nav-gradient-depth [data-nav-page="support.html"] { --nav-from:#087f96; --nav-to:#27786d; }
+.nav-gradient-depth .nav-item { --nav-from:#EDE5FA; --nav-to:#F8E7F2; --nav-glow:#a955ff44; }
+.nav-gradient-depth [data-nav-page="taxpowergst.html"] { --nav-from:#FFF0DF; --nav-to:#FFE4CC; --nav-glow:#f47a2244; }
+.nav-gradient-depth [data-nav-page="taxpowertds.html"] { --nav-from:#E0F5FC; --nav-to:#E5EDFC; --nav-glow:#38bdf844; }
+.nav-gradient-depth [data-nav-page="pricing.html"] { --nav-from:#E1F4ED; --nav-to:#E3F3F7; --nav-glow:#36bdac44; }
+.nav-gradient-depth [data-nav-page="downloads.html"] { --nav-from:#E4EDFC; --nav-to:#EEE7FA; }
+.nav-gradient-depth [data-nav-page="aboutus.html"] { --nav-from:#FAE8EF; --nav-to:#F3E8FA; }
+.nav-gradient-depth [data-nav-page="support.html"] { --nav-from:#E1F5F7; --nav-to:#E5F4EB; }
 @media(min-width:1101px) {
  .nav-gradient-depth .nav-sliding-bg { display:none; }
  .nav-gradient-depth .navbar-links { gap:5px; flex-wrap:nowrap; padding:6px; overflow:visible; }
  .nav-gradient-depth .nav-item {
   display:flex; align-items:center; justify-content:center; flex-shrink:0;
   width:44px; min-width:44px; max-width:144px; height:44px; padding:0; gap:0;
-  border:1px solid #ffffffdf; border-radius:99px; overflow:visible; isolation:isolate;
-  background:linear-gradient(155deg,#fff,#edf2f8); color:#526578;
-  box-shadow:0 3px 0 #ccd6e3,0 6px 12px #173e511a,inset 0 1px 1px #fff;
-  transform:perspective(500px) rotateX(var(--nav-rx,0deg)) rotateY(var(--nav-ry,0deg));
+  border:1px solid #dce6eb; border-radius:99px; overflow:visible; isolation:isolate;
+  background:#ffffff90; color:#526578;
+  box-shadow:none;
+  transform:none;
   transition:width .45s cubic-bezier(.2,.8,.2,1),transform .2s ease,box-shadow .3s ease,color .25s;
  }
  .nav-gradient-depth .nav-item::before {
   content:""; position:absolute; inset:0; border-radius:inherit; z-index:-1; pointer-events:none;
-  background:radial-gradient(circle at var(--nav-shine,30%) 0%,#ffffff60,transparent 65%),linear-gradient(45deg,var(--nav-from),var(--nav-to));
+  background:linear-gradient(45deg,var(--nav-from),var(--nav-to));
   opacity:0; transition:opacity .35s;
  }
- .nav-gradient-depth .nav-item.h-current { box-shadow:0 3px 0 #bfd0df,0 5px 14px var(--nav-glow),inset 0 0 0 2px var(--nav-from); }
+ .nav-gradient-depth .nav-item.h-current { box-shadow:none; }
  .nav-gradient-depth .nav-item .nav-item-icon { position:relative; width:21px; height:21px; transition:transform .3s,opacity .25s; }
  .nav-gradient-depth .nav-item .nav-item-label {
   position:absolute; left:10px; right:10px; width:auto; max-width:none; margin:0; text-align:center;
@@ -4864,8 +4864,8 @@ body.demo-form-open {
  .nav-gradient-depth .nav-dropdown-caret { display:none; }
  .nav-gradient-depth .nav-item:is(:hover,:focus-visible),
  .nav-gradient-depth .nav-dropdown:focus-within > .nav-item {
-  width:144px; max-width:144px; padding:0; color:#fff; background:transparent;
-  box-shadow:0 3px 0 var(--nav-from),0 10px 22px var(--nav-glow),inset 0 1px 1px #ffffff90;
+  width:144px; max-width:144px; padding:0; color:#0b3b3b; background:transparent;
+  box-shadow:none;
  }
  .nav-gradient-depth .nav-item:is(:hover,:focus-visible)::before,
  .nav-gradient-depth .nav-dropdown:focus-within > .nav-item::before { opacity:1; }
@@ -4873,7 +4873,7 @@ body.demo-form-open {
  .nav-gradient-depth .nav-dropdown:focus-within > .nav-item .nav-item-icon { transform:scale(0); opacity:0; }
  .nav-gradient-depth .nav-item:is(:hover,:focus-visible) .nav-item-label,
  .nav-gradient-depth .nav-dropdown:focus-within > .nav-item .nav-item-label { position:absolute; width:auto; max-width:none; opacity:1; transform:scale(1); transition-delay:.1s; }
- .nav-gradient-depth .nav-item:active { transform:translateY(2px); box-shadow:0 1px 0 var(--nav-from); }
+ .nav-gradient-depth .nav-item:active { transform:none; box-shadow:none; }
  .nav-gradient-depth .nav-item:focus-visible { outline:3px solid #0b3b3b; outline-offset:4px; }
 }
 @media(max-width:1100px) {
@@ -4881,7 +4881,7 @@ body.demo-form-open {
  .nav-gradient-depth .nav-item.nav-item-always.is-product-collapsed { width:100%; max-width:none; min-height:44px; gap:10px; }
  .nav-gradient-depth .nav-item .nav-item-label,
  .nav-gradient-depth .nav-item.nav-item-always.is-product-collapsed .nav-item-label { width:auto; max-width:none; opacity:1; }
- .nav-gradient-depth .nav-item.h-current { color:#0b3b3b; background:#e4f5fa; box-shadow:inset 3px 0 var(--nav-from); }
+ .nav-gradient-depth .nav-item.h-current { color:#0b3b3b; background:#e4f5fa; box-shadow:none; }
 }
 @media(prefers-reduced-motion:reduce) {
  .nav-gradient-depth .nav-item,.nav-gradient-depth .nav-item::before,
@@ -4897,3 +4897,11 @@ body.demo-form-open {
  .nav-gradient-depth .nav-item:is(:hover,:focus-visible),
  .nav-gradient-depth .nav-dropdown:focus-within > .nav-item { width:132px; }
 }
+
+/* Flat, restrained navigation treatment. */
+.header.nav-gradient-depth .navbar,
+.header.nav-gradient-depth .navbar:hover,
+.header.nav-gradient-depth .navbar-links { box-shadow:none; }
+.header.nav-gradient-depth .nav-item.h-current { border-color:#9dbcc7; color:#0b3b3b; }
+.header.nav-gradient-depth .nav-item:is(:hover,:focus-visible) { color:#0b3b3b; }
+.header.nav-gradient-depth .nav-dropdown-menu { box-shadow:0 4px 12px #173e510d; }
