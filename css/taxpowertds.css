@@ -535,3 +535,35 @@
   #tds-deductors .tds-processing-paper { display: none; animation: none; }
   #tds-deductors .tds-processing-done { animation: none; opacity: 1; }
 }
+
+/* Additive border-beam decoration; no dashboard layout or background overrides. */
+#tds-deductors {
+ --tds-beam-angle:137.508deg;
+ --tds-beam-gradient:conic-gradient(from var(--tds-beam-angle),
+  transparent 0deg,#315fea0a 18deg,#315fea8c 46deg,#009fb3 56deg,#cff4f7 60deg,transparent 63deg,
+  transparent 198deg,#e9564a0a 216deg,#e9564a80 244deg,#e9564a 254deg,#f9d3d0 258deg,transparent 261deg,transparent 360deg);
+}
+#tds-deductors > .tds-border-beam-ring,
+#tds-deductors > .tds-border-beam-glow,
+#tds-deductors .tds-border-beam-trail {
+ position:absolute; inset:0; border-radius:inherit; pointer-events:none;
+}
+#tds-deductors > .tds-border-beam-ring,
+#tds-deductors .tds-border-beam-trail {
+ padding:2px; background:var(--tds-beam-gradient);
+ -webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);
+ -webkit-mask-composite:xor;
+ mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);
+ mask-composite:exclude;
+}
+#tds-deductors > .tds-border-beam-ring { z-index:3; }
+#tds-deductors > .tds-border-beam-glow { z-index:0; filter:blur(14px); opacity:.35; }
+#tds-deductors .tds-border-beam-trail { padding:6px; }
+@media(forced-colors:active) {
+ #tds-deductors > .tds-border-beam-ring,
+ #tds-deductors > .tds-border-beam-glow { display:none; }
+}
+@supports not ((mask-composite:exclude) or (-webkit-mask-composite:xor)) {
+ #tds-deductors > .tds-border-beam-ring,
+ #tds-deductors > .tds-border-beam-glow { display:none; }
+}
