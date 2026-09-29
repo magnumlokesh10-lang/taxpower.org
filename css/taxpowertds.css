@@ -475,3 +475,25 @@
     padding-top: 52px;
   }
 }
+
+/* Replace only this screenshot's entrance/float transforms with scroll tilt.
+   Bottom-origin perspective keeps the receding top inside the existing frame. */
+#tds-deductors.tds-scroll-ready .gst-browser-frame {
+  opacity: 1;
+  animation: none;
+  transform-origin: center bottom;
+  transform: perspective(1600px) rotateX(var(--tds-scroll-angle, 0deg)) scale(var(--tds-scroll-scale, 1));
+}
+#tds-deductors.tds-scroll-ready .gst-browser-frame.tds-scroll-active {
+  will-change: transform;
+}
+#tds-deductors.tds-scroll-ready .gst-dashboard-image-wrap img {
+  animation: none;
+  transform: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  #tds-deductors.tds-scroll-ready .gst-browser-frame {
+    transform: none;
+    will-change: auto;
+  }
+}
