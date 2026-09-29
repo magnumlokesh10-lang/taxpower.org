@@ -5013,3 +5013,17 @@ body.demo-form-open {
 @media(prefers-reduced-motion:reduce) {
  .header.nav-gradient-depth .navbar-demo:is(.demo-desktop-only,.demo-mobile-only) { animation:none; }
 }
+
+/* Gentle breathing in the outer halo; the rotating border stays crisp. */
+.header.nav-gradient-depth .navbar-demo:is(.demo-desktop-only,.demo-mobile-only)::before {
+ animation:demoGlowBreathe 3.6s ease-in-out infinite;
+}
+@keyframes demoGlowBreathe {
+ 0%,100% { opacity:.3; }
+ 50% { opacity:1; }
+}
+@media(prefers-reduced-motion:reduce) {
+ .header.nav-gradient-depth .navbar-demo:is(.demo-desktop-only,.demo-mobile-only)::before {
+  animation:none; opacity:.65;
+ }
+}
