@@ -1,6 +1,6 @@
 (() => {
-  const NAV_CACHE_KEY = 'taxpower-navigation-v1';
-  const navigationRequest = fetch('nav.html', {
+  const NAV_CACHE_KEY = 'taxpower-navigation-depth-v2';
+  const navigationRequest = fetch('nav.html?v=20260929-depth', {
     cache: 'force-cache',
     credentials: 'omit'
   }).then((response) => {
