@@ -1,4 +1,4 @@
-/* Scroll-linked 3D preview for the TDS client screenshot only. */
+/* Scroll-linked entrance for the TDS client heading and screenshot. */
 (() => {
   'use strict';
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
@@ -12,6 +12,10 @@
     const viewport = window.innerHeight || document.documentElement.clientHeight;
     const progress = clamp((viewport * .85 - bounds.top) / (viewport * .7));
     const remaining = reducedMotion.matches ? 0 : 1 - progress;
+    const headingShift = (mobile.matches ? 70 : 140) * remaining;
+    const imageShift = (mobile.matches ? 95 : 180) * remaining;
+    section.style.setProperty('--tds-heading-shift', headingShift.toFixed(2) + 'px');
+    frame.style.setProperty('--tds-image-shift', imageShift.toFixed(2) + 'px');
     const angle = (mobile.matches ? 12 : 20) * remaining;
     const scale = mobile.matches ? 1 - .04 * remaining : 1 + .02 * remaining;
     frame.style.setProperty('--tds-scroll-angle', angle.toFixed(3) + 'deg');

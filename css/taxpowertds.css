@@ -476,13 +476,18 @@
   }
 }
 
-/* Replace only this screenshot's entrance/float transforms with scroll tilt.
-   Bottom-origin perspective keeps the receding top inside the existing frame. */
+/* Let the screenshot emerge below the frame while heading and image settle on scroll. */
+#tds-deductors.tds-scroll-ready { overflow: visible; }
+#tds-deductors.tds-scroll-ready .gst-dashboard-heading {
+  opacity: 1;
+  animation: none;
+  transform: translateY(var(--tds-heading-shift, 0px));
+}
 #tds-deductors.tds-scroll-ready .gst-browser-frame {
   opacity: 1;
   animation: none;
   transform-origin: center bottom;
-  transform: perspective(1600px) rotateX(var(--tds-scroll-angle, 0deg)) scale(var(--tds-scroll-scale, 1));
+  transform: translateY(var(--tds-image-shift, 0px)) perspective(1600px) rotateX(var(--tds-scroll-angle, 0deg)) scale(var(--tds-scroll-scale, 1));
 }
 #tds-deductors.tds-scroll-ready .gst-browser-frame.tds-scroll-active {
   will-change: transform;
@@ -492,6 +497,7 @@
   transform: none;
 }
 @media (prefers-reduced-motion: reduce) {
+  #tds-deductors.tds-scroll-ready .gst-dashboard-heading,
   #tds-deductors.tds-scroll-ready .gst-browser-frame {
     transform: none;
     will-change: auto;
