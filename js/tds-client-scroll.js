@@ -12,8 +12,8 @@
     const viewport = window.innerHeight || document.documentElement.clientHeight;
     const progress = clamp((viewport * .85 - bounds.top) / (viewport * .7));
     const remaining = reducedMotion.matches ? 0 : 1 - progress;
-    const headingShift = (mobile.matches ? 70 : 140) * remaining;
-    const imageShift = (mobile.matches ? 95 : 180) * remaining;
+    const headingShift = (mobile.matches ? 95 : 185) * remaining;
+    const imageShift = (mobile.matches ? 130 : 235) * remaining;
     section.style.setProperty('--tds-heading-shift', headingShift.toFixed(2) + 'px');
     frame.style.setProperty('--tds-image-shift', imageShift.toFixed(2) + 'px');
     const angle = (mobile.matches ? 12 : 20) * remaining;

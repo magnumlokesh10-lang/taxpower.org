@@ -503,3 +503,35 @@
     will-change: auto;
   }
 }
+
+/* Subtle document → validation → completion motif, confined to the top edge. */
+#tds-deductors .tds-processing-art {
+  position: absolute;
+  top: 8px;
+  left: 50%;
+  width: min(42%, 420px);
+  transform: translateX(-50%);
+  pointer-events: none;
+  z-index: 0;
+}
+#tds-deductors .tds-processing-art svg { display: block; width: 100%; height: auto; }
+#tds-deductors .tds-processing-paper { animation: tdsDocumentProcess 8s linear infinite; }
+#tds-deductors .tds-processing-done { animation: tdsCompletionGlow 8s ease-in-out infinite; }
+@keyframes tdsDocumentProcess {
+  0%, 5% { opacity: 0; transform: translateX(0); }
+  12% { opacity: 1; }
+  46%, 54% { opacity: 1; transform: translateX(192px); }
+  86% { opacity: 1; transform: translateX(400px); }
+  92%, 100% { opacity: 0; transform: translateX(400px); }
+}
+@keyframes tdsCompletionGlow {
+  0%, 78%, 100% { opacity: .55; }
+  88%, 94% { opacity: 1; }
+}
+@media (max-width: 700px) {
+  #tds-deductors .tds-processing-art { top: 18px; width: 52%; }
+}
+@media (prefers-reduced-motion: reduce) {
+  #tds-deductors .tds-processing-paper { display: none; animation: none; }
+  #tds-deductors .tds-processing-done { animation: none; opacity: 1; }
+}
