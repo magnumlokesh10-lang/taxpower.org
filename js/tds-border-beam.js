@@ -11,7 +11,7 @@
   let hovered = false, frame = 0, last = 0;
   const rect = panel.getBoundingClientRect();
   let onScreen = rect.bottom > 0 && rect.top < window.innerHeight;
-  const paint = () => panel.style.setProperty('--tds-beam-angle', ((angle % 360 + 360) % 360).toFixed(2) + 'deg');
+  const paint = () => panel.style.setProperty('--tds-beam-offset', (-((angle % 360 + 360) % 360) / 360 * 1000).toFixed(3));
   const running = () => panel.isConnected && onScreen && !document.hidden && !reduced.matches;
   function tick(now) {
    frame = 0;

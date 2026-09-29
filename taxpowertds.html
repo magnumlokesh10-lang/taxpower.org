@@ -13,9 +13,9 @@
     content="TaxPower GST, TaxPower TDS, GST software, TDS software, tax compliance, e-invoicing, GST return filing, TDS return filing">
   <link rel="stylesheet" href="css/stylesheet.css?v=20260929-nav-color-shift">
   <link rel="stylesheet" href="css/taxpowergst.css?v=20260926-idle-horn">
-  <link rel="stylesheet" href="css/taxpowertds.css?v=20260929-border-beam">
+  <link rel="stylesheet" href="css/taxpowertds.css?v=20260929-visible-beams">
   <script src="js/tds-intro.js?v=20260925-custom-picker" defer></script>
-  <script src="js/tds-border-beam.js?v=20260929" defer></script>
+  <script src="js/tds-border-beam.js?v=20260929-visible" defer></script>
   <script src="js/tds-client-scroll.js?v=20260929-visible-scroll" defer></script>
   <script src="js/taxpowergst.js?v=20260927-aurora" defer></script>
   <script src="js/nav-loader.js?v=20260929-polish" defer></script>
@@ -127,8 +127,22 @@
       </section>
 
       <section class="gst-dashboard-hero" id="tds-deductors" aria-labelledby="tds-dashboard-title">
-<div class="tds-border-beam-glow" aria-hidden="true"><span class="tds-border-beam-trail"></span></div>
-<div class="tds-border-beam-ring" aria-hidden="true"></div>
+<svg class="tds-border-beam-svg" aria-hidden="true" focusable="false">
+ <defs><filter id="tds-beam-edge-glow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="4"/></filter></defs>
+ <rect class="tds-beam-track" width="100%" height="100%" rx="8"/>
+ <g class="tds-beam-blue">
+  <rect class="tds-beam-halo" width="100%" height="100%" rx="8" pathLength="1000" filter="url(#tds-beam-edge-glow)"/>
+  <rect class="tds-beam-tail" width="100%" height="100%" rx="8" pathLength="1000"/>
+  <rect class="tds-beam-middle" width="100%" height="100%" rx="8" pathLength="1000"/>
+  <rect class="tds-beam-head" width="100%" height="100%" rx="8" pathLength="1000"/>
+ </g>
+ <g class="tds-beam-orange">
+  <rect class="tds-beam-halo" width="100%" height="100%" rx="8" pathLength="1000" filter="url(#tds-beam-edge-glow)"/>
+  <rect class="tds-beam-tail" width="100%" height="100%" rx="8" pathLength="1000"/>
+  <rect class="tds-beam-middle" width="100%" height="100%" rx="8" pathLength="1000"/>
+  <rect class="tds-beam-head" width="100%" height="100%" rx="8" pathLength="1000"/>
+ </g>
+</svg>
 <div class="tds-processing-art" aria-hidden="true">
   <svg viewBox="0 0 500 48" fill="none" focusable="false">
     <path d="M40 24H455" stroke="#7bbfda" stroke-opacity=".45" stroke-width="1.5" stroke-dasharray="3 7"/>
