@@ -535,22 +535,3 @@
   #tds-deductors .tds-processing-paper { display: none; animation: none; }
   #tds-deductors .tds-processing-done { animation: none; opacity: 1; }
 }
-
-
-/* Visible SVG edge trails, independent of CSS mask support. */
-#tds-deductors { --tds-beam-offset:0; }
-#tds-deductors > .tds-border-beam-svg {
- position:absolute; inset:3px; width:calc(100% - 6px); height:calc(100% - 6px);
- overflow:visible; z-index:3; pointer-events:none;
-}
-#tds-deductors .tds-border-beam-svg rect { fill:none; vector-effect:non-scaling-stroke; }
-#tds-deductors .tds-beam-track { stroke:#92bed54d; stroke-width:1; }
-#tds-deductors .tds-beam-blue { stroke:#008fe8; stroke-dashoffset:var(--tds-beam-offset); }
-#tds-deductors .tds-beam-orange { stroke:#f47a22; stroke-dashoffset:calc(var(--tds-beam-offset) - 500); }
-#tds-deductors .tds-beam-halo { stroke-width:9; stroke-dasharray:125 875; opacity:.7; }
-#tds-deductors .tds-beam-tail { stroke-width:3; stroke-dasharray:125 875; opacity:.25; }
-#tds-deductors .tds-beam-middle { stroke-width:3; stroke-dasharray:80 920; opacity:.6; }
-#tds-deductors .tds-beam-head { stroke-width:3.5; stroke-dasharray:28 972; stroke-linecap:round; }
-@media(forced-colors:active) {
- #tds-deductors > .tds-border-beam-svg { display:none; }
-}
