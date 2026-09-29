@@ -456,19 +456,29 @@
 
 
 
-/* Same animated dashboard canvas and image-view effects as GST. */
-#tds-deductors > canvas { position: absolute; inset: 0; z-index: 0; display: block; width: 100%; height: 100%; pointer-events: none; }
 :is(#tds-returns, #tds-compliance, #tds-register) .gst-feature-row-copy.gst-animation-visible { opacity: 1; transform: none; animation-fill-mode: backwards; }
 
-/* Soft aurora ribbons on a light lavender sky. */
+/* Static illustrated client workspace in TaxPower orange and sky blue. */
 .tds-page #tds-deductors {
   isolation: isolate;
-  background: linear-gradient(160deg, #EEE7FA, #E4DAFA 55%, #F4E7EE);
+  background: #e7f6fe url("../asset/frms_bg/tds-client-illustrated.webp") center top / cover no-repeat;
 }
-.tds-page #tds-deductors .gst-dashboard-heading h2 { color: #0B3B3B; }
-.tds-aurora-sky { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none; }
-.tds-aurora-still { display: none; }
-@media (prefers-reduced-motion: reduce) {
- .tds-aurora-motion { display: none; }
- .tds-aurora-still { display: inline; }
+.tds-page #tds-deductors .gst-dashboard-heading {
+  max-width: 540px;
+  width: 52%;
+  padding: 16px 20px;
+  box-sizing: border-box;
+  border-radius: 16px;
+  background: rgba(238, 249, 255, .92);
+}
+.tds-page #tds-deductors .gst-dashboard-heading h2 { color: #0b3b3b; }
+@media (max-width: 700px) {
+  .tds-page #tds-deductors {
+    background-size: auto 100%;
+  }
+  .tds-page #tds-deductors .gst-dashboard-heading {
+    width: 100%;
+    padding: 16px 12px;
+    background: rgba(238, 249, 255, .96);
+  }
 }
