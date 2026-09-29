@@ -5027,3 +5027,16 @@ body.demo-form-open {
   animation:none; opacity:.65;
  }
 }
+
+/* Short, separated orange and blue light arcs with clear unlit gaps. */
+.header.nav-gradient-depth .navbar-demo:is(.demo-desktop-only,.demo-mobile-only) {
+ background:conic-gradient(from var(--demo-ring-angle),
+ #dce7ed 0deg 15deg,#ff9700 28deg 55deg,#dce7ed 68deg 195deg,
+ #00bfff 208deg 235deg,#dce7ed 248deg 360deg);
+}
+.header.nav-gradient-depth .navbar-demo:is(.demo-desktop-only,.demo-mobile-only)::before {
+ background:conic-gradient(from var(--demo-ring-angle),
+ transparent 0deg 15deg,#ff9700c0 28deg 55deg,transparent 68deg 195deg,
+ #00bfffc0 208deg 235deg,transparent 248deg 360deg);
+ filter:blur(6px);
+}
