@@ -458,27 +458,20 @@
 
 :is(#tds-returns, #tds-compliance, #tds-register) .gst-feature-row-copy.gst-animation-visible { opacity: 1; transform: none; animation-fill-mode: backwards; }
 
-/* Static illustrated client workspace in TaxPower orange and sky blue. */
+/* Minimal, static TaxPower illustrations; no plants or animated backdrop. */
 .tds-page #tds-deductors {
   isolation: isolate;
-  background: #e7f6fe url("../asset/frms_bg/tds-client-illustrated.webp") center top / cover no-repeat;
+  background: #edf8fd url("../asset/frms_bg/tds-client-minimal.webp") center top / 100% auto no-repeat;
 }
 .tds-page #tds-deductors .gst-dashboard-heading {
-  max-width: 540px;
-  width: 52%;
-  padding: 16px 20px;
-  box-sizing: border-box;
-  border-radius: 16px;
-  background: rgba(238, 249, 255, .92);
+  max-width: 620px;
+  width: 70%;
+  background: transparent;
 }
 .tds-page #tds-deductors .gst-dashboard-heading h2 { color: #0b3b3b; }
 @media (max-width: 700px) {
-  .tds-page #tds-deductors {
-    background-size: auto 100%;
-  }
   .tds-page #tds-deductors .gst-dashboard-heading {
     width: 100%;
-    padding: 16px 12px;
-    background: rgba(238, 249, 255, .96);
+    padding-top: 52px;
   }
 }
