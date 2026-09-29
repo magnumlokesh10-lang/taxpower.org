@@ -4905,3 +4905,48 @@ body.demo-form-open {
 .header.nav-gradient-depth .nav-item.h-current { border-color:#9dbcc7; color:#0b3b3b; }
 .header.nav-gradient-depth .nav-item:is(:hover,:focus-visible) { color:#0b3b3b; }
 .header.nav-gradient-depth .nav-dropdown-menu { box-shadow:0 4px 12px #173e510d; }
+
+/* Minimal header polish and compact TaxPower product marks. */
+.header.nav-gradient-depth .nav-product-icon {
+ display:block; object-fit:contain; aspect-ratio:1; filter:none;
+}
+.header.nav-gradient-depth .navbar {
+ border-color:#dbe7ed; background:rgba(255,255,255,.82);
+}
+.header.nav-gradient-depth .navbar-links {
+ border-color:#e1e9ee; background:rgba(247,250,252,.82);
+}
+.header.nav-gradient-depth .nav-dropdown-menu {
+ padding:7px; border-color:#dce7ec; border-radius:14px;
+ background:rgba(255,255,255,.98);
+}
+.header.nav-gradient-depth .nav-dropdown-link {
+ min-height:44px; display:flex; align-items:center; border-radius:9px;
+ font-size:13px; color:#254b56;
+}
+.header.nav-gradient-depth .nav-dropdown-link:is(:hover,:focus-visible) {
+ background:#fff1e5; color:#0b3b3b; transform:none;
+}
+@media(min-width:1101px) {
+ .header.nav-gradient-depth .nav-item { border-color:transparent; background:#ffffffb3; }
+ .header.nav-gradient-depth .nav-item.h-current {
+  border-color:#c4dce5; background:#edf6f9;
+ }
+ .header.nav-gradient-depth .nav-item::after {
+  content:""; position:absolute; bottom:4px; left:calc(50% - 5px);
+  width:10px; height:2px; border-radius:2px; background:#507782;
+  opacity:0; pointer-events:none; transition:opacity .2s;
+ }
+ .header.nav-gradient-depth .nav-item.h-current::after { opacity:.7; }
+ .header.nav-gradient-depth .nav-item:is(:hover,:focus-visible) { border-color:#cddfe7; }
+ .header.nav-gradient-depth .nav-item .nav-item-label { font-weight:600; letter-spacing:0; }
+ .header.nav-gradient-depth .nav-item.nav-item-always:not(.is-product-collapsed) .nav-product-icon {
+  width:18px; height:18px; flex-basis:18px;
+ }
+ .header.nav-gradient-depth .nav-item.is-product-collapsed .nav-product-icon {
+  width:21px; height:21px; flex-basis:21px;
+ }
+}
+@media(prefers-reduced-motion:reduce) {
+ .header.nav-gradient-depth .nav-item::after { transition:none; }
+}

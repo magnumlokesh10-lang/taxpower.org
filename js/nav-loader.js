@@ -1,6 +1,6 @@
 (() => {
-  const NAV_CACHE_KEY = 'taxpower-navigation-depth-v2';
-  const navigationRequest = fetch('nav.html?v=20260929-depth', {
+  const NAV_CACHE_KEY = 'taxpower-navigation-polish-v3';
+  const navigationRequest = fetch('nav.html?v=20260929-polish', {
     cache: 'force-cache',
     credentials: 'omit'
   }).then((response) => {
