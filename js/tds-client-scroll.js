@@ -10,7 +10,9 @@
     if (!section?.isConnected || !frame || !section.getClientRects().length) return;
     const bounds = section.getBoundingClientRect();
     const viewport = window.innerHeight || document.documentElement.clientHeight;
-    const progress = clamp((viewport * .85 - bounds.top) / (viewport * .7));
+    // Hold the lowered pose until the frame reaches mid-screen.
+    // Settle at the viewport top, while the screenshot is still visible.
+    const progress = clamp((viewport * .5 - bounds.top) / (viewport * .5));
     const remaining = reducedMotion.matches ? 0 : 1 - progress;
     const headingShift = (mobile.matches ? 95 : 185) * remaining;
     const imageShift = (mobile.matches ? 130 : 235) * remaining;
@@ -44,6 +46,8 @@
     }
     schedule();
   }
+  // Capture also covers a scrollable ancestor when this section is embedded.
+  document.addEventListener('scroll', schedule, { passive: true, capture: true });
   window.addEventListener('scroll', schedule, { passive: true });
   window.addEventListener('resize', schedule, { passive: true });
   reducedMotion.addEventListener('change', schedule);
