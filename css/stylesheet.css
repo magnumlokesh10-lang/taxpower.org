@@ -5088,3 +5088,41 @@ body.demo-form-open {
   animation:none; --demo-inner-strength:.65;
  }
 }
+
+/* A gentle richer-to-lighter color drift while a navigation pill is explored. */
+.header.nav-gradient-depth [data-nav-page="index.html"] { --nav-rich:#C9B5F2; }
+.header.nav-gradient-depth [data-nav-page="taxpowergst.html"],
+.header.nav-gradient-depth [data-nav-page="taxpowertds.html"] { --nav-rich:#FFC17C; }
+.header.nav-gradient-depth [data-nav-page="pricing.html"] { --nav-rich:#98DFC0; }
+.header.nav-gradient-depth [data-nav-page="downloads.html"] { --nav-rich:#97D5F8; }
+.header.nav-gradient-depth [data-nav-page="aboutus.html"] { --nav-rich:#F5B7CA; }
+.header.nav-gradient-depth [data-nav-page="support.html"] { --nav-rich:#8CDDD4; }
+@media(min-width:1101px) {
+ .header.nav-gradient-depth .nav-item::before {
+  background-image:linear-gradient(110deg,var(--nav-rich) 0%,var(--nav-from) 35%,var(--nav-to) 70%,#ffffff 100%);
+  background-size:240% 100%; background-position:0% 50%;
+ }
+ .header.nav-gradient-depth .nav-item:is(:hover,:focus-visible)::before,
+ .header.nav-gradient-depth .nav-dropdown:is(:hover,:focus-within) > .nav-item::before {
+  opacity:1; animation:navGentleColorShift 3.8s ease-in-out infinite alternate;
+ }
+}
+.header.nav-gradient-depth .nav-item .nav-item-label {
+ font-family:'Plus Jakarta Sans',sans-serif;
+ font-size:12.5px; font-weight:700; line-height:1.35; letter-spacing:.005em;
+ text-shadow:none;
+}
+.header.nav-gradient-depth .nav-item:is(:hover,:focus-visible),
+.header.nav-gradient-depth .nav-dropdown:focus-within > .nav-item {
+ color:#123F48;
+}
+@keyframes navGentleColorShift {
+ from { background-position:0% 50%; }
+ to { background-position:100% 50%; }
+}
+@media(prefers-reduced-motion:reduce) {
+ .header.nav-gradient-depth .nav-item:is(:hover,:focus-visible)::before,
+ .header.nav-gradient-depth .nav-dropdown:is(:hover,:focus-within) > .nav-item::before {
+  animation:none; background-position:50% 50%;
+ }
+}
