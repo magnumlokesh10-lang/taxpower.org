@@ -4950,3 +4950,34 @@ body.demo-form-open {
 @media(prefers-reduced-motion:reduce) {
  .header.nav-gradient-depth .nav-item::after { transition:none; }
 }
+
+/* Light, distinct hover colors; product logos stay beside their labels. */
+.header.nav-gradient-depth [data-nav-page="index.html"] { --nav-from:#DDD2FF; --nav-to:#EEE5FF; }
+.header.nav-gradient-depth [data-nav-page="taxpowergst.html"],
+.header.nav-gradient-depth [data-nav-page="taxpowertds.html"] { --nav-from:#FFD29D; --nav-to:#FFEACD; }
+.header.nav-gradient-depth [data-nav-page="pricing.html"] { --nav-from:#BCEFD8; --nav-to:#DDF8E8; }
+.header.nav-gradient-depth [data-nav-page="downloads.html"] { --nav-from:#BDE7FF; --nav-to:#DEF2FF; }
+.header.nav-gradient-depth [data-nav-page="aboutus.html"] { --nav-from:#FFD3DF; --nav-to:#FFE8EE; }
+.header.nav-gradient-depth [data-nav-page="support.html"] { --nav-from:#B4EEE9; --nav-to:#DAF8F2; }
+@media(min-width:1101px) {
+ .header.nav-gradient-depth .nav-item.nav-item-always:is(:hover,:focus-visible),
+ .header.nav-gradient-depth .nav-dropdown:focus-within > .nav-item.nav-item-always {
+  gap:7px; padding-inline:10px; color:#0b3b3b;
+ }
+ .header.nav-gradient-depth .nav-item.nav-item-always:is(:hover,:focus-visible) .nav-product-icon,
+ .header.nav-gradient-depth .nav-dropdown:focus-within > .nav-item.nav-item-always .nav-product-icon {
+  opacity:1; transform:none; width:18px; height:18px; flex:0 0 18px;
+ }
+ .header.nav-gradient-depth .nav-item.nav-item-always:is(:hover,:focus-visible) .nav-item-label,
+ .header.nav-gradient-depth .nav-dropdown:focus-within > .nav-item.nav-item-always .nav-item-label {
+  position:static; left:auto; right:auto; width:auto; max-width:none; opacity:1; transform:none;
+ }
+ .header.nav-gradient-depth .nav-item:is(:hover,:focus-visible) {
+  border-color:transparent; color:#0b3b3b;
+ }
+}
+@media(max-width:1100px) {
+ .header.nav-gradient-depth .nav-item:is(:hover,:focus-visible) {
+  background:linear-gradient(45deg,var(--nav-from),var(--nav-to)); color:#0b3b3b;
+ }
+}
