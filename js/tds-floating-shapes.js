@@ -21,7 +21,7 @@
      '--shape-duration': duration.toFixed(2) + 's',
      '--shape-delay': (-duration * (index % 3 === 0 ? random(.72,.85) : random(.15,.88))).toFixed(2) + 's',
      '--shape-angle': random(-12,12).toFixed(1) + 'deg',
-     '--shape-turn': random(-100,100).toFixed(1) + 'deg',
+     '--shape-turn': ((Math.random() < .5 ? -1 : 1) * random(650,850)).toFixed(1) + 'deg',
      '--shape-drift': random(-22,22).toFixed(1) + 'px'
     };
     Object.entries(values).forEach(([key, value]) => shape.style.setProperty(key, value));
