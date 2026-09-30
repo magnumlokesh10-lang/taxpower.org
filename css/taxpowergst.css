@@ -2062,3 +2062,11 @@
  background:#438BC4;
  box-shadow:0 2px 8px rgba(67,139,196,.25);
 }
+
+/* Desktop: place the top report card to the right of the heading. */
+@media (min-width: 901px) {
+ #gst-reports.gst-feature-row {
+  background-image:url("../asset/frms_bg/gst-reports-yellow-sky-desktop.svg?v=20260930"),
+   linear-gradient(110deg,#FFF0AD 0%,#FFF8E7 48%,#B9E3FF 100%);
+ }
+}
