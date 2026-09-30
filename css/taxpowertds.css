@@ -476,34 +476,6 @@
   }
 }
 
-/* Let the screenshot emerge below the frame while heading and image settle on scroll. */
-#tds-deductors.tds-scroll-ready { overflow: visible; }
-#tds-deductors.tds-scroll-ready .gst-dashboard-heading {
-  opacity: 1;
-  animation: none;
-  transform: translateY(var(--tds-heading-shift, 0px));
-}
-#tds-deductors.tds-scroll-ready .gst-browser-frame {
-  opacity: 1;
-  animation: none;
-  transform-origin: center bottom;
-  transform: translateY(var(--tds-image-shift, 0px)) perspective(1600px) rotateX(var(--tds-scroll-angle, 0deg)) scale(var(--tds-scroll-scale, 1));
-}
-#tds-deductors.tds-scroll-ready .gst-browser-frame.tds-scroll-active {
-  will-change: transform;
-}
-#tds-deductors.tds-scroll-ready .gst-dashboard-image-wrap img {
-  animation: none;
-  transform: none;
-}
-@media (prefers-reduced-motion: reduce) {
-  #tds-deductors.tds-scroll-ready .gst-dashboard-heading,
-  #tds-deductors.tds-scroll-ready .gst-browser-frame {
-    transform: none;
-    will-change: auto;
-  }
-}
-
 /* Subtle document → validation → completion motif, confined to the top edge. */
 #tds-deductors .tds-processing-art {
   position: absolute;
@@ -546,7 +518,7 @@
  position:absolute; display:block; list-style:none; width:20px; height:20px;
  bottom:-150px; background:rgba(173,145,225,.32);
  border:1px solid rgba(135,100,190,.52);
- box-sizing:border-box;
+ box-sizing:border-box; border-radius:3px;
  animation:tdsFloatingShapeRise 25s linear infinite;
 }
 #tds-deductors .tds-floating-shapes > li:nth-child(1) { left:25%; width:80px; height:80px; animation-delay:-20s; }
@@ -564,9 +536,9 @@
  border-color:rgba(225,138,80,.55);
 }
 @keyframes tdsFloatingShapeRise {
- 0% { transform:translateY(0) rotate(0deg); opacity:0; border-radius:0; }
+ 0% { transform:translateY(0) rotate(0deg); opacity:0; border-radius:3px; }
  8%, 85% { opacity:1; }
- to { transform:translateY(var(--tds-shape-travel,-1200px)) rotate(720deg); opacity:0; border-radius:50%; }
+ to { transform:translateY(var(--tds-shape-travel,-1200px)) rotate(720deg); opacity:0; border-radius:3px; }
 }
 @supports(height:1cqh) {
  #tds-deductors .tds-floating-shapes > li { --tds-shape-travel:calc(-100cqh - 180px); }
