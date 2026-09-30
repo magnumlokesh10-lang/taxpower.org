@@ -1637,19 +1637,18 @@
  background-repeat:no-repeat;
  box-shadow:inset 0 0 0 1px rgba(255,255,255,.8);
 }
-/* Filing status: layered checklist and date motifs on a bright warm base. */
+/* Pink and apricot filing status frame. */
 #gst-filing-status.gst-feature-row {
-  background-color: #fff2dc;
-  background-image: url("../asset/frms_bg/gst-filing-status-abstract.svg?v=20260924-sync-clock"),
-    radial-gradient(ellipse at 95% 15%, #fff9e9 0%, transparent 60%),
-    linear-gradient(115deg, #ffe2c6 0%, #fff4d9 52%, #ffe9ce 100%);
-  background-size: 100% 100%, cover, cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  box-shadow: inset 0 0 0 1px rgba(255,255,255,.8);
+ background-color:#FFD1A6;
+ background-image:url("../asset/frms_bg/gst-filing-pink-apricot.svg?v=20260930"),
+ linear-gradient(115deg,#FFB5CC 0%,#FFC5BA 50%,#FFD1A6 100%);
+ background-size:100% 100%,cover;
+ background-position:center;
+ background-repeat:no-repeat;
+ box-shadow:inset 0 0 0 1px rgba(255,255,255,.8);
 }
 #gst-filing-status .gst-feature-row-copy > ul {
-  background: url("../asset/frms_bg/gst-filing-status-pink-transparent.png?v=20260924") center / contain no-repeat;
+ background:url("../asset/frms_bg/gst-filing-layered-receipt.svg?v=20260930") center / contain no-repeat;
 }
 :is(#gst-return, #gst-reports, #gst-filing-status) > .gst-motion-frame {
   display: none;
@@ -2069,4 +2068,16 @@
   background-image:url("../asset/frms_bg/gst-reports-yellow-sky-desktop.svg?v=20260930"),
    linear-gradient(110deg,#FFF0AD 0%,#FFF8E7 48%,#B9E3FF 100%);
  }
+}
+
+/* Rose glass details for the third GST feature only. */
+#gst-filing-status .gst-feature-row-copy :is(h2,p,li),
+#gst-filing-status .gst-typing-keyword { color:#0B3B3B; }
+#gst-filing-status .gst-feature-row-copy > ul > li {
+ background:rgba(255,255,255,.46); border-color:#C38EA0;
+ -webkit-backdrop-filter:blur(2px); backdrop-filter:blur(2px);
+ box-shadow:inset 0 1px 0 rgba(255,255,255,.65);
+}
+#gst-filing-status .gst-feature-row-copy > ul > li::before {
+ background:#C65C82; box-shadow:0 2px 8px rgba(198,92,130,.25);
 }
