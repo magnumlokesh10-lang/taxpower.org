@@ -1734,12 +1734,24 @@
   outline-offset: 5px;
 }
 
-/* Transparent 3D artwork behind the Returns bullet list only. */
+/* Soft lavender and mint glow behind the first GST feature's bullets only. */
 #gst-return .gst-feature-row-copy > ul {
-  background-image: url("../asset/frms_bg/gst-returns-growth-transparent.png?v=20e7b78fdcc9");
-  background-position: center;
-  background-size: contain;
+  background-image:
+    radial-gradient(ellipse, rgba(174, 135, 236, .42) 0%, rgba(174, 135, 236, .18) 36%, transparent 72%),
+    radial-gradient(ellipse, rgba(79, 222, 176, .38) 0%, rgba(79, 222, 176, .14) 38%, transparent 72%),
+    radial-gradient(ellipse, rgba(203, 180, 247, .28) 0%, transparent 70%);
+  background-size: 65% 85%, 70% 90%, 45% 65%;
+  background-position: -20% 0%, 120% 100%, 60% 0%;
   background-repeat: no-repeat;
+  animation: gstReturnBulletGlow 18s ease-in-out infinite alternate;
+}
+@keyframes gstReturnBulletGlow {
+  0% { background-position: -20% 0%, 120% 100%, 60% 0%; }
+  50% { background-position: 0% 70%, 100% 15%, 85% 45%; }
+  100% { background-position: 15% 100%, 85% 65%, 35% 100%; }
+}
+@media (prefers-reduced-motion: reduce) {
+  #gst-return .gst-feature-row-copy > ul { animation: none; }
 }
 
 /* Shared sharp copy on the bright Returns and Reports frames. */
