@@ -1637,18 +1637,18 @@
  background-repeat:no-repeat;
  box-shadow:inset 0 0 0 1px rgba(255,255,255,.8);
 }
-/* Pink and apricot filing status frame. */
+/* Fresh mint and turquoise filing status frame. */
 #gst-filing-status.gst-feature-row {
- background-color:#FFD1A6;
- background-image:url("../asset/frms_bg/gst-filing-pink-apricot.svg?v=20260930"),
- linear-gradient(115deg,#FFB5CC 0%,#FFC5BA 50%,#FFD1A6 100%);
+ background-color:#78DDD5;
+ background-image:url("../asset/frms_bg/gst-filing-mint-tracker.svg?v=20260930"),
+ linear-gradient(115deg,#B8F2D0 0%,#9BE9D3 50%,#78DDD5 100%);
  background-size:100% 100%,cover;
  background-position:center;
  background-repeat:no-repeat;
  box-shadow:inset 0 0 0 1px rgba(255,255,255,.8);
 }
 #gst-filing-status .gst-feature-row-copy > ul {
- background:url("../asset/frms_bg/gst-filing-layered-receipt.svg?v=20260930") center / contain no-repeat;
+ background:url("../asset/frms_bg/gst-filing-status-tracker.svg?v=20260930") center / contain no-repeat;
 }
 :is(#gst-return, #gst-reports, #gst-filing-status) > .gst-motion-frame {
   display: none;
@@ -2070,14 +2070,14 @@
  }
 }
 
-/* Rose glass details for the third GST feature only. */
+/* Teal glass details for the third GST feature only. */
 #gst-filing-status .gst-feature-row-copy :is(h2,p,li),
 #gst-filing-status .gst-typing-keyword { color:#0B3B3B; }
 #gst-filing-status .gst-feature-row-copy > ul > li {
- background:rgba(255,255,255,.46); border-color:#C38EA0;
+ background:rgba(255,255,255,.46); border-color:#70B5A6;
  -webkit-backdrop-filter:blur(2px); backdrop-filter:blur(2px);
  box-shadow:inset 0 1px 0 rgba(255,255,255,.65);
 }
 #gst-filing-status .gst-feature-row-copy > ul > li::before {
- background:#C65C82; box-shadow:0 2px 8px rgba(198,92,130,.25);
+ background:#168C89; box-shadow:0 2px 8px rgba(22,140,137,.25);
 }
