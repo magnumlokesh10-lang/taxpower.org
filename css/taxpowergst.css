@@ -1617,11 +1617,11 @@
   background-repeat: no-repeat;
   box-shadow: none;
 }
-/* Periwinkle and ice blue, scoped to the first GST feature only. */
+/* Aqua and sky blue, scoped to the first GST feature only. */
 #gst-return.gst-feature-row {
-  background-color: #C5EFFF;
+  background-color: #B5DFFF;
   background-image: url("../asset/frms_bg/gst-returns-periwinkle.svg?v=20260930"),
-    linear-gradient(115deg, #B5BFFF 0%, #BFD8FF 48%, #C5EFFF 100%);
+    linear-gradient(115deg, #85E8EF 0%, #9DE4F7 48%, #B5DFFF 100%);
   background-size: 100% 100%, cover;
   background-position: center;
   background-repeat: no-repeat;
