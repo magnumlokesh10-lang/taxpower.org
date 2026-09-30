@@ -1627,17 +1627,15 @@
   background-repeat: no-repeat;
   box-shadow: inset 0 0 0 1px rgba(255,255,255,.8);
 }
-/* Reports: report sheets and analytics motifs on the existing sky-blue base. */
+/* Soft yellow and sky blue report frame, with a cream transition. */
 #gst-reports.gst-feature-row {
-  background-color: #dcf7ff;
-  background-image:
-    url("../asset/frms_bg/gst-reports-abstract.svg?v=20260924-sync-clock"),
-    radial-gradient(ellipse at 0% 55%, #ecfcff 0%, transparent 65%),
-    linear-gradient(115deg, #d8f3ff 0%, #c7f5ed 54%, #b5e9ff 100%);
-  background-size: 100% 100%, cover, cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .8);
+ background-color:#FFF0AD;
+ background-image:url("../asset/frms_bg/gst-reports-yellow-sky.svg?v=20260930"),
+ linear-gradient(110deg,#FFF0AD 0%,#FFF8E7 48%,#B9E3FF 100%);
+ background-size:100% 100%,cover;
+ background-position:center;
+ background-repeat:no-repeat;
+ box-shadow:inset 0 0 0 1px rgba(255,255,255,.8);
 }
 /* Filing status: layered checklist and date motifs on a bright warm base. */
 #gst-filing-status.gst-feature-row {
@@ -1786,7 +1784,7 @@
 
 /* Full transparent Reports illustration; contain preserves the entire platform. */
 #gst-reports .gst-feature-row-copy > ul {
-  background-image: url("../asset/frms_bg/gst-reports-clipboard-transparent.png?v=a68dae49d399");
+  background-image: url("../asset/frms_bg/gst-reports-layered-charts.svg?v=20260930");
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
@@ -2048,4 +2046,19 @@
 #gst-return .gst-feature-row-copy > ul > li::before {
   background: #5271D6;
   box-shadow: 0 2px 8px rgba(82,113,214,.25);
+}
+
+/* Matching report-frame glass; preserve content-sized bullets and layout. */
+#gst-reports .gst-feature-row-copy :is(h2,p,li),
+#gst-reports .gst-typing-keyword { color:#0B3B3B; }
+#gst-reports .gst-feature-row-copy > ul > li {
+ background:rgba(255,255,255,.46);
+ border-color:#A2B8CB;
+ -webkit-backdrop-filter:blur(2px);
+ backdrop-filter:blur(2px);
+ box-shadow:inset 0 1px 0 rgba(255,255,255,.65);
+}
+#gst-reports .gst-feature-row-copy > ul > li::before {
+ background:#438BC4;
+ box-shadow:0 2px 8px rgba(67,139,196,.25);
 }
