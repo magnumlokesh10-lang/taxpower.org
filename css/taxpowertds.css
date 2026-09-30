@@ -548,3 +548,62 @@
 @media(prefers-reduced-motion:reduce) {
  #tds-deductors > .tds-floating-shapes { display:none; }
 }
+
+/* TDS feature introduction: centred heading and three horizontal workflow cards. */
+.tds-page .tds-feature-explorer {
+ display:block; position:relative; box-sizing:border-box;
+ width:100%; max-width:none; margin:0 0 28px; padding:32px;
+ border:1px solid #DCEAF1; border-radius:16px;
+ background:radial-gradient(ellipse at 0% 0%,#FFF0E0,transparent 48%),
+ radial-gradient(ellipse at 100% 100%,#E1F5FF,transparent 55%),#FAFDFE;
+ box-shadow:0 8px 24px rgba(32,82,102,.04);
+}
+.tds-page .tds-feature-explorer::before,
+.tds-page .tds-feature-explorer::after { content:none; }
+.tds-feature-explorer .gst-features-intro { text-align:center; }
+.tds-feature-explorer .gst-features-kicker {
+ display:inline-flex; align-items:center; gap:8px; padding:6px 12px;
+ border:1px solid #E5D9C9; border-radius:20px; background:#FFF8EE;
+}
+.tds-page .tds-feature-explorer h2 {
+ margin:14px auto 10px; max-width:900px;
+ color:#0B3B3B; font-size:clamp(27px,3vw,39px); line-height:1.25;
+ letter-spacing:-.035em;
+}
+.tds-feature-explorer .tds-explorer-brand { color:#E87921; }
+.tds-page .tds-feature-explorer .gst-features-intro p {
+ max-width:720px; margin:0 auto; color:#5C7888; font-size:14px; line-height:1.7;
+}
+.tds-feature-explorer .gst-features-nav {
+ display:grid; grid-template-columns:repeat(3,minmax(0,1fr));
+ gap:12px; margin:24px 0 0; padding:0; border:0; counter-reset:tds-workflow;
+}
+.tds-feature-explorer .gst-features-nav-label {
+ grid-column:1 / -1; margin:0 0 2px; text-align:center;
+ font-size:10px; letter-spacing:.12em; color:#64808E;
+}
+.tds-feature-explorer .gst-features-nav a {
+ display:flex; align-items:center; gap:12px; min-width:0; min-height:78px;
+ box-sizing:border-box; padding:16px; border:1px solid #D5E5ED;
+ border-radius:12px; background:rgba(255,255,255,.88);
+ box-shadow:0 4px 12px rgba(36,78,100,.04);
+ transition:background .2s,border-color .2s,box-shadow .2s;
+}
+.tds-feature-explorer .gst-features-link-icon { flex-shrink:0; }
+.tds-feature-explorer .gst-features-link-copy { flex:1; min-width:0; }
+.tds-feature-explorer .gst-features-link-copy strong { display:block; font-size:13px; line-height:1.5; color:#194D60; }
+.tds-feature-explorer .gst-features-link-copy small { display:block; margin-top:3px; font-size:11px; line-height:1.5; }
+.tds-feature-explorer .gst-features-link-arrow { flex-shrink:0; }
+.tds-feature-explorer .gst-features-nav a:hover {
+ padding:16px; background:#F0FAFF; border-color:#8CCADB;
+ box-shadow:0 5px 16px rgba(36,78,100,.09);
+}
+.tds-feature-explorer .gst-features-nav a:focus-visible { outline:3px solid #E9944E; outline-offset:3px; }
+@media(max-width:767px) {
+ .tds-page .tds-feature-explorer { padding:24px 18px; }
+ .tds-feature-explorer .gst-features-nav { grid-template-columns:1fr; gap:9px; }
+ .tds-feature-explorer .gst-features-nav a { min-height:68px; }
+}
+@media(prefers-reduced-motion:reduce) {
+ .tds-feature-explorer .gst-features-nav a { transition:none; }
+}
