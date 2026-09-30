@@ -1621,7 +1621,7 @@
 #gst-return.gst-feature-row {
   background-color: #B5DFFF;
   background-image: url("../asset/frms_bg/gst-returns-periwinkle.svg?v=20260930"),
-    linear-gradient(115deg, #85E8EF 0%, #9DE4F7 48%, #B5DFFF 100%);
+    linear-gradient(115deg, #B5DFFF 0%, #9DE4F7 48%, #85E8EF 100%);
   background-size: 100% 100%, cover;
   background-position: center;
   background-repeat: no-repeat;
