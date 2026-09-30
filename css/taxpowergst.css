@@ -1641,7 +1641,7 @@
 #gst-filing-status.gst-feature-row {
  background-color:#78DDD5;
  background-image:url("../asset/frms_bg/gst-filing-mint-tracker.svg?v=20260930"),
- linear-gradient(115deg,#B8F2D0 0%,#9BE9D3 50%,#78DDD5 100%);
+ linear-gradient(115deg,#78DDD5 0%,#9BE9D3 50%,#B8F2D0 100%);
  background-size:100% 100%,cover;
  background-position:center;
  background-repeat:no-repeat;
