@@ -1617,18 +1617,15 @@
   background-repeat: no-repeat;
   box-shadow: none;
 }
-/* Bright mint, lemon and lilac abstract Returns frame. */
+/* Periwinkle and ice blue, scoped to the first GST feature only. */
 #gst-return.gst-feature-row {
-  background-color: #edffd8;
-  background-image:
-    url("../asset/frms_bg/gst-returns-abstract.svg?v=20260924-sync-clock"),
-    radial-gradient(ellipse at 92% 85%, rgba(91, 239, 171, .5) 0%, transparent 58%),
-    radial-gradient(ellipse at 0% 0%, rgba(209, 166, 255, .42) 0%, transparent 52%),
-    linear-gradient(245deg, #aff4d2 0%, #f1ffc7 44%, #f6edff 72%, #e7d2ff 100%);
-  background-size: 100% 100%, cover, cover, cover;
+  background-color: #C5EFFF;
+  background-image: url("../asset/frms_bg/gst-returns-periwinkle.svg?v=20260930"),
+    linear-gradient(115deg, #B5BFFF 0%, #BFD8FF 48%, #C5EFFF 100%);
+  background-size: 100% 100%, cover;
   background-position: center;
   background-repeat: no-repeat;
-  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .8);
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,.8);
 }
 /* Reports: report sheets and analytics motifs on the existing sky-blue base. */
 #gst-reports.gst-feature-row {
@@ -1734,24 +1731,9 @@
   outline-offset: 5px;
 }
 
-/* Soft lavender and mint glow behind the first GST feature's bullets only. */
+/* Layered vector return sheets behind the first feature's bullet list. */
 #gst-return .gst-feature-row-copy > ul {
-  background-image:
-    radial-gradient(ellipse, rgba(174, 135, 236, .42) 0%, rgba(174, 135, 236, .18) 36%, transparent 72%),
-    radial-gradient(ellipse, rgba(79, 222, 176, .38) 0%, rgba(79, 222, 176, .14) 38%, transparent 72%),
-    radial-gradient(ellipse, rgba(203, 180, 247, .28) 0%, transparent 70%);
-  background-size: 65% 85%, 70% 90%, 45% 65%;
-  background-position: -20% 0%, 120% 100%, 60% 0%;
-  background-repeat: no-repeat;
-  animation: gstReturnBulletGlow 18s ease-in-out infinite alternate;
-}
-@keyframes gstReturnBulletGlow {
-  0% { background-position: -20% 0%, 120% 100%, 60% 0%; }
-  50% { background-position: 0% 70%, 100% 15%, 85% 45%; }
-  100% { background-position: 15% 100%, 85% 65%, 35% 100%; }
-}
-@media (prefers-reduced-motion: reduce) {
-  #gst-return .gst-feature-row-copy > ul { animation: none; }
+  background: url("../asset/frms_bg/gst-returns-layered-sheets.svg?v=20260930") center / contain no-repeat;
 }
 
 /* Shared sharp copy on the bright Returns and Reports frames. */
@@ -2051,4 +2033,19 @@
 }
 @media(prefers-reduced-motion:reduce) {
   .gst-billing-truck-lane .gst-truck-engine,.gst-billing-truck-lane .gst-truck-horn { animation: none !important; }
+}
+
+/* Readable matching glass and blue checks for this frame only. */
+#gst-return .gst-feature-row-copy :is(h2, p, li),
+#gst-return .gst-typing-keyword { color: #0B3B3B; }
+#gst-return .gst-feature-row-copy > ul > li {
+  background: rgba(255,255,255,.46);
+  border-color: #8FA8CC;
+  -webkit-backdrop-filter: blur(2px);
+  backdrop-filter: blur(2px);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.65);
+}
+#gst-return .gst-feature-row-copy > ul > li::before {
+  background: #5271D6;
+  box-shadow: 0 2px 8px rgba(82,113,214,.25);
 }

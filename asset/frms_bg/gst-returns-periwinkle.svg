@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="620" viewBox="0 0 1440 620" fill="none">
+<defs>
+<linearGradient id="paper" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#FFFFFF"/><stop offset="1" stop-color="#EAF5FF"/></linearGradient>
+<linearGradient id="purple" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#BDCBFF"/><stop offset="1" stop-color="#7D96DA"/></linearGradient>
+<linearGradient id="mint" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#A8DCFF"/><stop offset="1" stop-color="#5271D6"/></linearGradient>
+<filter id="depth" x="-40%" y="-40%" width="180%" height="190%"><feDropShadow dx="0" dy="9" stdDeviation="8" flood-color="#4764AA" flood-opacity=".22"/></filter>
+</defs>
+<!-- Primary motifs sit in exposed desktop corners; the copy area stays quiet. -->
+<g transform="translate(1300 -22) rotate(12 76 75)" filter="url(#depth)">
+<rect x="8" y="10" width="150" height="160" rx="20" fill="#7D96DA"/>
+<rect width="150" height="160" rx="20" fill="url(#paper)" stroke="white" stroke-width="2"/>
+<path d="M20 0H130Q150 0 150 20V46H0V20Q0 0 20 0Z" fill="url(#purple)"/>
+<path d="M36 -5V16M114 -5V16" stroke="#627BB9" stroke-width="9" stroke-linecap="round"/>
+<g fill="#D4E7FC"><rect x="20" y="64" width="26" height="24" rx="5"/><rect x="62" y="64" width="26" height="24" rx="5"/><rect x="104" y="64" width="26" height="24" rx="5"/><rect x="20" y="106" width="26" height="24" rx="5"/><rect x="104" y="106" width="26" height="24" rx="5"/></g>
+<rect x="58" y="101" width="34" height="34" rx="8" fill="url(#mint)"/>
+<path d="M66 118L73 125L85 111" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<!-- Continuous flow starts beneath the document and finishes beneath the check tile. -->
+<path class="returns-flow-line"
+  d="M880 585 C946 595 1017 602 1055 568 C1082 541 1112 545 1138 571 C1164 597 1192 607 1223 595 C1254 583 1290 570 1346 578"
+  pathLength="100" fill="none" stroke="#5271D6" stroke-width="3"
+  stroke-linecap="round" stroke-linejoin="round" pointer-events="none" stroke-dashoffset="100">
+  <!-- Use the SVG document clock shared by the dot, including after tab suspension. -->
+  <animate attributeName="stroke-dashoffset" values="100;-100" begin="0s"
+    dur="14s" calcMode="linear" repeatCount="indefinite"/>
+</path>
+<!-- Recording-style pulsing dot follows the leading tip on the existing timeline. -->
+<g class="returns-flow-dot" pointer-events="none">
+  <g>
+    <circle r="7" fill="#5271D6" opacity=".2">
+      <animate attributeName="r" values="5;10;5" dur="1.2s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values=".3;.06;.3" dur="1.2s" repeatCount="indefinite"/>
+    </circle>
+    <circle r="3.5" fill="#5271D6">
+      <animate attributeName="opacity" values="1;.35;1" dur="1.2s" repeatCount="indefinite"/>
+    </circle>
+    <animateMotion begin="0s" path="M880 585 C946 595 1017 602 1055 568 C1082 541 1112 545 1138 571 C1164 597 1192 607 1223 595 C1254 583 1290 570 1346 578" dur="14s" repeatCount="indefinite"
+      calcMode="linear" keyPoints="0;1;1" keyTimes="0;0.5;1"/>
+  </g>
+  <animate attributeName="opacity" values="0.95;0;0" keyTimes="0;0.5;1"
+    calcMode="discrete" dur="14s" repeatCount="indefinite"/>
+</g>
+
+<g transform="translate(743 540) rotate(-13 92 62)" filter="url(#depth)">
+<rect x="20" y="0" width="150" height="105" rx="14" fill="#8EA6E5"/>
+<rect x="10" y="-9" width="150" height="105" rx="14" fill="#D8E3FF" stroke="white"/>
+<rect y="-18" width="150" height="105" rx="14" fill="url(#paper)" stroke="white" stroke-width="2"/>
+<path d="M20 5H78M20 24H111M20 43H92" stroke="#94ACCF" stroke-width="5" stroke-linecap="round"/>
+<circle cx="131" cy="59" r="28" fill="url(#mint)" stroke="#E7F5FF" stroke-width="2"/>
+<path d="M117 59L127 69L146 48" stroke="white" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<g transform="translate(1312 550)" filter="url(#depth)">
+<rect width="62" height="58" rx="15" fill="url(#purple)" stroke="#F1F7FF"/>
+<path d="M17 29L27 39L46 19" stroke="white" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<!-- Secondary motifs behind the dashboard screenshot. -->
+<g transform="translate(40 72) rotate(-12)" opacity=".3">
+<rect x="9" y="10" width="157" height="183" rx="18" fill="#839ED9"/>
+<rect width="157" height="183" rx="18" fill="url(#paper)" stroke="white" stroke-width="2"/>
+<path d="M26 40H115M26 70H131M26 100H105M26 130H119" stroke="#839ED9" stroke-width="7" stroke-linecap="round"/>
+</g>
+<g transform="translate(555 195)" opacity=".19">
+<rect width="130" height="140" rx="18" fill="url(#purple)"/>
+<path d="M26 45H103M26 70H90M26 95H100" stroke="white" stroke-width="7" stroke-linecap="round"/>
+</g>
+
+
+<style>
+  .returns-flow-line {
+    /* A full-path gap lets the entire stroke exit before the next one enters. */
+    stroke-dasharray: 100 100;
+    opacity: .9;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .returns-flow-line { animation: none; stroke-dasharray: none; }
+    .returns-flow-dot { display: none; }
+  }
+</style>
+</svg>
