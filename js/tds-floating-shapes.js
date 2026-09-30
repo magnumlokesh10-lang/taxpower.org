@@ -6,7 +6,7 @@
   document.querySelectorAll('#tds-deductors > .tds-floating-shapes').forEach(layer => {
    if (layer.dataset.shapesInitialized) return;
    layer.dataset.shapesInitialized = 'true';
-   const types = ['square','circle','diamond','square','circle','diamond','square','circle','diamond','square'];
+   const types = ['square','triangle','diamond','square','triangle','diamond','square','triangle','diamond','square'];
    for (let i = types.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
     [types[i], types[j]] = [types[j], types[i]];
