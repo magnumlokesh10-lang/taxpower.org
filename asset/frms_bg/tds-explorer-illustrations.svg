@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="360" viewBox="0 0 1440 360" fill="none">
+<defs>
+ <linearGradient id="paper" x2="1" y2="1"><stop stop-color="#FFFFFF"/><stop offset="1" stop-color="#E5F3FC"/></linearGradient>
+ <linearGradient id="warm" x2="1" y2="1"><stop stop-color="#FFF5E8"/><stop offset="1" stop-color="#FFDFC0"/></linearGradient>
+ <filter id="depth" x="-40%" y="-40%" width="180%" height="190%"><feDropShadow dx="0" dy="7" stdDeviation="6" flood-color="#5F889B" flood-opacity=".16"/></filter>
+</defs>
+<!-- Numerical return sheets at the upper-left edge. -->
+<g transform="translate(-23 21) rotate(-12 77 78)" opacity=".58" filter="url(#depth)">
+ <rect x="11" y="12" width="142" height="164" rx="14" fill="#B6D7E9"/>
+ <rect x="5" y="5" width="142" height="164" rx="14" fill="#D9EBF5" stroke="white"/>
+ <rect width="142" height="164" rx="14" fill="url(#paper)" stroke="#A9CFE2" stroke-width="1.5"/>
+ <rect x="20" y="22" width="53" height="8" rx="4" fill="#78AEC9"/>
+ <rect x="19" y="46" width="104" height="18" rx="3" fill="#C9E4F3"/>
+ <path d="M19 64h104M19 84h104M19 104h104M19 124h104M19 144h104M57 46v98M92 46v98" stroke="#A5C9DB" stroke-width="1.5"/>
+ <g font-family="Arial,sans-serif" font-size="9" fill="#56849A" text-anchor="end"><text x="85" y="78">120</text><text x="117" y="78">240</text><text x="85" y="98">180</text><text x="117" y="98">360</text><text x="85" y="118">300</text><text x="117" y="118">600</text><text x="85" y="138">600</text><text x="117" y="138">1200</text></g>
+</g>
+<!-- Calculator on the upper-right; no graph imagery. -->
+<g transform="translate(1318 -15) rotate(12 57 76)" opacity=".62" filter="url(#depth)">
+ <rect x="6" y="8" width="114" height="158" rx="19" fill="#E6BD98"/>
+ <rect width="114" height="158" rx="19" fill="url(#warm)" stroke="#E5B991" stroke-width="1.5"/>
+ <rect x="17" y="20" width="80" height="32" rx="7" fill="#F4FCFF" stroke="#BBD7E1"/>
+ <text x="87" y="42" font-family="Arial,sans-serif" font-size="16" fill="#6F9BAE" text-anchor="end">1250</text>
+ <g fill="#E9BC96"><rect x="18" y="68" width="20" height="18" rx="5"/><rect x="47" y="68" width="20" height="18" rx="5"/><rect x="76" y="68" width="20" height="18" rx="5"/><rect x="18" y="96" width="20" height="18" rx="5"/><rect x="47" y="96" width="20" height="18" rx="5"/><rect x="18" y="124" width="20" height="18" rx="5"/><rect x="47" y="124" width="20" height="18" rx="5"/></g>
+ <rect x="76" y="96" width="20" height="46" rx="5" fill="#8DC7DD"/><path d="M81 116h10M81 122h10" stroke="white" stroke-width="2" stroke-linecap="round"/>
+</g>
+<!-- A small validation checklist peeks out below the workflow cards. -->
+<g transform="translate(669 307) rotate(-10 56 50)" opacity=".43" filter="url(#depth)">
+ <rect x="7" y="7" width="108" height="116" rx="13" fill="#B4D5E6"/>
+ <rect width="108" height="116" rx="13" fill="url(#paper)" stroke="#AED0E1"/>
+ <rect x="29" y="-5" width="50" height="14" rx="6" fill="#F1C399"/>
+ <g stroke="#70ACC4" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m16 32 5 5 9-11m-14 38 5 5 9-11m-14 38 5 5 9-11"/></g>
+ <path d="M42 32h48M42 59h40M42 86h45" stroke="#A6C5D5" stroke-width="4" stroke-linecap="round"/>
+</g>
+<g stroke="#9EC9DB" stroke-width="2" stroke-linecap="round" opacity=".45"><path d="M178 47h12m-6-6v12M1230 177h12m-6-6v12"/></g>
+<circle cx="190" cy="168" r="5" fill="#F2C598" opacity=".45"/>
+<circle cx="1248" cy="37" r="7" stroke="#ADD4E5" stroke-width="2" opacity=".5"/>
+</svg>
