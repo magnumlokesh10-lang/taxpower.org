@@ -626,3 +626,32 @@
 @media(prefers-reduced-motion:reduce) {
  .tds-feature-explorer .gst-features-nav a { transition:none; }
 }
+
+/* Distinct TDS tools: document downloads and numerical reports. */
+#tds-traces.gst-feature-card {
+ --reconciliation-art:url("../asset/frms_bg/tds-traces-documents.svg?v=20261001");
+ background:radial-gradient(ellipse at 95% 0%,#F6F0FF,transparent 58%),
+ linear-gradient(145deg,#F1EDFF 0%,#D6CCF1 100%);
+}
+#tds-reports.gst-feature-card {
+ --reconciliation-art:url("../asset/frms_bg/tds-numerical-reports.svg?v=20261001");
+ background:radial-gradient(ellipse at 5% 0%,#F7FFF7,transparent 58%),
+ linear-gradient(145deg,#E9F8EF 0%,#BDE5D3 100%);
+}
+:is(#tds-traces,#tds-reports).gst-feature-card::after {
+ width:clamp(90px,10vw,138px); height:132px; top:-12px; right:-5px; opacity:.48;
+}
+:is(#tds-traces,#tds-reports) .gst-feature-copy { padding-right:clamp(30px,5vw,74px); }
+:is(#tds-traces,#tds-reports) .gst-feature-copy h2 { color:#0B3B3B; }
+:is(#tds-traces,#tds-reports) .gst-feature-copy p { color:#244B50; }
+#tds-traces .gst-feature-copy :is(.gst-typing-keyword,strong) {
+ color:#51406E; background:rgba(255,255,255,.88); border-radius:4px;
+ padding:2px 5px; font-weight:800; box-shadow:inset 0 -2px #AA91D0;
+}
+#tds-reports .gst-feature-copy .gst-typing-keyword {
+ color:#245C4A; background:rgba(255,255,255,.88); box-shadow:inset 0 -2px #7BB69D;
+}
+@media(max-width:600px) {
+ :is(#tds-traces,#tds-reports).gst-feature-card::after { width:84px; height:94px; opacity:.3; }
+ :is(#tds-traces,#tds-reports) .gst-feature-copy { padding-right:24px; }
+}

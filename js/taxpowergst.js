@@ -1114,7 +1114,7 @@
           .replace(/^[^a-z0-9&/-]+|[^a-z0-9&/-]+$/gi, '')
           .toLowerCase();
 
-        if (keywordTerms.has(normalizedWord)) {
+        if (keywordTerms.has(normalizedWord) || (paragraph.dataset.highlightTerms || '').split(/\s+/).includes(normalizedWord)) {
           word.classList.add('gst-typing-keyword');
         }
 
