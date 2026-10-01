@@ -1,8 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="620" viewBox="0 0 1440 620" fill="none"><defs><filter id="depth" x="-40%" y="-40%" width="180%" height="190%"><feDropShadow dx="0" dy="8" stdDeviation="7" flood-color="#9B665B" flood-opacity=".18"/></filter><linearGradient id="paper" x2="1" y2="1"><stop stop-color="white"/><stop offset="1" stop-color="#FFF1E9"/></linearGradient><linearGradient id="tray" x2="1" y2="1"><stop stop-color="#F4AC94"/><stop offset="1" stop-color="#CE796B"/></linearGradient></defs>
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="620" viewBox="0 0 1440 620" fill="none"><defs><filter id="depth" x="-40%" y="-40%" width="180%" height="190%"><feDropShadow dx="0" dy="8" stdDeviation="7" flood-color="#567798" flood-opacity=".18"/></filter><linearGradient id="paper" x2="1" y2="1"><stop stop-color="white"/><stop offset="1" stop-color="#EDF5FF"/></linearGradient><linearGradient id="tray" x2="1" y2="1"><stop stop-color="#9FC3E6"/><stop offset="1" stop-color="#658FB8"/></linearGradient></defs>
 <!-- Continuous flow starts beneath the document and finishes beneath the check tile. -->
 <path class="returns-flow-line"
   d="M880 585 C946 595 1017 602 1055 568 C1082 541 1112 545 1138 571 C1164 597 1192 607 1223 595 C1254 583 1290 570 1346 578"
-  pathLength="100" fill="none" stroke="#C67865" stroke-width="3"
+  pathLength="100" fill="none" stroke="#658FB8" stroke-width="3"
   stroke-linecap="round" stroke-linejoin="round" pointer-events="none" stroke-dashoffset="100">
   <!-- Use the SVG document clock shared by the dot, including after tab suspension. -->
   <animate attributeName="stroke-dashoffset" values="100;-100" begin="0s"
@@ -11,11 +11,11 @@
 <!-- Recording-style pulsing dot follows the leading tip on the existing timeline. -->
 <g class="returns-flow-dot" pointer-events="none">
   <g>
-    <circle r="7" fill="#C67865" opacity=".2">
+    <circle r="7" fill="#658FB8" opacity=".2">
       <animate attributeName="r" values="5;10;5" dur="1.2s" repeatCount="indefinite"/>
       <animate attributeName="opacity" values=".3;.06;.3" dur="1.2s" repeatCount="indefinite"/>
     </circle>
-    <circle r="3.5" fill="#C67865">
+    <circle r="3.5" fill="#658FB8">
       <animate attributeName="opacity" values="1;.35;1" dur="1.2s" repeatCount="indefinite"/>
     </circle>
     <animateMotion begin="0s" path="M880 585 C946 595 1017 602 1055 568 C1082 541 1112 545 1138 571 C1164 597 1192 607 1223 595 C1254 583 1290 570 1346 578" dur="14s" repeatCount="indefinite"
@@ -28,16 +28,16 @@
 
 <!-- Form selection card at the top right. -->
 <g transform="translate(1314 -18) rotate(10 60 68)" filter="url(#depth)">
-<rect x="7" y="9" width="124" height="148" rx="16" fill="#D39785"/><rect width="124" height="148" rx="16" fill="url(#paper)" stroke="white" stroke-width="2"/>
-<text x="17" y="33" fill="#A76D5D" font-family="Arial,sans-serif" font-size="12" font-weight="700">RETURNS</text>
-<rect x="15" y="48" width="94" height="25" rx="6" fill="#F6DCD0"/><path d="M25 60h47m16-3 5 5 5-5" stroke="#BC8976" stroke-width="3" stroke-linecap="round"/>
-<path d="M19 91h84M19 109h64M19 127h75" stroke="#D5B4A6" stroke-width="5" stroke-linecap="round"/>
+<rect x="7" y="9" width="124" height="148" rx="16" fill="#88ABCA"/><rect width="124" height="148" rx="16" fill="url(#paper)" stroke="white" stroke-width="2"/>
+<text x="17" y="33" fill="#587F9F" font-family="Arial,sans-serif" font-size="12" font-weight="700">RETURNS</text>
+<rect x="15" y="48" width="94" height="25" rx="6" fill="#DCEAF8"/><path d="M25 60h47m16-3 5 5 5-5" stroke="#86A7C3" stroke-width="3" stroke-linecap="round"/>
+<path d="M19 91h84M19 109h64M19 127h75" stroke="#A9C3D9" stroke-width="5" stroke-linecap="round"/>
 </g>
 <!-- Token record anchors the curve beside the screenshot. -->
 <g transform="translate(751 545) rotate(-10 76 43)" filter="url(#depth)">
-<rect x="7" y="8" width="153" height="87" rx="13" fill="#D19A88"/><rect width="153" height="87" rx="13" fill="url(#paper)" stroke="white" stroke-width="2"/>
-<text x="16" y="27" fill="#AB7562" font-family="Arial,sans-serif" font-size="12" font-weight="700">TOKEN RECORD</text><path d="M17 44h112M17 62h74" stroke="#CCA58F" stroke-width="5" stroke-linecap="round"/>
+<rect x="7" y="8" width="153" height="87" rx="13" fill="#8AABC7"/><rect width="153" height="87" rx="13" fill="url(#paper)" stroke="white" stroke-width="2"/>
+<text x="16" y="27" fill="#6386A4" font-family="Arial,sans-serif" font-size="12" font-weight="700">TOKEN RECORD</text><path d="M17 44h112M17 62h74" stroke="#9BB9D1" stroke-width="5" stroke-linecap="round"/>
 </g>
-<g transform="translate(1312 550)" filter="url(#depth)"><rect x="4" y="6" width="62" height="58" rx="15" fill="#B87060"/><rect width="62" height="58" rx="15" fill="url(#tray)" stroke="#FFF6EE" stroke-width="2"/><path d="m17 29 10 10 19-20" stroke="white" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></g>
+<g transform="translate(1312 550)" filter="url(#depth)"><rect x="4" y="6" width="62" height="58" rx="15" fill="#557D9F"/><rect width="62" height="58" rx="15" fill="url(#tray)" stroke="#F3F8FF" stroke-width="2"/><path d="m17 29 10 10 19-20" stroke="white" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></g>
 <style>.returns-flow-line{stroke-dasharray:100 100;opacity:.9}@media(prefers-reduced-motion:reduce){.returns-flow-line{stroke-dasharray:none}.returns-flow-dot{display:none}}</style>
 </svg>
