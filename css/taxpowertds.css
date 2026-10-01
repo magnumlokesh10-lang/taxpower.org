@@ -177,18 +177,15 @@
   background-repeat: no-repeat;
   box-shadow: none;
 }
-/* Bright mint, lemon and lilac abstract Returns frame. */
+/* Coral and pearl for the TDS return filing workflow. */
 #tds-returns.gst-feature-row {
-  background-color: #edffd8;
-  background-image:
-    url("../asset/frms_bg/gst-returns-abstract.svg?v=20260924-sync-clock"),
-    radial-gradient(ellipse at 92% 85%, rgba(91, 239, 171, .5) 0%, transparent 58%),
-    radial-gradient(ellipse at 0% 0%, rgba(209, 166, 255, .42) 0%, transparent 52%),
-    linear-gradient(245deg, #aff4d2 0%, #f1ffc7 44%, #f6edff 72%, #e7d2ff 100%);
-  background-size: 100% 100%, cover, cover, cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .8);
+ background-color:#FFF7F1;
+ background-image:url("../asset/frms_bg/tds-return-coral-background.svg?v=20261001"),
+ linear-gradient(115deg,#FFBFAE 0%,#FFDED0 48%,#FFF7F1 100%);
+ background-size:100% 100%,cover;
+ background-position:center;
+ background-repeat:no-repeat;
+ box-shadow:inset 0 0 0 1px rgba(255,255,255,.8);
 }
 /* Reports: report sheets and analytics motifs on the existing sky-blue base. */
 #tds-compliance.gst-feature-row {
@@ -239,7 +236,7 @@
 
 /* Transparent 3D artwork behind the Returns bullet list only. */
 #tds-returns .gst-feature-row-copy > ul {
-  background-image: url("../asset/frms_bg/gst-returns-growth-transparent.png?v=20e7b78fdcc9");
+  background-image: url("../asset/frms_bg/tds-return-filing-tray.svg?v=20261001");
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
@@ -654,4 +651,16 @@
 @media(max-width:600px) {
  :is(#tds-traces,#tds-reports).gst-feature-card::after { width:84px; height:94px; opacity:.3; }
  :is(#tds-traces,#tds-reports) .gst-feature-copy { padding-right:24px; }
+}
+
+/* Match the GST glass treatment while keeping TDS filing artwork distinct. */
+#tds-returns .gst-feature-row-copy :is(h2,p,li),
+#tds-returns .gst-typing-keyword { color:#0B3B3B; }
+#tds-returns .gst-feature-row-copy > ul > li {
+ background:rgba(255,255,255,.46); border-color:#C39888;
+ -webkit-backdrop-filter:blur(2px); backdrop-filter:blur(2px);
+ box-shadow:inset 0 1px 0 rgba(255,255,255,.65);
+}
+#tds-returns .gst-feature-row-copy > ul > li::before {
+ background:#C67865; box-shadow:0 2px 8px rgba(198,120,101,.25);
 }
