@@ -252,20 +252,10 @@
   height: auto;
 }
 
+/* Dashboard screenshots stay still after their entrance animation. */
 .gst-animation-visible .gst-dashboard-image-wrap img {
-  animation: gstDashboardFloat 6s ease-in-out 1200ms infinite;
-}
-
-@keyframes gstDashboardFloat {
-
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-
-  50% {
-    transform: translateY(-5px);
-  }
+  animation: none;
+  transform: none;
 }
 
 .gst-dashboard-page .gst-browser-frame img,
