@@ -177,11 +177,11 @@
   background-repeat: no-repeat;
   box-shadow: none;
 }
-/* Soft rose on the left and powder blue on the right. */
+/* Soft rose on the left and pista green on the right. */
 #tds-returns.gst-feature-row {
- background-color:#BFD9F2;
+ background-color:#D3E8B5;
  background-image:url("../asset/frms_bg/tds-return-coral-background.svg?v=20261001-rose-blue"),
- linear-gradient(115deg,#F4C6D4 0%,#DDD5E9 48%,#BFD9F2 100%);
+ linear-gradient(115deg,#F4C6D4 0%,#F6EBDD 48%,#D3E8B5 100%);
  background-size:100% 100%,cover;
  background-position:center;
  background-repeat:no-repeat;
