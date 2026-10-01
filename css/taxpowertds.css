@@ -177,38 +177,27 @@
   background-repeat: no-repeat;
   box-shadow: none;
 }
-/* Soft rose on the left and pista green on the right. */
+/* Three distinct TDS feature palettes. */
 #tds-returns.gst-feature-row {
- background-color:#D3E8B5;
+ background-color:#D9E7F6;
  background-image:url("../asset/frms_bg/tds-return-coral-background.svg?v=20261001-rose-blue"),
- linear-gradient(115deg,#F4C6D4 0%,#F6EBDD 48%,#D3E8B5 100%);
- background-size:100% 100%,cover;
- background-position:center;
- background-repeat:no-repeat;
+ linear-gradient(115deg,#B5CDE8 0%,#D9E7F6 50%,#F0F6FC 100%);
+ background-size:100% 100%,cover; background-position:center; background-repeat:no-repeat;
  box-shadow:inset 0 0 0 1px rgba(255,255,255,.8);
 }
-/* Reports: report sheets and analytics motifs on the existing sky-blue base. */
 #tds-compliance.gst-feature-row {
-  background-color: #dcf7ff;
-  background-image:
-    url("../asset/frms_bg/gst-reports-abstract.svg?v=20260924-sync-clock"),
-    radial-gradient(ellipse at 0% 55%, #ecfcff 0%, transparent 65%),
-    linear-gradient(115deg, #d8f3ff 0%, #c7f5ed 54%, #b5e9ff 100%);
-  background-size: 100% 100%, cover, cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .8);
+ background-color:#FFF2D4;
+ background-image:url("../asset/frms_bg/tds-compliance-honey.svg?v=20261001"),
+ linear-gradient(115deg,#FFECC4 0%,#FFF6E5 48%,#F3CE8E 100%);
+ background-size:100% 100%,cover; background-position:center; background-repeat:no-repeat;
+ box-shadow:inset 0 0 0 1px rgba(255,255,255,.8);
 }
-/* Filing status: layered checklist and date motifs on a bright warm base. */
 #tds-register.gst-feature-row {
-  background-color: #fff2dc;
-  background-image: url("../asset/frms_bg/gst-filing-status-abstract.svg?v=20260924-sync-clock"),
-    radial-gradient(ellipse at 95% 15%, #fff9e9 0%, transparent 60%),
-    linear-gradient(115deg, #ffe2c6 0%, #fff4d9 52%, #ffe9ce 100%);
-  background-size: 100% 100%, cover, cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  box-shadow: inset 0 0 0 1px rgba(255,255,255,.8);
+ background-color:#EADFF4;
+ background-image:url("../asset/frms_bg/tds-register-mauve.svg?v=20261001"),
+ linear-gradient(115deg,#CBB5DF 0%,#E6D9F0 48%,#FAF3FF 100%);
+ background-size:100% 100%,cover; background-position:center; background-repeat:no-repeat;
+ box-shadow:inset 0 0 0 1px rgba(255,255,255,.8);
 }
 #tds-register .gst-feature-row-copy > ul {
   background: url("../asset/frms_bg/gst-filing-status-pink-transparent.png?v=20260924") center / contain no-repeat;
@@ -663,4 +652,19 @@
 }
 #tds-returns .gst-feature-row-copy > ul > li::before {
  background:#658FB8; box-shadow:0 2px 8px rgba(101,143,184,.25);
+}
+
+/* Consistent glass treatment across the three TDS feature frames. */
+#tds-returns { --tds-feature-accent:#658FB8; --tds-feature-border:#94ADC7; }
+#tds-compliance { --tds-feature-accent:#AD823E; --tds-feature-border:#C5A367; }
+#tds-register { --tds-feature-accent:#8968A9; --tds-feature-border:#AE94C4; }
+:is(#tds-returns,#tds-compliance,#tds-register) .gst-feature-row-copy :is(h2,p,li),
+:is(#tds-returns,#tds-compliance,#tds-register) .gst-typing-keyword { color:#0B3B3B; }
+:is(#tds-returns,#tds-compliance,#tds-register) .gst-feature-row-copy > ul > li {
+ background:rgba(255,255,255,.5); border-color:var(--tds-feature-border);
+ -webkit-backdrop-filter:blur(2px); backdrop-filter:blur(2px);
+ box-shadow:inset 0 1px 0 rgba(255,255,255,.65);
+}
+:is(#tds-returns,#tds-compliance,#tds-register) .gst-feature-row-copy > ul > li::before {
+ background:var(--tds-feature-accent); box-shadow:0 2px 8px rgba(36,60,80,.15);
 }
