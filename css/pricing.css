@@ -824,3 +824,37 @@
   .pricing-plans-panel { padding:24px 0; margin-bottom:20px; }
   .pricing-plans-panel::before { border-radius:14px; }
 }
+
+/* Small, meaningful illustrations around the pricing content. */
+.pricing-decoration { display:block; pointer-events:none; flex-shrink:0; }
+.pricing-decoration--guide { width:95px; height:55px; margin-right:auto; }
+.pricing-quick-nav > span { margin-right:0; }
+.pricing-suite-heading,.pricing-modules-heading { position:relative; }
+.pricing-suite-heading { min-height:98px; padding-right:170px; }
+.pricing-decoration--suite,.pricing-decoration--modules { position:absolute; right:10px; top:0; width:140px; height:105px; }
+.pricing-modules-heading { box-sizing:border-box; width:min(1120px,100%); min-height:105px; margin:0 auto 24px; padding:0 170px 0 16px; border-left:3px solid #35acd0; }
+.pricing-page .pricing-modules-heading h2 { margin:0; color:#163d4b; font:800 clamp(23px,2.4vw,30px)/1.25 'Plus Jakarta Sans',sans-serif; letter-spacing:-.03em; }
+.pricing-modules-heading h2 span { color:#087da5; }
+.pricing-modules-heading p { margin:9px 0 0; color:#4e6977; font-size:14px; line-height:1.65; }
+.pricing-modules-heading .pricing-section-eyebrow { color:#426c7e; }
+.pricing-terms { position:relative; padding-right:200px; }
+.pricing-decoration--terms { position:absolute; top:28px; right:30px; width:135px; height:110px; }
+.pricing-page .pricing-terms h2 { color:#163d4b; font-weight:800; letter-spacing:-.025em; }
+@media(max-width:767px) {
+ .pricing-quick-nav > span { flex-basis:auto; }
+ .pricing-decoration--guide { width:75px; height:45px; }
+ .pricing-quick-nav a:first-of-type { clear:both; }
+ .pricing-suite-heading,.pricing-modules-heading { padding-right:105px; min-height:90px; }
+ .pricing-decoration--suite,.pricing-decoration--modules { width:90px; height:75px; right:4px; }
+ .pricing-terms { padding-right:130px; }
+ .pricing-decoration--terms { width:90px; height:80px; right:15px; }
+}
+@media(max-width:540px) {
+ .pricing-suite-heading,.pricing-modules-heading { padding-right:68px; }
+ .pricing-decoration--suite,.pricing-decoration--modules { width:65px; height:56px; top:1px; right:0; }
+ .pricing-modules-heading p { font-size:13px; }
+ .pricing-page .pricing-modules-heading h2 { font-size:23px; }
+ .pricing-terms { padding-right:20px; }
+ .pricing-page .pricing-terms h2 { padding-right:65px; min-height:48px; }
+ .pricing-decoration--terms { width:64px; height:56px; right:16px; top:18px; }
+}
