@@ -439,18 +439,18 @@ function initTaxPowerSite() {
       modal.style.display = '';
     }
 
-    const fullNameInput = document.getElementById('demoFullName') || form.querySelector('input[name="name"]');
-    if (!fullNameInput) return false;
+    const firstInput = form.querySelector('input[name="company"]') || form.querySelector('input[name="name"]');
+    if (!firstInput) return false;
 
     const shouldPreventScroll = options.preventScroll ?? false;
     try {
-      fullNameInput.focus({ preventScroll: shouldPreventScroll });
-      const len = fullNameInput.value ? fullNameInput.value.length : 0;
-      if (typeof fullNameInput.setSelectionRange === 'function') {
-        fullNameInput.setSelectionRange(len, len);
+      firstInput.focus({ preventScroll: shouldPreventScroll });
+      const len = firstInput.value ? firstInput.value.length : 0;
+      if (typeof firstInput.setSelectionRange === 'function') {
+        firstInput.setSelectionRange(len, len);
       }
     } catch (e) {
-      fullNameInput.focus();
+      firstInput.focus();
     }
     return true;
   }
@@ -1608,15 +1608,15 @@ function initTaxPowerSite() {
     const purposeValue = document.getElementById('purposeSelectHidden')?.value || '';
     const gstStateOptions = Array.from(document.querySelectorAll('#gstStateCodes option')).map((option) => option.value);
 
-    if (!fullName?.checkValidity()) {
-      fullName?.focus();
-      fullName?.reportValidity();
-      return false;
-    }
-
     if (!companyName?.checkValidity()) {
       companyName?.focus();
       companyName?.reportValidity();
+      return false;
+    }
+
+    if (!fullName?.checkValidity()) {
+      fullName?.focus();
+      fullName?.reportValidity();
       return false;
     }
 
