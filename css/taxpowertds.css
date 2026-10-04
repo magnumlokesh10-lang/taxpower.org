@@ -179,26 +179,26 @@
 }
 /* Bright multicolour TDS workflows with individual artwork and motion paths. */
 #tds-returns.gst-feature-row {
- background-color:#C6D9FF;
+ background-color:#FFDEBA;
  background-image:url("../asset/frms_bg/tds-returns-workflow.svg?v=20261001"),
- radial-gradient(ellipse at 8% 90%,#B5C7FF 0%,transparent 58%),
- linear-gradient(115deg,#AEDDFF 0%,#E2CBFF 47%,#FFD5AE 100%);
+ radial-gradient(ellipse at 8% 90%,#FFF0DC 0%,transparent 58%),
+ linear-gradient(115deg,#FFC897 0%,#FFDEBA 47%,#FFF0D8 100%);
  background-size:100% 100%,cover,cover; background-position:center; background-repeat:no-repeat;
  box-shadow:inset 0 0 0 1px rgba(255,255,255,.8);
 }
 #tds-compliance.gst-feature-row {
- background-color:#CAF3DC;
+ background-color:#C4EFDA;
  background-image:url("../asset/frms_bg/tds-compliance-workflow.svg?v=20261001"),
- radial-gradient(ellipse at 8% 85%,#FFE4A5 0%,transparent 58%),
- linear-gradient(115deg,#FFF0B1 0%,#BBF0D3 48%,#9BDFF1 100%);
+ radial-gradient(ellipse at 8% 85%,#EEFFF5 0%,transparent 58%),
+ linear-gradient(115deg,#A5E3C2 0%,#C4EFDA 48%,#E1FAEA 100%);
  background-size:100% 100%,cover,cover; background-position:center; background-repeat:no-repeat;
  box-shadow:inset 0 0 0 1px rgba(255,255,255,.8);
 }
 #tds-register.gst-feature-row {
- background-color:#F0C6E3;
+ background-color:#F9CDDF;
  background-image:url("../asset/frms_bg/tds-register-workflow.svg?v=20261001"),
- radial-gradient(ellipse at 92% 85%,#C7C6FF 0%,transparent 58%),
- linear-gradient(115deg,#FFCEB1 0%,#F8BFDC 48%,#DBCAFF 100%);
+ radial-gradient(ellipse at 92% 85%,#FFF0F5 0%,transparent 58%),
+ linear-gradient(115deg,#F4B5CF 0%,#F9CDDF 48%,#FFE4EE 100%);
  background-size:100% 100%,cover,cover; background-position:center; background-repeat:no-repeat;
  box-shadow:inset 0 0 0 1px rgba(255,255,255,.8);
 }
@@ -619,13 +619,13 @@
 /* Distinct TDS tools: document downloads and numerical reports. */
 #tds-traces.gst-feature-card {
  --reconciliation-art:url("../asset/frms_bg/tds-traces-documents.svg?v=20261001");
- background:radial-gradient(ellipse at 100% 0%,rgba(255,221,184,.75),transparent 60%),
- linear-gradient(125deg,#B9DFFF 0%,#DCC5FA 48%,#FFD7BD 100%);
+ background:radial-gradient(ellipse at 100% 0%,#F5EDFF,transparent 60%),
+ linear-gradient(125deg,#CBB3F0 0%,#E0CEF8 48%,#EFE3FF 100%);
 }
 #tds-reports.gst-feature-card {
  --reconciliation-art:url("../asset/frms_bg/tds-numerical-reports.svg?v=20261001");
- background:radial-gradient(ellipse at 0% 0%,rgba(255,239,166,.7),transparent 58%),
- linear-gradient(125deg,#FFF0AF 0%,#BFEED8 48%,#ACDDFA 100%);
+ background:radial-gradient(ellipse at 0% 0%,#FFFCDF,transparent 58%),
+ linear-gradient(125deg,#FFE38F 0%,#FFF0B5 48%,#FFF8D7 100%);
 }
 :is(#tds-traces,#tds-reports).gst-feature-card::after {
  width:clamp(90px,10vw,138px); height:132px; top:-12px; right:-5px; opacity:.48;
@@ -658,9 +658,9 @@
 }
 
 /* Consistent glass treatment across the three TDS feature frames. */
-#tds-returns { --tds-feature-accent:#658DD3; --tds-feature-border:#8C9FD3; --tds-bullet-tint:rgba(243,247,255,.57); }
+#tds-returns { --tds-feature-accent:#B8793E; --tds-feature-border:#C89C72; --tds-bullet-tint:rgba(255,249,242,.65); }
 #tds-compliance { --tds-feature-accent:#279B95; --tds-feature-border:#73B2A0; --tds-bullet-tint:rgba(244,255,248,.57); }
-#tds-register { --tds-feature-accent:#996BB5; --tds-feature-border:#B48EC4; --tds-bullet-tint:rgba(255,244,252,.57); }
+#tds-register { --tds-feature-accent:#B3638A; --tds-feature-border:#C18DA5; --tds-bullet-tint:rgba(255,244,249,.65); }
 :is(#tds-returns,#tds-compliance,#tds-register) .gst-feature-row-copy :is(h2,p,li),
 :is(#tds-returns,#tds-compliance,#tds-register) .gst-typing-keyword { color:#0B3B3B; }
 :is(#tds-returns,#tds-compliance,#tds-register) .gst-feature-row-copy > ul > li {
