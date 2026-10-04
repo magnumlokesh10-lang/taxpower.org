@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="css/stylesheet.css?v=20260929-nav-color-shift">
   <script src="js/nav-loader.js?v=20260929-polish" defer></script>
   <script src="js/form-backend.js" defer></script>
-  <script src="js/script.js?v=20260929-minimal" defer></script>
+  <script src="js/script.js?v=20261004-company-first" defer></script>
   <script src="js/page-loader.js" defer></script>
   <link rel="stylesheet" href="css/support-cards.css?v=20261004-load-fix">
 </head>
@@ -98,25 +98,6 @@
                 <svg class="form-label-icon" width="13" height="13" viewBox="0 0 24 24" fill="none"
                   stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
                   aria-hidden="true">
-                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
-                  <circle cx="12" cy="7" r="4" />
-                </svg>
-                Full Name <span style="color: #d32f2f;">*</span>
-              </span>
-              <div class="input-icon-wrapper">
-                <span class="input-icon" aria-hidden="true"><svg width="15" height="15" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
-                    <circle cx="12" cy="7" r="4" />
-                  </svg></span>
-                <input type="text" name="name" id="demoFullName" autocomplete="name" placeholder="Enter your full name" required>
-              </div>
-            </label>
-            <label class="form-field">
-              <span class="form-label-text">
-                <svg class="form-label-icon" width="13" height="13" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
-                  aria-hidden="true">
                   <rect x="2" y="7" width="20" height="14" rx="2" />
                   <path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2" />
                 </svg>
@@ -129,6 +110,25 @@
                     <path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2" />
                   </svg></span>
                 <input type="text" name="company" autocomplete="organization" placeholder="Enter company name" required>
+              </div>
+            </label>
+            <label class="form-field">
+              <span class="form-label-text">
+                <svg class="form-label-icon" width="13" height="13" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+                  aria-hidden="true">
+                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                  <circle cx="12" cy="7" r="4" />
+                </svg>
+                Full Name <span style="color: #d32f2f;">*</span>
+              </span>
+              <div class="input-icon-wrapper">
+                <span class="input-icon" aria-hidden="true"><svg width="15" height="15" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                    <circle cx="12" cy="7" r="4" />
+                  </svg></span>
+                <input type="text" name="name" id="demoFullName" autocomplete="name" placeholder="Enter your full name" required>
               </div>
             </label>
             <label class="form-field">
@@ -380,8 +380,6 @@
               <option value="Want to Purchase">Want to Purchase</option>
               <option value="Pricing or Quotation">Pricing or Quotation</option>
               <option value="Renewal of License">Renewal of License</option>
-              <option value="Technical Support">Technical Support</option>
-              <option value="Other">Other</option>
             </select>
             <div class="purpose-dropdown" id="purposeDropdown" data-purpose-dropdown>
               <button type="button" class="purpose-dropdown-trigger" id="purposeTrigger" aria-haspopup="listbox"
@@ -461,40 +459,6 @@
                     </svg>
                   </span>
                   <span class="purpose-option-label">Renewal of License</span>
-                  <span class="purpose-option-check" aria-hidden="true">
-                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-                      stroke-linecap="round" stroke-linejoin="round">
-                      <polyline points="20 6 9 17 4 12"></polyline>
-                    </svg>
-                  </span>
-                </li>
-                <li class="purpose-option" role="option" aria-selected="false" data-value="Technical Support">
-                  <span class="purpose-option-icon" aria-hidden="true">
-                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                      stroke-linecap="round" stroke-linejoin="round">
-                      <path d="M6 15v-3a6 6 0 0 1 12 0v3"></path>
-                      <path d="M4 17v1a2 2 0 0 0 2 2h1"></path>
-                      <path d="M20 17v1a2 2 0 0 1-2 2h-1"></path>
-                    </svg>
-                  </span>
-                  <span class="purpose-option-label">Technical Support</span>
-                  <span class="purpose-option-check" aria-hidden="true">
-                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-                      stroke-linecap="round" stroke-linejoin="round">
-                      <polyline points="20 6 9 17 4 12"></polyline>
-                    </svg>
-                  </span>
-                </li>
-                <li class="purpose-option" role="option" aria-selected="false" data-value="Other">
-                  <span class="purpose-option-icon" aria-hidden="true">
-                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                      stroke-linecap="round" stroke-linejoin="round">
-                      <circle cx="8" cy="12" r="1.5"></circle>
-                      <circle cx="12" cy="12" r="1.5"></circle>
-                      <circle cx="16" cy="12" r="1.5"></circle>
-                    </svg>
-                  </span>
-                  <span class="purpose-option-label">Other</span>
                   <span class="purpose-option-check" aria-hidden="true">
                     <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
                       stroke-linecap="round" stroke-linejoin="round">
