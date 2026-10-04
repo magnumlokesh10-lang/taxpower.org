@@ -1137,11 +1137,35 @@
       cursor = document.createElement('div');
       cursor.className = 'gst-view-cursor';
       cursor.setAttribute('aria-hidden', 'true');
-      cursor.innerHTML = '<svg viewBox="0 0 28 30" width="28" height="30" focusable="false"><path d="M2 2 L26 10 L16 17 L10 28 Z" fill="#00a6e8" stroke="white" stroke-width="1.3" stroke-linejoin="round"/></svg><span>Click to view</span>';
+      cursor.innerHTML = '<svg viewBox="0 0 28 30" width="20" height="22" focusable="false"><path d="M2 2 L26 10 L16 17 L10 28 Z" fill="#00a6e8" stroke="white" stroke-width="1.3" stroke-linejoin="round"/></svg><span>Click to view</span>';
       document.body.appendChild(cursor);
+      let frame = 0;
+      let pointerX = 0;
+      let pointerY = 0;
+      let activeTarget = null;
+      cursor.moveHint = (event, target) => {
+        pointerX = event.clientX;
+        pointerY = event.clientY;
+        if (activeTarget !== target) {
+          activeTarget?.classList.remove('gst-cursor-active');
+          activeTarget = target;
+          activeTarget.classList.add('gst-cursor-active');
+        }
+        if (frame) return;
+        frame = requestAnimationFrame(() => {
+          frame = 0;
+          cursor.style.transform = `translate3d(${pointerX}px, ${pointerY}px, 0)`;
+          cursor.classList.toggle('label-left', pointerX > window.innerWidth - 125);
+          cursor.classList.toggle('label-above', pointerY > window.innerHeight - 48);
+          cursor.classList.add('is-visible');
+        });
+      };
       const hide = () => {
+        cancelAnimationFrame(frame);
+        frame = 0;
+        activeTarget?.classList.remove('gst-cursor-active');
+        activeTarget = null;
         cursor.classList.remove('is-visible');
-        document.querySelectorAll('.gst-cursor-active').forEach(el => el.classList.remove('gst-cursor-active'));
       };
       cursor.hideHint = hide;
       window.addEventListener('blur', hide);
@@ -1158,11 +1182,7 @@
           cursor.hideHint();
           return;
         }
-        cursor.style.transform = `translate3d(${event.clientX}px, ${event.clientY}px, 0)`;
-        cursor.classList.toggle('label-left', event.clientX > window.innerWidth - 160);
-        cursor.classList.toggle('label-above', event.clientY > window.innerHeight - 64);
-        target.classList.add('gst-cursor-active');
-        cursor.classList.add('is-visible');
+        cursor.moveHint(event, target);
       };
       target.addEventListener('pointerenter', move);
       target.addEventListener('pointermove', move);
