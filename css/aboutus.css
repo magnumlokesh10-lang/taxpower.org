@@ -115,3 +115,22 @@
 .se-registration dl { margin:0; display:grid; gap:10px; padding:4px 0 12px; }
 @media(max-width:900px) { .se-hero { grid-template-columns:1fr; } .se-brand-panel { max-width:540px; margin:auto; } }
 @media(max-width:480px) { .se-logo-orbit { width:145px; height:176px; } .se-product-list { grid-template-columns:1fr; } .se-magnum { margin-top:20px; } .se-brand-panel { padding:23px 18px; } .se-company-facts { gap:24px; } }
+
+/* Blue/cyan halo behind the Siddharth mark; keep the image itself crisp. */
+.se-about .se-logo-orbit {
+  position:relative;
+  isolation:isolate;
+  background:none;
+}
+.se-about .se-logo-orbit::before {
+  content:"";
+  position:absolute;
+  inset:-8% -20%;
+  z-index:0;
+  pointer-events:none;
+  border-radius:50%;
+  background:
+    radial-gradient(ellipse at 58% 30%,rgba(0,215,239,.30),rgba(0,215,239,.10) 32%,transparent 65%),
+    radial-gradient(ellipse at 43% 72%,rgba(25,91,245,.24),rgba(25,91,245,.07) 35%,transparent 67%);
+}
+.se-about .se-logo-orbit img { position:relative; z-index:1; }
