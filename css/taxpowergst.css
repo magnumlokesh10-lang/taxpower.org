@@ -264,82 +264,31 @@
   cursor: pointer;
 }
 
+/* Shared screenshot hint: blue pointer and rounded label. */
 .gst-dashboard-page .gst-dashboard-image-wrap,
 .gst-dashboard-page .gst-feature-browser,
-.gst-dashboard-page .gst-feature-row-media {
-  position: relative;
-  --gst-hint-x: 50%;
-  --gst-hint-y: calc(100% - 18px);
-  --gst-hint-shift-x: -50%;
-  --gst-hint-shift-y: -100%;
-  --gst-hint-offset-x: 0px;
-  --gst-hint-offset-y: -12px;
+.gst-dashboard-page .gst-feature-row-media { position: relative; }
+.gst-view-cursor {
+  position: fixed; top: 0; left: 0; z-index: 999;
+  pointer-events: none; opacity: 0; visibility: hidden;
 }
-
-.gst-dashboard-page .gst-dashboard-image-wrap::before,
-.gst-dashboard-page .gst-feature-browser::before,
-.gst-dashboard-page .gst-feature-row-media::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 2;
-  display: none;
-  pointer-events: none;
-  background: transparent;
-  opacity: 0;
-  transition: opacity 180ms ease;
+.gst-view-cursor.is-visible { opacity: 1; visibility: visible; }
+.gst-view-cursor svg { display: block; filter: drop-shadow(0 1px 2px #084c7133); }
+.gst-view-cursor span {
+  position: absolute; top: 23px; left: 27px;
+  padding: 9px 14px; border: 1px solid #ffffff70; border-radius: 11px;
+  background: #009ee3; color: white; font-size: 13px; font-weight: 600;
+  line-height: 1.2; white-space: nowrap; box-shadow: 0 3px 10px #08668b26;
 }
-
-.gst-dashboard-page .gst-dashboard-image-wrap::after,
-.gst-dashboard-page .gst-feature-browser::after,
-.gst-dashboard-page .gst-feature-row-media::after {
-  content: "Click to view";
-  position: absolute;
-  left: var(--gst-hint-x);
-  top: var(--gst-hint-y);
-  z-index: 3;
-  pointer-events: none;
-  padding: 4px 8px;
-  border: 0;
-  border-radius: 999px;
-  background: rgba(244, 122, 34, 0.92);
-  color: #fff;
-  box-shadow: none;
-  font-size: 10px;
-  font-weight: 600;
-  line-height: 1;
-  opacity: 0;
-  transform:
-    translateX(var(--gst-hint-shift-x)) translateX(var(--gst-hint-offset-x)) translateY(var(--gst-hint-shift-y)) translateY(calc(var(--gst-hint-offset-y) + 8px));
-  transition:
-    opacity 180ms ease,
-    transform 180ms ease;
-  white-space: nowrap;
-}
-
-.gst-dashboard-page .gst-dashboard-image-wrap:hover::before,
-.gst-dashboard-page .gst-dashboard-image-wrap:focus-within::before,
-.gst-dashboard-page .gst-feature-browser:hover::before,
-.gst-dashboard-page .gst-feature-browser:focus-within::before,
-.gst-dashboard-page .gst-feature-row-media:hover::before,
-.gst-dashboard-page .gst-feature-row-media:focus-within::before,
-.gst-dashboard-page .gst-dashboard-image-wrap:hover::after,
-.gst-dashboard-page .gst-dashboard-image-wrap:focus-within::after,
-.gst-dashboard-page .gst-feature-browser:hover::after,
-.gst-dashboard-page .gst-feature-browser:focus-within::after,
-.gst-dashboard-page .gst-feature-row-media:hover::after,
-.gst-dashboard-page .gst-feature-row-media:focus-within::after {
-  opacity: 1;
-}
-
-.gst-dashboard-page .gst-dashboard-image-wrap:hover::after,
-.gst-dashboard-page .gst-dashboard-image-wrap:focus-within::after,
-.gst-dashboard-page .gst-feature-browser:hover::after,
-.gst-dashboard-page .gst-feature-browser:focus-within::after,
-.gst-dashboard-page .gst-feature-row-media:hover::after,
-.gst-dashboard-page .gst-feature-row-media:focus-within::after {
-  transform:
-    translateX(var(--gst-hint-shift-x)) translateX(var(--gst-hint-offset-x)) translateY(var(--gst-hint-shift-y)) translateY(var(--gst-hint-offset-y));
+.gst-view-cursor.label-left span { left: auto; right: 8px; }
+.gst-view-cursor.label-above span { top: auto; bottom: 8px; }
+.gst-dashboard-page .gst-cursor-active,
+.gst-dashboard-page .gst-cursor-active img { cursor: none; }
+/* Keyboard keeps a stationary hint; touch uses the existing tap action. */
+.gst-dashboard-page :is(.gst-dashboard-image-wrap, .gst-feature-browser, .gst-feature-row-media):has(img:focus-visible)::after {
+  content: "Click to view"; position: absolute; bottom: 12px; right: 12px;
+  padding: 9px 14px; border-radius: 11px; background: #009ee3; color: white;
+  font-size: 13px; font-weight: 600; pointer-events: none; z-index: 3;
 }
 
 .gst-dashboard-page .gst-browser-frame img:focus-visible,

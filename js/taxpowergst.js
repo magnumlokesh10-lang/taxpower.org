@@ -1130,43 +1130,44 @@
   }
 
   function initGstImageHoverHints() {
-    const gstHintTargets = document.querySelectorAll('.gst-dashboard-page .gst-dashboard-image-wrap, .gst-dashboard-page .gst-feature-browser, .gst-dashboard-page .gst-feature-row-media');
-    if (!gstHintTargets.length) return;
-
-    const hintProperties = [
-      '--gst-hint-x',
-      '--gst-hint-y',
-      '--gst-hint-shift-x',
-      '--gst-hint-shift-y',
-      '--gst-hint-offset-x',
-      '--gst-hint-offset-y'
-    ];
-
-    gstHintTargets.forEach((target) => {
+    const targets = document.querySelectorAll('.gst-dashboard-page .gst-dashboard-image-wrap, .gst-dashboard-page .gst-feature-browser, .gst-dashboard-page .gst-feature-row-media');
+    if (!targets.length) return;
+    let cursor = document.querySelector('.gst-view-cursor');
+    if (!cursor) {
+      cursor = document.createElement('div');
+      cursor.className = 'gst-view-cursor';
+      cursor.setAttribute('aria-hidden', 'true');
+      cursor.innerHTML = '<svg viewBox="0 0 28 30" width="28" height="30" focusable="false"><path d="M2 2 L26 10 L16 17 L10 28 Z" fill="#00a6e8" stroke="white" stroke-width="1.3" stroke-linejoin="round"/></svg><span>Click to view</span>';
+      document.body.appendChild(cursor);
+      const hide = () => {
+        cursor.classList.remove('is-visible');
+        document.querySelectorAll('.gst-cursor-active').forEach(el => el.classList.remove('gst-cursor-active'));
+      };
+      cursor.hideHint = hide;
+      window.addEventListener('blur', hide);
+      window.addEventListener('scroll', hide, { passive: true, capture: true });
+      window.addEventListener('resize', hide, { passive: true });
+      document.addEventListener('visibilitychange', hide);
+      document.addEventListener('pointerdown', hide);
+    }
+    targets.forEach(target => {
       if (target.dataset.hoverHintInitialized) return;
       target.dataset.hoverHintInitialized = 'true';
-
-      target.addEventListener('pointermove', (event) => {
-        if (event.pointerType === 'touch') return;
-
-        const rect = target.getBoundingClientRect();
-        const x = Math.min(Math.max(event.clientX - rect.left, 12), Math.max(rect.width - 12, 12));
-        const y = Math.min(Math.max(event.clientY - rect.top, 12), Math.max(rect.height - 12, 12));
-        const nearLeft = x < 110;
-        const nearRight = rect.width - x < 110;
-        const nearTop = y < 54;
-
-        target.style.setProperty('--gst-hint-x', `${x}px`);
-        target.style.setProperty('--gst-hint-y', `${y}px`);
-        target.style.setProperty('--gst-hint-shift-x', nearLeft ? '0%' : nearRight ? '-100%' : '-50%');
-        target.style.setProperty('--gst-hint-shift-y', nearTop ? '0%' : '-100%');
-        target.style.setProperty('--gst-hint-offset-x', nearLeft ? '12px' : nearRight ? '-12px' : '0px');
-        target.style.setProperty('--gst-hint-offset-y', nearTop ? '12px' : '-12px');
-      });
-
-      target.addEventListener('pointerleave', () => {
-        hintProperties.forEach((property) => target.style.removeProperty(property));
-      });
+      const move = event => {
+        if (event.pointerType !== 'mouse' || document.body.classList.contains('gst-image-lightbox-open')) {
+          cursor.hideHint();
+          return;
+        }
+        cursor.style.transform = `translate3d(${event.clientX}px, ${event.clientY}px, 0)`;
+        cursor.classList.toggle('label-left', event.clientX > window.innerWidth - 160);
+        cursor.classList.toggle('label-above', event.clientY > window.innerHeight - 64);
+        target.classList.add('gst-cursor-active');
+        cursor.classList.add('is-visible');
+      };
+      target.addEventListener('pointerenter', move);
+      target.addEventListener('pointermove', move);
+      target.addEventListener('pointerleave', cursor.hideHint);
+      target.addEventListener('pointercancel', cursor.hideHint);
     });
   }
 
