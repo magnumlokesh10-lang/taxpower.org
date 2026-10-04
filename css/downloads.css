@@ -119,3 +119,27 @@
 @media(prefers-reduced-motion:reduce) {
  .download-setup-button,.download-utility-action { transition:none; }
 }
+
+/* Match the approved card preview and full-colour utility symbols. */
+.download-product-grid { gap:20px; }
+.download-product-card { padding:26px; border-radius:16px; }
+.download-product-card::before { width:132px; height:132px; }
+.download-product-card--gst { --download-accent:#ff7416; --download-tint:#fff3e7; }
+.download-product-card--tds { --download-accent:#0798f0; --download-tint:#ebf8ff; }
+.download-product-card--mvat { --download-accent:#7770ed; --download-tint:#f4efff; }
+.downloads-page .download-product-card h3 { font-size:clamp(23px,2.2vw,29px); font-weight:800; }
+.download-product-card > p { font-size:15px; min-height:47px; }
+.download-product-logo { width:60px; height:60px; margin-bottom:14px; }
+.download-product-badges { gap:8px; margin-bottom:19px; }
+.download-product-badges span { padding:8px 11px; font-size:12px; border-radius:10px; }
+.download-product-badges span:first-child { background:#fff2e5; color:#e86b12; font-weight:500; }
+.download-product-badges span:nth-child(2) { background:#eaf7ff; color:#058af1; }
+.download-setup-button { min-height:50px; font-size:15px; border-radius:11px; background:linear-gradient(115deg,var(--download-accent),var(--download-accent)); }
+.download-utility-tile { min-height:82px; background:#fff; }
+.download-utility-icon img { display:block; width:40px; height:40px; object-fit:contain; }
+.downloads-page .download-utility-copy h3 { font-size:13px; font-weight:750; }
+.download-utility-copy p { font-size:12px; }
+@media(max-width:767px) {
+ .download-product-card { padding:22px; }
+ .download-product-card > p { min-height:0; }
+}
