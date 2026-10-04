@@ -697,3 +697,40 @@
         grid-template-columns: 1fr;
     }
 }
+
+/* Clear pricing introduction with mobile-safe text widths. */
+.pricing-page .pricing-banner { min-height:260px; border:1px solid #d8e6ec; border-radius:18px; background:#f6fafc; box-shadow:0 10px 28px #214d6410; }
+.pricing-page .pricing-banner-background { inset:0; z-index:-2; filter:none; transform:none; background-position:right center; }
+.pricing-page .pricing-banner::before { content:""; position:absolute; inset:0; z-index:-1; background:linear-gradient(90deg,#f7fbff 0%,#f7fbfff5 44%,#f7fbff9c 74%,#f7fbff22 100%); }
+.pricing-page .pricing-banner-content { box-sizing:border-box; min-height:260px; padding:36px 40px; justify-content:center; gap:0; }
+.pricing-banner-eyebrow { font-size:10px; line-height:1.5; font-weight:750; letter-spacing:.15em; color:#35758b; margin-bottom:14px; }
+.pricing-page .pricing-banner h1 { display:flex; flex-wrap:wrap; align-items:baseline; gap:0 10px; width:auto; max-width:100%; min-height:0; padding:0; border:0; border-radius:0; margin:0; color:#0b3b3b; background:none; box-shadow:none; backdrop-filter:none; font-size:clamp(26px,3vw,37px); line-height:1.22; letter-spacing:-.035em; }
+.pricing-banner h1 > span:not(.pricing-brand-divider) { white-space:nowrap; }
+.pricing-page .pricing-brand-divider { color:#dc772a; font-weight:500; }
+.pricing-page .pricing-banner-summary { max-width:470px; margin:14px 0 0; color:#355968; font-size:16px; line-height:1.65; }
+.pricing-banner-products { display:flex; flex-wrap:wrap; gap:8px; margin-top:20px; }
+.pricing-banner-products span { padding:6px 11px; border:1px solid #cadfe9; border-radius:8px; background:#ffffffe6; color:#245363; font-size:11px; line-height:1.5; font-weight:600; }
+.pricing-suite-heading { box-sizing:border-box; width:min(1120px,100%); margin:0 auto 22px; padding:0 0 0 16px; border-left:3px solid #ef8737; }
+.pricing-section-eyebrow { display:block; margin-bottom:7px; color:#9b561f; font-size:10px; line-height:1.5; font-weight:750; letter-spacing:.1em; }
+.pricing-page .pricing-suite-heading h2 { margin:0; color:#0b3b3b; font-size:clamp(23px,2.4vw,30px); font-weight:800; line-height:1.25; letter-spacing:-.025em; }
+.pricing-suite-heading p { margin:9px 0 0; max-width:680px; font-size:14px; line-height:1.65; color:#4e6977; }
+@media(max-width:767px) {
+ .page-section.pricing-page { padding-top:30px; }
+ .pricing-page .pricing-banner-content { padding:28px 24px; }
+ .pricing-page .pricing-banner::before { background:linear-gradient(100deg,#f7fbfffa,#f7fbffe6); }
+ .pricing-page .pricing-banner h1 { max-width:500px; font-size:30px; }
+ .pricing-suite-heading { padding-left:13px; margin-bottom:20px; }
+ .pricing-page .badge-orange,.pricing-page .badge-sky { max-width:calc(100% - 32px); box-sizing:border-box; white-space:normal; line-height:1.4; left:16px; }
+}
+@media(max-width:480px) {
+ .pricing-page .pricing-banner { min-height:0; margin-bottom:26px; border-radius:14px; }
+ .pricing-page .pricing-banner-content { min-height:0; padding:26px 20px; }
+ .pricing-page .pricing-banner h1 { display:grid; grid-template-columns:auto 1fr; gap:5px 8px; font-size:clamp(24px,7.2vw,31px); }
+ .pricing-banner h1 > span:first-child { grid-column:1/-1; }
+ .pricing-page .pricing-brand-divider { font-size:.8em; }
+ .pricing-page .pricing-banner-summary { font-size:14px; line-height:1.65; margin-top:14px; }
+ .pricing-banner-products { gap:6px; margin-top:17px; }
+ .pricing-banner-products span { padding:5px 8px; }
+ .pricing-suite-heading p { font-size:13px; }
+ .pricing-page .pricing-suite-heading h2 { font-size:23px; }
+}
