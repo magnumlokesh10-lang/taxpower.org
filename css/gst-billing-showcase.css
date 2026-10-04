@@ -17,7 +17,7 @@
 .billing-card--dashboard { grid-column: 1 / -1; --billing-ink:#087cae; background: radial-gradient(ellipse at 88% 4%,#e5f8ff 0,transparent 43%),linear-gradient(120deg,#9dd8ff,#bbeaff 52%,#d5f3ff); }
 .billing-card--masters { --billing-ink:#7650b0; background: radial-gradient(ellipse at 95% 8%,#f2ecff,transparent 55%),linear-gradient(135deg,#cbb3f5,#dfcef9 52%,#ede2ff); }
 .billing-card--generate { --billing-ink:#b76821; background: radial-gradient(ellipse at 92% 7%,#fff0df,transparent 58%),linear-gradient(125deg,#ffc18c,#ffdab2 48%,#ffe9cd); }
-.billing-card--download { --billing-ink:#36833e; background: radial-gradient(ellipse at 8% 0,#f1ffdf,transparent 53%),linear-gradient(125deg,#b8e9a1,#d4f3b6 55%,#e9f9cb); }
+.billing-card--download { --billing-ink:#986b13; background: radial-gradient(ellipse at 8% 0,#fffbea,transparent 53%),linear-gradient(125deg,#ffe28a,#fff0af 55%,#fff8d7); }
 .billing-card--reports { --billing-ink:#b34d7d; background: radial-gradient(ellipse at 95% 5%,#fff0f6,transparent 52%),linear-gradient(125deg,#f6b5d0,#f9cce0 50%,#ffe3ed); }
 .billing-card-heading { min-height: 0; position: relative; padding: 30px 28px 24px; margin: 0; min-width: 0; }
 .billing-step { display: block; position: relative; z-index: 1; max-width: calc(100% - 95px); color: #365d68; font-size: 11px; line-height: 1.6; font-weight: 650; letter-spacing: .025em; }
@@ -103,3 +103,6 @@
 }
 @media(prefers-reduced-motion:reduce) { .billing-explore--polished .billing-workflow-nav a { transition:none; } }
 
+
+/* Keep download points compact while improving text contrast. */
+#gst-billing-download .billing-benefits li { color:#153c46; font-weight:600; background:#ffffffdf; }
