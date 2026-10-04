@@ -28,3 +28,37 @@
  .downloads-page .downloads-search-icon svg { width:26px; height:26px; }
  .downloads-page .downloads-search-suggestion { width:100%; font-size:14px; padding:11px 12px; }
 }
+
+/* Preserve the original photo and glass headings; add clear download actions. */
+.downloads-page .downloads-banner::before { content:""; position:absolute; inset:0; z-index:-1; background:linear-gradient(90deg,#082c4899,#082c4833 70%,transparent); pointer-events:none; }
+.downloads-page .downloads-banner-content { position:relative; padding-right:25%; justify-content:center; }
+.downloads-page .downloads-banner-search-field { margin-top:0; }
+.downloads-page .downloads-search-row { min-height:64px; }
+.downloads-page .downloads-banner-search-field h1 { font-size:clamp(23px,2.6vw,34px); }
+.downloads-page .downloads-search-suggestion { font-size:16px; padding:10px 22px; background:#713a194d; }
+.downloads-desktop-art { position:absolute; right:2%; top:50%; transform:translateY(-50%); width:21%; max-width:240px; pointer-events:none; }
+.downloads-banner-links { display:flex; flex-wrap:wrap; gap:9px; margin-top:13px; }
+.downloads-banner-links a { display:inline-flex; align-items:center; gap:18px; min-height:44px; padding:9px 14px; border:1px solid #b8e6f4b3; border-radius:9px; background:#f2fbfff2; color:#135570; font-size:12px; font-weight:700; text-decoration:none; transition:background .18s; }
+.downloads-banner-links a:hover { background:#d9f4ff; }
+.downloads-banner-links a:focus-visible { outline:3px solid #ffbd77; outline-offset:3px; }
+.downloads-art-arrow { animation:downloadsArrowNudge 2.8s ease-in-out infinite; }
+@keyframes downloadsArrowNudge { 0%,65%,100% { transform:translateY(0); } 35% { transform:translateY(5px); } }
+#software-downloads,#utility-downloads { scroll-margin-top:110px; }
+@media(max-width:900px) {
+ .downloads-page .downloads-banner-content { padding-right:22%; }
+ .downloads-desktop-art { width:19%; right:1%; }
+}
+@media(max-width:767px) {
+ .downloads-page .downloads-banner-content { padding-right:22px; }
+ .downloads-desktop-art { display:none; }
+ .downloads-page .downloads-banner-search-field h1 { font-size:clamp(22px,4.5vw,30px); }
+ .downloads-page .downloads-search-suggestion { font-size:15px; padding:12px 16px; }
+}
+@media(max-width:480px) {
+ .downloads-page .downloads-banner-content { padding-right:18px; }
+ .downloads-page .downloads-banner-search-field h1 { font-size:clamp(20px,6vw,26px); }
+ .downloads-page .downloads-search-suggestion { font-size:14px; padding:11px 12px; }
+ .downloads-banner-links { width:100%; gap:7px; }
+ .downloads-banner-links a { justify-content:space-between; flex:1 1 auto; padding:9px 10px; gap:8px; font-size:11px; }
+}
+@media(prefers-reduced-motion:reduce) { .downloads-art-arrow { animation:none; } }

@@ -15,7 +15,7 @@
   <script src="js/nav-loader.js?v=20260929-polish" defer></script>
   <script src="js/script.js?v=20260929-minimal" defer></script>
   <script src="js/page-loader.js" defer></script>
-  <link rel="stylesheet" href="css/downloads.css?v=20261004-responsive-banner">
+  <link rel="stylesheet" href="css/downloads.css?v=20261004-banner-actions">
 </head>
 
 <body>
@@ -24,13 +24,24 @@
     <div class="section-inner">
       <header class="downloads-banner" id="downloads-banner">
         <div class="downloads-banner-background" aria-hidden="true"></div>
+        <svg class="downloads-desktop-art" viewBox="0 0 240 180" fill="none" aria-hidden="true" focusable="false">
+<ellipse cx="121" cy="163" rx="94" ry="10" fill="#abd4e6" opacity=".35"/>
+<rect x="24" y="22" width="190" height="119" rx="13" fill="#eefaff" stroke="#a4dcec" stroke-width="3"/>
+<rect x="35" y="33" width="168" height="94" rx="7" fill="#d7f0fc"/>
+<path d="M96 142L91 160H150L145 142" fill="#d4e8ef"/>
+<path d="M78 162H163" stroke="#90c5d7" stroke-width="6" stroke-linecap="round"/>
+<rect x="50" y="48" width="55" height="62" rx="7" fill="white" stroke="#a7d2e2"/>
+<path d="M61 62H91M61 73H84M61 84H89" stroke="#91bdcf" stroke-width="4" stroke-linecap="round"/>
+<circle cx="159" cy="82" r="31" fill="#fff0dc"/>
+<g class="downloads-art-arrow" stroke="#ea8c34" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"><path d="M159 61V91M148 81L159 92L170 81"/></g>
+<path d="M144 99H174" stroke="#ea8c34" stroke-width="4" stroke-linecap="round"/>
+</svg>
         <div class="downloads-banner-content">
           <div class="downloads-banner-search-field">
             <div class="downloads-search-row">
               <span class="downloads-search-icon" aria-hidden="true">
                 <svg viewBox="0 0 24 24" focusable="false">
-                  <circle cx="11" cy="11" r="6.5"></circle>
-                  <path d="m16 16 4.5 4.5"></path>
+                  <path d="M12 3v12m-5-5 5 5 5-5M4 16v5h16v-5"></path>
                 </svg>
               </span>
               <h1>Download TaxPower GST Software</h1>
@@ -38,9 +49,10 @@
             <h2 class="downloads-search-suggestion">Download the latest version of TaxPower GST and TaxPower TDS
               Software</h2>
           </div>
+          <nav class="downloads-banner-links" aria-label="Jump to downloads"><a href="#software-downloads">Software Downloads <span aria-hidden="true">↓</span></a><a href="#utility-downloads">Utilities <span aria-hidden="true">↓</span></a></nav>
         </div>
       </header>
-      <div class="downloads-table-wrap" role="region" aria-label="Product download files">
+      <div class="downloads-table-wrap" id="software-downloads" role="region" aria-label="Product download files">
         <table class="downloads-table">
           <thead>
             <tr>
@@ -93,7 +105,7 @@
         </table>
       </div>
 
-      <h2 class="utility-download-heading">TaxPower Utilities Download</h2>
+      <h2 class="utility-download-heading" id="utility-downloads">TaxPower Utilities Download</h2>
       <div class="downloads-table-wrap" role="region" aria-label="TaxPower utility download files">
         <table class="downloads-table">
           <thead>
