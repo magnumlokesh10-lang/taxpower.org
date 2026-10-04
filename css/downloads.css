@@ -1,0 +1,30 @@
+/* Downloads banner aligned with the pricing frame; retain its search-style content. */
+.page-section.downloads-page { padding-top:18px; }
+.downloads-page > .section-inner { width:100%; max-width:none; }
+.downloads-page .downloads-banner { box-sizing:border-box; min-height:230px; border-radius:18px; margin-bottom:26px; }
+.downloads-page .downloads-banner-content { box-sizing:border-box; min-height:230px; padding:28px 34px; }
+.downloads-page .downloads-banner-search-field { max-width:100%; }
+.downloads-page .downloads-search-row { box-sizing:border-box; gap:12px; }
+.downloads-page .downloads-banner-search-field h1 { margin:0; line-height:1.25; overflow-wrap:break-word; }
+.downloads-page .downloads-search-suggestion { box-sizing:border-box; }
+.downloads-page .downloads-table-wrap { width:min(1120px,100%); margin-inline:auto; }
+.downloads-page .utility-download-heading { max-width:100%; }
+@media(max-width:767px) {
+ .page-section.downloads-page { padding-top:14px; }
+ .downloads-page .downloads-banner { min-height:210px; margin-bottom:22px; }
+ .downloads-page .downloads-banner-content { min-height:210px; padding:25px 22px; }
+ .downloads-page .downloads-search-row { min-height:64px; padding:14px 18px; border-radius:16px; }
+ .downloads-page .downloads-banner-search-field h1 { font-size:clamp(22px,4.5vw,30px); }
+ .downloads-page .downloads-search-icon { width:36px; height:36px; flex-basis:36px; }
+ .downloads-page .downloads-search-icon svg { width:32px; height:32px; }
+ .downloads-page .downloads-search-suggestion { width:calc(100% - 16px); padding:12px 16px; font-size:15px; line-height:1.5; border-radius:14px; }
+}
+@media(max-width:480px) {
+ .downloads-page .downloads-banner { min-height:0; border-radius:14px; }
+ .downloads-page .downloads-banner-content { min-height:0; padding:24px 18px; }
+ .downloads-page .downloads-search-row { gap:8px; padding:12px; }
+ .downloads-page .downloads-banner-search-field h1 { font-size:clamp(20px,6vw,26px); }
+ .downloads-page .downloads-search-icon { width:28px; height:28px; flex-basis:28px; }
+ .downloads-page .downloads-search-icon svg { width:26px; height:26px; }
+ .downloads-page .downloads-search-suggestion { width:100%; font-size:14px; padding:11px 12px; }
+}
