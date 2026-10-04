@@ -13,6 +13,44 @@
   <script src="js/form-backend.js" defer></script>
   <script src="js/script.js?v=20260929-minimal" defer></script>
   <script src="js/page-loader.js" defer></script>
+  <style>
+    /* Contact cards only; embedded enquiry form retains its existing styles. */
+    #support .support-contact-refined { margin-top:28px; }
+    #support .support-contact-refined > h2 { font-size:22px; letter-spacing:-.025em; margin:0 0 18px; color:#173f50; }
+    #support .support-contact-refined .support-contact-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:20px; }
+    #support .support-contact-refined .support-contact-card {
+      --support-accent:#14769b; --support-soft:#d8eff9; --support-border:#cce3ed;
+      display:flex; flex-direction:column; min-width:0; padding:24px 26px;
+      border:1px solid var(--support-border); border-radius:19px;
+      background:linear-gradient(125deg,#fff 5%,#eef8fd);
+      box-shadow:0 7px 22px #15456206; transform:none; transition:none;
+    }
+    #support .support-contact-refined .support-sales {
+      --support-accent:#9b5d26; --support-soft:#ffe8cd; --support-border:#eedac3;
+      background:linear-gradient(125deg,#fff 5%,#fff5e9);
+    }
+    #support .support-contact-refined .support-contact-card:hover { transform:none; border-color:var(--support-border); box-shadow:0 7px 22px #15456206; }
+    #support .support-contact-refined .support-card-top { display:flex; align-items:center; justify-content:space-between; gap:16px; margin-bottom:4px; }
+    #support .support-contact-refined .support-card-kicker { font-size:9px; letter-spacing:.13em; font-weight:750; color:var(--support-accent); }
+    #support .support-contact-refined .support-card-art { width:86px; height:65px; flex-shrink:0; color:var(--support-accent); }
+    #support .support-contact-refined h3 { margin:0 0 10px; font-size:23px; line-height:1.3; letter-spacing:-.035em; color:#173f50; }
+    #support .support-contact-refined p { font-size:13px; line-height:1.75; margin:0; color:#536e7c; max-width:500px; }
+    #support .support-contact-refined .support-topic-tags { display:flex; flex-wrap:wrap; gap:7px; list-style:none; padding:0; margin:17px 0 20px; }
+    #support .support-contact-refined .support-topic-tags li { font-size:10px; line-height:1.5; padding:5px 9px; color:var(--support-accent); background:#ffffffb3; border:1px solid var(--support-border); border-radius:6px; }
+    #support .support-contact-refined .support-card-bottom { margin-top:auto; border-top:1px solid var(--support-border); padding-top:15px; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:14px; }
+    #support .support-contact-refined .support-email { display:flex; flex-direction:column; gap:5px; color:var(--support-accent); text-decoration:none; min-height:44px; justify-content:center; overflow-wrap:anywhere; }
+    #support .support-contact-refined .support-email > span { font-size:10px; color:#536e7c; }
+    #support .support-contact-refined .support-email strong { font-size:12px; font-weight:650; }
+    #support .support-contact-refined .support-card-action { display:inline-flex; align-items:center; justify-content:center; gap:14px; min-height:44px; padding:10px 13px; border:1px solid var(--support-border); border-radius:9px; background:var(--support-soft); color:var(--support-accent); font-size:11px; font-weight:700; text-decoration:none; }
+    #support .support-contact-refined a:hover { text-decoration:underline; text-underline-offset:3px; }
+    #support .support-contact-refined a:focus-visible { outline:3px solid var(--support-accent); outline-offset:4px; }
+    @media(max-width:700px) {
+      #support .support-contact-refined .support-contact-grid { grid-template-columns:1fr; gap:14px; }
+      #support .support-contact-refined .support-contact-card { padding:20px; }
+      #support .support-contact-refined h3 { font-size:21px; }
+      #support .support-contact-refined .support-card-art { width:74px; height:56px; }
+    }
+  </style>
 </head>
 
 <body>
@@ -23,54 +61,36 @@
       <h1 class="hero_heading">Support & Contact</h1>
       <p class="section-lead">Need help with TaxPower? Reach out for demos, licensing, or technical support.</p>
 
-      <section class="support-contact">
-        <h2>Contact</h2>
+      <section class="support-contact support-contact-refined" aria-labelledby="support-contact-title">
+        <h2 id="support-contact-title">How can we help you?</h2>
         <div class="support-contact-grid">
-          <article class="support-contact-card">
-            <div class="support-card-icon" aria-hidden="true">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                stroke-linecap="round" stroke-linejoin="round">
-                <path d="M6 15v-3a6 6 0 0 1 12 0v3"></path>
-                <path d="M4 17v1a2 2 0 0 0 2 2h1"></path>
-                <path d="M20 17v1a2 2 0 0 1-2 2h-1"></path>
+          <article class="support-contact-card support-technical">
+            <div class="support-card-top"><span class="support-card-kicker">FOR EXISTING USERS</span>
+              <svg class="support-card-art" viewBox="0 0 120 90" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+                <path d="M30 53V43a30 30 0 0 1 60 0v22c0 10-10 16-23 16"/><rect x="22" y="44" width="16" height="26" rx="6" fill="white"/><rect x="82" y="44" width="16" height="26" rx="6" fill="white"/><rect x="54" y="76" width="18" height="8" rx="4" fill="var(--support-soft)"/><path d="M45 30h30v25H61l-8 7v-7h-8z" fill="var(--support-soft)"/><path d="M52 39h16M52 46h10"/>
               </svg>
             </div>
-            <h3>Technical Support / Query</h3>
-            <p>Already using TaxPower? Get help with installation, updates, licensing and day-to-day product queries.</p>
-            <ul class="support-contact-list">
-              <li>
-                <span class="support-contact-label">Mobile</span>
-                <a href="tel:+91XXXXXXXXXX">+91-XXXXXXXXXX</a>
-              </li>
-              <li>
-                <span class="support-contact-label">Email</span>
-                <a href="mailto:support@taxpower.org">support@taxpower.org</a>
-              </li>
-            </ul>
+            <h3>Technical support</h3>
+            <p>Get help with TaxPower GST &amp; TDS installation, updates, licensing and everyday software queries.</p>
+            <ul class="support-topic-tags" aria-label="Technical support topics"><li>Installation</li><li>Software queries</li><li>Licensing</li></ul>
+            <div class="support-card-bottom">
+              <a class="support-email" href="mailto:support@taxpower.org"><span>Email our support team</span><strong>support@taxpower.org <span aria-hidden="true">↗</span></strong></a>
+              <a class="support-card-action" href="#demo-enquiry">Send an enquiry <span aria-hidden="true">→</span></a>
+            </div>
           </article>
-
-          <article class="support-contact-card">
-            <div class="support-card-icon" aria-hidden="true">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                stroke-linecap="round" stroke-linejoin="round">
-                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-                <circle cx="9" cy="7" r="4"></circle>
-                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+          <article class="support-contact-card support-sales">
+            <div class="support-card-top"><span class="support-card-kicker">EXPLORE TAXPOWER</span>
+              <svg class="support-card-art" viewBox="0 0 120 90" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+                <rect x="16" y="12" width="88" height="57" rx="7" fill="white"/><path d="M16 25h88M60 69v12M44 81h32"/><circle cx="24" cy="19" r="2" fill="currentColor" stroke="none"/><path d="m49 35 20 11-20 11z" fill="var(--support-soft)"/><circle cx="98" cy="66" r="14" fill="var(--support-soft)"/><path d="m92 66 4 4 8-9"/>
               </svg>
             </div>
-            <h3>Demo / Enquiry / Sales Representative</h3>
-            <p>Want to see TaxPower in action? Book a free live demo or talk to our sales team for pricing and purchase.</p>
-            <ul class="support-contact-list">
-              <li>
-                <span class="support-contact-label">Mobile</span>
-                <a href="tel:+91XXXXXXXXXX">+91-XXXXXXXXXX</a>
-              </li>
-              <li>
-                <span class="support-contact-label">Email</span>
-                <a href="mailto:support@taxpower.org">support@taxpower.org</a>
-              </li>
-            </ul>
+            <h3>Product demos &amp; sales</h3>
+            <p>See TaxPower in action with a free live demo. Discuss software features, pricing and purchase options.</p>
+            <ul class="support-topic-tags" aria-label="Sales enquiry topics"><li>Live demo</li><li>Product guidance</li><li>Pricing</li></ul>
+            <div class="support-card-bottom">
+              <a class="support-email" href="mailto:support@taxpower.org"><span>Email for demos &amp; sales</span><strong>support@taxpower.org <span aria-hidden="true">↗</span></strong></a>
+              <a class="support-card-action" href="#demo-enquiry">Book a free demo <span aria-hidden="true">→</span></a>
+            </div>
           </article>
         </div>
       </section>
