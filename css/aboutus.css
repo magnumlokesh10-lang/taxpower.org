@@ -81,3 +81,37 @@
   .se-logo-orbit { width:160px; height:195px; }
   .se-brand-panel .se-brand-name { font-size:28px; }
 }
+
+/* Matching company profiles with distinct dealer and developer identities. */
+.se-hero { position:relative; gap:clamp(24px,4vw,56px); grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr); background:radial-gradient(ellipse at 100% 0%,#c9f4ffb3,transparent 58%),linear-gradient(125deg,#fffaf4ed,#f0faffed); }
+.se-hero > * { min-width:0; }
+.se-brand-panel { position:relative; width:100%; padding:26px clamp(18px,2.5vw,32px); border:1px solid #c5e3ee; border-radius:22px; background:linear-gradient(155deg,#fffffff2,#f1fbffe8); box-shadow:0 16px 36px #1259790c,inset 0 1px 0 #fff; }
+.se-profile-label { display:block; font-size:9px; letter-spacing:.13em; font-weight:750; color:#487185; line-height:1.6; }
+.se-logo-orbit { width:170px; height:206px; margin:14px auto 0; }
+.se-brand-services { display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-top:22px; padding-top:18px; border-top:1px solid #d7eaf1; }
+.se-brand-services span { padding:9px 5px; border:1px solid #deedf4; border-radius:8px; background:#ffffffb3; color:#365e74; font-size:11px; }
+.se-magnum { margin-top:28px; background:radial-gradient(ellipse at 100% 0%,#ffe0b680,transparent 58%),linear-gradient(125deg,#f5f8ffed,#fff9efed); border-color:#e1d9cc; }
+.se-about .se-magnum h2 { font-size:clamp(29px,3.3vw,44px); letter-spacing:-.035em; }
+.se-magnum h2 span { color:#94601f; }
+.se-company-facts { display:flex; flex-wrap:wrap; gap:30px; margin:23px 0; }
+.se-company-facts span { display:grid; gap:5px; color:#607687; font-size:12px; }
+.se-company-facts b { color:#164560; font-size:24px; }
+.se-product-list { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:10px; margin-bottom:24px; }
+.se-product-list a { display:block; border:1px solid #d6e2ed; border-radius:10px; padding:13px; color:#154f70; background:#ffffffb8; text-decoration:none; font-size:13px; font-weight:750; }
+.se-product-list small { display:block; margin-top:5px; font-size:11px; font-weight:400; color:#546e7f; line-height:1.5; }
+.se-product-list a:hover { border-color:#6598b2; background:#fff; }
+.se-magnum-panel { text-align:left; background:linear-gradient(150deg,#fff,#fffaf2); border-color:#e7d7bc; }
+.se-magnum-logo { min-height:94px; display:flex; align-items:center; margin:16px 0; padding:10px 0; }
+.se-magnum-logo img { width:min(100%,200px); height:auto; max-height:100px; object-fit:contain; object-position:left center; }
+.se-about .se-magnum-panel h3 { font-size:19px; line-height:1.45; margin:0 0 12px; }
+.se-company-contact { margin:21px 0 0; }
+.se-company-contact > div { padding:12px 0; border-top:1px solid #e8e0d4; }
+.se-company-contact dt,.se-registration dt { font-size:10px; font-weight:750; color:#8c622c; margin-bottom:5px; }
+.se-company-contact dd,.se-registration dd { margin:0; font-size:12px; color:#39586b; line-height:1.75; overflow-wrap:anywhere; }
+.se-company-contact a { color:#17648a; text-decoration:underline; text-underline-offset:3px; }
+.se-registration { border-top:1px solid #e8e0d4; margin-top:8px; padding-top:5px; }
+.se-registration summary { cursor:pointer; padding:12px 0; min-height:44px; font-size:12px; color:#735025; font-weight:650; }
+.se-registration summary:focus-visible { outline:2px solid #087ea6; outline-offset:3px; }
+.se-registration dl { margin:0; display:grid; gap:10px; padding:4px 0 12px; }
+@media(max-width:900px) { .se-hero { grid-template-columns:1fr; } .se-brand-panel { max-width:540px; margin:auto; } }
+@media(max-width:480px) { .se-logo-orbit { width:145px; height:176px; } .se-product-list { grid-template-columns:1fr; } .se-magnum { margin-top:20px; } .se-brand-panel { padding:23px 18px; } .se-company-facts { gap:24px; } }
