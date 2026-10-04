@@ -120,7 +120,7 @@
 .se-about .se-logo-orbit { position:relative; isolation:isolate; background:none; }
 .se-about .se-logo-orbit::before {
   content:""; position:absolute; inset:0; z-index:0; pointer-events:none;
-  background:url("../asset/swt_icon/siddharth-enterprise-logo.webp?v=20261004-v1-rounded-gap") center/contain no-repeat;
+  background:url("../asset/swt_icon/siddharth-enterprise-logo.png?v=20261004-final") center/contain no-repeat;
   filter:blur(17px); opacity:.35; transform:scale(1.1);
 }
 .se-about .se-logo-orbit img { position:relative; z-index:1; }
