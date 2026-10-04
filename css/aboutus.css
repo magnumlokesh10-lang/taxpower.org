@@ -64,3 +64,20 @@
 @media(max-width:1000px) { .se-association { grid-template-columns:1fr; } .se-service-grid { grid-template-columns:repeat(2,minmax(0,1fr)); } .se-hero { gap:25px; } .se-brand-panel strong { font-size:23px; } }
 @media(max-width:767px) { .se-hero,.se-web,.se-details { grid-template-columns:1fr; } .se-hero { padding:28px 22px; } .se-brand-panel { max-width:420px; width:100%; margin:auto; } .se-logo-orbit,.se-logo-orbit img { width:170px; height:170px; } .se-web { gap:32px; } .se-web-art { max-width:370px; width:100%; margin:0 auto; transform:none; } .se-about .se-lead { font-size:16px; } }
 @media(max-width:480px) { .se-relationship,.se-service-grid { grid-template-columns:1fr; } .se-association,.se-services,.se-web,.se-details { padding:25px 18px; margin-top:20px; } .se-about .se-hero h1 { font-size:32px; } .se-button { width:100%; } .se-hero { padding:25px 18px; } }
+
+/* Final three-blade identity: proportional icon and accessible live wordmark. */
+.se-logo-orbit { width:200px; height:244px; }
+.se-logo-orbit img { width:100%; height:100%; object-fit:contain; }
+.se-brand-panel .se-brand-name {
+  margin:12px 0 0; color:#0754c9; font-size:clamp(26px,2.4vw,34px);
+  font-weight:800; letter-spacing:-.035em; line-height:1.2;
+}
+.se-brand-panel .se-brand-name span {
+  display:block; margin-top:7px; color:#007f9b; font-size:.43em;
+  font-weight:700; letter-spacing:.24em; text-transform:uppercase;
+}
+.se-about .se-relationship article:last-child h3 { color:#0754c9; }
+@media(max-width:767px) {
+  .se-logo-orbit { width:160px; height:195px; }
+  .se-brand-panel .se-brand-name { font-size:28px; }
+}
