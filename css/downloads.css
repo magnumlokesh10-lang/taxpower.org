@@ -170,3 +170,39 @@
  .download-product-card,.download-utility-tile,.download-setup-button,.download-setup-button svg,.download-utility-action svg { transition:none; }
  .download-product-card:hover,.download-setup-button:hover svg,.download-utility-action:hover svg { transform:none; }
 }
+
+/* Refined downloads banner only. */
+.downloads-page .downloads-banner { border:1px solid #cce2ed; box-shadow:0 8px 26px #254e6710; background:#f2faff; }
+.downloads-page .downloads-banner-background { inset:0; background-image:url('../asset/promo banner/dnwd_bnnr.png'); background-position:center; }
+.downloads-page .downloads-banner::before { background:linear-gradient(100deg,#eff9fff5 0%,#eff9ffe8 44%,#eff9ff80 75%,#eff9ff33 100%); }
+.downloads-page .downloads-banner-content { padding:26px 28% 26px 34px; gap:0; }
+.downloads-page .downloads-banner-search-field { width:100%; gap:10px; }
+.downloads-page .downloads-search-row { min-height:64px; padding:14px 18px; gap:14px; border:1px solid #ffffffed; border-radius:14px; background:linear-gradient(115deg,#ffffffed,#e4f6ffc9); box-shadow:0 5px 16px #3776950d; }
+.downloads-page .downloads-banner-search-field h1 { color:#0b3b3b; font-size:clamp(24px,2.5vw,35px); font-weight:800; letter-spacing:-.035em; line-height:1.25; }
+.downloads-page .downloads-search-icon { order:0; width:42px; height:42px; flex-basis:42px; margin-left:0; border-radius:12px; background:#d7f0fc; color:#008dbb; }
+.downloads-page .downloads-search-icon svg { width:27px; height:27px; }
+.downloads-page .downloads-search-suggestion { align-self:flex-start; width:100%; padding:10px 16px; text-align:left; color:#466679; border:1px solid #ffffffaa; border-radius:11px; background:#ffffffa6; font-size:15px; line-height:1.6; }
+.downloads-page .downloads-banner-links { margin-top:14px; gap:10px; }
+.downloads-page .downloads-banner-links a { border:1px solid #baddec; background:#ffffffed; color:#15607c; border-radius:9px; }
+.downloads-page .downloads-banner-links a:first-child { background:#078fbe; border-color:#078fbe; color:white; box-shadow:0 4px 12px #008bbb1c; }
+.downloads-page .downloads-banner-links a:first-child:hover { background:#087fa8; }
+.downloads-page .downloads-desktop-art { right:4%; width:20%; max-width:225px; }
+@media(max-width:900px) {
+ .downloads-page .downloads-banner-content { padding-right:25%; }
+ .downloads-page .downloads-desktop-art { right:2%; }
+}
+@media(max-width:767px) {
+ .downloads-page .downloads-banner-content { padding:24px 22px; }
+ .downloads-page .downloads-search-row { padding:13px 15px; gap:11px; }
+ .downloads-page .downloads-banner-search-field h1 { font-size:clamp(22px,4.5vw,30px); }
+ .downloads-page .downloads-banner::before { background:linear-gradient(100deg,#eff9fff5,#eff9ffdb); }
+}
+@media(max-width:480px) {
+ .downloads-page .downloads-banner-content { padding:20px 16px; }
+ .downloads-page .downloads-search-row { padding:12px; gap:10px; }
+ .downloads-page .downloads-search-icon { width:34px; height:34px; flex-basis:34px; border-radius:9px; }
+ .downloads-page .downloads-search-icon svg { width:23px; height:23px; }
+ .downloads-page .downloads-banner-search-field h1 { font-size:22px; }
+ .downloads-page .downloads-search-suggestion { font-size:13px; padding:10px 12px; }
+ .downloads-page .downloads-banner-links a { min-height:44px; font-size:12px; }
+}
