@@ -766,9 +766,6 @@
 /* Light licence illustration and touch-friendly section shortcuts. */
 .pricing-page .pricing-banner-background { background: url('../asset/promo banner/price_banner.jpg') right center / cover no-repeat; }
 .pricing-page .pricing-banner::before { background:linear-gradient(90deg,#f7fbff 0%,#f7fbfff2 42%,#f7fbff8c 70%,#f7fbff18 100%); }
-.pricing-license-art { position:absolute; right:3%; top:50%; transform:translateY(-50%); width:28%; max-width:320px; pointer-events:none; }
-.pricing-license-art svg { display:block; width:100%; height:auto; }
-.pricing-page .pricing-banner-content { padding-right:33%; }
 .pricing-page .pricing-banner { margin-bottom:14px; }
 .pricing-quick-nav { display:flex; align-items:center; flex-wrap:wrap; gap:10px; margin:0 0 28px; padding:10px 14px; border:1px solid #dbe8ed; border-radius:12px; background:#ffffffd9; }
 .pricing-quick-nav > span { color:#577180; font-size:12px; font-weight:600; margin-right:auto; }
@@ -778,16 +775,12 @@
 .pricing-quick-nav a span { color:#059ed2; }
 #suite-heading,#pricing-individual,#pricing-combos { scroll-margin-top:110px; }
 @media(max-width:767px) {
- .pricing-license-art { width:180px; right:5px; opacity:.8; }
- .pricing-page .pricing-banner-content { padding-right:180px; }
  .pricing-quick-nav > span { flex-basis:100%; }
  .pricing-quick-nav a { flex:1; gap:8px; padding:0 10px; }
 }
 @media(max-width:540px) {
- .pricing-license-art { width:125px; top:14px; right:4px; transform:none; opacity:.55; }
  .pricing-page .pricing-banner-content { padding-right:18px; }
  .pricing-page .pricing-banner h1,.pricing-page .pricing-banner-eyebrow { position:relative; z-index:1; }
- .pricing-license-art { opacity:.22; }
  .pricing-quick-nav { gap:7px; padding:10px; }
  .pricing-quick-nav a { flex:1 1 100%; min-height:44px; }
 }
