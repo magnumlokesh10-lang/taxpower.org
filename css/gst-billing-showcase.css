@@ -67,3 +67,38 @@
  .billing-generation-preview { margin: 0 10px 12px; }
 }
 @media(prefers-reduced-motion:reduce) { .billing-showcase * { animation: none !important; transition: none !important; } .billing-showcase .gst-animation-ready,.billing-showcase .gst-feature-copy,.billing-showcase .gst-feature-row-media,.billing-showcase .gst-typing-word { opacity: 1 !important; transform: none !important; } }
+
+/* A compact illustrated introduction with descriptive workflow shortcuts. */
+.billing-explore--polished { position:relative; isolation:isolate; display:grid; grid-template-columns:minmax(0,1fr) 180px; align-items:center; gap:22px; margin:0 0 26px; padding:30px; overflow:hidden; border:1px solid #d8e8ee; border-radius:22px; background:linear-gradient(120deg,#fff 45%,#f3f9fc); box-shadow:0 8px 26px #17445c06; text-align:left; }
+.billing-explore--polished::before { content:""; position:absolute; top:0; left:30px; width:100px; height:3px; background:linear-gradient(90deg,#ff891f,#39b8d6); border-radius:0 0 4px 4px; }
+.billing-explore--polished .billing-eyebrow { display:inline-flex; align-items:center; gap:8px; font-size:10px; }
+.billing-explore--polished .billing-eyebrow::before { content:""; width:6px; height:6px; border-radius:50%; background:#f38a36; box-shadow:0 0 0 4px #fff0df; }
+.billing-explore--polished h2 { margin:12px 0 11px; max-width:760px; font-size:clamp(25px,2.8vw,37px); }
+.billing-explore--polished h2 span { color:#087fac; }
+.billing-explore--polished p { max-width:660px; font-size:14px; line-height:1.7; }
+.billing-explore-art { position:relative; height:125px; pointer-events:none; }
+.billing-explore-art svg { position:absolute; width:115px; height:110px; color:#3196b4; left:0; top:0; transform:rotate(-9deg); }
+.billing-explore-art svg+svg { left:70px; top:20px; color:#e2984b; transform:rotate(10deg); }
+.billing-explore--polished .billing-workflow-nav { grid-column:1/-1; display:grid; grid-template-columns:repeat(5,minmax(0,1fr)); gap:10px; margin:0; width:100%; }
+.billing-explore--polished .billing-workflow-nav a { position:relative; min-width:0; min-height:82px; padding:13px 23px 13px 10px; gap:8px; border-radius:13px; border-color:#dce8ec; background:#ffffffeb; transition:border-color .2s,box-shadow .2s,background .2s; }
+.billing-explore--polished .billing-workflow-nav a span { display:block; width:auto; height:auto; border-radius:0; background:transparent; color:inherit; }
+.billing-explore--polished .billing-workflow-nav .billing-nav-icon { flex:0 0 33px; width:33px; height:36px; color:#238db0; }
+.billing-nav-icon svg { display:block; width:100%; height:100%; }
+.billing-explore--polished .billing-nav-copy { min-width:0; }
+.billing-nav-copy strong { display:block; font-size:13px; font-weight:750; color:#164552; }
+.billing-nav-copy small { display:block; margin-top:5px; font-size:10px; font-weight:400; line-height:1.4; color:#5d7985; }
+.billing-explore--polished .billing-workflow-nav .billing-nav-arrow { position:absolute; right:9px; top:12px; font-size:13px; color:#7b9ca7; }
+.billing-explore--polished .billing-workflow-nav a:nth-child(2) .billing-nav-icon { color:#ba762d; }
+.billing-explore--polished .billing-workflow-nav a:nth-child(3) .billing-nav-icon { color:#468b4f; }
+.billing-explore--polished .billing-workflow-nav a:nth-child(4) .billing-nav-icon { color:#8758b1; }
+.billing-explore--polished .billing-workflow-nav a:nth-child(5) .billing-nav-icon { color:#bb6589; }
+@media(hover:hover) { .billing-explore--polished .billing-workflow-nav a:hover { background:#f2fbff; border-color:#81c7dd; box-shadow:0 4px 12px #1b7b9910; } }
+@media(max-width:1100px) and (min-width:761px) { .billing-explore--polished .billing-workflow-nav a { flex-direction:column; align-items:flex-start; } }
+@media(max-width:760px) {
+ .billing-explore--polished { grid-template-columns:minmax(0,1fr); padding:24px 18px 18px; gap:20px; border-radius:16px; }
+ .billing-explore-art { display:none; }
+ .billing-explore--polished .billing-workflow-nav { grid-template-columns:repeat(2,minmax(0,1fr)); gap:8px; }
+ .billing-explore--polished .billing-workflow-nav a:last-child { grid-column:1/-1; }
+ .billing-explore--polished .billing-workflow-nav a { min-height:76px; }
+}
+@media(prefers-reduced-motion:reduce) { .billing-explore--polished .billing-workflow-nav a { transition:none; } }
