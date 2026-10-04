@@ -940,7 +940,7 @@
     "#ffffff",
     "#00bfff",
     "#ffffff",
-    "#fcae1e",
+    "#00bfff",
     "#ffffff"
   ];
 
