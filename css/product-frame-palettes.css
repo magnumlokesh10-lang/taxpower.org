@@ -1,0 +1,71 @@
+/* Site-wide product frame palettes. Each frame has its own colour combination.
+   Artwork layers, screenshot styling and motion remain owned by existing stylesheets. */
+
+/* Three distinct product introductions. */
+#taxpowergst .gst-intro-hero:not(.gst-billing-intro) {
+ background:radial-gradient(ellipse at 85% 35%,#DDEFFB,transparent 48%),linear-gradient(125deg,#FFFAF2,#F5FAFF);
+}
+#taxpowergst #gst-billing-intro {
+ background:radial-gradient(ellipse at 90% 20%,#FAE1CD,transparent 52%),linear-gradient(125deg,#FDF3E5,#EDF2EB);
+}
+#taxpowertds .tds-intro {
+ background:radial-gradient(ellipse at 85% 15%,#E8DDF5,transparent 48%),linear-gradient(125deg,#F9F4FF,#ECF6F1);
+}
+
+/* GST: coral/iris reconciliation, indigo/ice ITC; existing aqua, yellow/sky
+   and turquoise/mint workflow frames remain their distinct combinations. */
+#taxpowergst #gst-einvoice.gst-feature-card {
+ background:linear-gradient(125deg,#FFBAB0 0%,#F5D9E2 50%,#DDD7F9 100%);
+}
+#taxpowergst #gst-itc.gst-feature-card {
+ background:linear-gradient(135deg,#AFBFEF 0%,#D5E1F4 48%,#E8F4FC 100%);
+}
+
+/* TDS no longer reuses Billing's single-family blue, peach, yellow, lavender or rose. */
+.tds-page #tds-deductors {
+ background-image:linear-gradient(115deg,rgba(241,219,183,.72),rgba(216,224,234,.66)),url("../asset/frms_bg/tds-client-minimal.webp");
+ background-color:#E8E2D7;
+ background-position:center,center top;
+ background-size:cover,100% auto;
+ background-repeat:no-repeat;
+}
+#tds-traces.gst-feature-card {
+ background:linear-gradient(120deg,#D6BEF0 0%,#EAE0E0 50%,#F2ECA9 100%);
+}
+#tds-reports.gst-feature-card {
+ background:linear-gradient(130deg,#E8CFAC 0%,#ECE9D4 48%,#BED9C3 100%);
+}
+#tds-returns.gst-feature-row {
+ background-color:#F7CCC0;
+ background-image:url("../asset/frms_bg/tds-returns-workflow.svg?v=20261001"),
+ linear-gradient(115deg,#F4B5A5 0%,#F9D9C5 48%,#F7EDCF 100%);
+ background-size:100% 100%,cover;
+ --tds-feature-accent:#B76B51; --tds-feature-border:#CA9B87;
+ --tds-bullet-tint:rgba(255,249,245,.67);
+}
+#tds-compliance.gst-feature-row {
+ background-color:#DFE9CE;
+ background-image:url("../asset/frms_bg/tds-compliance-workflow.svg?v=20261001"),
+ linear-gradient(120deg,#D6EEA5 0%,#DAE9DD 50%,#BCCDF0 100%);
+ background-size:100% 100%,cover;
+ --tds-feature-accent:#588778; --tds-feature-border:#91ADA0;
+ --tds-bullet-tint:rgba(249,255,248,.67);
+}
+#tds-register.gst-feature-row {
+ background-color:#DDD5E3;
+ background-image:url("../asset/frms_bg/tds-register-workflow.svg?v=20261001"),
+ linear-gradient(125deg,#CBB5D5 0%,#E2D5E1 48%,#E6ECEE 100%);
+ background-size:100% 100%,cover;
+ --tds-feature-accent:#906C99; --tds-feature-border:#B29BBA;
+ --tds-bullet-tint:rgba(255,249,255,.67);
+}
+/* Distinct introduction strips, separate from the main screenshot frames. */
+#taxpowergst .gst-feature-stack-heading {
+ background:linear-gradient(115deg,#F5F4E7,#F1FAFA);
+}
+.tds-page .tds-feature-explorer {
+ background:linear-gradient(125deg,#F5EAEF,#EFF0FB);
+}
+.billing-explore--polished {
+ background:linear-gradient(120deg,#FFFCF4 35%,#EEF4F8);
+}
