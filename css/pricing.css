@@ -737,7 +737,7 @@
 
 /* Match the surrounding product-frame width; keep pricing cards untouched. */
 .page-section.pricing-page { padding-top:18px; }
-.pricing-page > .section-inner { width:100%; max-width:none; }
+.pricing-page > .section-inner { width:min(1120px,100%); max-width:1120px; margin-inline:auto; }
 .pricing-page .pricing-banner { min-height:230px; margin-bottom:26px; }
 .pricing-page .pricing-banner-content { min-height:230px; padding:28px 34px; }
 .pricing-page .pricing-banner h1 { font-size:clamp(27px,3.1vw,40px); font-weight:800; letter-spacing:-.035em; line-height:1.2; }
@@ -764,8 +764,8 @@
 }
 
 /* Light licence illustration and touch-friendly section shortcuts. */
-.pricing-page .pricing-banner-background { background: radial-gradient(ellipse at 85% 45%, #def4fa, transparent 53%), linear-gradient(110deg,#fffaf3,#f6fcff); }
-.pricing-page .pricing-banner::before { background: none; }
+.pricing-page .pricing-banner-background { background: url('../asset/promo banner/price_banner.jpg') right center / cover no-repeat; }
+.pricing-page .pricing-banner::before { background:linear-gradient(90deg,#f7fbff 0%,#f7fbfff2 42%,#f7fbff8c 70%,#f7fbff18 100%); }
 .pricing-license-art { position:absolute; right:3%; top:50%; transform:translateY(-50%); width:28%; max-width:320px; pointer-events:none; }
 .pricing-license-art svg { display:block; width:100%; height:auto; }
 .pricing-page .pricing-banner-content { padding-right:33%; }
@@ -790,4 +790,9 @@
  .pricing-license-art { opacity:.22; }
  .pricing-quick-nav { gap:7px; padding:10px; }
  .pricing-quick-nav a { flex:1 1 100%; min-height:44px; }
+}
+
+/* Keep the photo visible while protecting narrow-screen heading contrast. */
+@media(max-width:767px) {
+ .pricing-page .pricing-banner::before { background:linear-gradient(90deg,#f7fbfff5,#f7fbffce 60%,#f7fbff78); }
 }
