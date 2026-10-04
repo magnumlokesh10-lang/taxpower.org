@@ -222,34 +222,34 @@
 @media(prefers-reduced-motion:reduce) { .se-about .se-button { transition:none; } }
 
 /* Individually illustrated service cards with product-specific headings. */
-.se-services .se-section-header { max-width:900px; margin-bottom:32px; }
+.se-services .se-section-header { max-width:900px; margin-bottom:22px; }
 .se-services #se-services-title { font-size:clamp(26px,2.7vw,38px); line-height:1.25; max-width:850px; }
 .se-services #se-services-title span { display:block; color:#527687; font-size:.68em; font-weight:500; letter-spacing:-.015em; margin-top:10px; }
 .se-services .se-section-header p { max-width:720px; margin-top:16px; }
 .se-service-grid .se-service-card {
   --service-accent:#226daa; --service-soft:#dceeff; --service-bg:#f1f7ff; --service-border:#d3e3f5;
-  display:flex; flex-direction:column; min-width:0; padding:24px;
+  display:flex; flex-direction:column; min-width:0; padding:18px;
   background:linear-gradient(150deg,#ffffff 0%,var(--service-bg) 75%);
-  border:1px solid var(--service-border); border-radius:18px;
+  border:1px solid var(--service-border); border-radius:14px;
 }
 .se-service-grid .se-service-mint { --service-accent:#237c61; --service-soft:#d5f0e4; --service-bg:#effaf5; --service-border:#cde7dc; }
 .se-service-grid .se-service-violet { --service-accent:#7454ac; --service-soft:#e9dff9; --service-bg:#f7f2fd; --service-border:#e2d7f2; }
 .se-service-grid .se-service-peach { --service-accent:#a2662b; --service-soft:#ffe7ca; --service-bg:#fff7ed; --service-border:#f0dcc1; }
 .se-service-grid .se-service-rose { --service-accent:#ab5579; --service-soft:#f8dfe9; --service-bg:#fff3f7; --service-border:#efd5df; }
 .se-service-grid .se-service-teal { --service-accent:#167b88; --service-soft:#d4f0f1; --service-bg:#edfafa; --service-border:#c8e7e9; }
-.se-service-visual { display:flex; justify-content:space-between; align-items:flex-start; gap:16px; margin-bottom:14px; min-height:110px; color:var(--service-accent); }
-.se-service-card .se-service-number { background:var(--service-soft); color:var(--service-accent); border:1px solid var(--service-border); margin:0; width:32px; height:32px; border-radius:50%; font-size:10px; }
-.se-service-illustration { display:block; width:134px; height:108px; max-width:65%; flex-shrink:0; }
-.se-service-eyebrow { color:var(--service-accent); font-size:9px; font-weight:750; letter-spacing:.12em; line-height:1.6; margin-bottom:9px; }
-.se-about .se-service-card h3 { font-size:18px; line-height:1.4; margin-bottom:10px; }
-.se-service-card p { color:#4e6675; font-size:13px; line-height:1.8; }
-.se-service-action { display:flex; align-items:center; justify-content:space-between; gap:12px; color:var(--service-accent); font-size:12px; font-weight:700; text-decoration:none; min-height:44px; margin-top:auto; padding-top:17px; }
+.se-service-visual { display:flex; justify-content:space-between; align-items:flex-start; gap:12px; margin-bottom:6px; min-height:52px; color:var(--service-accent); }
+.se-service-card .se-service-number { background:var(--service-soft); color:var(--service-accent); border:1px solid var(--service-border); margin:0; width:27px; height:27px; border-radius:50%; font-size:10px; }
+.se-service-illustration { display:block; width:66px; height:53px; max-width:65%; flex-shrink:0; }
+.se-service-eyebrow { color:var(--service-accent); font-size:9px; font-weight:750; letter-spacing:.12em; line-height:1.5; margin-bottom:5px; }
+.se-about .se-service-card h3 { font-size:16px; line-height:1.4; margin-bottom:7px; }
+.se-about .se-service-card p { color:#4e6675; font-size:12px; line-height:1.65; }
+.se-service-action { display:flex; align-items:center; justify-content:space-between; gap:12px; color:var(--service-accent); font-size:12px; font-weight:700; text-decoration:none; min-height:40px; margin-top:auto; padding-top:9px; }
 .se-service-action:hover { text-decoration:underline; text-underline-offset:4px; }
-.se-service-card .se-product-links { margin-top:18px; gap:7px; }
+.se-service-card .se-product-links { margin-top:10px; gap:6px; }
 .se-service-card .se-product-links a { background:#ffffffb3; border-color:var(--service-border); color:var(--service-accent); min-height:40px; }
 @media(max-width:480px) {
-  .se-service-grid .se-service-card { padding:22px; }
-  .se-service-visual { min-height:96px; }
-  .se-service-illustration { width:120px; height:96px; }
+  .se-service-grid .se-service-card { padding:16px; }
+  .se-service-visual { min-height:48px; }
+  .se-service-illustration { width:60px; height:48px; }
   .se-services #se-services-title { font-size:26px; overflow-wrap:break-word; }
 }
