@@ -13,46 +13,7 @@
   <script src="js/form-backend.js" defer></script>
   <script src="js/script.js?v=20260929-minimal" defer></script>
   <script src="js/page-loader.js" defer></script>
-  <style>
-    #support > .section-inner > .support-page-title { font-size:clamp(26px,3vw,40px); line-height:1.2; letter-spacing:-.035em; color:#163f50; }
-    #support > .section-inner > .support-page-title span { color:#087e9a; }
-    /* Contact cards only; embedded enquiry form retains its existing styles. */
-    #support .support-contact-refined { margin-top:20px; }
-    #support .support-contact-refined > h2 { font-size:22px; letter-spacing:-.025em; margin:0 0 18px; color:#173f50; }
-    #support .support-contact-refined .support-contact-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:16px; }
-    #support .support-contact-refined .support-contact-card {
-      --support-accent:#087b96; --support-soft:#d5f2fa; --support-border:#bfe5ef; --support-stripe:#00b4d8;
-      display:flex; flex-direction:column; min-width:0; padding:16px 20px;
-      border:1px solid var(--support-border); border-radius:14px; border-top:3px solid var(--support-stripe);
-      background:linear-gradient(125deg,#f7fdff,#e7f7fc);
-      box-shadow:0 7px 22px #15456206; transform:none; transition:none;
-    }
-    #support .support-contact-refined .support-sales {
-      --support-accent:#a94d13; --support-soft:#ffe4d2; --support-border:#f3d4bf; --support-stripe:#f47a22;
-      background:linear-gradient(125deg,#fffaf6,#fff0e3);
-    }
-    #support .support-contact-refined .support-contact-card:hover { transform:none; border-color:var(--support-border); box-shadow:0 7px 22px #15456206; }
-    #support .support-contact-refined .support-card-top { display:flex; align-items:center; justify-content:space-between; gap:16px; margin-bottom:4px; }
-    #support .support-contact-refined .support-card-kicker { font-size:9px; letter-spacing:.13em; font-weight:750; color:var(--support-accent); }
-    #support .support-contact-refined .support-card-art { width:58px; height:44px; flex-shrink:0; color:var(--support-accent); }
-    #support .support-contact-refined h3 { margin:0 0 7px; font-size:20px; line-height:1.3; letter-spacing:-.035em; color:var(--support-accent); }
-    #support .support-contact-refined p { font-size:12px; line-height:1.65; margin:0; color:#536e7c; max-width:500px; }
-    #support .support-contact-refined .support-topic-tags { display:flex; flex-wrap:wrap; gap:7px; list-style:none; padding:0; margin:10px 0 12px; }
-    #support .support-contact-refined .support-topic-tags li { font-size:10px; line-height:1.5; padding:4px 8px; color:var(--support-accent); background:#ffffffb3; border:1px solid var(--support-border); border-radius:6px; }
-    #support .support-contact-refined .support-card-bottom { margin-top:auto; border-top:1px solid var(--support-border); padding-top:10px; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:14px; }
-    #support .support-contact-refined .support-email { display:flex; flex-direction:column; gap:5px; color:var(--support-accent); text-decoration:none; min-height:44px; justify-content:center; overflow-wrap:anywhere; }
-    #support .support-contact-refined .support-email > span { font-size:10px; color:#536e7c; }
-    #support .support-contact-refined .support-email strong { font-size:12px; font-weight:650; }
-    #support .support-contact-refined .support-card-action { display:inline-flex; align-items:center; justify-content:center; gap:14px; min-height:44px; padding:10px 13px; border:1px solid var(--support-border); border-radius:9px; background:var(--support-soft); color:var(--support-accent); font-size:11px; font-weight:700; text-decoration:none; }
-    #support .support-contact-refined a:hover { text-decoration:underline; text-underline-offset:3px; }
-    #support .support-contact-refined a:focus-visible { outline:3px solid var(--support-accent); outline-offset:4px; }
-    @media(max-width:700px) {
-      #support .support-contact-refined .support-contact-grid { grid-template-columns:1fr; gap:14px; }
-      #support .support-contact-refined .support-contact-card { padding:15px 17px; }
-      #support .support-contact-refined h3 { font-size:19px; }
-      #support .support-contact-refined .support-card-art { width:54px; height:41px; }
-    }
-  </style>
+  <link rel="stylesheet" href="css/support-cards.css?v=20261004-load-fix">
 </head>
 
 <body>
