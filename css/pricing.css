@@ -734,3 +734,31 @@
  .pricing-suite-heading p { font-size:13px; }
  .pricing-page .pricing-suite-heading h2 { font-size:23px; }
 }
+
+/* Match the surrounding product-frame width; keep pricing cards untouched. */
+.page-section.pricing-page { padding-top:18px; }
+.pricing-page > .section-inner { width:100%; max-width:none; }
+.pricing-page .pricing-banner { min-height:230px; margin-bottom:26px; }
+.pricing-page .pricing-banner-content { min-height:230px; padding:28px 34px; }
+.pricing-page .pricing-banner h1 { font-size:clamp(27px,3.1vw,40px); font-weight:800; letter-spacing:-.035em; line-height:1.2; }
+.pricing-page .pricing-banner h1 > span:first-child { color:#cc6017; }
+.pricing-page .pricing-banner h1 > span:last-child { color:#087da5; }
+.pricing-page .pricing-brand-divider { color:#647d88; font-weight:500; }
+.pricing-page .pricing-banner-eyebrow { color:#426c7e; margin-bottom:11px; letter-spacing:.13em; }
+.pricing-page .pricing-banner-summary { color:#365566; font-weight:500; max-width:540px; margin-top:12px; }
+.pricing-page .pricing-banner-products { margin-top:17px; }
+.pricing-page .pricing-suite-heading h2 { color:#163d4b; letter-spacing:-.03em; }
+.pricing-page .pricing-suite-heading h2 span { color:#087da5; }
+.pricing-page .section-title { color:#14637c; font-weight:750; letter-spacing:-.02em; }
+@media(max-width:767px) {
+ .page-section.pricing-page { padding-top:14px; }
+ .pricing-page .pricing-banner-content { min-height:210px; padding:25px 22px; }
+ .pricing-page .pricing-banner { min-height:210px; margin-bottom:22px; }
+ .pricing-page .pricing-banner h1 { font-size:30px; }
+}
+@media(max-width:480px) {
+ .pricing-page .pricing-banner,.pricing-page .pricing-banner-content { min-height:0; }
+ .pricing-page .pricing-banner-content { padding:24px 18px; }
+ .pricing-page .pricing-banner h1 { font-size:clamp(23px,7vw,30px); line-height:1.25; }
+ .pricing-page .pricing-banner-summary { font-size:14px; }
+}
