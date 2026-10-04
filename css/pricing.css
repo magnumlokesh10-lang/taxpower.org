@@ -737,7 +737,7 @@
 
 /* Match the surrounding product-frame width; keep pricing cards untouched. */
 .page-section.pricing-page { padding-top:18px; }
-.pricing-page > .section-inner { width:min(1120px,100%); max-width:1120px; margin-inline:auto; }
+.pricing-page > .section-inner { width:100%; max-width:none; margin-inline:auto; }
 .pricing-page .pricing-banner { min-height:230px; margin-bottom:26px; }
 .pricing-page .pricing-banner-content { min-height:230px; padding:28px 34px; }
 .pricing-page .pricing-banner h1 { font-size:clamp(27px,3.1vw,40px); font-weight:800; letter-spacing:-.035em; line-height:1.2; }
@@ -788,4 +788,39 @@
 /* Keep the photo visible while protecting narrow-screen heading contrast. */
 @media(max-width:767px) {
  .pricing-page .pricing-banner::before { background:linear-gradient(90deg,#f7fbfff5,#f7fbffce 60%,#f7fbff78); }
+}
+
+/* Full-width pricing frames; the existing card grids keep their dimensions. */
+.pricing-plans-panel {
+  position:relative;
+  isolation:isolate;
+  width:100%;
+  margin:0 0 24px;
+  padding:28px 0;
+}
+.pricing-plans-panel::before {
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:-1;
+  pointer-events:none;
+  border:1px solid #dce8ee;
+  border-radius:18px;
+  background:linear-gradient(120deg,#fffdf9ed,#f3faffed);
+  box-shadow:0 6px 20px #214d6408;
+}
+.pricing-plans-panel--modules::before {
+  background:linear-gradient(120deg,#f7fbffed,#fffaf5ed);
+}
+.pricing-plans-panel > .featured-grid,
+.pricing-plans-panel > .pricing-grid { margin-bottom:0; }
+.pricing-page .pricing-plans-panel > .section-title {
+  display:block;
+  width:min(1120px,100%);
+  box-sizing:border-box;
+  margin:0 auto 30px;
+}
+@media(max-width:767px) {
+  .pricing-plans-panel { padding:24px 0; margin-bottom:20px; }
+  .pricing-plans-panel::before { border-radius:14px; }
 }
