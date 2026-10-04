@@ -1,0 +1,66 @@
+/* Siddharth Enterprise: dealership, support and independent web development. */
+.se-about { --se-ink:#103e50; --se-blue:#087ba5; --se-muted:#526e7d; color:var(--se-ink); }
+.se-about * { box-sizing:border-box; }
+.se-about h1,.se-about h2,.se-about h3 { color:var(--se-ink); font-family:'Plus Jakarta Sans',sans-serif; }
+.se-about p { color:var(--se-muted); font-size:14px; line-height:1.8; }
+.se-hero { display:grid; grid-template-columns:1.2fr .8fr; gap:48px; align-items:center; padding:48px clamp(24px,4vw,64px); border:1px solid #cce4ed; border-radius:18px; background:radial-gradient(ellipse at 86% 30%,#bceefc80,transparent 55%),linear-gradient(120deg,#fffaf3d9,#edfaffd9); overflow:hidden; }
+.se-kicker { display:block; color:#397c94; font-size:10px; font-weight:750; letter-spacing:.13em; margin-bottom:13px; }
+.se-about .se-hero h1 { font-size:clamp(32px,3.8vw,52px); letter-spacing:-.045em; line-height:1.16; margin:0 0 20px; }
+.se-hero h1 span { color:#077da8; }
+.se-about .se-lead { font-size:18px; color:#28576b; font-weight:600; line-height:1.55; }
+.se-hero-copy > p { max-width:640px; }
+.se-actions { display:flex; align-items:center; flex-wrap:wrap; gap:20px; margin-top:24px; }
+.se-button { display:inline-flex; align-items:center; justify-content:space-between; gap:20px; min-height:46px; padding:12px 18px; color:white; background:#087ea6; border:1px solid #087ea6; border-radius:9px; text-decoration:none; font-size:13px; font-weight:700; }
+.se-button:hover { background:#086b8f; }
+.se-link { display:inline-flex; align-items:center; min-height:44px; color:#0a789e; font-weight:700; font-size:13px; text-decoration:none; }
+.se-about a:focus-visible { outline:3px solid #ed9b4c; outline-offset:4px; }
+.se-brand-panel { text-align:center; padding:28px 18px; border:1px solid #ffffff; background:#ffffff65; border-radius:24px; box-shadow:0 18px 45px #27698a0c; }
+.se-logo-orbit { display:grid; place-items:center; width:230px; height:230px; margin:auto; background:radial-gradient(circle,#a2edff66,transparent 68%); }
+.se-logo-orbit img { display:block; width:230px; height:230px; object-fit:contain; }
+.se-brand-panel strong { display:block; font-size:28px; letter-spacing:-.04em; color:#114f72; }
+.se-brand-panel strong span { font-weight:500; }
+.se-brand-panel p { font-size:11px; margin:9px 0 19px; }
+.se-dealer-tag { display:inline-block; border:1px solid #d9bd9655; background:#fff4e5; color:#965514; border-radius:20px; padding:8px 13px; font-size:11px; font-weight:700; }
+.se-association,.se-services,.se-web,.se-details { margin-top:28px; padding:34px clamp(20px,4vw,54px); border-radius:16px; border:1px solid #d4e6ed; background:#ffffffaa; }
+.se-about h2 { font-size:clamp(25px,2.6vw,35px); line-height:1.22; letter-spacing:-.035em; margin:0 0 13px; }
+.se-association { display:grid; grid-template-columns:.65fr 1.35fr; gap:28px; align-items:center; }
+.se-relationship { display:grid; grid-template-columns:1fr 1fr; gap:18px; }
+.se-relationship article { position:relative; padding:20px; background:#f4faff; border:1px solid #daeaf1; border-radius:12px; }
+.se-relationship article:last-child { background:#fffaf1; border-color:#eee1ca; }
+.se-relationship img { object-fit:contain; margin-bottom:10px; }
+.se-small-label { display:block; font-size:9px; font-weight:700; color:#527386; letter-spacing:.1em; margin-bottom:9px; }
+.se-about .se-relationship h3 { font-size:16px; line-height:1.5; margin:0; }
+.se-relationship p { font-size:12px; margin:8px 0 0; }
+.se-section-header { margin-bottom:24px; }
+.se-section-header p { margin:0; }
+.se-service-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:16px; }
+.se-service-grid article { padding:23px; border-radius:12px; border:1px solid #dce9ef; background:#ffffffdb; }
+.se-service-number { display:grid; place-items:center; width:34px; height:34px; border-radius:9px; background:#e4f5fc; color:#1685a8; font-weight:700; font-size:11px; margin-bottom:18px; }
+.se-about .se-service-grid h3 { font-size:17px; margin:0 0 9px; }
+.se-service-grid p { margin:0; font-size:13px; }
+.se-product-links { display:flex; flex-wrap:wrap; gap:7px; margin-top:12px; }
+.se-product-links a { display:inline-flex; align-items:center; min-height:36px; padding:5px 9px; border:1px solid #cce2ed; border-radius:7px; font-size:11px; color:#177494; text-decoration:none; }
+.se-web { display:grid; grid-template-columns:.85fr 1.15fr; align-items:center; gap:55px; background:linear-gradient(115deg,#ecf9ffe0,#f5f1ffb0); }
+.se-web-art { border:1px solid #b6d5e6; border-radius:13px; background:#ffffffc9; transform:rotate(-3deg); box-shadow:12px 15px 0 #bfdbec40; }
+.se-browser-top { display:flex; gap:5px; align-items:center; padding:13px; border-bottom:1px solid #d3e4ee; }
+.se-browser-top i { width:6px; height:6px; border-radius:50%; background:#9dc8dd; }
+.se-browser-top i:first-child { background:#f3b47a; }
+.se-browser-top span { margin-left:auto; font-size:7px; letter-spacing:.1em; color:#7294a3; }
+.se-browser-body { padding:25px; }
+.se-code { font-size:47px; color:#218abd; font-weight:700; }
+.se-mock-line { height:8px; background:#ccdeec; border-radius:4px; width:75%; margin-top:14px; }
+.se-mock-line.short { width:48%; background:#dfe9f1; margin-top:9px; }
+.se-mock-cards { display:flex; gap:10px; margin-top:25px; }
+.se-mock-cards i { height:49px; flex:1; background:#e4f4fa; border-radius:7px; }
+.se-mock-cards i:nth-child(2) { background:#f9eadb; }
+.se-mock-cards i:nth-child(3) { background:#ede8fa; }
+.se-web-badge { display:block; margin:0 25px 18px; font-size:10px; color:#5c8597; }
+.se-about .se-independent { font-size:12px; padding-left:12px; border-left:2px solid #b4cddf; margin:16px 0; }
+.se-details { display:grid; grid-template-columns:1fr 1fr; gap:35px; }
+.se-details dl { display:grid; gap:16px; margin:0; }
+.se-details dl > div { border-bottom:1px solid #e0eaf0; padding-bottom:12px; }
+.se-details dt { color:#37677a; font-size:11px; font-weight:700; margin-bottom:5px; }
+.se-details dd { margin:0; font-size:13px; line-height:1.6; color:#69818e; }
+@media(max-width:1000px) { .se-association { grid-template-columns:1fr; } .se-service-grid { grid-template-columns:repeat(2,minmax(0,1fr)); } .se-hero { gap:25px; } .se-brand-panel strong { font-size:23px; } }
+@media(max-width:767px) { .se-hero,.se-web,.se-details { grid-template-columns:1fr; } .se-hero { padding:28px 22px; } .se-brand-panel { max-width:420px; width:100%; margin:auto; } .se-logo-orbit,.se-logo-orbit img { width:170px; height:170px; } .se-web { gap:32px; } .se-web-art { max-width:370px; width:100%; margin:0 auto; transform:none; } .se-about .se-lead { font-size:16px; } }
+@media(max-width:480px) { .se-relationship,.se-service-grid { grid-template-columns:1fr; } .se-association,.se-services,.se-web,.se-details { padding:25px 18px; margin-top:20px; } .se-about .se-hero h1 { font-size:32px; } .se-button { width:100%; } .se-hero { padding:25px 18px; } }
