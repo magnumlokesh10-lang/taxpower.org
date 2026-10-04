@@ -14,11 +14,11 @@
 .billing-showcase-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 24px; }
 .billing-card { --billing-ink:#168bb4; position: relative; isolation: isolate; display: grid; grid-template-rows: auto 1fr; min-width: 0; overflow: hidden; border: 1px solid #ffffffdb; border-radius: 22px; scroll-margin-top: 115px; box-shadow: 0 8px 28px #17445c0a; }
 .billing-card::before { content: ''; position: absolute; z-index: -1; width: 330px; height: 330px; right: -180px; top: -190px; border: 38px solid #ffffff35; border-radius: 50%; pointer-events: none; }
-.billing-card--dashboard { grid-column: 1 / -1; background: radial-gradient(ellipse at 88% 4%,#fff4ca 0,transparent 43%),linear-gradient(120deg,#b5e8ff,#cef7ef 52%,#fff0ce); }
-.billing-card--masters { --billing-ink:#9a65bb; background: radial-gradient(ellipse at 95% 8%,#ffe6c9,transparent 55%),linear-gradient(135deg,#e8d5ff,#ffdcec 52%,#fff0d3); }
-.billing-card--generate { --billing-ink:#bd701c; background: radial-gradient(ellipse at 92% 7%,#bfeef5,transparent 58%),linear-gradient(125deg,#ffedac,#fff3cf 48%,#c1edf7); }
-.billing-card--download { --billing-ink:#098e93; background: radial-gradient(ellipse at 8% 0,#e7ffc4,transparent 53%),linear-gradient(125deg,#bef1dc,#aee6f6 55%,#d7dfff); }
-.billing-card--reports { --billing-ink:#7463bb; background: radial-gradient(ellipse at 95% 5%,#ffd6b8,transparent 52%),linear-gradient(125deg,#ddd9ff,#f6ddf1 50%,#ffe5bd); }
+.billing-card--dashboard { grid-column: 1 / -1; --billing-ink:#087cae; background: radial-gradient(ellipse at 88% 4%,#e5f8ff 0,transparent 43%),linear-gradient(120deg,#9dd8ff,#bbeaff 52%,#d5f3ff); }
+.billing-card--masters { --billing-ink:#7650b0; background: radial-gradient(ellipse at 95% 8%,#f2ecff,transparent 55%),linear-gradient(135deg,#cbb3f5,#dfcef9 52%,#ede2ff); }
+.billing-card--generate { --billing-ink:#b76821; background: radial-gradient(ellipse at 92% 7%,#fff0df,transparent 58%),linear-gradient(125deg,#ffc18c,#ffdab2 48%,#ffe9cd); }
+.billing-card--download { --billing-ink:#36833e; background: radial-gradient(ellipse at 8% 0,#f1ffdf,transparent 53%),linear-gradient(125deg,#b8e9a1,#d4f3b6 55%,#e9f9cb); }
+.billing-card--reports { --billing-ink:#b34d7d; background: radial-gradient(ellipse at 95% 5%,#fff0f6,transparent 52%),linear-gradient(125deg,#f6b5d0,#f9cce0 50%,#ffe3ed); }
 .billing-card-heading { min-height: 0; position: relative; padding: 30px 28px 24px; margin: 0; min-width: 0; }
 .billing-step { display: block; position: relative; z-index: 1; max-width: calc(100% - 95px); color: #365d68; font-size: 11px; line-height: 1.6; font-weight: 650; letter-spacing: .025em; }
 .billing-card-heading :is(h2,h3) { position: relative; z-index: 1; max-width: calc(100% - 95px); margin: 13px 0 16px; color: #0b3b3b; font-size: clamp(23px,2.25vw,31px); line-height: 1.15; letter-spacing: -.035em; font-weight: 800; }
