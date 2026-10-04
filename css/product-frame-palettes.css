@@ -22,13 +22,7 @@
 }
 
 /* TDS no longer reuses Billing's single-family blue, peach, yellow, lavender or rose. */
-.tds-page #tds-deductors {
- background-image:linear-gradient(115deg,rgba(241,219,183,.72),rgba(216,224,234,.66)),url("../asset/frms_bg/tds-client-minimal.webp");
- background-color:#E8E2D7;
- background-position:center,center top;
- background-size:cover,100% auto;
- background-repeat:no-repeat;
-}
+/* Client dashboard uses its original light illustration background in taxpowertds.css. */
 #tds-traces.gst-feature-card {
  background:linear-gradient(120deg,#D6BEF0 0%,#EAE0E0 50%,#F2ECA9 100%);
 }
