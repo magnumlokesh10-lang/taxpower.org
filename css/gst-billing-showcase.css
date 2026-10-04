@@ -25,7 +25,7 @@
 .billing-card-heading > p { position: relative; z-index: 1; margin: 0 0 18px; color: #315663; font-size: 14px; line-height: 1.75; max-width: 68ch; }
 .billing-corner-art { position: absolute; right: 15px; top: 14px; width: 110px; height: 98px; color: var(--billing-ink); pointer-events: none; }
 .billing-benefits { position: relative; z-index: 1; display: flex; flex-wrap: wrap; gap: 8px; list-style: none; padding: 0; margin: 0; }
-.billing-benefits li { display: flex; align-items: baseline; gap: 7px; padding: 7px 10px; border: 1px solid #ffffffee; border-radius: 9px; color: #244e59; background: #ffffffa6; font-size: 12px; line-height: 1.5; }
+.billing-benefits li { display: flex; align-items: baseline; gap: 7px; padding: 7px 10px; border: 1px solid #ffffffee; border-radius: 9px; color: #173f49; font-weight: 500; background: #ffffffa6; font-size: 12px; line-height: 1.5; }
 .billing-benefits li::before { content: '✓'; color: var(--billing-ink); font-weight: 800; }
 .billing-showcase .billing-screen { align-self: start; box-sizing: border-box; padding: 0; margin: 0 18px 18px; border: 1px solid #ffffffeb; border-radius: 9px; background: #fff; box-shadow: 0 8px 20px #1c52601a; overflow: hidden; }
 .billing-showcase .billing-screen img { display: block; width: 100%; height: auto; max-height: none; border-radius: 0; object-fit: contain; transform: none; animation: none; }
@@ -103,5 +103,3 @@
 }
 @media(prefers-reduced-motion:reduce) { .billing-explore--polished .billing-workflow-nav a { transition:none; } }
 
-/* Keep generation chips consistent; strengthen only their text contrast. */
-#gst-billing-generate .billing-benefits li { color:#173f49; font-weight:500; }
