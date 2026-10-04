@@ -259,3 +259,40 @@
  .downloads-page .downloads-search-suggestion { padding:12px 14px; font-size:13px; align-items:flex-start; gap:8px; }
  .downloads-suggestion-icon { margin-top:2px; }
 }
+
+/* Responsive search banner: clear query, quiet suggestion and equal tap targets. */
+.downloads-page .downloads-banner-search-field { min-width:0; box-shadow:0 6px 20px #174f701a; }
+.downloads-page .downloads-search-row { background:linear-gradient(110deg,#ffffff,#e8f6ff); }
+.downloads-page .downloads-search-suggestion { background:#f6fbff; }
+.downloads-page .downloads-search-suggestion > span:first-of-type { overflow-wrap:break-word; }
+.downloads-page .downloads-banner-links a { box-sizing:border-box; }
+@media(max-width:767px) {
+ .downloads-page .downloads-banner { min-height:0; border-radius:16px; }
+ .downloads-page .downloads-banner-content { min-height:0; height:auto; padding:23px 20px; }
+ .downloads-page .downloads-banner-search-field { width:100%; border-radius:16px; }
+ .downloads-page .downloads-search-row { min-height:0; padding:16px; align-items:center; }
+ .downloads-page .downloads-banner-search-field h1 { font-size:clamp(22px,3.7vw,28px); line-height:1.35; text-wrap:balance; }
+ .downloads-page .downloads-search-suggestion { font-size:14px; line-height:1.6; align-items:flex-start; }
+ .downloads-suggestion-icon { margin-top:3px; }
+ .downloads-page .downloads-banner-links { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); width:100%; gap:10px; margin-top:14px; }
+ .downloads-page .downloads-banner-links a { justify-content:space-between; min-width:0; min-height:46px; padding:11px 13px; font-size:12px; }
+ .downloads-page .downloads-banner-links a span { flex-shrink:0; }
+}
+@media(max-width:480px) {
+ .downloads-page .downloads-banner-content { padding:18px 14px; }
+ .downloads-page .downloads-banner-search-field { border-radius:14px; }
+ .downloads-page .downloads-search-row { padding:14px 12px; gap:9px; }
+ .downloads-page .downloads-banner-search-field h1 { font-size:clamp(19px,5.3vw,23px); letter-spacing:-.025em; line-height:1.35; }
+ .downloads-page .downloads-search-icon { width:27px; height:27px; flex-basis:27px; }
+ .downloads-page .downloads-search-icon svg { width:25px; height:25px; }
+ .downloads-page .downloads-search-suggestion { padding:11px 12px; gap:8px; font-size:12px; line-height:1.65; }
+ .downloads-suggestion-icon { width:15px; height:15px; flex-basis:15px; }
+ .downloads-suggestion-return { font-size:18px; line-height:1.2; margin-top:2px; }
+ .downloads-page .downloads-banner-links { gap:8px; margin-top:12px; }
+ .downloads-page .downloads-banner-links a { padding:10px; font-size:11px; gap:6px; border-radius:9px; }
+}
+@media(max-width:350px) {
+ .downloads-page .downloads-banner-content { padding:15px 10px; }
+ .downloads-page .downloads-banner-links { grid-template-columns:1fr; }
+ .downloads-page .downloads-banner-links a { font-size:12px; }
+}
