@@ -1,0 +1,9 @@
+{
+  "name": "taxpower-support-email",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "engines": { "node": ">=20" },
+  "scripts": { "start": "node --env-file=.env server.mjs", "test": "node --test validation.test.mjs" },
+  "dependencies": { "nodemailer": "^7.0.0" }
+}

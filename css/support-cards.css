@@ -36,3 +36,10 @@
       #support .support-contact-refined h3 { font-size:19px; }
       #support .support-contact-refined .support-card-art { width:54px; height:41px; }
     }
+
+#support .support-direct-phones { margin:0 0 12px; font-size:13px; font-weight:650; }
+#support .support-direct-phones a { color:#087b96; text-decoration:none; }
+#support .support-contact-refined button.support-card-action { cursor:pointer; font-family:inherit; }
+#support .support-new-user-note { max-width:850px; margin:18px auto 12px; padding:14px 18px; border:1px solid #f2d4b7; border-left:3px solid #f47a22; border-radius:10px; background:#fff8ef; font-size:12px; line-height:1.7; color:#536978; }
+#support .support-new-user-note strong { display:block; color:#a34f14; margin-bottom:3px; }
+#support .support-new-user-note button { border:0; background:none; padding:0; font:inherit; color:#086d8c; text-decoration:underline; cursor:pointer; }

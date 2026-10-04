@@ -13,7 +13,10 @@
   <script src="js/form-backend.js" defer></script>
   <script src="js/script.js?v=20261004-company-first" defer></script>
   <script src="js/page-loader.js" defer></script>
-  <link rel="stylesheet" href="css/support-cards.css?v=20261004-load-fix">
+  <link rel="stylesheet" href="css/support-cards.css?v=20261004-chat">
+  <link rel="stylesheet" href="css/support-chat.css?v=20261004">
+  <script src="js/support-chat-config.js?v=20261004" defer></script>
+  <script src="js/support-chat.js?v=20261004" defer></script>
 </head>
 
 <body>
@@ -36,9 +39,9 @@
             <h3>Technical support</h3>
             <p>Get help with TaxPower GST &amp; TDS installation, updates, licensing and everyday software queries.</p>
             <ul class="support-topic-tags" aria-label="Technical support topics"><li>Installation</li><li>Software queries</li><li>Licensing</li></ul>
-            <div class="support-card-bottom">
-              <a class="support-email" href="mailto:support@taxpower.org"><span>Email our support team</span><strong>support@taxpower.org <span aria-hidden="true">↗</span></strong></a>
-              <a class="support-card-action" href="#demo-enquiry">Send an enquiry <span aria-hidden="true">→</span></a>
+            <div class="support-direct-phones"><a href="tel:+919811881661">+91 9811881661</a><span> · </span><a href="tel:07124046531">0712-4046531</a></div><div class="support-card-bottom">
+              <a class="support-email" href="mailto:info@magnuminfosystem.com"><span>Email our support team</span><strong>info@magnuminfosystem.com <span aria-hidden="true">↗</span></strong></a>
+              <button type="button" class="support-card-action" data-support-chat>Prepare support request <span aria-hidden="true">→</span></button>
             </div>
           </article>
           <article class="support-contact-card support-sales">
@@ -61,6 +64,7 @@
 
     <!-- Demo enquiry form placed under Support -->
     <div id="demo-enquiry"></div>
+    <div class="support-new-user-note" role="note"><strong>New users only</strong><span>Use this form for demo, purchase and quotation enquiries. Licence renewal enquiries are also welcome. For an existing-user technical issue, <button type="button" data-support-chat>contact technical support</button>.</span></div>
     <div class="demo-form-modal embedded" id="demoEnquiryModal" aria-hidden="false">
       <div class="demo-form-dialog" role="dialog" aria-modal="true" aria-labelledby="demoFormTitle">
         <div class="demo-form-heading">
