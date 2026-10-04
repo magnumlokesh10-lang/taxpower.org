@@ -1,8 +1,10 @@
 (() => {
   'use strict';
+  function initCompanyLogos() {
   const viewport = document.querySelector('.company-logo-marquee');
   const track = document.querySelector('.company-logo-track');
-  if (!viewport || !track) return;
+  if (!viewport || !track || viewport.dataset.marqueeInitialized) return;
+  viewport.dataset.marqueeInitialized = 'true';
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
   const mouseHover = window.matchMedia('(hover: hover) and (pointer: fine)');
   const duplicate = track.querySelector('[aria-hidden="true"]');
@@ -19,7 +21,7 @@
   function measure() {
     // Measure equivalent cards, including the seam gap; do not assume 50% of track width.
     distance = duplicate && !reducedMotion.matches
-      ? duplicate.getBoundingClientRect().left - track.firstElementChild.getBoundingClientRect().left
+      ? duplicate.offsetLeft - track.firstElementChild.offsetLeft
       : 0;
     position = viewport.scrollLeft;
   }
@@ -39,14 +41,19 @@
   function syncAnimation() {
     cancelAnimationFrame(frame);
     previousTime = 0;
-    if (!document.hidden && visible && !reducedMotion.matches) frame = requestAnimationFrame(tick);
+    if (!document.hidden && visible && !reducedMotion.matches) {
+      measure();
+      frame = requestAnimationFrame(tick);
+    }
   }
   function updatePreference() {
     viewport.classList.toggle('is-enhanced', !reducedMotion.matches);
     measure();
     syncAnimation();
   }
-  viewport.addEventListener('mouseenter', () => { hovered = mouseHover.matches; });
+  viewport.addEventListener('pointermove', event => {
+    hovered = mouseHover.matches && event.pointerType === 'mouse' && !!event.target.closest('.company-logo-card');
+  }, { passive: true });
   viewport.addEventListener('mouseleave', () => { hovered = false; });
   viewport.addEventListener('focusin', () => { focused = viewport.matches(':focus-visible'); });
   viewport.addEventListener('focusout', () => { focused = false; });
@@ -75,6 +82,9 @@
   });
   document.addEventListener('visibilitychange', () => {
     touching = false;
+    hovered = false;
+    focused = viewport.matches(':focus-visible');
+    resumeAfter = 0;
     position = viewport.scrollLeft;
     syncAnimation();
   });
@@ -82,8 +92,27 @@
   else window.addEventListener('resize', measure);
   if ('IntersectionObserver' in window) new IntersectionObserver(entries => {
     visible = entries[0].isIntersecting;
+    if (!visible) { hovered = false; touching = false; }
     syncAnimation();
   }).observe(viewport);
+  function restore() {
+    hovered = false;
+    touching = false;
+    focused = viewport.matches(':focus-visible');
+    resumeAfter = 0;
+    measure();
+    syncAnimation();
+  }
+  window.addEventListener('pageshow', restore);
+  window.addEventListener('focus', restore);
+  document.addEventListener('taxpower:sections-loaded', restore);
   reducedMotion.addEventListener('change', updatePreference);
   updatePreference();
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initCompanyLogos, { once: true });
+  } else {
+    initCompanyLogos();
+  }
+  document.addEventListener('taxpower:sections-loaded', initCompanyLogos);
 })();
