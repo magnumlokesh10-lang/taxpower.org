@@ -222,9 +222,14 @@
 @media(prefers-reduced-motion:reduce) { .se-about .se-button { transition:none; } }
 
 /* Individually illustrated service cards with product-specific headings. */
-.se-services .se-section-header { max-width:900px; margin-bottom:22px; }
-.se-services #se-services-title { font-size:clamp(26px,2.7vw,38px); line-height:1.25; max-width:850px; }
-.se-services #se-services-title span { display:block; color:#527687; font-size:.68em; font-weight:500; letter-spacing:-.015em; margin-top:10px; }
+.se-services .se-section-header { max-width:none; margin-bottom:22px; }
+.se-services #se-services-title { font-size:clamp(22px,2.35vw,34px); line-height:1.25; max-width:none; margin-bottom:8px; }
+.se-services #se-services-title span { display:inline; font:inherit; letter-spacing:inherit; }
+.se-services #se-services-title .se-title-gst { color:#b65e16; }
+.se-services #se-services-title .se-title-tds { color:#7050aa; }
+.se-services #se-services-title .se-title-join { color:#527687; }
+.se-services .se-section-header .se-services-subtitle { margin:0 0 8px; font-size:17px; color:#326c83; font-weight:500; line-height:1.4; }
+@media(min-width:1001px) { .se-services #se-services-title { white-space:nowrap; } }
 .se-services .se-section-header p { max-width:720px; margin-top:16px; }
 .se-service-grid .se-service-card {
   --service-accent:#226daa; --service-soft:#dceeff; --service-bg:#f1f7ff; --service-border:#d3e3f5;
