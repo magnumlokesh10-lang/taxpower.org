@@ -116,21 +116,28 @@
 @media(max-width:900px) { .se-hero { grid-template-columns:1fr; } .se-brand-panel { max-width:540px; margin:auto; } }
 @media(max-width:480px) { .se-logo-orbit { width:145px; height:176px; } .se-product-list { grid-template-columns:1fr; } .se-magnum { margin-top:20px; } .se-brand-panel { padding:23px 18px; } .se-company-facts { gap:24px; } }
 
-/* Blue/cyan halo behind the Siddharth mark; keep the image itself crisp. */
-.se-about .se-logo-orbit {
-  position:relative;
-  isolation:isolate;
-  background:none;
-}
+/* A diffused silhouette follows the mark rather than a circular backdrop. */
+.se-about .se-logo-orbit { position:relative; isolation:isolate; background:none; }
 .se-about .se-logo-orbit::before {
-  content:"";
-  position:absolute;
-  inset:-8% -20%;
-  z-index:0;
-  pointer-events:none;
-  border-radius:50%;
-  background:
-    radial-gradient(ellipse at 58% 30%,rgba(0,215,239,.30),rgba(0,215,239,.10) 32%,transparent 65%),
-    radial-gradient(ellipse at 43% 72%,rgba(25,91,245,.24),rgba(25,91,245,.07) 35%,transparent 67%);
+  content:""; position:absolute; inset:0; z-index:0; pointer-events:none;
+  background:url("../asset/swt_icon/siddharth-enterprise-logo.webp?v=20261004-v1-rounded-gap") center/contain no-repeat;
+  filter:blur(17px); opacity:.35; transform:scale(1.1);
 }
 .se-about .se-logo-orbit img { position:relative; z-index:1; }
+.se-hero:not(.se-magnum) > .se-brand-panel {
+  max-width:350px; justify-self:center; padding:20px 22px;
+}
+.se-hero:not(.se-magnum) .se-logo-orbit { width:140px; height:170px; margin-top:10px; }
+.se-hero:not(.se-magnum) .se-brand-name { font-size:28px; margin-top:8px; }
+.se-hero:not(.se-magnum) .se-brand-panel p { margin:8px 0 13px; }
+.se-hero:not(.se-magnum) .se-brand-services { margin-top:15px; padding-top:13px; gap:6px; }
+.se-hero:not(.se-magnum) .se-brand-services span { padding:7px 4px; }
+.se-magnum { grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr); }
+@media(max-width:900px) {
+  .se-magnum { grid-template-columns:1fr; }
+}
+@media(max-width:480px) {
+  .se-hero:not(.se-magnum) > .se-brand-panel { padding:18px 16px; }
+  .se-hero:not(.se-magnum) .se-logo-orbit { width:125px; height:152px; }
+  .se-hero:not(.se-magnum) .se-brand-name { font-size:26px; }
+}
