@@ -4,7 +4,9 @@ The website widget is a guided enquiry assistant, not live chat and not an AI se
 
 ## Current mode
 
-`js/support-chat-config.js` has an empty endpoint. In this mode **Open email draft** opens the visitor's email application addressed to `info@magnuminfosystem.com`. The visitor must press Send there and attach any screenshot manually. The widget never claims this draft was sent. An installed/configured email application is required. Details stay in memory until the page reloads or Start over is used; they are not put in local storage.
+The interface shows assistant questions and customer reply bubbles, a brief typing indicator, screenshot selection and an editable summary. It is automated, not a live human operator. All submission stays inside the widget; there is no email-app draft handoff.
+
+The endpoint in `js/support-chat-config.js` is currently empty. The Submit button remains disabled with an explicit “not connected” message until the backend is deployed and configured. Nothing is silently submitted or stored locally. Existing phone/email contact links remain available. After configuration, screenshots and details go directly to the backend and success is shown only on a confirmed response.
 
 ## Enable direct website submission
 

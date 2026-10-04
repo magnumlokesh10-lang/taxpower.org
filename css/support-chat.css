@@ -33,3 +33,14 @@
 #tp-support-widget .tp-chat-summary button { padding:3px 8px; min-height:30px; font-size:10px; }
 #tp-support-widget .tp-chat-preview { display:block; max-width:100%; max-height:160px; border-radius:8px; margin:12px 0; }
 @media(max-width:480px){#tp-support-widget .tp-chat-launch{right:12px;bottom:12px;font-size:12px;}#tp-support-widget .tp-chat-panel{right:12px;bottom:72px;max-height:calc(100dvh - 88px);} }
+
+/* Conversational assistant: retained replies and compact chat composer. */
+#tp-support-widget .tp-chat-panel { width:390px; }
+#tp-support-widget .tp-chat-message { max-width:92%; padding:10px 12px; border-radius:13px 13px 13px 3px; background:#edf7fa; margin:12px 0; line-height:1.65; overflow-wrap:anywhere; white-space:pre-wrap; font-size:12px; }
+#tp-support-widget .tp-chat-message small { display:block; font-size:9px; font-weight:700; margin-bottom:4px; color:#627985; }
+#tp-support-widget .tp-chat-user { margin-left:auto; border-radius:13px 13px 3px 13px; background:#087d9a; color:#fff; }
+#tp-support-widget .tp-chat-user small { color:#d6f4fc; }
+#tp-support-widget .tp-chat-question { padding:12px; border-radius:12px 12px 12px 3px; background:#edf7fa; line-height:1.6; font-size:12px; }
+#tp-support-widget .tp-chat-typing { color:#577682; font-style:italic; }
+#tp-support-widget .tp-chat-summary { background:#fffaf3; border:1px solid #f2dfc8; border-radius:12px; padding:8px 12px; }
+#tp-support-widget .tp-chat-progress { font-size:9px; margin-top:14px; }
