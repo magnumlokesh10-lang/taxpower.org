@@ -35,6 +35,8 @@
   </script>
   <link rel="stylesheet" href="css/stylesheet.css?v=20260929-nav-color-shift">
   <link rel="stylesheet" href="css/pricing.css?v=20261004-pricing-illustrations">
+  <link rel="stylesheet" href="css/pricing-builder.css?v=20261005">
+  <script src="js/pricing-builder.js?v=20261005" defer></script>
   <script src="js/nav-loader.js?v=20260929-polish" defer></script>
   <script src="js/script.js?v=20260929-minimal" defer></script>
   <script src="js/page-loader.js" defer></script>
@@ -61,296 +63,42 @@
           <div class="pricing-banner-products" aria-label="Available modules"><span>GST Return</span><span>GST Billing</span><span>TDS</span></div>
         </div>
       </header>
-      <nav class="pricing-quick-nav" aria-label="Explore pricing plans"><span>Find your plan</span><svg class="pricing-decoration pricing-decoration--guide" viewBox="0 0 160 120" fill="none" aria-hidden="true" focusable="false"><path d="M30 88L65 58L98 76L133 29" stroke="#9dd8e9" stroke-width="3" stroke-dasharray="5 5"/><rect x="18" y="52" width="40" height="49" rx="8" fill="#e9f7fd" stroke="#8ac8dd"/><rect x="69" y="33" width="40" height="49" rx="8" fill="#fff2e3" stroke="#efb77e"/><rect x="114" y="12" width="32" height="40" rx="7" fill="#eaf6f1" stroke="#99cebb"/><path d="M29 65H45M29 74H40M80 46H97M80 55H92M122 32L128 37L139 24" stroke="#4c9cb7" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg><a href="#suite-heading">Complete Suites <span aria-hidden="true">↗</span></a><a href="#pricing-individual">Individual Modules <span aria-hidden="true">↗</span></a><a href="#pricing-combos">Combo Plans <span aria-hidden="true">↗</span></a></nav>
     </div>
-
-    <section class="pricing-plans-panel" aria-labelledby="suite-heading">
-    <div class="pricing-suite-heading"><svg class="pricing-decoration pricing-decoration--suite" viewBox="0 0 160 120" fill="none" aria-hidden="true" focusable="false"><ellipse cx="83" cy="105" rx="63" ry="8" fill="#dfedf4"/><rect x="14" y="26" width="71" height="62" rx="9" fill="#fff0df" stroke="#eaba87" transform="rotate(-9 14 26)"/><rect x="53" y="17" width="82" height="75" rx="10" fill="#eef8fd" stroke="#93c9dc" stroke-width="2"/><rect x="63" y="28" width="24" height="7" rx="3" fill="#f6b56e"/><path d="M64 46H123M64 56H110M64 66H101" stroke="#a0c4d0" stroke-width="4" stroke-linecap="round"/><circle cx="126" cy="85" r="22" fill="#d8f1e8" stroke="#88c8b4"/><path d="M116 84L123 91L136 76" stroke="#389884" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="pricing-section-eyebrow">RECOMMENDED PLANS</span><h2 id="suite-heading">All-in-one <span>TaxPower suites</span></h2><p>GST Return, GST Billing and TDS—together in one license suite.</p></div>
-
-    <div class="featured-grid">
-
-      <!-- ----- Professional Suite ----- -->
-      <div class="featured-card-wrapper">
-        <div class="pricing-card top-featured-orange">
-          <span class="badge-orange">Recommended for Professionals</span>
-          <div>
-            <span class="pill-orange">Best for GST &amp; Tax Consultants</span>
-            <h3 class="card-heading-orange">Professional Complete Suite</h3>
-            <div class="price-amount"><del>₹17,000</del>₹15,000</div>
-            <div class="price-type">Initial License Fee (One-Time Setup)</div>
-
-            <div class="renewal-box-orange">
-              <strong>Annual Renewal <span class="tag-amc">AMC</span>:</strong> ₹8,000 / F.Y
+    <section class="tp-plan" data-pricing-builder aria-labelledby="plan-title">
+      <header class="tp-plan-heading"><span class="tp-plan-eyebrow">YOUR WORK. YOUR MODULES.</span><h2 id="plan-title">A plan that fits <span>you.</span></h2><p>Choose your edition and modules. We’ll put the right price together.</p></header>
+      <div class="tp-plan-layout">
+        <div class="tp-plan-options">
+          <fieldset class="tp-plan-editions"><legend><span>01</span> Who is the software for?</legend>
+            <div class="tp-edition-grid">
+              <label class="tp-choice"><input type="radio" name="tp-edition" value="professional" checked><span class="tp-choice-content"><strong>Professional</strong><small>CAs, consultants &amp; tax practices</small></span><span class="tp-choice-check" aria-hidden="true"></span></label>
+              <label class="tp-choice"><input type="radio" name="tp-edition" value="business"><span class="tp-choice-content"><strong>Business</strong><small>Companies &amp; finance teams</small></span><span class="tp-choice-check" aria-hidden="true"></span></label>
             </div>
-
-            <ul class="features-list">
-              <li>GST Return + GST Billing + TDS Module</li>
-              <li>Optimized for CAs, tax practitioners, and compliance firms</li>
-              <li>F.Y-wise subscription &amp; license renewal</li>
-            </ul>
-            <p class="card-description">Ideal for tax practitioners managing multi-client compliance workflows with
-              structured reporting and accuracy.</p>
-          </div>
-          <a href="index.html#demo-enquiry" class="cta-btn-orange" data-demo-purpose="Free Trial / Demo" data-demo-product="TaxPower GST Return,TaxPower E-Invoice & E-Way Bill,TaxPower TDS Return">Request Trial License</a>
+          </fieldset>
+          <fieldset class="tp-plan-modules"><legend><span>02</span> What do you need?</legend><p class="tp-field-help">Select one or more modules. Combine them to save.</p>
+            <label class="tp-choice tp-module"><input type="checkbox" name="tp-module" value="gst" checked><span class="tp-module-icon" aria-hidden="true">GST</span><span class="tp-choice-content"><strong>GST Return</strong><small>Return preparation, filing &amp; ITC reconciliation</small></span><span class="tp-choice-check" aria-hidden="true"></span></label>
+            <label class="tp-choice tp-module"><input type="checkbox" name="tp-module" value="billing"><span class="tp-module-icon tp-module-icon--billing" aria-hidden="true">BILL</span><span class="tp-choice-content"><strong>GST Billing</strong><small>Invoicing, E-Invoices &amp; E-Way Bills</small></span><span class="tp-choice-check" aria-hidden="true"></span></label>
+            <label class="tp-choice tp-module"><input type="checkbox" name="tp-module" value="tds"><span class="tp-module-icon tp-module-icon--tds" aria-hidden="true">TDS</span><span class="tp-choice-content"><strong>TDS</strong><small>TDS / TCS returns, TRACES &amp; certificates</small></span><span class="tp-choice-check" aria-hidden="true"></span></label>
+          </fieldset>
+          <p class="tp-plan-hint"><span aria-hidden="true">✦</span> Your bundle price is applied automatically.</p>
         </div>
-      </div>
-
-      <!-- ----- Enterprise Suite ----- -->
-      <div class="featured-card-wrapper">
-        <div class="pricing-card top-featured-orange">
-          <span class="badge-orange">Recommended for Enterprises</span>
-          <div>
-            <span class="pill-orange">Best for Businesses & Corporate Entities</span>
-            <h3 class="card-heading-orange">Enterprise Complete Suite</h3>
-            <div class="price-amount"><del>₹26,000</del>₹20,000</div>
-            <div class="price-type">Initial License Fee (One-Time Setup)</div>
-
-            <div class="renewal-box-orange">
-              <strong>Annual Renewal <span class="tag-amc">AMC</span>:</strong> ₹10,000 / F.Y
-            </div>
-
-            <ul class="features-list">
-              <li>GST Return + GST Billing + TDS Module</li>
-              <li>Designed for corporate finance teams, firms, and enterprise users</li>
-              <li>F.Y-wise subscription &amp; license renewal</li>
-            </ul>
-            <p class="card-description">Comprehensive software suite for internal operations, bulk e-invoicing, e-way
-              bill generation, and compliance management.</p>
+        <aside class="tp-plan-summary" aria-label="Your selected plan">
+          <div data-plan-output aria-live="polite" aria-atomic="true">
+            <span class="tp-summary-edition" data-plan-edition>PROFESSIONAL EDITION</span>
+            <h3 data-plan-name>GST Return</h3><p class="tp-summary-label">One-time installation fee</p>
+            <div class="tp-summary-price"><del data-plan-original hidden></del><strong data-plan-price>₹7,000</strong></div>
+            <p class="tp-plan-saving" data-plan-saving hidden></p>
+            <div class="tp-plan-renewal"><span>Annual renewal <small>AMC / financial year</small></span><strong data-plan-renewal>₹5,000</strong></div>
           </div>
-          <a href="index.html#demo-enquiry" class="cta-btn-orange" data-demo-purpose="Free Trial / Demo" data-demo-product="TaxPower GST Return,TaxPower E-Invoice & E-Way Bill,TaxPower TDS Return">Request Trial License</a>
-        </div>
+          <ul class="tp-plan-includes"><li>Support &amp; updates free for the first year</li><li>Product key delivered by email</li><li>Optional multi-user LAN access</li></ul>
+          <a class="tp-plan-cta" data-plan-cta href="index.html#demo-enquiry" data-demo-purpose="Free Trial / Demo" data-demo-product="TaxPower GST Return">Request Trial / Enquire <span aria-hidden="true">↗</span></a>
+          <p class="tp-plan-tax">18% GST extra on installation. LAN charges additional.</p>
+        </aside>
       </div>
-
-    </div>
+      <noscript><p>Interactive selection requires JavaScript. Open “View all prices” below to compare every plan.</p></noscript>
     </section>
-
-    <!-- ----- Bottom Pricing Cards ----- -->
-    <section class="pricing-plans-panel pricing-plans-panel--modules" aria-labelledby="modules-heading">
-    <div class="pricing-modules-heading"><svg class="pricing-decoration pricing-decoration--modules" viewBox="0 0 160 120" fill="none" aria-hidden="true" focusable="false"><path d="M51 46H105M51 80H105M80 37V91" stroke="#a9d5e4" stroke-width="3"/><rect x="16" y="15" width="54" height="43" rx="9" fill="#fff0df" stroke="#edbd86"/><rect x="94" y="22" width="49" height="43" rx="9" fill="#e8f6fd" stroke="#9bcce0"/><rect x="52" y="76" width="57" height="34" rx="9" fill="#eef1fc" stroke="#b7c5e5"/><path d="M29 29H56M29 39H47M106 36H131M106 46H123M65 88H97M65 98H87" stroke="#79a9bd" stroke-width="3" stroke-linecap="round"/><circle cx="80" cy="64" r="12" fill="white" stroke="#afcedc"/><path d="M74 64H86M80 58V70" stroke="#e9a967" stroke-width="2.5" stroke-linecap="round"/></svg><span class="pricing-section-eyebrow">FLEXIBLE OPTIONS</span><h2 id="modules-heading">Individual modules <span>&amp; combo plans</span></h2><p>Choose TaxPower GST, GST Billing or TaxPower TDS—individually or together.</p></div>
-
-    <div class="pricing-grid" id="pricing-individual">
-
-      <!-- ----- 1. Billing Card ----- -->
-      <div class="pricing-card hover-btn-card">
-        <div>
-          <h3 class="bottom-card-heading">TaxPower Billing</h3>
-
-          <div class="pricing-tier">
-            <div class="tier-title-prof">For Professionals</div>
-            <div class="price-line">
-              <span class="price-line-left">Installation <span class="tag-license-fee">License Fee</span>:</span>
-              <span><strong>₹5,000</strong></span>
-            </div>
-            <div class="price-line">
-              <span>Annual Renewal <span class="tag-amc">AMC</span>:</span>
-              <span><strong>₹3,000 / F.Y</strong></span>
-            </div>
-          </div>
-
-          <div class="pricing-tier last-tier">
-            <div class="tier-title-biz">For Businesses</div>
-            <div class="price-line">
-              <span class="price-line-left">Installation <span class="tag-license-fee">License Fee</span>:</span>
-              <span><strong>₹7,000</strong></span>
-            </div>
-            <div class="price-line">
-              <span>Annual Renewal <span class="tag-amc">AMC</span>:</span>
-              <span><strong>₹4,000 / F.Y</strong></span>
-            </div>
-          </div>
-
-          <p class="card-info-text">Tailored for businesses needing quick sales invoicing, automated E-Way bills, and
-            E-Invoicing integration.</p>
-        </div>
-        <a href="index.html#demo-enquiry" class="cta-btn-sky" data-demo-purpose="Want to Purchase" data-demo-product="TaxPower E-Invoice & E-Way Bill">Get Started</a>
-      </div>
-
-      <!-- ----- 2. GST Return Card (Most Popular) ----- -->
-      <div class="pricing-card popular-card">
-        <span class="badge-orange">Most Popular</span>
-        <div>
-          <h3 class="bottom-card-heading">GST Return</h3>
-
-          <div class="pricing-tier">
-            <div class="tier-title-prof">For Professionals</div>
-            <div class="price-line">
-              <span class="price-line-left">Installation <span class="tag-license-fee">License Fee</span>:</span>
-              <span><strong>₹7,000</strong></span>
-            </div>
-            <div class="price-line">
-              <span>Annual Renewal <span class="tag-amc">AMC</span>:</span>
-              <span><strong>₹5,000 / F.Y</strong></span>
-            </div>
-          </div>
-
-          <div class="pricing-tier last-tier">
-            <div class="tier-title-biz">For Businesses</div>
-            <div class="price-line">
-              <span class="price-line-left">Installation <span class="tag-license-fee">License Fee</span>:</span>
-              <span><strong>₹12,000</strong></span>
-            </div>
-            <div class="price-line">
-              <span>Annual Renewal <span class="tag-amc">AMC</span>:</span>
-              <span><strong>₹6,000 / F.Y</strong></span>
-            </div>
-          </div>
-
-          <p class="card-info-text">Designed for tax consultants &amp; firms managing monthly GST return filings and
-            automated 2A/2B reconciliations.</p>
-        </div>
-        <a href="index.html#demo-enquiry" class="cta-btn-orange" data-demo-purpose="Want to Purchase" data-demo-product="TaxPower GST Return">Get Started</a>
-      </div>
-
-      <!-- ----- 3. TDS Card ----- -->
-      <div class="pricing-card hover-btn-card">
-        <div>
-          <h3 class="bottom-card-heading">TaxPower TDS</h3>
-
-          <div class="pricing-tier">
-            <div class="tier-title-prof">For Professionals</div>
-            <div class="price-line">
-              <span class="price-line-left">Installation <span class="tag-license-fee">License Fee</span>:</span>
-              <span><strong>₹5,000</strong></span>
-            </div>
-            <div class="price-line">
-              <span>Annual Renewal <span class="tag-amc">AMC</span>:</span>
-              <span><strong>₹2,500 / F.Y</strong></span>
-            </div>
-          </div>
-
-          <div class="pricing-tier last-tier">
-            <div class="tier-title-biz">For Businesses</div>
-            <div class="price-line">
-              <span class="price-line-left">Installation <span class="tag-license-fee">License Fee</span>:</span>
-              <span><strong>₹7,000</strong></span>
-            </div>
-            <div class="price-line">
-              <span>Annual Renewal <span class="tag-amc">AMC</span>:</span>
-              <span><strong>₹3,500 / F.Y</strong></span>
-            </div>
-          </div>
-
-          <p class="card-info-text">Built for finance teams handling quarterly TDS returns, Form 16/16A generation, and
-            correction filings.</p>
-        </div>
-        <a href="index.html#demo-enquiry" class="cta-btn-sky" data-demo-purpose="Want to Purchase" data-demo-product="TaxPower TDS Return">Get Started</a>
-      </div>
-
-      <!-- ----- 4. GST Return + Billing Combo ----- -->
-      <div class="pricing-card hover-btn-card" id="pricing-combos">
-        <span class="badge-sky">Combo Offer</span>
-        <div>
-          <h3 class="bottom-card-heading">GST Return + Billing</h3>
-
-          <div class="pricing-tier">
-            <span class="save-legend-badge">SAVE ₹1,000</span>
-            <div class="tier-title-prof">For Professionals</div>
-            <div class="price-line">
-              <span class="price-line-left">Installation <span class="tag-license-fee">License Fee</span>:</span>
-              <span><del>₹12,000</del> <strong>₹11,000</strong></span>
-            </div>
-            <div class="price-line">
-              <span>Annual Renewal <span class="tag-amc">AMC</span>:</span>
-              <span><del>₹8,000</del> <strong>₹7,000 / F.Y</strong></span>
-            </div>
-          </div>
-
-          <div class="pricing-tier last-tier">
-            <span class="save-legend-badge">SAVE ₹4,000</span>
-            <div class="tier-title-biz">For Businesses</div>
-            <div class="price-line">
-              <span class="price-line-left">Installation <span class="tag-license-fee">License Fee</span>:</span>
-              <span><del>₹19,000</del> <strong>₹15,000</strong></span>
-            </div>
-            <div class="price-line">
-              <span>Annual Renewal <span class="tag-amc">AMC</span>:</span>
-              <span><del>₹10,000</del> <strong>₹8,000 / F.Y</strong></span>
-            </div>
-          </div>
-
-          <p class="card-info-text">Complete integration of sales invoicing with direct GST compliance and return
-            processing.</p>
-        </div>
-        <a href="index.html#demo-enquiry" class="cta-btn-sky" data-demo-purpose="Want to Purchase" data-demo-product="TaxPower GST Return,TaxPower E-Invoice & E-Way Bill">Get Started</a>
-      </div>
-
-      <!-- ----- 5. GST Return + TDS Combo ----- -->
-      <div class="pricing-card hover-btn-card">
-        <span class="badge-sky">Combo Offer</span>
-        <div>
-          <h3 class="bottom-card-heading">GST Return + TDS</h3>
-
-          <div class="pricing-tier">
-            <span class="save-legend-badge">SAVE ₹1,000</span>
-            <div class="tier-title-prof">For Professionals</div>
-            <div class="price-line">
-              <span class="price-line-left">Installation <span class="tag-license-fee">License Fee</span>:</span>
-              <span><del>₹12,000</del> <strong>₹11,000</strong></span>
-            </div>
-            <div class="price-line">
-              <span>Annual Renewal <span class="tag-amc">AMC</span>:</span>
-              <span><del>₹7,500</del> <strong>₹7,000 / F.Y</strong></span>
-            </div>
-          </div>
-
-          <div class="pricing-tier last-tier">
-            <span class="save-legend-badge">SAVE ₹3,000</span>
-            <div class="tier-title-biz">For Businesses</div>
-            <div class="price-line">
-              <span class="price-line-left">Installation <span class="tag-license-fee">License Fee</span>:</span>
-              <span><del>₹19,000</del> <strong>₹16,000</strong></span>
-            </div>
-            <div class="price-line">
-              <span>Annual Renewal <span class="tag-amc">AMC</span>:</span>
-              <span><del>₹9,500</del> <strong>₹8,500 / F.Y</strong></span>
-            </div>
-          </div>
-
-          <p class="card-info-text">Unified compliance solution covering end-to-end GST filings and corporate TDS
-            requirements.</p>
-        </div>
-        <a href="index.html#demo-enquiry" class="cta-btn-sky" data-demo-purpose="Want to Purchase" data-demo-product="TaxPower GST Return,TaxPower TDS Return">Get Started</a>
-      </div>
-
-      <!-- ----- 6. Billing + TDS Combo ----- -->
-      <div class="pricing-card hover-btn-card">
-        <span class="badge-sky">Combo Offer</span>
-        <div>
-          <h3 class="bottom-card-heading">Billing + TDS</h3>
-
-          <div class="pricing-tier">
-            <span class="save-legend-badge">SAVE ₹1,000</span>
-            <div class="tier-title-prof">For Professionals</div>
-            <div class="price-line">
-              <span class="price-line-left">Installation <span class="tag-license-fee">License Fee</span>:</span>
-              <span><del>₹10,000</del> <strong>₹9,000</strong></span>
-            </div>
-            <div class="price-line">
-              <span>Annual Renewal <span class="tag-amc">AMC</span>:</span>
-              <span><del>₹5,500</del> <strong>₹5,000 / F.Y</strong></span>
-            </div>
-          </div>
-
-          <div class="pricing-tier last-tier">
-            <span class="save-legend-badge">SAVE ₹2,000</span>
-            <div class="tier-title-biz">For Businesses</div>
-            <div class="price-line">
-              <span class="price-line-left">Installation <span class="tag-license-fee">License Fee</span>:</span>
-              <span><del>₹14,000</del> <strong>₹12,000</strong></span>
-            </div>
-            <div class="price-line">
-              <span>Annual Renewal <span class="tag-amc">AMC</span>:</span>
-              <span><del>₹7,500</del> <strong>₹6,500 / F.Y</strong></span>
-            </div>
-          </div>
-
-          <p class="card-info-text">Ideal setup for managing day-to-day invoicing alongside vendor and payroll TDS
-            deductions.</p>
-        </div>
-        <a href="index.html#demo-enquiry" class="cta-btn-sky" data-demo-purpose="Want to Purchase" data-demo-product="TaxPower E-Invoice & E-Way Bill,TaxPower TDS Return">Get Started</a>
-      </div>
-    </div><!-- ----- End Pricing Grid ----- -->
-    </section>
+    <details class="tp-price-list"><summary><span>View all prices <small>Compare individual modules &amp; bundles</small></span><span class="tp-details-plus" aria-hidden="true">+</span></summary>
+      <div class="tp-price-table-wrap" tabindex="0" role="region" aria-label="All prices; scroll horizontally on small screens"><table><caption>Installation and annual AMC · INR · GST extra</caption><thead><tr><th scope="col">Modules</th><th scope="col">Professional<br>Installation</th><th scope="col">Professional<br>AMC / F.Y</th><th scope="col">Business<br>Installation</th><th scope="col">Business<br>AMC / F.Y</th></tr></thead><tbody><tr><th scope="row">GST Return</th><td>₹7,000</td><td>₹5,000</td><td>₹12,000</td><td>₹6,000</td></tr><tr><th scope="row">GST Billing</th><td>₹5,000</td><td>₹3,000</td><td>₹7,000</td><td>₹4,000</td></tr><tr><th scope="row">TDS</th><td>₹5,000</td><td>₹2,500</td><td>₹7,000</td><td>₹3,500</td></tr><tr><th scope="row">GST Return + GST Billing</th><td>₹11,000</td><td>₹7,000</td><td>₹15,000</td><td>₹8,000</td></tr><tr><th scope="row">GST Return + TDS</th><td>₹11,000</td><td>₹7,000</td><td>₹16,000</td><td>₹8,500</td></tr><tr><th scope="row">GST Billing + TDS</th><td>₹9,000</td><td>₹5,000</td><td>₹12,000</td><td>₹6,500</td></tr><tr><th scope="row">Complete Suite</th><td>₹15,000</td><td>₹8,000</td><td>₹20,000</td><td>₹10,000</td></tr></tbody></table></div>
+    </details>
 
     <section class="pricing-terms" aria-labelledby="terms-heading">
         <svg class="pricing-decoration pricing-decoration--terms" viewBox="0 0 160 120" fill="none" aria-hidden="true" focusable="false"><rect x="34" y="14" width="80" height="94" rx="10" fill="#f1f9fc" stroke="#9acada" stroke-width="2"/><rect x="53" y="8" width="43" height="15" rx="6" fill="#ffe9cd" stroke="#e6b680"/><path d="M65 43H99M65 62H99M65 81H91" stroke="#a2c6d3" stroke-width="4" stroke-linecap="round"/><path d="M46 41L50 45L57 36M46 60L50 64L57 55M46 79L50 83L57 74" stroke="#53a797" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M118 68L138 76V91Q137 104 118 112Q99 104 98 91V76Z" fill="#e4f3ed" stroke="#97cdbb"/><path d="M109 89L116 96L128 81" stroke="#4b9d89" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg><h2 id="terms-heading">Terms &amp; conditions</h2>
