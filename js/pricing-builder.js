@@ -5,7 +5,7 @@
     professional: { gst: [7000, 5000], billing: [5000, 3000], tds: [5000, 2500], 'gst+billing': [11000, 7000], 'gst+tds': [11000, 7000], 'billing+tds': [9000, 5000], 'gst+billing+tds': [15000, 8000] },
     business: { gst: [12000, 6000], billing: [7000, 4000], tds: [7000, 3500], 'gst+billing': [15000, 8000], 'gst+tds': [16000, 8500], 'billing+tds': [12000, 6500], 'gst+billing+tds': [20000, 10000] }
   };
-  const labels = { gst: 'GST Return', billing: 'GST Billing', tds: 'TDS' };
+  const labels = { gst: 'TaxPower GST', billing: 'TaxPower Billing', tds: 'TaxPower TDS' };
   const products = { gst: 'TaxPower GST Return', billing: 'TaxPower E-Invoice & E-Way Bill', tds: 'TaxPower TDS Return' };
   const money = value => '₹' + value.toLocaleString('en-IN');
   function init() {
@@ -18,6 +18,7 @@
         const edition = builder.querySelector('[name="tp-edition"]:checked').value;
         const selected = [...builder.querySelectorAll('[name="tp-module"]:checked')].map(input => input.value);
         const plan = prices[edition][selected.join('+')];
+        builder.dataset.planTone = selected.length === 1 ? selected[0] : 'bundle';
         get('edition').textContent = edition === 'business' ? 'BUSINESS EDITION' : 'PROFESSIONAL EDITION';
         get('name').textContent = selected.length ? selected.map(key => labels[key]).join(' + ') : 'Select at least one module';
         get('price').textContent = plan ? money(plan[0]) : '—';
