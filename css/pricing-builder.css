@@ -53,3 +53,20 @@
 @media(max-width:600px){.tp-plan-heading{position:relative;display:block;padding-bottom:20px}.tp-plan-heading-copy{position:relative;z-index:1}.tp-plan-art{width:150px;margin:14px auto -6px}.tp-plan-heading p{max-width:none}.tp-plan .tp-plan-heading h2{font-size:30px}.tp-plan .tp-plan-heading p{font-size:13px}.tp-module{padding:15px;gap:13px;min-height:90px}.tp-module .tp-choice-content strong{font-size:16px}.tp-module .tp-choice-content small{font-size:11px}.tp-module-icon{width:43px;height:47px}.tp-module-icon svg{width:27px;height:27px}.tp-plan-summary{padding:24px 20px}}
 @media(max-width:480px){.tp-edition-grid{grid-template-columns:1fr}.tp-plan legend{font-size:15px}.tp-choice small{font-size:11px}.tp-plan-heading{margin-bottom:23px}.tp-plan-summary h3{font-size:22px}.tp-plan-cta{font-size:13px}}
 @media(prefers-reduced-motion:reduce){.tp-module{transition:none}}
+
+/* TaxPower module selection matches the branded orange reference card. */
+.tp-plan .tp-module{display:grid;grid-template-columns:1fr auto;gap:9px 14px;min-height:118px;padding:16px 18px;border:1px solid #d2dfe7;border-radius:14px;background:#fff;box-shadow:0 3px 10px #1c405a06}
+.tp-plan .tp-module .tp-module-icon{grid-column:1;grid-row:1;display:grid;place-items:center;width:34px;height:34px;border:0;border-radius:9px;background:#f5f8fa;box-shadow:none;transform:none;color:inherit}
+.tp-plan .tp-module .tp-module-icon img{display:block;width:24px;height:24px;object-fit:contain}
+.tp-plan .tp-module .tp-choice-content{grid-column:1/-1;grid-row:2}
+.tp-plan .tp-module .tp-choice-content strong{color:#27485a;font-size:15px;line-height:1.5}
+.tp-plan .tp-module .tp-choice-content small{display:inline-block;margin-top:5px;padding:3px 9px;border-radius:20px;background:#edf3f6;color:#506574;font-size:11px;line-height:1.45;font-weight:600}
+.tp-plan .tp-module .tp-choice-check{grid-column:2;grid-row:1;align-self:center;width:21px;height:21px;border-radius:7px}
+.tp-plan .tp-module:has(input:checked){border-color:#ff842e;background:#fff8f2;box-shadow:0 0 0 3px #fff0e4,0 6px 16px #b9641910}
+.tp-plan .tp-module:has(input:checked) .tp-module-icon{background:#ffeddf}
+.tp-plan .tp-module:has(input:checked) .tp-choice-content strong{color:#b94900}
+.tp-plan .tp-module:has(input:checked) .tp-choice-content small{color:#a64100;background:#ffe4d0}
+.tp-plan .tp-module:has(input:checked) .tp-choice-check{border-color:#ef761b;background:#ef761b;color:#fff}
+.tp-plan .tp-module:has(input:checked) .tp-choice-check::after{font-size:14px}
+@media(hover:hover){.tp-plan .tp-module:hover{border-color:#f1ad79;background:#fffaf6;box-shadow:0 4px 14px #b964190d}.tp-plan .tp-module:has(input:checked):hover{border-color:#ef761b;background:#fff5ec;box-shadow:0 0 0 3px #fff0e4,0 6px 16px #b9641910}}
+@media(max-width:480px){.tp-plan .tp-module{padding:14px 16px;min-height:114px}.tp-plan .tp-module .tp-choice-content strong{font-size:14px}}
