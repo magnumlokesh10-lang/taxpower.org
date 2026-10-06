@@ -30,7 +30,10 @@
 .tp-plan [data-plan-count]{margin-left:auto;color:#697d8d;font-size:10px;font-weight:500;letter-spacing:0}
 .pricing-page .tp-field-help{font-size:11px;line-height:1.6;color:var(--plan-muted);margin:0 0 14px}
 .tp-module{display:grid;grid-template-columns:32px minmax(0,1fr) 18px;gap:12px;min-height:72px;padding:13px;margin-top:9px;border:1px solid var(--plan-line);border-radius:10px;background:#fff;transition:border-color .16s,background .16s}
-.tp-module:has(input:checked){border-color:#adc7d9;background:#f6fafd}
+.tp-module:has(input:checked){border-color:#64afd0;background:#f0f9ff}
+.tp-module:has(input:checked) .tp-choice-content strong{color:#086c9b}
+.tp-module:has(input:checked) .tp-module-icon{background:#e1f2fc;border-radius:9px}
+.tp-module:has(input:checked) .tp-choice-check{background:#087da7;border-color:#087da7}
 .tp-module-icon{display:grid;place-items:center;width:32px;height:36px;background:transparent}
 .tp-module-icon img{display:block;width:24px;height:24px;object-fit:contain}
 .tp-module .tp-choice-content small{padding:0;background:none;border-radius:0;font-size:11px;font-weight:400}
