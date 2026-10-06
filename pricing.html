@@ -35,7 +35,7 @@
   </script>
   <link rel="stylesheet" href="css/stylesheet.css?v=20260929-nav-color-shift">
   <link rel="stylesheet" href="css/pricing.css?v=20261004-pricing-illustrations">
-  <link rel="stylesheet" href="css/pricing-builder.css?v=20261006-inline">
+  <link rel="stylesheet" href="css/pricing-builder.css?v=20261006-compact">
   <script src="js/pricing-builder.js?v=20261005-polish" defer></script>
   <script src="js/nav-loader.js?v=20260929-polish" defer></script>
   <script src="js/script.js?v=20260929-minimal" defer></script>
@@ -64,8 +64,8 @@
         </div>
       </header>
     </div>
-    <section class="tp-plan" data-pricing-builder data-plan-tone="gst" aria-labelledby="plan-title">
-      <header class="tp-plan-heading"><div class="tp-plan-heading-copy"><span class="tp-plan-eyebrow">YOUR WORK. YOUR MODULES.</span><h2 id="plan-title">A plan that fits <span>you.</span></h2><p>Build your plan with TaxPower GST, TaxPower Billing and TaxPower TDS.<br class="tp-desktop-break"> Select the tools you need for your everyday tax work.</p></div><svg class="tp-plan-art" viewBox="0 0 300 180" fill="none" aria-hidden="true" focusable="false">
+    <section class="tp-plan" data-pricing-builder data-plan-tone="bundle" aria-labelledby="plan-title">
+      <header class="tp-plan-heading"><div class="tp-plan-heading-copy"><span class="tp-plan-eyebrow">YOUR WORK. YOUR MODULES.</span><h2 id="plan-title">A plan that fits <span>you.</span></h2><p>Select your TaxPower products. See your price instantly.</p></div><svg class="tp-plan-art" viewBox="0 0 300 180" fill="none" aria-hidden="true" focusable="false">
 <defs><linearGradient id="tp-paper" x1="110" y1="20" x2="220" y2="140" gradientUnits="userSpaceOnUse"><stop stop-color="#fff"/><stop offset="1" stop-color="#dfedf9"/></linearGradient><linearGradient id="tp-platform" x1="25" y1="120" x2="255" y2="165" gradientUnits="userSpaceOnUse"><stop stop-color="#dcf0fa"/><stop offset="1" stop-color="#b9d4e8"/></linearGradient></defs>
 <ellipse cx="152" cy="158" rx="116" ry="15" fill="#174c75" opacity=".07"/>
 <path d="m29 128 110-39 128 37-111 42Z" fill="url(#tp-platform)"/><path d="m29 128 127 40 111-42v10l-111 40-127-39Z" fill="#a8c9dc"/>
@@ -84,21 +84,21 @@
           </fieldset>
           <fieldset class="tp-plan-modules"><legend><span>02</span> What do you need?</legend><p class="tp-field-help">Select one or more modules. Combine them to save.</p>
             <label class="tp-choice tp-module"><input type="checkbox" name="tp-module" value="gst" checked><span class="tp-module-icon" aria-hidden="true"><img src="asset/swt_icon/taxpower_icon.png" width="24" height="24" alt="" decoding="async"></span><span class="tp-choice-content"><strong>TaxPower GST</strong><small>GST Return Filing</small></span><span class="tp-choice-check" aria-hidden="true"></span></label>
-            <label class="tp-choice tp-module"><input type="checkbox" name="tp-module" value="billing"><span class="tp-module-icon tp-module-icon--billing" aria-hidden="true"><img src="asset/swt_icon/taxpower_icon.png" width="24" height="24" alt="" decoding="async"></span><span class="tp-choice-content"><strong>TaxPower Billing</strong><small>E-Invoice and E-Way Bill Generation</small></span><span class="tp-choice-check" aria-hidden="true"></span></label>
-            <label class="tp-choice tp-module"><input type="checkbox" name="tp-module" value="tds"><span class="tp-module-icon tp-module-icon--tds" aria-hidden="true"><img src="asset/swt_icon/taxpower_icon.png" width="24" height="24" alt="" decoding="async"></span><span class="tp-choice-content"><strong>TaxPower TDS</strong><small>TDS Return Filling</small></span><span class="tp-choice-check" aria-hidden="true"></span></label>
+            <label class="tp-choice tp-module"><input type="checkbox" name="tp-module" value="billing" checked><span class="tp-module-icon tp-module-icon--billing" aria-hidden="true"><img src="asset/swt_icon/taxpower_icon.png" width="24" height="24" alt="" decoding="async"></span><span class="tp-choice-content"><strong>TaxPower Billing</strong><small>E-Invoice and E-Way Bill Generation</small></span><span class="tp-choice-check" aria-hidden="true"></span></label>
+            <label class="tp-choice tp-module"><input type="checkbox" name="tp-module" value="tds" checked><span class="tp-module-icon tp-module-icon--tds" aria-hidden="true"><img src="asset/swt_icon/taxpower_icon.png" width="24" height="24" alt="" decoding="async"></span><span class="tp-choice-content"><strong>TaxPower TDS</strong><small>TDS Return Filling</small></span><span class="tp-choice-check" aria-hidden="true"></span></label>
           </fieldset>
           <p class="tp-plan-hint"><span aria-hidden="true">✦</span> Your bundle price is applied automatically.</p>
         </div>
         <aside class="tp-plan-summary" aria-label="Your selected plan"><div class="tp-summary-topline"><span>YOUR SELECTED PLAN</span><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true" focusable="false"><rect x="5" y="5" width="22" height="24" rx="5"/><path d="M11 3h10v5H11zM10 15h12M10 20h7M21 23l2 2 5-6"/></svg></div>
           <div data-plan-output aria-live="polite" aria-atomic="true">
             <span class="tp-summary-edition" data-plan-edition>PROFESSIONAL EDITION</span>
-            <h3 data-plan-name>TaxPower GST</h3><p class="tp-summary-label">One-time installation fee</p>
-            <div class="tp-summary-price"><del data-plan-original hidden></del><strong data-plan-price>₹7,000</strong></div>
-            <p class="tp-plan-saving" data-plan-saving hidden></p>
-            <div class="tp-plan-renewal"><span>Annual renewal <small>AMC / financial year</small></span><strong data-plan-renewal>₹5,000</strong></div>
+            <h3 data-plan-name>TaxPower GST + TaxPower Billing + TaxPower TDS</h3><p class="tp-summary-label">One-time installation fee</p>
+            <div class="tp-summary-price"><del data-plan-original>₹17,000</del><strong data-plan-price>₹15,000</strong></div>
+            <p class="tp-plan-saving" data-plan-saving>Save ₹2,000 on installation vs separate modules</p>
+            <div class="tp-plan-renewal"><span>Annual renewal <small>AMC / financial year</small></span><strong data-plan-renewal>₹8,000</strong></div>
           </div>
           <ul class="tp-plan-includes"><li>Support &amp; updates free for the first year</li><li>Product key delivered by email</li><li>Optional multi-user LAN access</li></ul>
-          <a class="tp-plan-cta" data-plan-cta href="index.html#demo-enquiry" data-demo-purpose="Free Trial / Demo" data-demo-product="TaxPower GST Return">Request Trial / Enquire <span aria-hidden="true">↗</span></a>
+          <a class="tp-plan-cta" data-plan-cta href="index.html#demo-enquiry" data-demo-purpose="Free Trial / Demo" data-demo-product="TaxPower GST Return,TaxPower E-Invoice &amp; E-Way Bill,TaxPower TDS Return">Request Trial / Enquire <span aria-hidden="true">↗</span></a>
           <p class="tp-plan-tax">18% GST extra on installation. LAN charges additional.</p>
         </aside>
       </div>
