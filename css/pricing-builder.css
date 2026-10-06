@@ -76,3 +76,25 @@
 @media(max-width:480px){.tp-plan{padding:22px 16px;border-radius:14px}.tp-plan-summary{padding:21px 18px}.tp-plan-heading h2{font-size:27px}.tp-edition-grid .tp-choice{padding:10px 7px;min-height:70px}.tp-module{padding:12px 10px;gap:9px}.tp-module .tp-choice-content strong{font-size:13px}.tp-module .tp-choice-content small{font-size:10px}.tp-plan [data-plan-count]{font-size:9px}.tp-plan legend{font-size:13px}.tp-price-list{padding:0 18px}}
 @media(max-width:360px){.tp-edition-grid .tp-choice-check{display:none}.tp-plan [data-plan-count]{flex-basis:100%;margin-left:33px}}
 @media(prefers-reduced-motion:reduce){.tp-module,.tp-plan-cta{transition:none}}
+
+/* Small document illustrations and restrained blue / warm accents. */
+.tp-plan-heading{display:flex;align-items:center;justify-content:space-between;gap:24px}
+.tp-plan-heading-copy{flex:1;min-width:0}
+.tp-plan-illustration{display:block;width:170px;height:auto;flex-shrink:0}
+.tp-plan-eyebrow{color:#91612d}
+.pricing-page .tp-plan-heading h2 span{color:#176b97}
+.tp-plan .tp-summary-topline{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-bottom:12px;color:#326a8b}
+.tp-summary-illustration{display:block;width:47px;height:40px;flex-shrink:0}
+.tp-plan .tp-summary-edition{background:#eaf4fc;border-color:#c4dced;color:#245e82;padding:6px 9px;border-radius:6px}
+.tp-plan [data-plan-count]{display:inline-flex;align-items:center;padding:4px 8px;border:1px solid #d4e4ef;border-radius:20px;background:#f0f7fc;color:#3a6786;line-height:1.4}
+.tp-plan legend>span{background:#eaf3fa;color:#367599;border:1px solid #d4e5f0}
+.tp-edition-grid .tp-choice:has(input:checked) strong{color:#176b97}
+.tp-plan .tp-summary-price strong{color:#214762}
+.tp-plan .tp-plan-renewal strong{color:#176b97}
+.pricing-page .tp-plan-saving{display:inline-block;padding:5px 9px;border:1px solid #d2e5d9;border-radius:6px;background:#eff7f2;color:#396650;font-weight:500}
+.tp-plan .tp-plan-cta{background:linear-gradient(110deg,#176b97,#227fa9);border-color:#176b97;box-shadow:0 3px 8px #176b9714}
+.tp-plan .tp-plan-cta[aria-disabled=true]{background:#e0e6ec;border-color:#e0e6ec;box-shadow:none;color:#6b7d8c}
+.tp-plan .tp-plan-hint>span{color:#aa783a}
+@media(max-width:800px){.tp-plan-illustration{width:130px}.tp-plan-heading{gap:16px}}
+@media(max-width:600px){.tp-plan-illustration{width:90px}.tp-plan-heading{gap:10px}.tp-plan-heading-copy{min-width:0}.tp-plan-eyebrow{font-size:8px;letter-spacing:.1em}.pricing-page .tp-plan-heading h2{font-size:25px}.pricing-page .tp-plan-heading p{font-size:12px}}
+@media(max-width:360px){.tp-plan-illustration{width:66px}.tp-plan [data-plan-count]{flex-basis:auto}}
