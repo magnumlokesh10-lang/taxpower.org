@@ -14,13 +14,16 @@
       builder.dataset.ready = 'true';
       const get = name => builder.querySelector('[data-plan-' + name + ']');
       const cta = get('cta');
+      // Start a newly loaded chooser from the HTML defaults, including restored controls.
+      builder.querySelectorAll('[name="tp-module"], [name="tp-edition"]').forEach(input => { input.checked = input.defaultChecked; });
       function update(animate = false) {
         const edition = builder.querySelector('[name="tp-edition"]:checked').value;
         const selected = [...builder.querySelectorAll('[name="tp-module"]:checked')].map(input => input.value);
         const plan = prices[edition][selected.join('+')];
-        builder.dataset.planTone = selected.length === 1 ? selected[0] : 'bundle';
+        builder.dataset.planTone = selected.join('-') || 'empty';
+        get('count').textContent = selected.length + (selected.length === 1 ? ' product selected' : ' products selected');
         get('edition').textContent = edition === 'business' ? 'BUSINESS EDITION' : 'PROFESSIONAL EDITION';
-        get('name').textContent = selected.length ? selected.map(key => labels[key]).join(' + ') : 'Select at least one module';
+        get('name').textContent = selected.length ? selected.map(key => labels[key]).join(' + ') : 'Select at least one product';
         get('price').textContent = plan ? money(plan[0]) : '—';
         get('renewal').textContent = plan ? money(plan[1]) : '—';
         const separate = selected.reduce((sum, key) => sum + prices[edition][key][0], 0);
