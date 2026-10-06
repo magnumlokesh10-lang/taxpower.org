@@ -20,7 +20,6 @@
         const edition = builder.querySelector('[name="tp-edition"]:checked').value;
         const selected = [...builder.querySelectorAll('[name="tp-module"]:checked')].map(input => input.value);
         const plan = prices[edition][selected.join('+')];
-        builder.dataset.planTone = selected.join('-') || 'empty';
         get('count').textContent = selected.length + (selected.length === 1 ? ' product selected' : ' products selected');
         get('edition').textContent = edition === 'business' ? 'BUSINESS EDITION' : 'PROFESSIONAL EDITION';
         get('name').textContent = selected.length ? selected.map(key => labels[key]).join(' + ') : 'Select at least one product';
